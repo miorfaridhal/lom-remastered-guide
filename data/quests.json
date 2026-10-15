@@ -1,0 +1,2437 @@
+[
+  {
+    "id": 1,
+    "name": "Niccolo's Business Unusual",
+    "land": "Domina",
+    "arc": "Niccolo",
+    "npc": "Niccolo",
+    "start": "Domina: leave the first area by the top path; he is in the next area",
+    "needs": "None. The first quest you can take.",
+    "reward": "Flame, Medallion (Wheel handed over at the start)",
+    "end": "Pick 'Throw Candy' to start the bandit fight on Luon Highway. Niccolo then gives you the Flame and the Medallion",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Colorblocks artifact directly above Home to create Domina, then enter it. Ignore the opening conversation and leave the first area by the top path."
+      },
+      {
+        "step": "Talk to Niccolo in the next area. Tell him you are 'Not Afraid' of the bandits, then answer Yes when he asks for help."
+      },
+      {
+        "step": "Niccolo wants Teapo. Go back to the town centre near the entrance and enter the bottom-most door of the lower-left building. Teapo is the one shaped like a teapot."
+      },
+      {
+        "step": "Talk to Teapo. Niccolo gives you the Wheel artifact. Leave the building and exit the area by the bottom path."
+      },
+      {
+        "step": "On the world map place the Wheel directly left of Home to create Luon Highway, then enter it."
+      },
+      {
+        "step": "Follow the road to the bandits.",
+        "path": "Right, Right, Upper Right at the fork, Right, Right"
+      },
+      {
+        "step": "Choose 'Throw Candy' when asked. This starts the first boss fight. Afterwards Niccolo hands over the Flame and the Medallion."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 2,
+    "name": "The Little Sorcerers",
+    "land": "Home",
+    "arc": "Bud & Lisa",
+    "npc": "Pelican",
+    "start": "Starts when you leave your house after your first event, then enter Domina",
+    "needs": "Clear one other event first (#1 or #5)",
+    "reward": "None",
+    "end": "Beat Bud & Lisa in the upper left of the Outskirts of Domina, then tell Bud you want him as your apprentice",
+    "warning": "",
+    "prereq": [
+      1,
+      5
+    ],
+    "prereqMode": "any",
+    "route": [
+      {
+        "step": "Leave home after your first event. After a short conversation, enter Domina."
+      },
+      {
+        "step": "On the Domina map go to the point at the far left. This leads to the Outskirts of Domina."
+      },
+      {
+        "step": "Go to the upper left of the Outskirts. There is a pumpkin patch and two young sorcerers."
+      },
+      {
+        "step": "Beat the two kids and dodge their magic. Afterwards tell Bud you want him to be your apprentice."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 3,
+    "name": "The Wisdom of Gaia",
+    "land": "Domina",
+    "arc": "Faerie",
+    "npc": "Daena",
+    "start": "Domina inn (upper-left door in the town centre): bottom floor, room on the right",
+    "needs": "Luon Highway placed (Wheel from #1)",
+    "reward": "None",
+    "end": "Take Daena to Gaia on Luon Highway. Daena gives you the Forbidden Ring",
+    "warning": "Highly missable. Tell Daena souls live on, then agree to take her. Do it before entering Gato Grottoes after Flame of Hope, and before clearing both #1 and #5.",
+    "prereq": [
+      1
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Domina, enter the inn (upper-left door in the town centre) and open the room on the right on the bottom floor."
+      },
+      {
+        "step": "Talk to Daena and answer that 'Souls are Forever'. Then say you will go with her to see Gaia. She joins your party."
+      },
+      {
+        "step": "Enter Luon Highway and walk to Gaia.",
+        "path": "Right, Right, Lower Right at the fork, Right, Right, Right"
+      },
+      {
+        "step": "Talk to Gaia. Daena gives you the Forbidden Ring, which shares experience with the whole party."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 4,
+    "name": "Where's Putty?",
+    "land": "Ulkan Mines",
+    "arc": "Penguin",
+    "npc": "None (enter Ulkan Mines)",
+    "start": "Ulkan Mines: enter with a partner and ride the Dudbear Express to hear about Putty",
+    "needs": "Mine Your Own Business (#14) and The Quiet Sea (#34) started: #4 will not start until you start The Quiet Sea. SS Buccaneer and Polpota Harbor placed",
+    "reward": "None",
+    "end": "Cross the SS Buccaneer to Polpota Harbor and watch the scene on the beach",
+    "warning": "Missed if you clear both Catchin' Lilipeas (#64) and Diddle Had It! (#20) first.",
+    "prereq": [
+      14,
+      34
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Bring a partner into the Ulkan Mines and ride the Dudbear Express. You hear that Putty has disappeared."
+      },
+      {
+        "step": "Leave the mines.",
+        "path": "Down, Left, Upper Left, Up at the statue, Upper Right, Upper Right, Upper Left, Left"
+      },
+      {
+        "step": "Enter the SS Buccaneer.",
+        "path": "Left, Down, Downstairs, Left Door, Downstairs, Left Door, Downstairs"
+      },
+      {
+        "step": "Search the moving barrel, then talk to the Captain so he lets you leave the ship."
+      },
+      {
+        "step": "Enter Polpota Harbor and go to the beach to find Putty."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 5,
+    "name": "The Lost Princess",
+    "land": "Mekiv Caverns",
+    "arc": "Jumi",
+    "npc": "Elazul",
+    "start": "Domina pub: he is staring at Rachel. Side with him and Rachel hands over the Jade Egg",
+    "needs": "None",
+    "reward": "Stone Eye, Firefly Lamp",
+    "end": "Find Pearl in Mekiv Caverns and beat the Yeti",
+    "warning": "Disappears if you enter the Tower of Leires (#21) first, and fails if you enter it while this is active.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Domina and go into the pub. Talk to Elazul and side with him so he joins you. If you stick up for Rachel instead, Elazul leaves."
+      },
+      {
+        "step": "Talk to Rachel again. She gives you the Jade Egg."
+      },
+      {
+        "step": "Exit to the Domina map. Elazul asks to join and joins whatever you answer. If he does not appear, re-enter and exit Domina until he does."
+      },
+      {
+        "step": "Place the Jade Egg directly above the Junkyard to create Mekiv Caverns, then enter."
+      },
+      {
+        "step": "Find Pearl.",
+        "path": "Lower Right, Lower Right, Right, Lower Left, Lower Left, Left"
+      },
+      {
+        "step": "Beat the Yeti to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 6,
+    "name": "Diddle's Letter",
+    "land": "Domina",
+    "arc": "Diddle & Capella",
+    "npc": "Diddle & Capella",
+    "start": "Domina park with the fountain",
+    "needs": "#1 or #2 cleared",
+    "reward": "None",
+    "end": "Beat Giga Rex in the Luon Highway bandit caves. Keep the Gator Skin it gives you for Niccolo Part 4",
+    "warning": "Will not trigger while Seeing Double (#43) is active.",
+    "prereq": [
+      1,
+      2
+    ],
+    "prereqMode": "any",
+    "route": [
+      {
+        "step": "In Domina go to the park with the fountain and talk to Diddle. He leaves; follow him, then re-enter the park and talk to Capella."
+      },
+      {
+        "step": "Leave the screen, go to the Outskirts of Domina (far-left point), then return to the park and talk to Capella again."
+      },
+      {
+        "step": "Follow Capella to the town centre and talk to the Sproutling."
+      },
+      {
+        "step": "Go to the inn (upper-left door in the centre), listen to the conversation and talk to Miss Yuka."
+      },
+      {
+        "step": "Go to the Outskirts of Domina and listen to the Mail Pelican. Go to the world map, return to the Outskirts and talk to the Pelican again. He sends you to the Highway."
+      },
+      {
+        "step": "Enter Luon Highway and go to the second fork.",
+        "path": "Right, Right, Lower Right, Right"
+      },
+      {
+        "step": "A letter lies at the fork. Tell Capella to read it. Go Lower Left, then Left to find Diddle, and tell him Capella read the letter."
+      },
+      {
+        "step": "Enter the caves.",
+        "path": "Lower Left, Lower Left, talk to Capella, Upper Left"
+      },
+      {
+        "step": "Beat Giga Rex. Keep the Gator Skin for Niccolo's Business Unusual: Part 4."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 7,
+    "name": "Two Torches",
+    "land": "Gato Grottoes",
+    "arc": "Faerie",
+    "npc": "Daena",
+    "start": "Gato Grottoes: Temple of Healing, then the Dreamweaving Room at the far back",
+    "needs": "Murmuring Forest (#9) and Flame of Hope (#23); Escad not in party",
+    "reward": "Stone Eye",
+    "end": "Tell Daena to take you to the Sealed Room in the Caves and beat Spriggan",
+    "warning": "",
+    "prereq": [
+      9,
+      23
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Gato Grottoes, go to the Temple of Healing and through to the Dreamweaving Room at the far back. Talk to Daena and she lets you in."
+      },
+      {
+        "step": "Watch the scene between Escad and Matilda, then leave the room."
+      },
+      {
+        "step": "Follow the nun back in, talk to Daena and agree to help her."
+      },
+      {
+        "step": "Exit to the Gato Grottoes map and head for the Caves. Talk to Escad."
+      },
+      {
+        "step": "Tell Daena to take you to the Sealed Room and beat Spriggan."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 8,
+    "name": "Huntin' Du'Cate",
+    "land": "Jungle",
+    "arc": "Misc",
+    "npc": "None (enter the Jungle)",
+    "start": "Place the Medallion directly above Mekiv Caverns to create the Jungle. Talk to Sotherbee, then follow the Lilipea",
+    "needs": "Jungle placed (Medallion)",
+    "reward": "Sand Rose, Ancient Tablet",
+    "end": "Beat Du'Cate at the end of the route. Give the 500 Lucre to the others to receive the Sand Rose",
+    "warning": "Missed if Catchin' Lilipeas (#64) is cleared first. Fails if you start #64 while this is active.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Medallion directly above Mekiv Caverns to create the Jungle and enter it."
+      },
+      {
+        "step": "Talk to Sotherbee in the first area. Go Right and come straight back to try to catch the Lilipea."
+      },
+      {
+        "step": "Go Right, talk to the Lilipea and keep following it. It leads to a man who casts a spell so you do not get lost. The map is easy to get lost in."
+      },
+      {
+        "step": "Back to the entrance.",
+        "path": "Right, Right, Upper Right, Left"
+      },
+      {
+        "step": "Throne Room detour: from the entrance go Right, Right, Right. Talk to Hamson and follow him, talk to him again and follow him. Talk to Skippie and go Upper Left into the Throne Room. Talk to the character at the throne, then go Down and Lower Left. You are warped back to the entrance."
+      },
+      {
+        "step": "From the entrance go Right and talk to Skippie to help him. Go Up and talk to Hamson to help him, then go Left."
+      },
+      {
+        "step": "Reach the boss.",
+        "path": "Right, Right, Right, Lower Right, Right, Right, Right"
+      },
+      {
+        "step": "Beat Du'Cate. You win 500 Lucre; choose to give the money to the others to receive the Sand Rose."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 9,
+    "name": "The Murmuring Forest",
+    "land": "Jungle",
+    "arc": "Faerie",
+    "npc": "Flowerling",
+    "start": "Jungle: use the Psychic Service to warp to the Courtyard of Rain",
+    "needs": "Huntin' Du'Cate (#8)",
+    "reward": "None",
+    "end": "Tell the Punkmaster you want to fight, then beat him",
+    "warning": "",
+    "prereq": [
+      8
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the Jungle. Use the Psychic Service to go to the Courtyard of Rain. Open the chest, beat the enemies and talk to Selkie, who casts a spell on you."
+      },
+      {
+        "step": "Return to the entrance. Use the Psychic Service to go to the Forest Ruins and go Lower Left. The faeries teleport you back to the entrance."
+      },
+      {
+        "step": "Use the Psychic Service to the Forest Ruins again and go Up. Talk to Selkie to remove the spell and offer to help her."
+      },
+      {
+        "step": "Go Down to the save room, then Lower Left. Watch Escad beat up the faeries, talk to him and keep going Left."
+      },
+      {
+        "step": "Tell the Punkmaster you want to fight and beat him."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 10,
+    "name": "The Gorgon Eye",
+    "land": "Lake Kilma",
+    "arc": "Penguin",
+    "npc": "None (enter Lake Kilma)",
+    "start": "Place the Stone Eye directly above the Tower of Leires to create Lake Kilma. Talk to the penguins",
+    "needs": "Lake Kilma placed (Stone Eye)",
+    "reward": "Firefly Lamp, Medallion",
+    "end": "Reach map area 16, jump off the cliff and beat the Gorgon's Eye",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Stone Eye directly above the Tower of Leires to create Lake Kilma, then enter."
+      },
+      {
+        "step": "Talk to the penguins and answer 'What?'. Head for area 16 on the map."
+      },
+      {
+        "step": "Walk to the cliff.",
+        "path": "Left, Left, Upper Right, Right, Lower Right, Right (to the save room), Upper Right, Right, Upper Right, Upper Left, Left, then jump off the cliff"
+      },
+      {
+        "step": "Beat the Gorgon's Eye."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 11,
+    "name": "In Search of Faeries",
+    "land": "Gato Grottoes",
+    "arc": "Faerie",
+    "npc": "Matilda",
+    "start": "Gato Grottoes Dreamweaving Room: agree to look for Daena",
+    "needs": "Two Torches (#7)",
+    "reward": "None",
+    "end": "Follow Tote through Lake Kilma to Daena and beat the Boreal Hound",
+    "warning": "Agree to help Matilda. Refusing loses #11, #13, #15 and #17.",
+    "prereq": [
+      7
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Gato Grottoes, go to the Dreamweaving Room and talk to Matilda. Agree to look for Daena."
+      },
+      {
+        "step": "Enter Lake Kilma and go to area 16 to reach Tote.",
+        "path": "Left, Left, Upper Right, Right, Lower Right, Right (to the save room), Upper Right, Right, Upper Right, Upper Left, Left"
+      },
+      {
+        "step": "Talk to Tote and follow him.",
+        "path": "Lower Right, Lower Right (talk to Daena), Lower Left, Down, Left (Daena attacks Irwin), Lower Left, Left"
+      },
+      {
+        "step": "Beat the Boreal Hound."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 12,
+    "name": "Teatime of Danger",
+    "land": "Mindas Ruins",
+    "arc": "Misc",
+    "npc": "None (enter Mindas Ruins)",
+    "start": "Place the Ancient Tablet directly right of Home to create the Mindas Ruins. Starts on entering; talk to Duelle (the onion)",
+    "needs": "Mindas Ruins placed (Ancient Tablet)",
+    "reward": "Bottled Spirit, Rusted Anchor",
+    "end": "Solve the flowerling gate puzzles, go down the staircase to the boss area and beat Count Dovula",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Ancient Tablet directly right of Home to create the Mindas Ruins, then enter."
+      },
+      {
+        "step": "Talk to Duelle, the onion character, and head into the ruins."
+      },
+      {
+        "step": "Work through the three Flowerkeys' Corners. Talk to the flowerlings in each corner until they stand in the layout that opens the gate (Legend of Mana Info describes a '<' shape twice, then a '/' shape). Leave to the right after each one."
+      },
+      {
+        "step": "After the last corner a flower girl opens a staircase. Go down it and go Left, Left, Left to the boss area."
+      },
+      {
+        "step": "Talk to Teapo. Count Dovula comes down and the boss fight begins."
+      },
+      {
+        "step": "After the fight you return to the entrance for a scene between Teapo and the onion."
+      }
+    ],
+    "routeNote": "The two walkthroughs I found give different move-by-move directions in these ruins (Legend of Mana Info says its instructions were recently overhauled), so go by what is on screen."
+  },
+  {
+    "id": 13,
+    "name": "Star-Crossed Lovers",
+    "land": "Gato Grottoes",
+    "arc": "Faerie",
+    "npc": "Matilda",
+    "start": "Gato Grottoes Dreamweaving Room: a long scene takes everyone to the Mindas Ruins",
+    "needs": "Pokiehl: Dream Teller (#15) and Teatime of Danger (#12); Escad not in party",
+    "reward": "None",
+    "end": "Pay Niccolo to take you to the Temple of Winds, climb the stairs, choose Escad or Daena and fight the one you did not choose",
+    "warning": "",
+    "prereq": [
+      15,
+      12
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Gato Grottoes and go to the Dreamweaving Room. A long scene plays and everyone is taken to the Mindas Ruins."
+      },
+      {
+        "step": "Cross the ruins.",
+        "path": "Right, Right, Right, then Left (above ground)"
+      },
+      {
+        "step": "Go through the Gates and set both Flowerlings on the Right. Go Right and go through the Gates again."
+      },
+      {
+        "step": "Pay Niccolo to take you to the Temple of Winds, then go up the stairs."
+      },
+      {
+        "step": "At the top choose Escad or Daena. You then fight the one you did not choose."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 14,
+    "name": "Mine Your Own Business",
+    "land": "Ulkan Mines",
+    "arc": "Misc",
+    "npc": "Pokiehl",
+    "start": "Place the Bottled Spirit directly right of the Mindas Ruins to create the Ulkan Mines. Watts' Workshop is the top room",
+    "needs": "Ulkan Mines placed (Bottled Spirit)",
+    "reward": "Moon's Mirror, Torch of Coral",
+    "end": "Talk to Watts three times and beat the monster that attacks",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Bottled Spirit directly right of the Mindas Ruins to create the Ulkan Mines, then enter. If you plan to do The Seven Wisdoms, bring Bud: that starts it, but do not finish it yet."
+      },
+      {
+        "step": "Go Right and enter the Top Room, Watts' Workshop. Talk to Pokiehl to begin the search for Watts."
+      },
+      {
+        "step": "Leave the workshop and go Lower Right. Go Down the stairs into the next area."
+      },
+      {
+        "step": "Find Watts.",
+        "path": "Lower Left corner, Down the stairs, Upper Left three times, Upper Left, Up the stairs, then Down the path"
+      },
+      {
+        "step": "Talk to Watts three times. A monster attacks; beat it."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 15,
+    "name": "Pokiehl: Dream Teller",
+    "land": "Ulkan Mines",
+    "arc": "Faerie",
+    "npc": "Pokiehl",
+    "start": "Ulkan Mines (Kid Escad appears)",
+    "needs": "In Search of Faeries (#11); Escad not in party",
+    "reward": "None",
+    "end": "Choose Escad or Daena at the end of the dream. Choosing Daena makes Escad attack you",
+    "warning": "Fails if you leave the mines during the quest.",
+    "prereq": [
+      11
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the Ulkan Mines.",
+        "path": "Right, Lower Right"
+      },
+      {
+        "step": "Talk to Pokiehl and tell him you are in a hurry. He shows you a dream world."
+      },
+      {
+        "step": "In the dream world.",
+        "path": "Right, Lower Right, Right (to the stairs), keep going Right to another set of stairs and go down"
+      },
+      {
+        "step": "After the conversation you leave the dream world. Choose between Escad and Daena."
+      }
+    ],
+    "routeNote": "Do not leave the Mines during this event or it fails."
+  },
+  {
+    "id": 16,
+    "name": "Diddle Kidnapped!?",
+    "land": "Domina",
+    "arc": "Diddle & Capella",
+    "npc": "Diddle & Capella",
+    "start": "Domina church: talk to Roger, then watch the scene in the park",
+    "needs": "Diddle Had It! (#20) and Catchin' Lilipeas (#64)",
+    "reward": "None",
+    "end": "Beat the Chimera Lord at the end of the White Forest",
+    "warning": "Knock out any dudbears you see in the White Forest or they take you elsewhere.",
+    "prereq": [
+      20,
+      64
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Domina go to the church and talk to Roger."
+      },
+      {
+        "step": "Go to the park and watch Diddle get kidnapped. Exit to the world map."
+      },
+      {
+        "step": "Enter the White Forest and smack the Dudbears as you go.",
+        "path": "Lower Left, Left, Upper Left, Left, Left"
+      },
+      {
+        "step": "Beat the Chimera Lord."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 17,
+    "name": "Heaven's Gate",
+    "land": "Gato Grottoes",
+    "arc": "Faerie",
+    "npc": "Matilda",
+    "start": "Gato Grottoes Dreamweaving Room: the partner you sided with earlier must join you, then she gives you the Brooch of Love",
+    "needs": "Star-Crossed Lovers (#13). Do Daddy's Broom (#18) first",
+    "reward": "Brooch of Love",
+    "end": "Place the Brooch of Love to create Lucemia, go to area 30 and beat Irwin",
+    "warning": "Ends the Faerie arc.",
+    "prereq": [
+      13
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Gato Grottoes and go to the Dreamweaving Room. Whoever you sided with in earlier events must join your party; after the scene talk to them (Daena in the example)."
+      },
+      {
+        "step": "Talk to Matilda to get the Brooch of Love."
+      },
+      {
+        "step": "Place the Brooch of Love directly right of the Jungle to create Lucemia, then enter."
+      },
+      {
+        "step": "Go to area 30 on the Lucemia map and beat Irwin."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 18,
+    "name": "Daddy's Broom",
+    "land": "Home",
+    "arc": "Bud & Lisa",
+    "npc": "Bud",
+    "start": "Home: the cactus is missing from its pot. Talk to Lisa on the ground floor",
+    "needs": "#2 and #19; Seven Wisdoms (#62) started; Lisa not in party",
+    "reward": "None",
+    "end": "Beat the Gremlin in the Junkyard",
+    "warning": "Missed once #40, #33 or #17 is cleared with 18 artifacts placed.",
+    "prereq": [
+      2,
+      19
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Come home and find the cactus missing from its pot. Go back to the ground floor and talk to Lisa. She mentions her missing broom and the cactus returns."
+      },
+      {
+        "step": "Go upstairs and talk to the cactus, then back downstairs and talk to Bud. Bud joins you."
+      },
+      {
+        "step": "Enter the Junkyard.",
+        "path": "Upper Right, Lower Right, Upper Right, Right, Upper Left, Right, Right"
+      },
+      {
+        "step": "Beat the Gremlin."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 19,
+    "name": "The Infernal Doll",
+    "land": "Junkyard",
+    "arc": "Misc",
+    "npc": "None (enter the Junkyard)",
+    "start": "Place the Broken Doll directly above the Ulkan Mines to create the Junkyard. The Jack-in-the-Box at the start gives you the route",
+    "needs": "Junkyard placed (Broken Doll)",
+    "reward": "Tome of Magic",
+    "end": "Follow the route to the Infernal Doll and win the fight",
+    "warning": "Follow the toy box path exactly or the boss room stays closed.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Broken Doll directly above the Ulkan Mines to create the Junkyard, then enter. The Infernal Doll runs off as soon as you arrive."
+      },
+      {
+        "step": "Talk to the Jack-in-the-Box (the toy box). It tells you the route."
+      },
+      {
+        "step": "Follow it to the doll.",
+        "path": "Upper Right, Lower Right, Upper Right, Right, Upper Left, Right, Right"
+      },
+      {
+        "step": "Beat the enemies to end the event."
+      }
+    ],
+    "routeNote": "This quest never needs Geo. You can keep the Tome of Magic unplaced. Placing it directly left of the Jungle creates Geo and its level 4 shop; read Forge, Items, first, because Geo's café can make Love is Blind (#65) vanish and your first visit starts Li'l Cactus (#49)."
+  },
+  {
+    "id": 20,
+    "name": "Diddle Had It!",
+    "land": "Lumina",
+    "arc": "Diddle & Capella",
+    "npc": "Diddle & Capella",
+    "start": "Lumina tavern (western section)",
+    "needs": "Diddle's Letter (#6) and The Fallen Emperor (#41)",
+    "reward": "None",
+    "end": "Chase Capella and Diddle up the Underworld without touching a Shadole, then beat Ape Mummy",
+    "warning": "Fails if you leave the Underworld. Cannot start while The Crimson Dragon (#40) is active.",
+    "prereq": [
+      6,
+      41
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Lumina, go to the tavern in the western section and talk to Capella and Diddle. Leave and return to that area so Diddle leaves."
+      },
+      {
+        "step": "Go home, then to the world map. Four Shadoles enter Lumina. Go back to Lumina and talk to Capella; he leaves. Leave the area and watch Diddle get taken hostage."
+      },
+      {
+        "step": "Enter the Underworld. You are teleported to the lowest level. Do not talk to Pokiehl; it may fail the event."
+      },
+      {
+        "step": "Chase Capella and Diddle without touching a Shadole (touching one sends you back to the start).",
+        "path": "Left, through two groups of Shadoles, through two long rooms, past the Shadoles that disappear (they are still there), past the next set that disappear (note where they stand)"
+      },
+      {
+        "step": "Beat Ape Mummy."
+      },
+      {
+        "step": "Afterwards do not enter Domina. Go straight home."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 21,
+    "name": "The Looking-Glass Tower",
+    "land": "Tower of Leires",
+    "arc": "Jumi",
+    "npc": "Pearl",
+    "start": "Place the Moon's Mirror directly above Gato Grottoes to create the Tower of Leires. She waits at the entrance",
+    "needs": "Do The Lost Princess (#5) first; Elazul not in party",
+    "reward": "Frozen Heart, Pirate's Hook",
+    "end": "Take Pearl to the 11th floor and beat the Iron Centaur, then escort her down and beat the Jewel Beast on the bottom floor",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Moon's Mirror directly above Gato Grottoes to create the Tower of Leires, then enter. Talk to Pearl in the first area and take her into the tower."
+      },
+      {
+        "step": "Climb to the 11th floor. Two rooms with teleport crystals help.",
+        "path": "Right, Left, Left (2nd floor), Right, Upstairs (3rd), Left, Upstairs (4th), Right, Upstairs (5th), Down, Left, Upstairs (6th), Left, Upstairs (7th), Right, Upstairs (8th), Lower Left, enter the large door, search the crystal and leave the room, Left, Upstairs, follow the hall to the Room of Fate, enter"
+      },
+      {
+        "step": "On the 11th floor beat the Iron Centaur."
+      },
+      {
+        "step": "Escort Pearl out: fall off the railing on the 11th floor to land on the 5th floor, use the stairs down, and leave through the left or right side of the foyer near the top of the screen."
+      },
+      {
+        "step": "On the bottom floor beat the Jewel Beast. It drops the Frozen Heart."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 22,
+    "name": "The Two Pearls",
+    "land": "Tower of Leires",
+    "arc": "Jumi",
+    "npc": "Elazul",
+    "start": "Home: he is in your bed. Leave and return until he goes, then meet him at the Tower of Leires",
+    "needs": "Cosmo (#24)",
+    "reward": "None",
+    "end": "Take Elazul to the Room of Fate on the 11th floor and fight Lady Blackpearl with him",
+    "warning": "",
+    "prereq": [
+      24
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Talk to Elazul in your bed. Go downstairs, come back and talk to him again. Repeat until he leaves your home."
+      },
+      {
+        "step": "Enter the Tower of Leires and offer to help Elazul."
+      },
+      {
+        "step": "Climb to the 11th floor and the Room of Fate (same route as The Looking-Glass Tower).",
+        "path": "Right, Left, Left (2nd floor), Right, Upstairs (3rd), Left, Upstairs (4th), Right, Upstairs (5th), Down, Left, Upstairs (6th), Left, Upstairs (7th), Right, Upstairs (8th), Lower Left, enter the large door, search the crystal and leave the room, Left, Upstairs, follow the hall to the Room of Fate, enter"
+      },
+      {
+        "step": "Agree to help Elazul and beat Lady Blackpearl."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 23,
+    "name": "The Flame of Hope",
+    "land": "Gato Grottoes",
+    "arc": "Jumi",
+    "npc": "None (enter Gato Grottoes)",
+    "start": "Place the Flame directly left of Luon Highway to create Gato Grottoes. Take the right-hand point on the map and follow the sproutling",
+    "needs": "Gato Grottoes placed (Flame)",
+    "reward": "Ancient Tablet, Torch of Coral",
+    "end": "Offer to help the Inspector find Sandra, follow the trail of leaves to the Waterfall and the Nest, and watch Sandra leave",
+    "warning": "Will not start while Drowned Dreams (#28) is active.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Flame directly left of Luon Highway to create Gato Grottoes, then enter."
+      },
+      {
+        "step": "On the Gato Grottoes map take the point on the Right. Watch the Sproutling and the nun and take the Upper Right path."
+      },
+      {
+        "step": "Talk to Rubens at the fork and take the Right path. Watch the Sproutling run away."
+      },
+      {
+        "step": "Return to the fork, take the Left path and talk to the character in the Temple of Healing."
+      },
+      {
+        "step": "Return to the fork and go Right, return to the Temple of Healing, then go back to the terrace area and talk to Rubens."
+      },
+      {
+        "step": "The Inspector asks you to help find the criminal Sandra. Offer to help."
+      },
+      {
+        "step": "Back on the Gato Grottoes map take the point on the Left to reach the Cliffs. Follow the trail of leaves to the Waterfall and the Nest.",
+        "path": "Far upper Left, Right, Right down the stairs, Right, Left"
+      },
+      {
+        "step": "Watch Sandra leave to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 24,
+    "name": "Cosmo",
+    "land": "Home",
+    "arc": "Jumi",
+    "npc": "Elazul",
+    "start": "Home: he is outside your front door. Tell him you have not seen Pearl and he joins you",
+    "needs": "Lucky Clover (#31). Clear Li'l Cactus (#49) first",
+    "reward": "None",
+    "end": "Talk to the duck in Mekiv Caverns and beat the Jewel Beast at the boss area",
+    "warning": "Li'l Cactus (#49) is lost if you start this first.",
+    "prereq": [
+      31
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Leave your front door. Elazul is waiting. Tell him you have not seen Pearl and have him join you."
+      },
+      {
+        "step": "Enter Mekiv Caverns and talk to the duck."
+      },
+      {
+        "step": "Work through the caverns to the boss area (marked on the map) and beat the Jewel Beast."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 25,
+    "name": "Can't Look Back",
+    "land": "Fieg Snowfields",
+    "arc": "School",
+    "npc": "None (enter Fieg Snowfields)",
+    "start": "Place the Frozen Heart directly below the Bone Fortress to create Fieg Snowfields. Talk to Mephianse at the campfire",
+    "needs": "Fieg Snowfields placed (Frozen Heart)",
+    "reward": "Rusted Anchor, Broken Doll",
+    "end": "Go to map area 18 and beat the boss",
+    "warning": "Do not enter Duma Desert while this is active.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Frozen Heart directly below the Bone Fortress to create Fieg Snowfields, then enter."
+      },
+      {
+        "step": "Head to area 13 on the map, listen to the conversation and talk to Mephianse at the campfire."
+      },
+      {
+        "step": "Go on to area 18 and beat the boss."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 26,
+    "name": "A Siren's Song",
+    "land": "Lumina",
+    "arc": "Gilbert",
+    "npc": "Soldiers (Lumina tavern alley)",
+    "start": "Lumina: western tavern, then the alley",
+    "needs": "Drowned Dreams (#28), The Spirits' Light (#30), Summer Lovin' (#27)",
+    "reward": "None",
+    "end": "Trick the mermaid at Madora Beach, run through the cage gate and beat Tropicallo",
+    "warning": "",
+    "prereq": [
+      28,
+      30,
+      27
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Lumina go to the tavern in the western section and enter the alley. Talk to the soldiers, then go to the Lamp Shop and talk to the soldier there."
+      },
+      {
+        "step": "Go to Polpota Harbor. Take the path between the hotel and the restaurant and talk to Monique. Go to the beach and talk to the soldiers."
+      },
+      {
+        "step": "Enter Madora Beach.",
+        "path": "Left, Upper Left, Upper Left, Left, then talk to the Mermaid"
+      },
+      {
+        "step": "Walk to the right side of the screen and wait for the mermaid to turn into a bubble. The moment it starts to morph, run over to the cage and walk through the gate."
+      },
+      {
+        "step": "Beat Tropicallo."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 27,
+    "name": "Summer Lovin'",
+    "land": "Madora Beach",
+    "arc": "Penguin",
+    "npc": "None (enter Madora Beach)",
+    "start": "Place the Torch of Coral directly above Lake Kilma to create Madora Beach. Starts on entering",
+    "needs": "Madora Beach placed (Torch of Coral)",
+    "reward": "Rusted Anchor, Moon's Mirror",
+    "end": "Step on every crab (20 or more), beat Fullmetal Haggar in the cave, then talk to the penguin (Valerie)",
+    "warning": "Talk to Valerie before leaving or you lose the rewards.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Torch of Coral directly above Lake Kilma to create Madora Beach, then enter."
+      },
+      {
+        "step": "Watch the conversation, then step on every crab. You need at least 20 for Buried Treasure later."
+      },
+      {
+        "step": "Go to Fullmetal Haggar.",
+        "path": "Right, Right, Right (into the cave), Lower Right, Upper Right, Upper Right, Upper Left, Left (into the cave), Upper Left, Lower Right"
+      },
+      {
+        "step": "Beat him, then talk to the penguin (Valerie) before you leave."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 28,
+    "name": "Drowned Dreams",
+    "land": "Polpota Harbor",
+    "arc": "Jumi",
+    "npc": "Hotel employee",
+    "start": "Right side of the hotel reception",
+    "needs": "Polpota Harbor placed (Rusted Anchor). Do Flame of Hope (#23) first",
+    "reward": "Pirate's Hook, Bottled Spirit",
+    "end": "Watch the scene with Thoma in the hotel room on the left",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Polpota Harbor, go Left into the mall and talk to the Flowerling and the Mermaid."
+      },
+      {
+        "step": "Go Left to the beach and talk to Thoma."
+      },
+      {
+        "step": "Go to the town entrance, up to the hotel and talk to the manager. Agree to help."
+      },
+      {
+        "step": "Go to the Lower Right stairway and talk to the Inspector. Follow the path to the restaurant and talk to the people there."
+      },
+      {
+        "step": "Back on the beach talk to the Soldier."
+      },
+      {
+        "step": "At the hotel entrance there is a Basket Fish. Talk to the Inspector and ask him every question until he walks away."
+      },
+      {
+        "step": "Go to the restaurant to see Thoma, then back to the hotel entrance to see Thoma and Boyd speak."
+      },
+      {
+        "step": "Go into the hotel, take the room on the left and talk to Thoma."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 29,
+    "name": "Fluorite",
+    "land": "Geo",
+    "arc": "Jumi",
+    "npc": "Florina",
+    "start": "Geo Jewelry Shop: it takes you to Pandora's Box. Talk to Florina to enter the dream world",
+    "needs": "Alexandrite (#32) and Reach for the Stars (#36)",
+    "reward": "None",
+    "end": "Cross the dream dungeon and beat the boss at the end",
+    "warning": "",
+    "prereq": [
+      32,
+      36
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Geo and go to the Jewelry Shop. This takes you to Pandora's Box. Talk to Florina to enter another dream world."
+      },
+      {
+        "step": "Pay Niccolo when you see him."
+      },
+      {
+        "step": "Cross the dream.",
+        "path": "Down, Left, Upper Right, Upper Right (Elazul and Pearl talk), talk to Elazul and go Upper Left, Left (Elazul and Pearl talk), Upper Left, Upper Left"
+      },
+      {
+        "step": "Beat the boss at the end."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 30,
+    "name": "The Spirits' Light",
+    "land": "Lumina",
+    "arc": "Gilbert",
+    "npc": "Monique",
+    "start": "Place the Firefly Lamp directly left of Mekiv Caverns to create Lumina. Monique's Lamp Shop is in the Shopping District (north, upper right)",
+    "needs": "Lumina placed (Firefly Lamp)",
+    "reward": "Trembling Spoon, Sand Rose",
+    "end": "Sell the three lamps to the dudbears, then finish the scenes at the Lamp Shop",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Firefly Lamp directly left of Mekiv Caverns to create Lumina, then enter. The west section is the tavern and the north section is the Shopping District."
+      },
+      {
+        "step": "Go north to the Shopping District and to the Upper Right. Enter Monique's Lamp Shop and talk to her. Gilbert appears and offers to help her sell six lamps."
+      },
+      {
+        "step": "Leave the shop and talk to Gilbert. He buys three lamps and you sell the other three."
+      },
+      {
+        "step": "Go to the tavern in the western part of Lumina and talk to the puzzle-piece guy. He teaches you the Dudbear language."
+      },
+      {
+        "step": "Sell your three lamps to the dudbears by answering their questions.",
+        "path": "Dudbear near the puzzle guy: B, B, A, C. Dudbear near Capella: A, B, B, A, C. Dudbear in the Shopping District: B, B, A, C"
+      },
+      {
+        "step": "Return to the Lamp Shop and talk to Gilbert. Go inside and watch the scene, leave, talk to Monique after she leaves, then go back into the shop."
+      }
+    ],
+    "routeNote": "Some guides call this event 'Faeries' Light'. The dudbear answers come from Legend of Mana Info."
+  },
+  {
+    "id": 31,
+    "name": "The Lucky Clover",
+    "land": "Domina",
+    "arc": "Jumi",
+    "npc": "Elazul",
+    "start": "Domina bar (one earlier source says the inn)",
+    "needs": "Flame of Hope (#23), Drowned Dreams (#28), Looking-Glass Tower (#21); also School Amour (#58) if #30 is done",
+    "reward": "Jade Egg, Frozen Heart",
+    "end": "Find the three cores in Geo, then fight the Jewel Beast in the battle arena below Kristie's place",
+    "warning": "",
+    "prereq": [
+      23,
+      28,
+      21
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Domina go to the bar and talk to Elazul. Help him look for his friend. Leave and tell Pearl the bar is also dangerous; she goes to your Home."
+      },
+      {
+        "step": "Enter Geo and go to the Academy of Magic to see Esmeralda. On a day that is not Gnome or Undine Day she is in the Academy; on Gnome or Undine Day she is in the Library. Change the day to find her in the classroom, change it again to see her in the Library, then offer to help her find the cores."
+      },
+      {
+        "step": "Talk to Alex at the Jewelry Shop. Find three cores: (1) Mephianse's office in the Academy of Magic, on Dryad Day. (2) The basement of Kristie's place, the Diana statue. (3) Teapo at the Cafe: ask behind the counter about the core, exit to the city map and return, and Teapo hands it over."
+      },
+      {
+        "step": "Go to the Jewelry Shop so Elazul joins you. Return to Kristie's place and talk to Diana, the statue in the basement. Head downstairs to the battle arena."
+      },
+      {
+        "step": "Beat the Jewel Beast."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 32,
+    "name": "Alexandrite",
+    "land": "Domina",
+    "arc": "Jumi",
+    "npc": "Elazul",
+    "start": "Domina bar: he asks you to take Pearl to Geo",
+    "needs": "The Two Pearls (#22)",
+    "reward": "None",
+    "end": "Find Diana missing, go to the Underground Battle Arena and finish there",
+    "warning": "",
+    "prereq": [
+      22
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Domina go to the bar and talk to Elazul. Agree to take Pearl to Geo."
+      },
+      {
+        "step": "Enter Geo, go to Kristie's place and talk to Diana. Tell Pearl everything is okay, then talk to Kristie."
+      },
+      {
+        "step": "Collect 3 keys, in this order: Mephianse's office in the Academy of Magic, the City's gates, and the Instrument Shop."
+      },
+      {
+        "step": "Return to Kristie's place. Diana is missing. Go to the Underground Battle Arena to find her."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 33,
+    "name": "The Teardrop Crystal",
+    "land": "Geo",
+    "arc": "Jumi",
+    "npc": "Inspector Boyd",
+    "start": "Domina church: tell him 'No, that can't be'. He sends you to Geo",
+    "needs": "Fluorite (#29) and The Little Sorcerers (#2). Do Daddy's Broom (#18) first",
+    "reward": "Jumi's Staff",
+    "end": "Open the three gates of the Bejeweled City with the gem tone puzzles, then beat Lord of Jewels 999 and 1000 in the Room of Clarius",
+    "warning": "Ends the Jumi arc.",
+    "prereq": [
+      29,
+      2
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Domina go to the church and talk to the Inspector. Tell him 'No, that can't be' and he sends you to Geo for the Jumi Cores."
+      },
+      {
+        "step": "In Geo enter and leave the jewel shop right away to see Pearl and Elazul come in. Search the treasure box on the right to be taken to Pandora's Box."
+      },
+      {
+        "step": "After the conversation choose Pearl or Elazul to join you, then leave Geo for the world map."
+      },
+      {
+        "step": "Place Jumi's Staff directly left of Domina to create the Bejeweled City, then enter."
+      },
+      {
+        "step": "Enter every room in the Glowing Corridor to collect four gemstones: Sapphire, Topaz, Emerald and Ruby."
+      },
+      {
+        "step": "Level 1: go to Sappho's gate and search the door to fight a Jewel Beast. Then put two gems in the slots and search the door. The number of tones you hear is the number of correct gems, so keep trying combinations. Open the gate but do not pass yet; go back and retrieve your gems."
+      },
+      {
+        "step": "Level 2: go through Sappho's gate and collect the Amethyst and Aquamarine. Search the gate to fight a Jewel Beast. Place three gems until you hear 3 tones, enter Level 3 and retrieve the gems from the slots."
+      },
+      {
+        "step": "Level 3: beat the Machine Golem for the Diamond in the room near the stairs. Search the gate to fight a Jewel Beast. Place four gems until you hear 4 tones and go on to the Room of Clarius."
+      },
+      {
+        "step": "Beat Lord of Jewels 999 and Lord of Jewels 1000 and watch the scenes."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 34,
+    "name": "The Quiet Sea",
+    "land": "SS Buccaneer",
+    "arc": "Penguin",
+    "npc": "Ramtieger",
+    "start": "Place the Pirate's Hook directly above Madora Beach to create the SS Buccaneer. Tell him 'South, East, East'",
+    "needs": "SS Buccaneer placed (Pirate's Hook)",
+    "reward": "Medallion, Frozen Heart",
+    "end": "Get the bottle from the barrel below the Forecastle Deck, then beat Gova on the top deck",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Pirate's Hook directly above Madora Beach to create the SS Buccaneer, then enter."
+      },
+      {
+        "step": "Find Ramtieger.",
+        "path": "Left, Down, then the second door from the end on the bottom wall"
+      },
+      {
+        "step": "Talk to Ramtieger and choose 'South, East, East'."
+      },
+      {
+        "step": "Return to the top deck and talk to the Penguin. Leave and come straight back: he has a bottle and a ghost escapes. Talk to the Penguin again so he leaves."
+      },
+      {
+        "step": "Go to the Captain's Quarters and talk to the Captain at the top of the screen."
+      },
+      {
+        "step": "Go to the Forecastle Deck and take the stairs down. Enter the left door on the top wall, go downstairs and search the barrel."
+      },
+      {
+        "step": "Tell the figure there is a pretty girl and keep talking until he gives you the bottle."
+      },
+      {
+        "step": "Return to the top deck and beat Gova."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 35,
+    "name": "The Treasure Map",
+    "land": "SS Buccaneer",
+    "arc": "Penguin",
+    "npc": "Ramtieger",
+    "start": "SS Buccaneer: tell him 'North, North, East', then tell the Captain you will help",
+    "needs": "The Lost Princess (#5) or Cosmo (#24)",
+    "reward": "None",
+    "end": "Catch the dudbears holding all eight map pieces in Mekiv Caverns before Roger arrives",
+    "warning": "Timed. Save first. Failing it closes the Nordic Snowfield line.",
+    "prereq": [
+      5,
+      24
+    ],
+    "prereqMode": "any",
+    "route": [
+      {
+        "step": "Enter the SS Buccaneer. The event is timed, so save first."
+      },
+      {
+        "step": "Tell Ramtieger 'North, North, East'. Then tell the Captain you will help get the treasure map. This takes you to Mekiv Caverns."
+      },
+      {
+        "step": "Collect the pieces.",
+        "path": "Upper Right, Right (Roger and his Dudbears), Upper Right, Right (the Dudbears destroy the map), catch the single Dudbear running around for piece 1, Upper Left, Left, Lower Right, Right (Dudbears with pieces 2 and 3), Upper Left, Left, Left, Left, Lower Right (three more Dudbears), Lower Right, Right, Right (the last two Dudbears)"
+      },
+      {
+        "step": "Catch all eight piece holders quickly. If Roger arrives you fail, and you also lose two other events."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 36,
+    "name": "Reach for the Stars",
+    "land": "Duma Desert",
+    "arc": "School",
+    "npc": "Kathinja",
+    "start": "Place the Sand Rose directly right of Lake Kilma to create the Duma Desert. Agree to help the students",
+    "needs": "Duma Desert placed (Sand Rose)",
+    "reward": "Torch of Coral, Broken Doll, Ishe Platinum (a player reported getting it during this quest)",
+    "end": "Tell Kathinja you are ready and beat the two Axe Beaks",
+    "warning": "Do not enter Fieg Snowfields while this is active.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Sand Rose directly right of Lake Kilma to create the Duma Desert, then enter."
+      },
+      {
+        "step": "Agree to help the students.",
+        "path": "Right, Lower Right, Upper Right"
+      },
+      {
+        "step": "Talk to the students and choose to go through them."
+      },
+      {
+        "step": "Exit at the top of the screen.",
+        "path": "Lower Left, Up, through the students, Left, Left"
+      },
+      {
+        "step": "Tell Kathinja you are ready and beat the two Axe Beaks."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 37,
+    "name": "The Dragon Princess",
+    "land": "White Forest",
+    "arc": "Dragon",
+    "npc": "Larc",
+    "start": "Pick him up in the Underworld first, then take him into the White Forest",
+    "needs": "The Ghost of Nemesis (#39); Larc in party",
+    "reward": "Torch of Coral",
+    "end": "Agree to take the test and beat Sierra",
+    "warning": "",
+    "prereq": [
+      39
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Tome of Magic directly left of the Jungle to create Geo. Do not enter Geo yet."
+      },
+      {
+        "step": "Place the Green Cane directly left of the Bone Fortress to create the White Forest."
+      },
+      {
+        "step": "Enter the Underworld first to pick up Larc, then enter the White Forest."
+      },
+      {
+        "step": "Follow the route Larc confirms.",
+        "path": "Lower Left, Lower Left, Down, Left, Left, Lower Left, Lower Right, Right"
+      },
+      {
+        "step": "Agree to take the test and fight Sierra."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 38,
+    "name": "The Guardian of Winds",
+    "land": "Norn Peaks",
+    "arc": "Dragon",
+    "npc": "Larc",
+    "start": "Place the Skull Lantern directly left of the Underworld to create Norn Peaks. Arrive with him",
+    "needs": "The Fallen Emperor (#41); Larc in party",
+    "reward": "Dragon Bone, Tome of Magic",
+    "end": "Beat the three Windcallers, then Akravator",
+    "warning": "",
+    "prereq": [
+      41
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Skull Lantern directly left of the Underworld to create Norn Peaks. Enter the Underworld to pick up Larc, then enter Norn Peaks with him."
+      },
+      {
+        "step": "In Norn Peaks.",
+        "path": "Right, Right, Right"
+      },
+      {
+        "step": "Talk to the Windcallers in the upper right of the town and exit Upper Right."
+      },
+      {
+        "step": "Beat the three Windcallers.",
+        "path": "First: Upper Right, Upper Right. Second: Upper Left, Left, Upper Left, Left. Third: Right, Lower Right, Right, Upper Right, Right, Lower Right, Upper Right"
+      },
+      {
+        "step": "The statue only disappears once all three are beaten.",
+        "path": "Lower Left, Left, Upper Right"
+      },
+      {
+        "step": "Reach Akravator.",
+        "path": "Right, Upper Right, Left, Left"
+      },
+      {
+        "step": "Beat Akravator."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 39,
+    "name": "The Ghost of Nemesis",
+    "land": "Bone Fortress",
+    "arc": "Dragon",
+    "npc": "Larc",
+    "start": "Take him and a pet or golem into the Bone Fortress and enter the dragon skeleton",
+    "needs": "Guardian of Winds (#38) and The Field Trip (#63)",
+    "reward": "Green Cane",
+    "end": "Beat Sierra and Deathbringer on the 3rd floor, then the two Jabaras",
+    "warning": "",
+    "prereq": [
+      38,
+      63
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Before leaving Home grab a pet from the Monster Corral so the party has three. Enter the Underworld to pick up Larc."
+      },
+      {
+        "step": "Enter the Bone Fortress and go Right in the first area. Beat the Skeletal Soldier and search the skull to enter."
+      },
+      {
+        "step": "Inside, search a stool in the entrance. A trap splits your party."
+      },
+      {
+        "step": "Reach your pet.",
+        "path": "Down, Left, search the Skull, Left, search the Knight, Right"
+      },
+      {
+        "step": "Back in the main room take the elevator to the 3rd floor.",
+        "path": "Left, Lower Right, Lower Left, Right, search the Left Stool, get in the elevator, 3rd floor. Beat Sierra."
+      },
+      {
+        "step": "Pick up the key after the fight. Take the elevator to the 2nd floor and get Larc back into your party.",
+        "path": "Left, search the Knight, Left"
+      },
+      {
+        "step": "Take the elevator to the 1st floor and search the lower-left stool. Use the elevator again to the 3rd floor and go Left to fight Deathbringer."
+      },
+      {
+        "step": "Go Right and beat the 2 Jabaras."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 40,
+    "name": "The Crimson Dragon",
+    "land": "Underworld",
+    "arc": "Dragon",
+    "npc": "Sierra",
+    "start": "Underworld: search the Stone and she asks for help",
+    "needs": "The Dragon Princess (#37). Do Daddy's Broom (#18) first",
+    "reward": "None",
+    "end": "Beat Larc in the Underworld, then climb The Flames and beat Drakonis",
+    "warning": "Ends the Dragon arc.",
+    "prereq": [
+      37
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the Underworld and search the Stone. Sierra comes out and asks for help. Agree, then enter the Underworld."
+      },
+      {
+        "step": "Climb through the Underworld.",
+        "path": "Upper Left, Upper Right, Right, first doorway, Up, Upper Right, Lower Left, Right to the second doorway, Upper Right, Upper Right, Right to the first doorway, Up through the Faces, Upper Right, far Left, far Left (one of the doorways leads to the room with the faces), Up through the Faces, touch the Shadoles, Up through the Faces and answer 'Let's Go!'"
+      },
+      {
+        "step": "Beat Larc. The Flames replaces the Underworld on the map. Talk to Sierra at the entrance so she joins you."
+      },
+      {
+        "step": "Climb The Flames.",
+        "path": "Up (bridge), Up, Up, Left, Upper Left, Up the first stairs, Up through the door, fall through the floor, far Lower Left, Down, Upper Right, kill the dragon, Lower Right, Upper Left, Up, far Lower Right, fall through the floor, kill the dragon, Right, Lower Right, Up the stairs, Lower Left, Down, Upper Left, Left, Down, Down, Blue Orb boss, Upper Right, Up, Up, Up through the door, Up"
+      },
+      {
+        "step": "Beat Drakonis."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 41,
+    "name": "The Fallen Emperor",
+    "land": "Underworld",
+    "arc": "Dragon",
+    "npc": "Larc",
+    "start": "Enter the Underworld with no NPC in party",
+    "needs": "Underworld placed (Trembling Spoon)",
+    "reward": "Skull Lantern, Broken Doll",
+    "end": "Reach the Baptismal Chamber route and beat Hitodama in the room with faces on the walls",
+    "warning": "",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Trembling Spoon directly above the Jungle to create the Underworld, then enter. Talk to the Stone to teleport inside; Larc joins you."
+      },
+      {
+        "step": "Find Olbohn's Study.",
+        "path": "Left, Right, Right, first doorway, Up, Right, Lower Left, Right, then enter the first door"
+      },
+      {
+        "step": "Talk to Olbohn a few times. Talk to the Shadole to reach the Baptismal Chamber."
+      },
+      {
+        "step": "Talk to the Shadole in the upper left corner so it casts Baptism of Fire."
+      },
+      {
+        "step": "Reach the boss.",
+        "path": "Lower Left, Lower Left, Right to the second doorway, Right, Right, first doorway"
+      },
+      {
+        "step": "Beat Hitodama."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 42,
+    "name": "The Blessed Elixir",
+    "land": "Gato Grottoes",
+    "arc": "Niccolo",
+    "npc": "Bartender (Geo)",
+    "start": "Geo bar first, then the nuns in the Gato Grottoes dungeons",
+    "needs": "Flame of Hope (#23); Niccolo not in party",
+    "reward": "None",
+    "end": "Beat Niccolo, follow the bartenders (Geo, Lumina) to the spring in the Duma Desert and watch the barrel fill",
+    "warning": "",
+    "prereq": [
+      23
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "In Geo go to the bar area and talk to the bartender. Exit to the world map."
+      },
+      {
+        "step": "Enter Gato Grottoes and go to the Dungeons in the western section. Enter the first door on the Left and keep going until you find a room with barrels and nuns."
+      },
+      {
+        "step": "Talk to the nuns to trigger the event and leave the room. Beat Niccolo."
+      },
+      {
+        "step": "Enter Geo and talk to the bartender again."
+      },
+      {
+        "step": "Enter Lumina and talk to the bartender in the western section."
+      },
+      {
+        "step": "Enter the Duma Desert and work through the areas until you find the spring. Watch the barrel fill with water."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 43,
+    "name": "Seeing Double",
+    "land": "Domina",
+    "arc": "Misc",
+    "npc": "None (shadow figure)",
+    "start": "Place the Sword of Mana directly above Domina to create the Tree of Mana (do not enter it). Then follow your shadow duplicate around Domina",
+    "needs": "The Little Sorcerers (#2); Domina at Shade level 3",
+    "reward": "None",
+    "end": "Follow your duplicate to the Outskirts of Domina and beat Shadow Zero-One",
+    "warning": "Missed if Domina lacks the mana level. Sword of Mana beside Domina helps.",
+    "prereq": [
+      2
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Sword of Mana directly above Domina to create the Tree of Mana. Do not enter the Tree yet."
+      },
+      {
+        "step": "Enter Domina and go to the centre of town. You see a duplicate of yourself being cruel to a Sproutling."
+      },
+      {
+        "step": "Go Right to the market. It happens again."
+      },
+      {
+        "step": "Go back to the town centre and talk to Teapo in the lower-left door near the exit."
+      },
+      {
+        "step": "Leave the building and follow your duplicate to the Outskirts of Domina."
+      },
+      {
+        "step": "The duplicate turns into Shadow Zero-One. Beat it."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 44,
+    "name": "The Cage of Dreams",
+    "land": "Home",
+    "arc": "Mana",
+    "npc": "Sproutlings",
+    "start": "Home: your Cactus waits outside with a dead Sproutling after a major arc",
+    "needs": "Finish the Faerie (#17), Dragon (#40) or Jumi (#33) arc",
+    "reward": "Sword of Mana",
+    "end": "Follow the path through the dream world to the Sproutling and receive the Sword of Mana",
+    "warning": "",
+    "prereq": [
+      40,
+      33,
+      17
+    ],
+    "prereqMode": "any",
+    "route": [
+      {
+        "step": "Return home. Your Cactus is outside with a dead Sproutling. The timing varies: go to the world map and re-enter home a couple of times, or place your next artifact on the map."
+      },
+      {
+        "step": "Enter your house and talk to the Cactus, then leave the house."
+      },
+      {
+        "step": "Go to the Workshops and watch the conversation."
+      },
+      {
+        "step": "Leave and talk to Pokiehl outside the Workshops."
+      },
+      {
+        "step": "Go back inside and talk to the wheel after Pokiehl leaves."
+      },
+      {
+        "step": "You enter another dream world. Follow the path to the Sproutling to receive the Sword of Mana."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 45,
+    "name": "Niccolo's Business Unusual: Part 2",
+    "land": "Gato Grottoes",
+    "arc": "Niccolo",
+    "npc": "Niccolo",
+    "start": "Gato Grottoes item shop: agree to help him",
+    "needs": "#1 and #23. Do Wisdom of Gaia (#3) first",
+    "reward": "Broken Doll, Medallion",
+    "end": "Stand on the log at the waterfall for 30 to 60 seconds, then take the left path so a faerie appears. You get Lucre, a Bun and the Broken Doll",
+    "warning": "Fails if you part with Niccolo during the quest.",
+    "prereq": [
+      1,
+      23
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Gato Grottoes, go to the Item Shop and talk to Niccolo. Agree to help him."
+      },
+      {
+        "step": "Open the Gato Grottoes map, head to the Cave and go straight to the Waterfall.",
+        "path": "Far upper Left, Right, Right down the stairs, Right, Left"
+      },
+      {
+        "step": "Niccolo collects items here. Leave by the Right path."
+      },
+      {
+        "step": "Return to the Waterfall area and stand on the log for 30 to 60 seconds. Then take the left path so a Faerie appears and talk to it."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 46,
+    "name": "Niccolo's Business Unusual: Part 3",
+    "land": "Lumina",
+    "arc": "Niccolo",
+    "npc": "Niccolo",
+    "start": "Lumina Shopping District item shop: agree to go with him",
+    "needs": "Part 2 (#45) and Teatime of Danger (#12)",
+    "reward": "None",
+    "end": "Chase the 'psychokinetic' Flowerling through the Mindas Ruins until it vanishes, rearrange the Flowerkeys' Corners and reach the exit. Niccolo walks off; there is no reward",
+    "warning": "Fails if you part with Niccolo during the quest.",
+    "prereq": [
+      45,
+      12
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Lumina, go to the Shopping District and into the item shop. Talk to Niccolo and agree to go with him. He wants to check on a strange Flowerling in the Mindas Ruins. Keep him in your party until the end."
+      },
+      {
+        "step": "Exit Lumina and enter the Mindas Ruins. At the first fork go left and continue past the Tower of Winds (you can save there)."
+      },
+      {
+        "step": "On the next screen go to the upper right to the female Flowerkeys' Corner. Arrange the Flowerlings in the upper left and lower right."
+      },
+      {
+        "step": "Leave the screen, go to the lower left, then left again to reach the western gates. Take the lower-left path and keep going left to the psychokinetic Flowerling. Chase it until it vanishes in a spell. Niccolo decides it does not exist and tells you to leave."
+      },
+      {
+        "step": "Go left, then south, then right to a male Flowerkeys' Corner. Talk to the Flowerling there to make it drop down again."
+      },
+      {
+        "step": "Now each corner holds a single Flowerling. Move this one to the right, then return to the western gates."
+      },
+      {
+        "step": "Take the upper-left path to a female Flowerkeys' Corner. Move its Flowerling to the bottom left, then return to the western gates."
+      },
+      {
+        "step": "Take the lower-right path and walk past the Megalithic Structure, ignoring the Flowerling there. At the eastern gates go to the lower left, then left to a male Flowerkeys' Corner. Move its Flowerling to the upper left and return to the eastern gates."
+      },
+      {
+        "step": "Take the upper-right path and go right. On the next screen go south, then all the way right to the exit."
+      },
+      {
+        "step": "Niccolo still thinks the Flowerling was a fake and walks off. There is no reward, though one guide mentions a chest with a Blackened Bat near a wandering flowergirl in the ruins."
+      }
+    ],
+    "routeNote": "Do not enter your house during this event or it fails. Sources differ on the start: two say the Shopping District item shop, StrategyWiki says Heartbreaker Jessica's Gem Shop via the dot on the right of the Lumina map. Legend of Mana Info says its own ruins directions need an overhaul, so go by the screens."
+  },
+  {
+    "id": 47,
+    "name": "Niccolo's Business Unusual: Part 4",
+    "land": "Geo",
+    "arc": "Niccolo",
+    "npc": "Niccolo",
+    "start": "Geo bar: have him join you",
+    "needs": "Part 3 (#46) and Mine Your Own Business (#14)",
+    "reward": "None",
+    "end": "Give Watts a Gator Skin in his Ulkan Mines workshop",
+    "warning": "Fails if you part with Niccolo during the quest.",
+    "prereq": [
+      46,
+      14
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Geo, find the bar area, talk to Niccolo and have him join your party."
+      },
+      {
+        "step": "Enter the Ulkan Mines and go into Watts' Workshop."
+      },
+      {
+        "step": "Exit and re-enter the workshop. Watts asks for the Gator Skin you were told to keep (it comes from Diddle's Letter)."
+      },
+      {
+        "step": "Give him a Gator Skin. If you do not have one, talk to Miss Yuka at the Domina inn, then return to the workshop."
+      },
+      {
+        "step": "Re-enter the workshop to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 48,
+    "name": "Niccolo Calls It Quits?",
+    "land": "Geo",
+    "arc": "Niccolo",
+    "npc": "Niccolo",
+    "start": "Geo: Kristie's place, where he and Kristie talk",
+    "needs": "Part 4 (#47)",
+    "reward": "None",
+    "end": "Take Niccolo to the Gato Grottoes bird's nest twice, with Polpota Harbor pickups in between",
+    "warning": "",
+    "prereq": [
+      47
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Geo, go to Kristie's place and talk to Niccolo and Kristie."
+      },
+      {
+        "step": "Enter Polpota Harbor, go to the beach and pick up Niccolo."
+      },
+      {
+        "step": "Enter Geo and go to Kristie's again."
+      },
+      {
+        "step": "Enter Gato Grottoes and go to the western point on the map. Choose to go behind the Waterfall and go to the Bird's Nest so Niccolo can get some leaves."
+      },
+      {
+        "step": "Enter Geo and go to Kristie's again."
+      },
+      {
+        "step": "Enter Gato Grottoes and go to the Bird's Nest again. Niccolo falls down."
+      },
+      {
+        "step": "Enter Polpota Harbor and pick up Niccolo again. His journey ends."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 49,
+    "name": "Li'l Cactus",
+    "land": "Home",
+    "arc": "Bud & Lisa",
+    "npc": "Meimei",
+    "start": "Home: come downstairs and find Bud on the floor (this always happens before Cosmo), then see the Domina fortune teller",
+    "needs": "The Little Sorcerers (#2); visit Geo once",
+    "reward": "None",
+    "end": "Talk to six people around the world, then take the Cactus out of the mailbox at home",
+    "warning": "Will not start with Bud or Lisa in party. Lost if Cosmo (#24) is done first. Li'l Cactus is unavailable meanwhile, so you cannot log diary entries.",
+    "prereq": [
+      2
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Come downstairs. Bud may be lying on the ground. Talk to Bud and Lisa."
+      },
+      {
+        "step": "Enter Domina, go to the Marketplace and talk to the fortune teller."
+      },
+      {
+        "step": "Go home, upstairs, and read the note in the empty pot (the Cactus is gone)."
+      },
+      {
+        "step": "Enter Luon Highway and talk to Gaia."
+      },
+      {
+        "step": "Enter the Jungle and talk to Selkie (Upper Left from the Forested Ruins)."
+      },
+      {
+        "step": "Enter Geo, go to the Magic University and talk to the student in the entrance hall."
+      },
+      {
+        "step": "Enter the SS Buccaneer and talk to David.",
+        "path": "Left, Down, stairs, left door, stairs"
+      },
+      {
+        "step": "Enter Domina, go to the Outskirts of Domina and talk to the Pelican."
+      },
+      {
+        "step": "Go home and take the Cactus out of the mailbox."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 50,
+    "name": "Rachel",
+    "land": "Domina",
+    "arc": "Misc",
+    "npc": "Mark & Jennifer",
+    "start": "Domina: Mark's place (lower-left door in the town centre, top floor)",
+    "needs": "School Amour (#58) and The Lost Princess (#5)",
+    "reward": "None",
+    "end": "Find the flash of light in the Geo academy library on Salamander Day, then talk to Rachel, Mark and Jennifer back in Domina",
+    "warning": "",
+    "prereq": [
+      58,
+      5
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Domina and go to Mark's place (lower-left door in the town centre, top floor). Talk to Mark and Rachel. If Mark is not with Rachel, exit to the world map, re-enter Domina and go back up the stairs."
+      },
+      {
+        "step": "Exit and re-enter Domina. Talk to Jennifer in the Marketplace, near the fortune teller."
+      },
+      {
+        "step": "Exit and re-enter Domina. Talk to Mark, who says Rachel left. Talk to Teapo, who says she went to the Academy of Magic in Geo."
+      },
+      {
+        "step": "Enter Geo and go to the academy library on Salamander Day (sleep at the cafe to change the day). You see a flash of light."
+      },
+      {
+        "step": "Enter Domina and talk to Rachel and Mark. Exit and re-enter, then talk to Jennifer in the Marketplace. Exit and re-enter again, then talk to Mark and Rachel to end the event."
+      }
+    ],
+    "routeNote": "Mark or Jennifer run the item shop every other day, and you cannot have the needed talks while they are working, so leave and re-enter Domina until they are free."
+  },
+  {
+    "id": 51,
+    "name": "The Nordic Snowfield",
+    "land": "SS Buccaneer",
+    "arc": "Penguin",
+    "npc": "Ramtieger",
+    "start": "SS Buccaneer: tell him 'South, South, West', then agree with the Captain",
+    "needs": "The Treasure Map (#35) and Can't Look Back (#25)",
+    "reward": "None",
+    "end": "Talk to the correct faerie, Ehrlang, on the last screen of the Fields of Innocence route",
+    "warning": "Save first. The wrong faerie fails it.",
+    "prereq": [
+      35,
+      25
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the SS Buccaneer and tell Ramtieger 'South, South, West'."
+      },
+      {
+        "step": "Tell the Captain you agree to go to the Fieg Snowfields for the faeries' treasure."
+      },
+      {
+        "step": "In the Fieg Snowfields go to the Fields of Innocence. Talk to Fiorentina; her spell lets you see level 2 faeries."
+      },
+      {
+        "step": "Walk the faerie route. Each faerie you meet raises the level of faerie you can see, up to the one who will not give her name.",
+        "path": "Upper Left, Lower Left, Down, Right (next faerie casts the level 3 spell), Lower Right, Lower Right, Right, Upper Right (next casts the level 5 spell), Upper Right, Upper Left, Lower Left, talk to the faerie who will not give her name to see all the faeries, Right, Right (save at the statue), Lower Right, Right"
+      },
+      {
+        "step": "Save at the statue before the last choice."
+      },
+      {
+        "step": "On the last screen talk to only one faerie. StrategyWiki names Ehrlang (a Class 7 faerie, usually at the upper left when you enter the screen) as the correct one. A wrong faerie fails the event; reload your save and try again."
+      }
+    ],
+    "routeNote": "Only StrategyWiki names the correct faerie. The other guides say one of the three is right without saying which, and they spell some faerie names differently."
+  },
+  {
+    "id": 52,
+    "name": "Buried Treasure",
+    "land": "SS Buccaneer",
+    "arc": "Penguin",
+    "npc": "Ramtieger",
+    "start": "SS Buccaneer: tell him 'West, West, North' (after stomping 20 crabs on Madora Beach)",
+    "needs": "A Siren's Song (#26); stomp 20 crabs on Madora Beach",
+    "reward": "Firefly Lamp, Stone Eye",
+    "end": "Bribe your way past the dudbears to the treasure, then give them a coin after finding it",
+    "warning": "Give one coin to the dudbears after finding the treasure or it fails.",
+    "prereq": [
+      26
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "First step on at least 20 crabs at Madora Beach (you can do this in Summer Lovin')."
+      },
+      {
+        "step": "Enter the SS Buccaneer, tell Ramtieger 'West, West, North' and tell the Captain you will help."
+      },
+      {
+        "step": "At Madora Beach talk to the Captain and get 15 Halo Coins."
+      },
+      {
+        "step": "Go Right. Talk to the central Dudbear, third from the top, and give it a coin."
+      },
+      {
+        "step": "Keep going Right until you enter the cave. Talk to a Dudbear to get 3 Li'l Bottles and give one to the Dudbear at the Lower Right exit."
+      },
+      {
+        "step": "Keep going Right to more Dudbears. The centre Dudbear trades Pucashells for 2 Li'l Bottles. Give one Shell to the Dudbear guarding the Upper Left exit."
+      },
+      {
+        "step": "Keep going Left to more Dudbears and give a Shell to the Upper Left exit."
+      },
+      {
+        "step": "Leave to find the treasure, then offer the Dudbears a Halo Coin."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 53,
+    "name": "Path of the Blacksmith",
+    "land": "Home",
+    "arc": "Crafting",
+    "npc": "None (enter your workshop)",
+    "start": "Auto-starts when you enter the Workshops area to the left of Home",
+    "needs": "Watts Drops the Hammer (#61)",
+    "reward": "None",
+    "end": "Ask Watts every question in his new blacksmith room",
+    "warning": "Talk to Li'l Cactus right after.",
+    "prereq": [
+      61
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Go to the Workshops Area to the left of your Home."
+      },
+      {
+        "step": "Find Watts, who is building a blacksmith room."
+      },
+      {
+        "step": "Ask him every question to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 54,
+    "name": "Instruments 101",
+    "land": "Home",
+    "arc": "Crafting",
+    "npc": "None (enter your workshop)",
+    "start": "Auto-starts when you enter the Workshops area to the left of Home",
+    "needs": "Reach for the Stars (#36), or talk to all four students in the Geo Academy classroom",
+    "reward": "None",
+    "end": "Learn how to catch Spirits and get Coins in your Instrument Workshop",
+    "warning": "Talk to Li'l Cactus right after.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Go to the Workshops Area to the left of your Home."
+      },
+      {
+        "step": "Find the student who built your Instrument Workshop and follow the tutorial."
+      },
+      {
+        "step": "Learn how to catch Spirits and get Coins to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 55,
+    "name": "Golem Go Make 'em",
+    "land": "Home",
+    "arc": "Crafting",
+    "npc": "Professor Bomb",
+    "start": "Workshops area left of Home: he explains the golem facility",
+    "needs": "Professor Bomb's Lab (#60)",
+    "reward": "None",
+    "end": "Read the Golem Encyclopedia and pass the test",
+    "warning": "Talk to Li'l Cactus right after.",
+    "prereq": [
+      60
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Go to the Workshops Area to the left of your Home. The Professor explains the golem facility he built."
+      },
+      {
+        "step": "Get the Golem Encyclopedia from the Professor and read it for the test."
+      },
+      {
+        "step": "Take the test. Answers in order:",
+        "path": "A, B, A, A, A, B, A, A, B, A"
+      }
+    ],
+    "routeNote": "You can retry wrong answers. These answers come from Legend of Mana Info, so check them against the questions you actually get."
+  },
+  {
+    "id": 56,
+    "name": "The Mana Orchards",
+    "land": "Home",
+    "arc": "Crafting",
+    "npc": "Gaia, then Trent",
+    "start": "Gaia on Luon Highway mentions Trent. Then go out your front door and take the path to the Lower Left",
+    "needs": "Luon Highway placed (#1)",
+    "reward": "None",
+    "end": "Beat the four Lullabuds, give Trent seeds, wait for the produce to ripen, pick it and put it in the big wooden box",
+    "warning": "Talk to Li'l Cactus before the first harvest and right after.",
+    "prereq": [
+      1
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "After talking to Gaia, go out your front door and take the path to the Lower Left."
+      },
+      {
+        "step": "Beat the four Lullabuds. Trent grows out of the ground."
+      },
+      {
+        "step": "Talk to Trent and give him seeds."
+      },
+      {
+        "step": "Wait a few game days for his produce to ripen. To speed it up, cross lands on the world map: each land crossed passes one day."
+      },
+      {
+        "step": "Stand under the produce you want and pick it."
+      },
+      {
+        "step": "Put the produce in the big wooden box to finish the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 57,
+    "name": "The Monster Corral",
+    "land": "Home",
+    "arc": "Crafting",
+    "npc": "None (monster egg)",
+    "start": "Domina: far-left point of the Domina map, upper left path to Duelle (the onion guy)",
+    "needs": "#1 or #5 (and #2 if it has already triggered)",
+    "reward": "None",
+    "end": "Catch the monster egg, then listen to Duelle's pet raising lessons",
+    "warning": "Talk to Li'l Cactus right after.",
+    "prereq": [
+      1,
+      5
+    ],
+    "prereqMode": "any",
+    "route": [
+      {
+        "step": "Enter Domina and go to the far-left point of the Domina map."
+      },
+      {
+        "step": "Take the upper left path and you meet Duelle the onion guy. Listen to his directions."
+      },
+      {
+        "step": "Catch the monster egg running around the area."
+      },
+      {
+        "step": "The Mail Pelican takes the egg to your Monster Corral in the back yard. Listen to Duelle's instructions on raising pet monsters."
+      },
+      {
+        "step": "The egg needs a few game days to hatch. Cross lands on the world map to pass days faster."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 58,
+    "name": "Gilbert: School Amour",
+    "land": "Geo",
+    "arc": "Gilbert",
+    "npc": "Gilbert",
+    "start": "Geo: Fruit Parlor Cafe in the bar area on the left. Watch him talk with Miss Kathinja, then offer to help",
+    "needs": "The Spirits' Light (#30). Do Love is Blind (#65) first",
+    "reward": "None",
+    "end": "Convince the students at the Cafe, Mall Avenue, Magic University, Library and bar, with the Item Shop student last",
+    "warning": "",
+    "prereq": [
+      30
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Geo and go to the bar area on the left of town (the Fruit Parlor Cafe). Watch Gilbert talk with Miss Kathinja, then talk to Gilbert and offer to help."
+      },
+      {
+        "step": "Talk to the three kids in the cafe and tell them what they want to hear. Talk to them again; they should say they will return to school. If not, talk again and take the other choice."
+      },
+      {
+        "step": "Go to Mall Avenue on the right side of Geo. Talk to the two kids, leave by the Upper Path and go to the Magic University. Talk to the two kids in the courtyard and the one in the entrance hall."
+      },
+      {
+        "step": "Go to the Library and talk to the two kids there."
+      },
+      {
+        "step": "Go back to the mall area and into the bar for two more kids."
+      },
+      {
+        "step": "Go to the Item Shop (Instrument Shop) and talk to the kids there. One of them only returns to school after everyone else is convinced."
+      },
+      {
+        "step": "The Palace of Arts has no students. When everyone has agreed, a final scene plays outside Geo's walls."
+      }
+    ],
+    "routeNote": "The guides do not agree on a total number of students, so work through each place listed instead of counting."
+  },
+  {
+    "id": 59,
+    "name": "Gilbert: Resume for Love",
+    "land": "Geo",
+    "arc": "Gilbert",
+    "npc": "Gilbert (statue)",
+    "start": "Statue in the palace basement",
+    "needs": "School Amour (#58) and A Siren's Song (#26); Niccolo not in party",
+    "reward": "None",
+    "end": "Choose the right lines at the statue in the Ulkan Mines",
+    "warning": "Fails if you pick only the bottom options.",
+    "prereq": [
+      58,
+      26
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Geo and go to the Palace of Arts (Kristie's place). Go to the lower right of the room and search the statue."
+      },
+      {
+        "step": "Enter the Ulkan Mines and ride the Dudbear Express. Read the book of poems. Roger comes and stops you; talk to him to start a rumble."
+      },
+      {
+        "step": "Enter the Ulkan Mines again, ride the Dudbear Express again and read the book again. Talk to Roger and follow him.",
+        "path": "Left, Down, Left, Up, Up at the save statue, Up, Up, search the statue"
+      },
+      {
+        "step": "Enter Lumina and go to Monique's Lamp Shop. Talk to her."
+      },
+      {
+        "step": "Enter Madora Beach, go to the Lighthouse and watch the scenes."
+      },
+      {
+        "step": "Enter the Ulkan Mines, return to the statue and help her cast the spell by choosing the right lines."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 60,
+    "name": "Professor Bomb's Lab",
+    "land": "Junkyard",
+    "arc": "Misc",
+    "npc": "Flowerling",
+    "start": "Junkyard: talk to the man at the entrance and he warps you to the lab",
+    "needs": "The Infernal Doll (#19); Lake Kilma placed (Stone Eye)",
+    "reward": "None",
+    "end": "Follow the Golem from Lake Kilma's first area (it exits Upper Left) and beat it",
+    "warning": "",
+    "prereq": [
+      19
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the Junkyard and talk to the guy at the entrance. He teleports you to Professor Bomb's Lab. Tell him you will help find his Golem."
+      },
+      {
+        "step": "Leave the Junkyard.",
+        "path": "Left, Lower Left, Left"
+      },
+      {
+        "step": "Enter Lake Kilma. The Golem is in the first area and exits through the Upper Left."
+      },
+      {
+        "step": "Follow it, fight it and beat it."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 61,
+    "name": "Watts Drops the Hammer",
+    "land": "Ulkan Mines",
+    "arc": "Misc",
+    "npc": "Watts",
+    "start": "Ulkan Mines, his workshop: he talks about his lost hammer",
+    "needs": "Mine Your Own Business (#14)",
+    "reward": "None",
+    "end": "Ride the Dudbear Express to Digger's Hideout, pick up the Hammer and return it to Watts",
+    "warning": "Cannot start while Pokiehl: Dream Teller (#15) is active.",
+    "prereq": [
+      14
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the Ulkan Mines, go into Watts' Workshop and talk to him about his lost hammer."
+      },
+      {
+        "step": "Return to the entrance of the Mines and talk to the pole to ride the Dudbear Express to Digger's Hideout."
+      },
+      {
+        "step": "Pick up the Hammer lying on the ground and leave the room."
+      },
+      {
+        "step": "Use the map to find your way back to Watts, and give him the hammer."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 62,
+    "name": "The Seven Wisdoms",
+    "land": "Home",
+    "arc": "Bud & Lisa",
+    "npc": "Bud",
+    "start": "Talk to Bud at home",
+    "needs": "The Little Sorcerers (#2)",
+    "reward": "None",
+    "end": "Take Bud to meet Gaia, Rosiotti, Tote, Pokiehl, Olbohn and Selva, then bring him home",
+    "warning": "Selva only appears in Gato Grottoes after you have met the other five. Taking Bud along on #8, #9, #10 and #14 saves trips.",
+    "prereq": [
+      2
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Gaia: take Bud to Luon Highway and talk to Boink, the hippo-like creature. Have him teleport you to the fork, then keep going right to find Gaia."
+      },
+      {
+        "step": "Tote: take Bud to Lake Kilma and go to the cliff to find Tote the turtle."
+      },
+      {
+        "step": "Rosiotti: take Bud to the Jungle, use the Psychic Service to go to the Forest Ruins, then go up from that screen."
+      },
+      {
+        "step": "Pokiehl: the guide counts him as already done from an earlier event."
+      },
+      {
+        "step": "Olbohn: take Bud to the Underworld and touch the stone, then go through the door to reach him.",
+        "path": "Left, Upper Right, Right, Up, Up, Upper Right, Lower Left, far Right. To leave, talk to the Shadole, which takes you to the entrance, and talk to the Shadole there."
+      },
+      {
+        "step": "Selva: take Bud to Gato Grottoes. Once you have met the other five, Selva stands at the fork right before the Temple of Healing."
+      },
+      {
+        "step": "Take Bud home to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 63,
+    "name": "The Field Trip",
+    "land": "Bone Fortress",
+    "arc": "School",
+    "npc": "Student",
+    "start": "Place the Dragon Bone directly left of Norn Peaks to create the Bone Fortress. Talk to the student in the middle of the first screen",
+    "needs": "Bone Fortress placed (Dragon Bone)",
+    "reward": "None",
+    "end": "Collect Faerie Scales, Starsparkles and Silver Spotted Mushrooms from the students and bring them back to the first student",
+    "warning": "You may need to fail once before it lets you succeed.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Place the Dragon Bone directly left of Norn Peaks to create the Bone Fortress, then enter."
+      },
+      {
+        "step": "Talk to the student in the middle of the first screen. You need 3 ingredients from the students in the next area."
+      },
+      {
+        "step": "Go Right."
+      },
+      {
+        "step": "Faerie Scales: from the student in blue along the top."
+      },
+      {
+        "step": "Starsparkles: from the male Flowerling in the lower right."
+      },
+      {
+        "step": "Silver Spotted Mushrooms: from the purple Flowerling near the middle right."
+      },
+      {
+        "step": "Return to the first student to end the event."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 64,
+    "name": "Catchin' Lilipeas",
+    "land": "White Forest",
+    "arc": "Misc",
+    "npc": "Sotherbee",
+    "start": "White Forest entrance",
+    "needs": "White Forest placed (Green Cane). Do #8 and #4 first",
+    "reward": "None",
+    "end": "Talk to the Lilipea elder in the lilipea town and beat the Hegs Ant",
+    "warning": "Will not start with Larc in party or while The Dragon Princess (#37) is active.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the White Forest and talk to Sotherbee at the entrance."
+      },
+      {
+        "step": "Follow the route.",
+        "path": "Lower Right, Lower Right, talk to Skippie, Lower Left, Left, talk to Reverend Nouvelle, Left, Upper Left and search the shaking barrel, Upper Right, Upper Right, talk to Hamson, Upper Left, Left and search the barrel, Down, Lower Right, Right (watch the scene)"
+      },
+      {
+        "step": "Walk into town and talk to the Lilipeas until the Reverend translates, then talk to the elder on the left."
+      },
+      {
+        "step": "Beat the Hegs Ant."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 65,
+    "name": "Gilbert: Love is Blind",
+    "land": "Polpota Harbor",
+    "arc": "Gilbert",
+    "npc": "Elle",
+    "start": "Madora Beach lighthouse: she joins you",
+    "needs": "A Siren's Song (#26)",
+    "reward": "None",
+    "end": "Take Elle to Gilbert at the Polpota Harbor restaurant, then beat the Orc on the SS Buccaneer top deck",
+    "warning": "Lost if you enter Geo's café first, which triggers School Amour (#58).",
+    "prereq": [
+      26
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Madora Beach, go to the lighthouse and have Elle join you."
+      },
+      {
+        "step": "Enter Polpota Harbor and take her to the restaurant. Talk to Gilbert."
+      },
+      {
+        "step": "Go back to the Madora Beach lighthouse and pick her up a second time. As you leave, Gilbert takes her."
+      },
+      {
+        "step": "Enter the SS Buccaneer to see them on the top deck. Go to the Captain's Quarters and talk to the Captain."
+      },
+      {
+        "step": "Go back to the top deck and beat the Orc."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 66,
+    "name": "The Wimpy Thugling",
+    "land": "Duma Desert",
+    "arc": "Misc",
+    "npc": "Tikkle",
+    "start": "Duma Desert: go Right",
+    "needs": "Reach for the Stars (#36); Duma Desert at Dryad level 3 (one source also wants The Blessed Elixir, #42, done)",
+    "reward": "None",
+    "end": "Agree to help Tikkle, reach map area 23 and beat Kima",
+    "warning": "Remove pets, golems and NPCs from your party. Keep one Monster Corral slot free.",
+    "prereq": [
+      36
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Make sure you have no pet with you, 4 or fewer pets in your ranch and no NPCs in your party."
+      },
+      {
+        "step": "Enter the Duma Desert, go Right and talk to Tikkle. Agree to help him."
+      },
+      {
+        "step": "Work your way to area 23 on the map."
+      },
+      {
+        "step": "Beat Kima."
+      }
+    ],
+    "routeNote": ""
+  },
+  {
+    "id": 67,
+    "name": "Pee-Wee Birdie",
+    "land": "Domina",
+    "arc": "Misc",
+    "npc": "Yuka",
+    "start": "Domina inn: she asks for your help; accept",
+    "needs": "Domina at Wisp level 3 and Salamander level 3 (one source says Shade instead of Salamander)",
+    "reward": "None",
+    "end": "Give Miss Yuka all eight items, then come back later and talk to the Birdie (now a Needlebeak) for the Revive Ring",
+    "warning": "Do not talk to Pee-Wee too often or it breaks.",
+    "prereq": [],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter Domina and go to the inn in the centre of town. Talk to Miss Yuka. She says Pee-Wee needs eight items to hatch. Accept; refusing ends the event."
+      },
+      {
+        "step": "Gather all eight items: Flat Seed, Topple Cotton, Animal Hide, Baobab Wood, Menos Bronze, Citrisquid, Rotten Meat and Sulphur."
+      },
+      {
+        "step": "Menos Bronze and Baobab Wood are sold in a shop in Lumina. Topple Cotton is sold by a student on the first floor of the Domina inn. Animal Hide drops from Gray Ox, Molebear, Rabite and Teedie (some are in Gato Grottoes and Lake Kilma)."
+      },
+      {
+        "step": "Flat Seed comes from Trent (save before talking to him and reload if he has none). Citrisquid is grown by Trent from Oblong Seeds (the yellow ones). Rotten Meat drops from undead enemies in the Underworld and some in the Jungle. Sulphur is in three chests, one in the Underworld and two in the Ulkan Mines; keep at least one."
+      },
+      {
+        "step": "Give Miss Yuka all eight items, leave town and return to the inn."
+      },
+      {
+        "step": "Talk to the Birdie to receive a Revive Ring. Do not talk to it too often: the guides say it breaks after 10 to 15 talks."
+      }
+    ],
+    "routeNote": "Item locations are from StrategyWiki; the item list matches Legend of Mana Info."
+  },
+  {
+    "id": 68,
+    "name": "The Legend of Mana",
+    "land": "Tree of Mana",
+    "arc": "Mana",
+    "npc": "None (enter the Tree of Mana)",
+    "start": "Tree of Mana: talk to Pokiehl and start climbing",
+    "needs": "The Cage of Dreams (#44)",
+    "reward": "None",
+    "end": "Beat the Mana Goddess at the top. Credits roll and a New Game Plus save is offered",
+    "warning": "Final event. Finish everything else first.",
+    "prereq": [
+      44
+    ],
+    "prereqMode": "all",
+    "route": [
+      {
+        "step": "Enter the Tree of Mana, talk to Pokiehl and begin climbing. There is only one path to the top."
+      },
+      {
+        "step": "Reach the ruins-like area, laid out as a 3x3 grid. Find and beat 4 sets of monsters."
+      },
+      {
+        "step": "After all 4 sets are down you are taken to the Mana Goddess. Level up as high as you can first."
+      },
+      {
+        "step": "Beat the Mana Goddess to end the game. Watch all the credits and save at the very end."
+      }
+    ],
+    "routeNote": "New Game Plus keeps items, workshops, pets and the orchard. Reading the Forbidden Tome in your home library lets you change the difficulty. The Machine Golem in the Diamond room on the 3rd level of the Bejeweled City gives a lot of experience for levelling."
+  }
+]

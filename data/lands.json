@@ -1,0 +1,230 @@
+[
+  {
+    "order": 1,
+    "land": "Home",
+    "artifact": "Mailbox",
+    "source": "Given in the opening tutorial",
+    "sourceQuests": []
+  },
+  {
+    "order": 2,
+    "land": "Domina",
+    "artifact": "Colorblocks",
+    "source": "Talk to the Sproutling in front of your home",
+    "sourceQuests": []
+  },
+  {
+    "order": 3,
+    "land": "Luon Highway",
+    "artifact": "Wheel",
+    "source": "Niccolo's Business Unusual (#1) hands it over",
+    "sourceQuests": [
+      1
+    ]
+  },
+  {
+    "order": 4,
+    "land": "Gato Grottoes",
+    "artifact": "Flame",
+    "source": "Niccolo's Business Unusual (#1)",
+    "sourceQuests": [
+      1
+    ]
+  },
+  {
+    "order": 5,
+    "land": "Mindas Ruins",
+    "artifact": "Ancient Tablet",
+    "source": "The Flame of Hope (#23)",
+    "sourceQuests": [
+      23
+    ]
+  },
+  {
+    "order": 6,
+    "land": "Ulkan Mines",
+    "artifact": "Bottled Spirit",
+    "source": "Teatime of Danger (#12)",
+    "sourceQuests": [
+      12
+    ]
+  },
+  {
+    "order": 7,
+    "land": "Junkyard",
+    "artifact": "Broken Doll",
+    "source": "Niccolo's Business Unusual: Part 2 (#45)",
+    "sourceQuests": [
+      45
+    ]
+  },
+  {
+    "order": 8,
+    "land": "Mekiv Caverns",
+    "artifact": "Jade Egg",
+    "source": "Rachel in the Domina bar, during The Lost Princess (#5)",
+    "sourceQuests": [
+      5
+    ]
+  },
+  {
+    "order": 9,
+    "land": "Tower of Leires",
+    "artifact": "Moon's Mirror",
+    "source": "Mine Your Own Business (#14)",
+    "sourceQuests": [
+      14
+    ]
+  },
+  {
+    "order": 10,
+    "land": "Lake Kilma",
+    "artifact": "Stone Eye",
+    "source": "The Lost Princess (#5)",
+    "sourceQuests": [
+      5
+    ]
+  },
+  {
+    "order": 11,
+    "land": "Lumina",
+    "artifact": "Firefly Lamp",
+    "source": "The Gorgon Eye (#10)",
+    "sourceQuests": [
+      10
+    ]
+  },
+  {
+    "order": 12,
+    "land": "Jungle",
+    "artifact": "Medallion",
+    "source": "Niccolo's Business Unusual (#1), second reward",
+    "sourceQuests": [
+      1
+    ]
+  },
+  {
+    "order": 13,
+    "land": "Duma Desert",
+    "artifact": "Sand Rose",
+    "source": "Huntin' Du'Cate (#8)",
+    "sourceQuests": [
+      8
+    ]
+  },
+  {
+    "order": 14,
+    "land": "Underworld",
+    "artifact": "Trembling Spoon",
+    "source": "The Spirits' Light (#30)",
+    "sourceQuests": [
+      30
+    ]
+  },
+  {
+    "order": 15,
+    "land": "Norn Peaks",
+    "artifact": "Skull Lantern",
+    "source": "The Fallen Emperor (#41)",
+    "sourceQuests": [
+      41
+    ]
+  },
+  {
+    "order": 16,
+    "land": "Bone Fortress",
+    "artifact": "Dragon Bone",
+    "source": "The Guardian of Winds (#38)",
+    "sourceQuests": [
+      38
+    ]
+  },
+  {
+    "order": 17,
+    "land": "Fieg Snowfields",
+    "artifact": "Frozen Heart",
+    "source": "The Looking-Glass Tower (#21)",
+    "sourceQuests": [
+      21
+    ]
+  },
+  {
+    "order": 18,
+    "land": "Lucemia",
+    "artifact": "Brooch of Love",
+    "source": "Matilda gives it at the start of Heaven's Gate (#17)",
+    "sourceQuests": [
+      17
+    ]
+  },
+  {
+    "order": 19,
+    "land": "Tree of Mana",
+    "artifact": "Sword of Mana",
+    "source": "The Cage of Dreams (#44)",
+    "sourceQuests": [
+      44
+    ]
+  },
+  {
+    "order": 20,
+    "land": "Polpota Harbor",
+    "artifact": "Rusted Anchor",
+    "source": "Summer Lovin' (#27)",
+    "sourceQuests": [
+      27
+    ]
+  },
+  {
+    "order": 21,
+    "land": "Orchard",
+    "artifact": "Golden Seed",
+    "source": "Harvest 60 or more fruit, then talk to Trent",
+    "sourceQuests": []
+  },
+  {
+    "order": 22,
+    "land": "Madora Beach",
+    "artifact": "Torch of Coral",
+    "source": "Reach for the Stars (#36)",
+    "sourceQuests": [
+      36
+    ]
+  },
+  {
+    "order": 23,
+    "land": "Geo",
+    "artifact": "Tome of Magic",
+    "source": "The Infernal Doll (#19)",
+    "sourceQuests": [
+      19
+    ]
+  },
+  {
+    "order": 24,
+    "land": "White Forest",
+    "artifact": "Green Cane",
+    "source": "The Ghost of Nemesis (#39)",
+    "sourceQuests": [
+      39
+    ]
+  },
+  {
+    "order": 25,
+    "land": "SS Buccaneer",
+    "artifact": "Pirate's Hook",
+    "source": "Drowned Dreams (#28)",
+    "sourceQuests": [
+      28
+    ]
+  },
+  {
+    "order": 26,
+    "land": "Bejeweled City",
+    "artifact": "Jumi's Staff",
+    "source": "The Teardrop Crystal (#33)",
+    "sourceQuests": [
+      33
+    ]
+  }
+]

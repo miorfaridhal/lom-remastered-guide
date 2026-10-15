@@ -1,0 +1,27 @@
+{
+  "_about": "Ordering rules that are not plain prerequisites: a quest that is lost, fails or will not start if another one happens first. Each pair means 'first' must be cleared before 'then'. Derived from the warnings in quests.json.",
+  "before": [
+    { "first": 3,  "then": 5,  "why": "The Wisdom of Gaia is lost once both #1 and #5 are cleared." },
+    { "first": 3,  "then": 23, "why": "The Wisdom of Gaia must be done before entering Gato Grottoes after The Flame of Hope." },
+    { "first": 3,  "then": 45, "why": "Niccolo Part 2 says to do The Wisdom of Gaia first." },
+    { "first": 4,  "then": 64, "why": "Where's Putty? is missed if #64 and #20 are both cleared first." },
+    { "first": 5,  "then": 21, "why": "The Lost Princess disappears if you enter the Tower of Leires first." },
+    { "first": 6,  "then": 43, "why": "Diddle's Letter will not trigger while Seeing Double is active." },
+    { "first": 8,  "then": 64, "why": "Huntin' Du'Cate is missed if Catchin' Lilipeas is cleared first." },
+    { "first": 18, "then": 17, "why": "Daddy's Broom is missed once Heaven's Gate is cleared with 18 artifacts placed." },
+    { "first": 18, "then": 33, "why": "Daddy's Broom is missed once The Teardrop Crystal is cleared with 18 artifacts placed." },
+    { "first": 18, "then": 40, "why": "Daddy's Broom is missed once The Crimson Dragon is cleared with 18 artifacts placed." },
+    { "first": 20, "then": 40, "why": "Diddle Had It! cannot start while The Crimson Dragon is active." },
+    { "first": 23, "then": 28, "why": "The Flame of Hope will not start while Drowned Dreams is active." },
+    { "first": 30, "then": 62, "why": "The Seven Wisdoms needs Olbohn in the Underworld (Trembling Spoon from #30)." },
+    { "first": 49, "then": 24, "why": "Li'l Cactus is lost if Cosmo is done first." },
+    { "first": 64, "then": 37, "why": "Catchin' Lilipeas will not start while The Dragon Princess is active." },
+    { "first": 16, "then": 37, "why": "Finish the Diddle arc before the Dragon arc ends (no Larc in party for #64/#16)." },
+    { "first": 65, "then": 58, "why": "Love is Blind is lost if Geo's cafe triggers School Amour first." }
+  ],
+  "requires": [
+    { "id": 54, "anyOf": [36, 19], "why": "Instruments 101 opens after Reach for the Stars (#36), or via Geo (Tome of Magic from #19) and its four students." },
+    { "id": 49, "anyOf": [19], "why": "Li'l Cactus starts after your first visit to Geo (Tome of Magic from #19)." }
+  ],
+  "last": 68
+}

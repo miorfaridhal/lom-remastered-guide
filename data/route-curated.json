@@ -1,0 +1,122 @@
+{
+  "order": [
+    1,
+    2,
+    3,
+    56,
+    5,
+    57,
+    6,
+    23,
+    45,
+    12,
+    14,
+    61,
+    53,
+    19,
+    10,
+    60,
+    55,
+    8,
+    9,
+    7,
+    36,
+    54,
+    46,
+    21,
+    27,
+    28,
+    34,
+    4,
+    30,
+    41,
+    20,
+    26,
+    65,
+    43,
+    58,
+    59,
+    50,
+    49,
+    31,
+    24,
+    22,
+    32,
+    29,
+    62,
+    18,
+    33,
+    11,
+    15,
+    13,
+    17,
+    42,
+    66,
+    47,
+    48,
+    35,
+    25,
+    51,
+    52,
+    38,
+    63,
+    39,
+    64,
+    16,
+    37,
+    40,
+    67,
+    44,
+    68
+  ],
+  "phases": [
+    {
+      "fromStep": 1,
+      "title": "1. Opening: Luon Highway, Gato, Jungle; Orchard and Monster Corral early"
+    },
+    {
+      "fromStep": 8,
+      "title": "2. Forge and Golem workshops (Mindas, Ulkan, Junkyard, Lake Kilma)"
+    },
+    {
+      "fromStep": 18,
+      "title": "3. Instruments, Duma and the Faerie start (Lumina, Duma)"
+    },
+    {
+      "fromStep": 24,
+      "title": "4. Harbor and sea lands (Tower of Leires, Madora, Polpota, SS Buccaneer, Fieg)"
+    },
+    {
+      "fromStep": 29,
+      "title": "5. Underworld, Norn Peaks and Gilbert (do #65 before Geo's café)"
+    },
+    {
+      "fromStep": 35,
+      "title": "6. Gilbert and the Jumi arc: The Seven Wisdoms (#62) may already be running (it starts on its own after #2); finish Daddy's Broom (#18) before the Teardrop Crystal ends the arc (Jumi's Staff, place Bejeweled City)"
+    },
+    {
+      "fromStep": 47,
+      "title": "7. Faerie arc: ends with Brooch of Love, place Lucemia"
+    },
+    {
+      "fromStep": 51,
+      "title": "8. Niccolo"
+    },
+    {
+      "fromStep": 55,
+      "title": "9. Ship and snow"
+    },
+    {
+      "fromStep": 59,
+      "title": "10. Dragon arc: #38 Dragon Bone (place Bone Fortress), #39 Green Cane (place White Forest); #64 and #16 before #37, without Larc"
+    },
+    {
+      "fromStep": 66,
+      "title": "11. Anytime: mana levels"
+    },
+    {
+      "fromStep": 67,
+      "title": "12. Finale: #44 gives Sword of Mana (place Tree of Mana)"
+    }
+  ]
+}
