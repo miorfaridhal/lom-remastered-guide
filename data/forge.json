@@ -1,0 +1,2960 @@
+{
+  "elements": [
+    "Wisp",
+    "Shade",
+    "Dryad",
+    "Aura",
+    "Salamander",
+    "Gnome",
+    "Jinn",
+    "Undine"
+  ],
+  "materials": [
+    {
+      "name": "Menos Bronze",
+      "class": "Metal",
+      "weapon": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "armor": [
+        10,
+        10,
+        10,
+        10
+      ],
+      "growth": 18,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Forsena Iron",
+      "class": "Metal",
+      "weapon": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "armor": [
+        15,
+        15,
+        15,
+        15
+      ],
+      "growth": 20,
+      "resistance": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Granz Steel",
+      "class": "Metal",
+      "weapon": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "armor": [
+        20,
+        20,
+        20,
+        20
+      ],
+      "growth": 24,
+      "resistance": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Lorant Silver",
+      "class": "Metal",
+      "weapon": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "armor": [
+        25,
+        25,
+        25,
+        25
+      ],
+      "growth": 12,
+      "resistance": [
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Wendel Silver",
+      "class": "Metal",
+      "weapon": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "armor": [
+        30,
+        30,
+        30,
+        30
+      ],
+      "growth": 16,
+      "resistance": [
+        9,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Orihalcon",
+      "class": "Metal",
+      "weapon": [
+        28,
+        28,
+        28,
+        28
+      ],
+      "armor": [
+        28,
+        28,
+        28,
+        28
+      ],
+      "growth": 12,
+      "resistance": [
+        8,
+        8,
+        7,
+        10,
+        7,
+        9,
+        6,
+        8
+      ]
+    },
+    {
+      "name": "Vizel Gold",
+      "class": "Metal",
+      "weapon": [
+        35,
+        35,
+        35,
+        35
+      ],
+      "armor": [
+        35,
+        35,
+        35,
+        35
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Maia Lead",
+      "class": "Metal",
+      "weapon": [
+        36,
+        3,
+        68,
+        18
+      ],
+      "armor": [
+        3,
+        18,
+        36,
+        36
+      ],
+      "growth": 48,
+      "resistance": [
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "Ishe Platinum",
+      "class": "Metal",
+      "weapon": [
+        40,
+        40,
+        40,
+        40
+      ],
+      "armor": [
+        40,
+        40,
+        40,
+        40
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        7,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Lorimar Iron",
+      "class": "Metal",
+      "weapon": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "armor": [
+        45,
+        45,
+        45,
+        45
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9
+      ]
+    },
+    {
+      "name": "Altena Alloy",
+      "class": "Metal",
+      "weapon": [
+        50,
+        50,
+        50,
+        50
+      ],
+      "armor": [
+        50,
+        50,
+        50,
+        50
+      ],
+      "growth": 18,
+      "resistance": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ]
+    },
+    {
+      "name": "Oak Wood",
+      "class": "Wood",
+      "weapon": [
+        10,
+        6,
+        14,
+        4
+      ],
+      "armor": [
+        16,
+        5,
+        7,
+        9
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        6,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Holly Wood",
+      "class": "Wood",
+      "weapon": [
+        15,
+        9,
+        21,
+        6
+      ],
+      "armor": [
+        24,
+        7,
+        10,
+        13
+      ],
+      "growth": 14,
+      "resistance": [
+        7,
+        8,
+        6,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Baobab Wood",
+      "class": "Wood",
+      "weapon": [
+        20,
+        12,
+        28,
+        8
+      ],
+      "armor": [
+        32,
+        10,
+        14,
+        18
+      ],
+      "growth": 24,
+      "resistance": [
+        7,
+        8,
+        6,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Ebony Wood",
+      "class": "Wood",
+      "weapon": [
+        25,
+        15,
+        35,
+        10
+      ],
+      "armor": [
+        40,
+        12,
+        17,
+        22
+      ],
+      "growth": 24,
+      "resistance": [
+        7,
+        8,
+        6,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Ash Wood",
+      "class": "Wood",
+      "weapon": [
+        30,
+        18,
+        42,
+        12
+      ],
+      "armor": [
+        48,
+        15,
+        21,
+        27
+      ],
+      "growth": 11,
+      "resistance": [
+        7,
+        8,
+        6,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Maple Wood",
+      "class": "Wood",
+      "weapon": [
+        35,
+        21,
+        49,
+        14
+      ],
+      "armor": [
+        56,
+        17,
+        24,
+        31
+      ],
+      "growth": 12,
+      "resistance": [
+        7,
+        8,
+        6,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Fossil Wood",
+      "class": "Wood",
+      "weapon": [
+        40,
+        24,
+        56,
+        16
+      ],
+      "armor": [
+        64,
+        20,
+        28,
+        36
+      ],
+      "growth": 22,
+      "resistance": [
+        7,
+        6,
+        6,
+        9,
+        10,
+        6,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Dior Wood",
+      "class": "Wood",
+      "weapon": [
+        50,
+        30,
+        70,
+        20
+      ],
+      "armor": [
+        80,
+        25,
+        35,
+        45
+      ],
+      "growth": 10,
+      "resistance": [
+        7,
+        8,
+        5,
+        9,
+        10,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Marble",
+      "class": "Stone",
+      "weapon": [
+        12,
+        2,
+        21,
+        16
+      ],
+      "armor": [
+        7,
+        9,
+        12,
+        15
+      ],
+      "growth": 28,
+      "resistance": [
+        7,
+        8,
+        9,
+        7,
+        7,
+        6,
+        10,
+        7
+      ]
+    },
+    {
+      "name": "Obsidian",
+      "class": "Stone",
+      "weapon": [
+        24,
+        4,
+        43,
+        33
+      ],
+      "armor": [
+        14,
+        18,
+        24,
+        30
+      ],
+      "growth": 32,
+      "resistance": [
+        8,
+        6,
+        9,
+        7,
+        7,
+        6,
+        10,
+        8
+      ]
+    },
+    {
+      "name": "Pedan Stone",
+      "class": "Stone",
+      "weapon": [
+        36,
+        7,
+        64,
+        50
+      ],
+      "armor": [
+        21,
+        27,
+        36,
+        45
+      ],
+      "growth": 24,
+      "resistance": [
+        7,
+        8,
+        9,
+        7,
+        7,
+        7,
+        10,
+        7
+      ]
+    },
+    {
+      "name": "Gaeus's Tears",
+      "class": "Stone",
+      "weapon": [
+        48,
+        9,
+        86,
+        67
+      ],
+      "armor": [
+        28,
+        36,
+        48,
+        60
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        9,
+        7,
+        10,
+        6,
+        10,
+        6
+      ]
+    },
+    {
+      "name": "Animal Hide",
+      "class": "Hide",
+      "weapon": [
+        10,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        20,
+        8,
+        12,
+        10
+      ],
+      "growth": 8,
+      "resistance": [
+        8,
+        8,
+        7,
+        9,
+        9,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Gator Skin",
+      "class": "Hide",
+      "weapon": [
+        18,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        36,
+        14,
+        21,
+        18
+      ],
+      "growth": 12,
+      "resistance": [
+        8,
+        8,
+        7,
+        9,
+        7,
+        8,
+        8,
+        6
+      ]
+    },
+    {
+      "name": "Centaur Hide",
+      "class": "Hide",
+      "weapon": [
+        26,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        52,
+        20,
+        31,
+        26
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        9,
+        7,
+        8,
+        7,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Dragon Skin",
+      "class": "Hide",
+      "weapon": [
+        35,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        70,
+        28,
+        42,
+        35
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        7,
+        9,
+        5,
+        10,
+        5,
+        10
+      ]
+    },
+    {
+      "name": "Fish Scales",
+      "class": "Scales",
+      "weapon": [
+        8,
+        8,
+        7,
+        7
+      ],
+      "armor": [
+        9,
+        9,
+        8,
+        4
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        6
+      ]
+    },
+    {
+      "name": "Lizard Scales",
+      "class": "Scales",
+      "weapon": [
+        16,
+        17,
+        14,
+        14
+      ],
+      "armor": [
+        19,
+        19,
+        16,
+        8
+      ],
+      "growth": 20,
+      "resistance": [
+        7,
+        9,
+        8,
+        8,
+        7,
+        8,
+        8,
+        9
+      ]
+    },
+    {
+      "name": "Snake Scales",
+      "class": "Scales",
+      "weapon": [
+        24,
+        26,
+        21,
+        21
+      ],
+      "armor": [
+        28,
+        28,
+        24,
+        12
+      ],
+      "growth": 20,
+      "resistance": [
+        9,
+        7,
+        8,
+        8,
+        8,
+        7,
+        8,
+        7
+      ]
+    },
+    {
+      "name": "Dragon Scales",
+      "class": "Scales",
+      "weapon": [
+        60,
+        66,
+        54,
+        54
+      ],
+      "armor": [
+        72,
+        72,
+        60,
+        30
+      ],
+      "growth": 14,
+      "resistance": [
+        7,
+        7,
+        7,
+        7,
+        6,
+        7,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Animal Bone",
+      "class": "Bone",
+      "weapon": [
+        14,
+        10,
+        12,
+        12
+      ],
+      "armor": [
+        9,
+        15,
+        6,
+        9
+      ],
+      "growth": 20,
+      "resistance": [
+        9,
+        6,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Ivory",
+      "class": "Bone",
+      "weapon": [
+        28,
+        21,
+        24,
+        24
+      ],
+      "armor": [
+        18,
+        30,
+        12,
+        18
+      ],
+      "growth": 20,
+      "resistance": [
+        7,
+        6,
+        7,
+        7,
+        8,
+        6,
+        7,
+        7
+      ]
+    },
+    {
+      "name": "Cursed Bone",
+      "class": "Bone",
+      "weapon": [
+        43,
+        32,
+        36,
+        36
+      ],
+      "armor": [
+        27,
+        45,
+        18,
+        27
+      ],
+      "growth": 20,
+      "resistance": [
+        9,
+        5,
+        9,
+        7,
+        9,
+        7,
+        9,
+        7
+      ]
+    },
+    {
+      "name": "Fossil",
+      "class": "Bone",
+      "weapon": [
+        57,
+        45,
+        48,
+        48
+      ],
+      "armor": [
+        36,
+        60,
+        24,
+        36
+      ],
+      "growth": 20,
+      "resistance": [
+        9,
+        6,
+        8,
+        8,
+        10,
+        6,
+        10,
+        6
+      ]
+    },
+    {
+      "name": "Topple Cotton",
+      "class": "Cloth",
+      "weapon": [
+        18,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "growth": 10,
+      "resistance": [
+        6,
+        8,
+        6,
+        10,
+        10,
+        7,
+        7,
+        6
+      ]
+    },
+    {
+      "name": "Sultan's Silk",
+      "class": "Cloth",
+      "weapon": [
+        28,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        14,
+        14,
+        14,
+        14
+      ],
+      "growth": 10,
+      "resistance": [
+        6,
+        8,
+        6,
+        10,
+        10,
+        7,
+        7,
+        6
+      ]
+    },
+    {
+      "name": "Judd Hemp",
+      "class": "Cloth",
+      "weapon": [
+        38,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        19,
+        19,
+        19,
+        19
+      ],
+      "growth": 10,
+      "resistance": [
+        10,
+        6,
+        6,
+        10,
+        10,
+        7,
+        7,
+        6
+      ]
+    },
+    {
+      "name": "Altena Felt",
+      "class": "Cloth",
+      "weapon": [
+        48,
+        1,
+        1,
+        1
+      ],
+      "armor": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "growth": 10,
+      "resistance": [
+        7,
+        7,
+        7,
+        9,
+        10,
+        7,
+        7,
+        6
+      ]
+    },
+    {
+      "name": "Jacobini Rock",
+      "class": "Aerolite",
+      "weapon": [
+        15,
+        11,
+        22,
+        24
+      ],
+      "armor": [
+        15,
+        13,
+        18,
+        24
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Halley Rock",
+      "class": "Aerolite",
+      "weapon": [
+        20,
+        15,
+        30,
+        32
+      ],
+      "armor": [
+        20,
+        18,
+        24,
+        32
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Ankh Rock",
+      "class": "Aerolite",
+      "weapon": [
+        25,
+        18,
+        37,
+        40
+      ],
+      "armor": [
+        25,
+        22,
+        30,
+        40
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Vinek Rock",
+      "class": "Aerolite",
+      "weapon": [
+        30,
+        22,
+        45,
+        48
+      ],
+      "armor": [
+        30,
+        27,
+        36,
+        48
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Tuttle Rock",
+      "class": "Aerolite",
+      "weapon": [
+        35,
+        26,
+        52,
+        56
+      ],
+      "armor": [
+        35,
+        31,
+        42,
+        56
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Nemesis Rock",
+      "class": "Aerolite",
+      "weapon": [
+        40,
+        30,
+        60,
+        64
+      ],
+      "armor": [
+        40,
+        36,
+        48,
+        64
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Biella Rock",
+      "class": "Aerolite",
+      "weapon": [
+        45,
+        33,
+        67,
+        72
+      ],
+      "armor": [
+        45,
+        40,
+        54,
+        72
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Swifte Rock",
+      "class": "Aerolite",
+      "weapon": [
+        50,
+        37,
+        75,
+        80
+      ],
+      "armor": [
+        50,
+        45,
+        60,
+        80
+      ],
+      "growth": 16,
+      "resistance": [
+        7,
+        8,
+        10,
+        7,
+        7,
+        8,
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Adamantite",
+      "class": "Other",
+      "weapon": [
+        62,
+        46,
+        93,
+        99
+      ],
+      "armor": [
+        62,
+        31,
+        93,
+        62
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Fullmetal",
+      "class": "Other",
+      "weapon": [
+        55,
+        41,
+        68,
+        66
+      ],
+      "armor": [
+        44,
+        27,
+        99,
+        27
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Coral",
+      "class": "Other",
+      "weapon": [
+        18,
+        21,
+        14,
+        12
+      ],
+      "armor": [
+        23,
+        9,
+        32,
+        9
+      ],
+      "growth": 12,
+      "resistance": [
+        9,
+        6,
+        7,
+        7,
+        9,
+        7,
+        9,
+        5
+      ]
+    },
+    {
+      "name": "Tortoise Shell",
+      "class": "Other",
+      "weapon": [
+        26,
+        31,
+        20,
+        18
+      ],
+      "armor": [
+        33,
+        13,
+        46,
+        13
+      ],
+      "growth": 20,
+      "resistance": [
+        8,
+        8,
+        9,
+        7,
+        9,
+        8,
+        9,
+        7
+      ]
+    },
+    {
+      "name": "Shell",
+      "class": "Other",
+      "weapon": [
+        20,
+        24,
+        16,
+        14
+      ],
+      "armor": [
+        26,
+        10,
+        36,
+        10
+      ],
+      "growth": 14,
+      "resistance": [
+        8,
+        7,
+        9,
+        8,
+        9,
+        7,
+        9,
+        6
+      ]
+    },
+    {
+      "name": "Emerald",
+      "class": "Gem",
+      "weapon": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "armor": [
+        1,
+        1,
+        1,
+        50
+      ],
+      "growth": 8,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Pearl",
+      "class": "Gem",
+      "weapon": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "armor": [
+        1,
+        1,
+        1,
+        50
+      ],
+      "growth": 8,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "name": "Lapis Lazuli",
+      "class": "Gem",
+      "weapon": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "armor": [
+        1,
+        1,
+        1,
+        50
+      ],
+      "growth": 8,
+      "resistance": [
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8,
+        8
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Knife",
+      "weights": [
+        44,
+        16,
+        12,
+        48
+      ]
+    },
+    {
+      "name": "Sword",
+      "weights": [
+        32,
+        32,
+        32,
+        32
+      ]
+    },
+    {
+      "name": "Axe",
+      "weights": [
+        28,
+        36,
+        48,
+        16
+      ]
+    },
+    {
+      "name": "2H Sword",
+      "weights": [
+        40,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "name": "2H Axe",
+      "weights": [
+        40,
+        40,
+        64,
+        16
+      ]
+    },
+    {
+      "name": "Hammer",
+      "weights": [
+        8,
+        72,
+        64,
+        16
+      ]
+    },
+    {
+      "name": "Spear",
+      "weights": [
+        52,
+        20,
+        24,
+        48
+      ]
+    },
+    {
+      "name": "Staff",
+      "weights": [
+        4,
+        44,
+        16,
+        32
+      ]
+    },
+    {
+      "name": "Gloves",
+      "weights": [
+        0,
+        32,
+        24,
+        56
+      ]
+    },
+    {
+      "name": "Flail",
+      "weights": [
+        0,
+        40,
+        28,
+        44
+      ]
+    },
+    {
+      "name": "Bow",
+      "weights": [
+        40,
+        4,
+        20,
+        40
+      ]
+    }
+  ],
+  "armor": [
+    {
+      "name": "Armor",
+      "class": "Heavy",
+      "weights": [
+        26,
+        26,
+        26,
+        4
+      ]
+    },
+    {
+      "name": "Hauberk",
+      "class": "Heavy",
+      "weights": [
+        12,
+        16,
+        16,
+        2
+      ]
+    },
+    {
+      "name": "Shield",
+      "class": "Heavy",
+      "weights": [
+        8,
+        8,
+        8,
+        4
+      ]
+    },
+    {
+      "name": "Helm",
+      "class": "Heavy",
+      "weights": [
+        8,
+        7,
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Gauntlet",
+      "class": "Heavy",
+      "weights": [
+        7,
+        6,
+        8,
+        2
+      ]
+    },
+    {
+      "name": "Boots",
+      "class": "Heavy",
+      "weights": [
+        6,
+        8,
+        7,
+        2
+      ]
+    },
+    {
+      "name": "Robe",
+      "class": "Light",
+      "weights": [
+        6,
+        6,
+        6,
+        8
+      ]
+    },
+    {
+      "name": "Mantle",
+      "class": "Light",
+      "weights": [
+        4,
+        4,
+        4,
+        12
+      ]
+    },
+    {
+      "name": "Hat",
+      "class": "Light",
+      "weights": [
+        4,
+        2,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "Sandals",
+      "class": "Light",
+      "weights": [
+        2,
+        4,
+        2,
+        4
+      ]
+    },
+    {
+      "name": "Pendant",
+      "class": "Accessory",
+      "weights": [
+        0,
+        0,
+        0,
+        24
+      ]
+    },
+    {
+      "name": "Ring",
+      "class": "Accessory",
+      "weights": [
+        1,
+        1,
+        1,
+        16
+      ]
+    }
+  ],
+  "energy": {
+    "5": [
+      [
+        8,
+        10,
+        20,
+        40,
+        80,
+        160,
+        320,
+        640,
+        1280
+      ],
+      [
+        8,
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ]
+    ],
+    "6": [
+      [
+        8,
+        12,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768,
+        1536
+      ],
+      [
+        8,
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ]
+    ],
+    "7": [
+      [
+        8,
+        14,
+        28,
+        56,
+        112,
+        224,
+        448,
+        896,
+        1792
+      ],
+      [
+        8,
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ]
+    ],
+    "8": [
+      [
+        8,
+        16,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048
+      ],
+      [
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768,
+        1536
+      ],
+      [
+        8,
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        16,
+        32,
+        64,
+        128,
+        256
+      ]
+    ],
+    "9": [
+      [
+        9,
+        18,
+        36,
+        72,
+        144,
+        288,
+        576,
+        1152,
+        2304
+      ],
+      [
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768,
+        1536
+      ],
+      [
+        8,
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768
+      ],
+      [
+        8,
+        8,
+        8,
+        16,
+        16,
+        32,
+        64,
+        128,
+        256
+      ]
+    ],
+    "10": [
+      [
+        10,
+        20,
+        40,
+        80,
+        160,
+        320,
+        640,
+        1280,
+        2560
+      ],
+      [
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768,
+        1536
+      ],
+      [
+        8,
+        8,
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768
+      ],
+      [
+        8,
+        8,
+        8,
+        8,
+        32,
+        32,
+        64,
+        128,
+        256
+      ]
+    ],
+    "32": [
+      [
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048,
+        4096,
+        8192
+      ],
+      [
+        24,
+        48,
+        96,
+        192,
+        384,
+        768,
+        1536,
+        3072,
+        6144
+      ],
+      [
+        24,
+        48,
+        96,
+        192,
+        288,
+        576,
+        1152,
+        2304,
+        4608
+      ],
+      [
+        16,
+        24,
+        48,
+        96,
+        192,
+        384,
+        768,
+        1536,
+        3072
+      ]
+    ]
+  },
+  "items": [
+    {
+      "name": "Gold coins (Wisp, Shade, Dryad, Aura, Salamander, Gnome, Jinn, Undine)",
+      "group": "Coins",
+      "energy": 64,
+      "taint": "2 of that element",
+      "effect": ""
+    },
+    {
+      "name": "Silver coins (Wisp, Shade, Dryad, Aura, Salamander, Gnome, Jinn, Undine)",
+      "group": "Coins",
+      "energy": 48,
+      "taint": "1 of that element",
+      "effect": ""
+    },
+    {
+      "name": "Fire Stone",
+      "group": "Stones and crystals",
+      "energy": 24,
+      "taint": "Salamander",
+      "effect": ""
+    },
+    {
+      "name": "Earth Stone",
+      "group": "Stones and crystals",
+      "energy": 24,
+      "taint": "Gnome",
+      "effect": ""
+    },
+    {
+      "name": "Wind Stone",
+      "group": "Stones and crystals",
+      "energy": 24,
+      "taint": "Jinn",
+      "effect": ""
+    },
+    {
+      "name": "Water Stone",
+      "group": "Stones and crystals",
+      "energy": 24,
+      "taint": "Undine",
+      "effect": ""
+    },
+    {
+      "name": "Sun Crystal",
+      "group": "Stones and crystals",
+      "energy": 48,
+      "taint": "Wisp",
+      "effect": "Makes the Sun God card (Sword Sunlight, Bow Solar Flare)"
+    },
+    {
+      "name": "Moon Crystal",
+      "group": "Stones and crystals",
+      "energy": 48,
+      "taint": "Shade",
+      "effect": "Makes the Moon Goddess card (Sword Moonlight, Bow Lunar Shot)"
+    },
+    {
+      "name": "Glow Crystal",
+      "group": "Stones and crystals",
+      "energy": 96,
+      "taint": "None",
+      "effect": "Makes a Nymph of Dawn card. When it is pushed out it releases 192 energy"
+    },
+    {
+      "name": "Chaos Crystal",
+      "group": "Stones and crystals",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes the Ancient Moon card: opposing elements can rise together"
+    },
+    {
+      "name": "Round Seed",
+      "group": "Seeds",
+      "energy": 16,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Oblong Seed",
+      "group": "Seeds",
+      "energy": 16,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Crooked Seed",
+      "group": "Seeds",
+      "energy": 16,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Big Seed",
+      "group": "Seeds",
+      "energy": 24,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Small Seed",
+      "group": "Seeds",
+      "energy": 24,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Long Seed",
+      "group": "Seeds",
+      "energy": 24,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Flat Seed",
+      "group": "Seeds",
+      "energy": 48,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Spiny Seed",
+      "group": "Seeds",
+      "energy": 48,
+      "taint": "None",
+      "effect": "Makes the Yggsdrasil card (all stat bonuses up)"
+    },
+    {
+      "name": "Bellgrapes",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Diceberry",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Makes the Wind God card (Staff Caduceus, shoes Paralysis immunity)"
+    },
+    {
+      "name": "Mangoelephant",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Loquat-Shoes",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Shoes: Strike, Slash, Thrust +25%"
+    },
+    {
+      "name": "Pear o'Heels",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Shoes: Strike, Slash, Thrust +25%"
+    },
+    {
+      "name": "Squalphin",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "Undine",
+      "effect": "Makes the Ocean God card (Spear Trident)"
+    },
+    {
+      "name": "Citrisquid",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Weapons: Slash -25%, Heavy +25%. Armor: Strike +25%, Slash -25%"
+    },
+    {
+      "name": "Springanana",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Makes the Heaven's Scale card (HP recovery while moving)"
+    },
+    {
+      "name": "Peach Puppy",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Weapons: Slash +25%, Heavy -25%"
+    },
+    {
+      "name": "Apricat",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Weapons: Force -25%, Tech +25%"
+    },
+    {
+      "name": "Applesocks",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Whalamato",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Pine o'Clock",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Armor: Sleep immunity. Makes the Ragnarok card; it also removes other immunities"
+    },
+    {
+      "name": "Fishy Fruit",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "Undine",
+      "effect": "Makes the Spring card (Robe Flameburst immunity, Pendant Sleep immunity)"
+    },
+    {
+      "name": "Boarmelon",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Rhinoloupe",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Weapons: Slash +25%. Armor: Poison immunity (removes other immunities)"
+    },
+    {
+      "name": "Orcaplant",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes the Ocean God card (Spear Trident)"
+    },
+    {
+      "name": "Garlicrown",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "Aura",
+      "effect": "Pushes Pixie cards off the item"
+    },
+    {
+      "name": "Honey Onion",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "Dryad",
+      "effect": ""
+    },
+    {
+      "name": "Sweet Moai",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Helm: Strike, Slash, Thrust +25%. Hat: +50%"
+    },
+    {
+      "name": "Spiny Carrot",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "Undine",
+      "effect": "Weapons: Slash +25%, Heavy -25%"
+    },
+    {
+      "name": "Conchurnip",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Cornflower",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "Wisp",
+      "effect": ""
+    },
+    {
+      "name": "Cabadillo",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Hauberk: Strike, Slash, Thrust +25%, Magic -50%"
+    },
+    {
+      "name": "Needlettuce",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Weapons: Slash +25%, Heavy -25%. Makes the Bed of Thorn card (armor +50%, but no HP recovery)"
+    },
+    {
+      "name": "Cherry Bombs",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Masked Potato",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Weapons: Slash -25%, Heavy +25%"
+    },
+    {
+      "name": "Lilipods",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Each one makes a neutral Enticed Nymph card, used to rinse old cards out. On a Lorant Silver spear with no essence, a measured test made a Pixie card instead"
+    },
+    {
+      "name": "Rocket Papaya",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": "Helps make the Tower card"
+    },
+    {
+      "name": "Orange'opus",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Bumpkin",
+      "group": "Fruit and vegetables",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes a Clown card (wide stat limits). Used for varnishing"
+    },
+    {
+      "name": "Heart Mint",
+      "group": "Fruit and vegetables",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Makes the Mother of Gods card (Flail plunge attacks)"
+    },
+    {
+      "name": "Spade Basil",
+      "group": "Fruit and vegetables",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Weapons: Slash +25%. Makes the Ruler of the Sky card (Spear Gungnir, Staff Electrosceptre)"
+    },
+    {
+      "name": "Dialaurel",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": "Makes the Metropolis card (armor Magic +25%, Robe more)"
+    },
+    {
+      "name": "Gold Clover",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "None",
+      "effect": "Weapons: Slash +25%"
+    },
+    {
+      "name": "Mush-In-A-Box",
+      "group": "Fruit and vegetables",
+      "energy": 32,
+      "taint": "Shade",
+      "effect": ""
+    },
+    {
+      "name": "Toadstoolshed",
+      "group": "Fruit and vegetables",
+      "energy": 64,
+      "taint": "Shade",
+      "effect": ""
+    },
+    {
+      "name": "All kinds of meat",
+      "group": "Meat",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Every meat is the same to the smithy in the guides: energy only, no element, no card. Dragon Steak and the other kinds all count as this one item"
+    },
+    {
+      "name": "Sharp Claw",
+      "group": "Fangs and claws",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Weapons: Slash +50%, Heavy -50%. Makes the God of Destruction card"
+    },
+    {
+      "name": "Poison Fang",
+      "group": "Fangs and claws",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Weapons: Force -50%, Tech +50%"
+    },
+    {
+      "name": "Giant's Horn",
+      "group": "Fangs and claws",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Weapons: Slash -50%, Heavy +50%"
+    },
+    {
+      "name": "Scissors",
+      "group": "Fangs and claws",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Weapons: Force +50%, Tech -50%"
+    },
+    {
+      "name": "Healing Claw",
+      "group": "Fangs and claws",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Shield: Poison immunity"
+    },
+    {
+      "name": "Zombie Claw",
+      "group": "Fangs and claws",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Pendant: Paralysis immunity"
+    },
+    {
+      "name": "Vampire Fang",
+      "group": "Fangs and claws",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes the Witch of Moon card (Sword Vampsword)"
+    },
+    {
+      "name": "Little Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Armor: Slash +25%"
+    },
+    {
+      "name": "Sleepy Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Armor: Thrust +25%"
+    },
+    {
+      "name": "Silly Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Weapons: Heavy +25%"
+    },
+    {
+      "name": "Dangerous Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Armor: Strike +25%"
+    },
+    {
+      "name": "Angry Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Weapons: Force +25%"
+    },
+    {
+      "name": "Blank Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Weapons: Tech +25%"
+    },
+    {
+      "name": "Wicked Eye",
+      "group": "Eyes",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Weapons: Slash +25%"
+    },
+    {
+      "name": "Creepy Eye",
+      "group": "Eyes",
+      "energy": 48,
+      "taint": "None",
+      "effect": "Armor: Magic +25%. Can push in a random Pixie card that lowers other stats"
+    },
+    {
+      "name": "Angel Feather",
+      "group": "Feathers",
+      "energy": 32,
+      "taint": "Wisp",
+      "effect": "Makes the Fallen Angel card (2H Sword Chaotic Avenger)"
+    },
+    {
+      "name": "Raven Feather",
+      "group": "Feathers",
+      "energy": 24,
+      "taint": "Shade",
+      "effect": ""
+    },
+    {
+      "name": "Clear Feather",
+      "group": "Feathers",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Weapons: Heavy -50%, Tech +50%"
+    },
+    {
+      "name": "Moth Wing",
+      "group": "Feathers",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Armor: Strike, Slash, Thrust -25%, Magic +25%"
+    },
+    {
+      "name": "Flaming Quill",
+      "group": "Feathers",
+      "energy": 64,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "White Feather",
+      "group": "Feathers",
+      "energy": 32,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Aroma Oil",
+      "group": "Bottles",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Hide armor: Strike, Slash, Thrust +50%. Makes the Wisdom Goddess card (Shield Stare immunity)"
+    },
+    {
+      "name": "Dragon Blood",
+      "group": "Bottles",
+      "energy": 64,
+      "taint": "None",
+      "effect": "Makes the God of War card (Axe Dragonslayer)"
+    },
+    {
+      "name": "Acid",
+      "group": "Bottles",
+      "energy": 48,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Holy Water",
+      "group": "Bottles",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Pushes Pixie cards off the item"
+    },
+    {
+      "name": "Ether",
+      "group": "Bottles",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Makes the Blacksmith God card (Hammer Sledgehammer)"
+    },
+    {
+      "name": "Mercury",
+      "group": "Vials",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes a Witch card (lowers energy cost for Shade, Aura, Jinn, Undine)"
+    },
+    {
+      "name": "Stinky Breath",
+      "group": "Vials",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Armor: Poison and Confusion immunity (removes other immunities)"
+    },
+    {
+      "name": "Ghost's Howl",
+      "group": "Vials",
+      "energy": 32,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Dragon's Breath",
+      "group": "Vials",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Weapons: Force +25%, Tech +25%"
+    },
+    {
+      "name": "Damsel's Sigh (Virgin's Sigh)",
+      "group": "Vials",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Makes the Goddess of Love card (Pendant: more Lucre). Renamed in the remaster"
+    },
+    {
+      "name": "Electricity",
+      "group": "Urns",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Makes the Thunder God card (Hammer Mjolnir)"
+    },
+    {
+      "name": "Moss",
+      "group": "Urns",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Helm: Darkness immunity"
+    },
+    {
+      "name": "Ear of Wheat",
+      "group": "Urns",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes the Fertility Goddess card (Armor Petrification immunity, Ring shares Exp Crystals)"
+    },
+    {
+      "name": "Baked Roach",
+      "group": "Pellets",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Robe: Poison immunity"
+    },
+    {
+      "name": "Blackened Bat",
+      "group": "Pellets",
+      "energy": 48,
+      "taint": "None",
+      "effect": "Pendant: Darkness immunity. Makes the Wings of Darkness card (Staff Golden Touch)"
+    },
+    {
+      "name": "Sulpher",
+      "group": "Powders",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes a Sorcerer card (lowers energy cost for Wisp, Dryad, Salamander, Gnome)"
+    },
+    {
+      "name": "Poison Powder",
+      "group": "Powders",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Sleepy Powder",
+      "group": "Powders",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Knockout Dust",
+      "group": "Powders",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Rust",
+      "group": "Powders",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Grave Dirt",
+      "group": "Powders",
+      "energy": 32,
+      "taint": "None",
+      "effect": "Makes the Dying Earth card (all stat bonuses down)"
+    },
+    {
+      "name": "Ash",
+      "group": "Powders",
+      "energy": 16,
+      "taint": "None",
+      "effect": "Makes the Volcano card (weapons Force +50%, Tech -50%; Hammer Magma Hammer)"
+    },
+    {
+      "name": "Hairball",
+      "group": "Pouch and misc",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Needle",
+      "group": "Pouch and misc",
+      "energy": 8,
+      "taint": "None",
+      "effect": "Makes the Bed of Thorn card"
+    },
+    {
+      "name": "Mirror Piece",
+      "group": "Pouch and misc",
+      "energy": 24,
+      "taint": "None",
+      "effect": "Makes the Mirrored World card (reverses which element eats which)"
+    },
+    {
+      "name": "Wad of Wool",
+      "group": "Pouch and misc",
+      "energy": 16,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Messy Scroll",
+      "group": "Pouch and misc",
+      "energy": 16,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Greenball Bun",
+      "group": "Pouch and misc",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    },
+    {
+      "name": "Tako Bug",
+      "group": "Pouch and misc",
+      "energy": 8,
+      "taint": "None",
+      "effect": ""
+    }
+  ],
+  "cards": [
+    {
+      "card": "Yggsdrasil",
+      "item": "Spiny Seed",
+      "needs": "Dryad above 4",
+      "effect": "All stat bonuses up; faster HP recovery (unconfirmed)"
+    },
+    {
+      "card": "Ancient Moon",
+      "item": "Chaos Crystal",
+      "needs": "None",
+      "effect": "Lets opposing elements rise together. Blocks consumption"
+    },
+    {
+      "card": "Mirrored World",
+      "item": "Mirror Piece",
+      "needs": "Total above 2",
+      "effect": "Reverses which element eats which"
+    },
+    {
+      "card": "Heaven's Scale",
+      "item": "Springanana",
+      "needs": "None",
+      "effect": "HP recovery while moving. Strengthens Phoenix"
+    },
+    {
+      "card": "Dying Earth",
+      "item": "Grave Dirt",
+      "needs": "None",
+      "effect": "All stat bonuses down"
+    },
+    {
+      "card": "Ragnarok",
+      "item": "Pine o'Clock",
+      "needs": "Salamander, Gnome, Jinn and Undine all above 0",
+      "effect": "Turns Pixie cards into Evil Gods. 2H Sword: Ragnarok plunge attack"
+    },
+    {
+      "card": "Bed of Thorn",
+      "item": "Needle or Needlettuce",
+      "needs": "Dryad above 0, Salamander 0",
+      "effect": "Armor +50% in all defenses, but no HP recovery"
+    },
+    {
+      "card": "Volcano",
+      "item": "Ash",
+      "needs": "None",
+      "effect": "Weapons Force +50%, Tech -50%. Hammer: Magma Hammer. Hauberk: Freeze immunity"
+    },
+    {
+      "card": "Metropolis",
+      "item": "Dialaurel",
+      "needs": "Shade above 0, Salamander 0",
+      "effect": "Armor Magic +25%. Robe: Magic +50% and Confusion immunity"
+    },
+    {
+      "card": "Tower",
+      "item": "Rocket Papaya, Healing Claw",
+      "needs": "Wisp above 0, Jinn 0",
+      "effect": "No listed effect"
+    },
+    {
+      "card": "Spring",
+      "item": "Fishy Fruit",
+      "needs": "None",
+      "effect": "Robe: Flameburst immunity. Pendant: Sleep immunity. Strengthens Unicorn"
+    },
+    {
+      "card": "Ruler of the Sky",
+      "item": "Spade Basil",
+      "needs": "Wisp above 2, total above 5",
+      "effect": "Spear: Gungnir. Staff: Electrosceptre"
+    },
+    {
+      "card": "Mother of Gods",
+      "item": "Heart Mint",
+      "needs": "Shade, Gnome and Undine above 1",
+      "effect": "Flail: Green Princess, Game of Death, Red Dream"
+    },
+    {
+      "card": "Sun God",
+      "item": "Sun Crystal",
+      "needs": "Wisp above 2, total above 4",
+      "effect": "Sword: Sunlight. Bow: Solar Flare"
+    },
+    {
+      "card": "Moon Goddess",
+      "item": "Moon Crystal",
+      "needs": "Shade above 2, total above 4",
+      "effect": "Sword: Moonlight. Bow: Lunar Shot"
+    },
+    {
+      "card": "Thunder God",
+      "item": "Electricity",
+      "needs": "Wisp, Salamander and Jinn above 2",
+      "effect": "Hammer: Mjolnir"
+    },
+    {
+      "card": "Goddess of Love",
+      "item": "Damsel's Sigh (Virgin's Sigh)",
+      "needs": "Shade and Dryad above 2",
+      "effect": "Pendant: more Lucre dropped"
+    },
+    {
+      "card": "Fertility Goddess",
+      "item": "Ear of Wheat",
+      "needs": "Dryad above 2, total above 4",
+      "effect": "Armor: Petrification immunity. Ring: shares Exp Crystals"
+    },
+    {
+      "card": "Ocean God",
+      "item": "Squalphin or Orcaplant",
+      "needs": "Undine above 2, total above 4",
+      "effect": "Spear: Trident. Armor: Flameburst immunity"
+    },
+    {
+      "card": "Wind God",
+      "item": "Diceberry",
+      "needs": "Jinn above 2, total above 4",
+      "effect": "Staff: Caduceus. Shoes: Paralysis immunity"
+    },
+    {
+      "card": "Wisdom Goddess",
+      "item": "Aroma Oil",
+      "needs": "Total above 5",
+      "effect": "Shield: Stare immunity"
+    },
+    {
+      "card": "Blacksmith God",
+      "item": "Ether",
+      "needs": "Aura and Gnome above 2",
+      "effect": "Hammer: Sledgehammer"
+    },
+    {
+      "card": "God of War",
+      "item": "Dragon Blood",
+      "needs": "Salamander above 2, total above 4",
+      "effect": "Axe: Dragonslayer"
+    },
+    {
+      "card": "Fallen Angel",
+      "item": "Angel Feather",
+      "needs": "Wisp above 4, Shade 0",
+      "effect": "2H Sword: Chaotic Avenger"
+    },
+    {
+      "card": "Witch of Moon",
+      "item": "Vampire Fang",
+      "needs": "Jinn 0, Undine above 4",
+      "effect": "Sword: Vampsword (called Lunar Witch in the remaster)"
+    },
+    {
+      "card": "Lord of Flies",
+      "item": "Clear Feather",
+      "needs": "Gnome 0, Jinn above 4",
+      "effect": "Knife: Sinister Blade"
+    },
+    {
+      "card": "Wings of Darkness",
+      "item": "Blackened Bat",
+      "needs": "Wisp 0, Shade above 4",
+      "effect": "Staff: Golden Touch"
+    },
+    {
+      "card": "God of Destruction",
+      "item": "Sharp Claw",
+      "needs": "Salamander above 4, Undine 0",
+      "effect": "Sword: Flame Tongue. Pushes stats toward Power"
+    }
+  ]
+}

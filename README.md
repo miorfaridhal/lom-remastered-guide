@@ -58,6 +58,35 @@ The first command writes [`data/route-solved.json`](data/route-solved.json) and 
 - The solver does not model mana levels. A few events (#43 Seeing Double, #66 The Wimpy Thugling, #67 Pee-Wee Birdie) also need a land's element at level 3, which depends on where you place artifacts. Use the artifact map on the Places tab.
 - The rules come from fan guides written around both the PlayStation original and the remaster. If a rule is wrong for your version, fix it in `data/constraints.json` and re-run.
 
+## Tempering simulator
+
+[`js/temper.js`](js/temper.js) is a deterministic model of forging and tempering a weapon. Give it a material, a weapon type and the items in order; it returns the power, the eight essence levels, the visible and hidden cards and whether varnish is active after every step. It is the engine for the forging advisor that comes next.
+
+Each part of the model has a confidence level:
+
+| Part | Confidence | Rule |
+|---|---|---|
+| Base power | Measured | floor(Σ weight × material value ÷ 128) over Slash, Heavy, Force and Tech |
+| Attribute items | Measured | An item like Dragon's Breath changes the weights only while it is the last item added |
+| Card slots | Measured | 3 visible + 1 hidden; a new card enters hidden; stones make no card; a Lilipod on an item with no essence makes a Pixie |
+| Golem block strength | Measured | floor((piece 1 + piece 2) ÷ 17), shown up to +9 |
+| Essence energy | Guide | Level costs from the energy table by resistance and wizard cards; tainting items feed their element |
+| Essence → power, varnish | Estimate | Fitted to the readings below |
+
+How essence turns into power is not published, so [`tools/calibrate.mjs`](tools/calibrate.mjs) fits it. It tries over 200,000 combinations of the model's open choices against [`data/calibration.json`](data/calibration.json): 19 readings measured in the Android remaster and 5 figures from fan guides. Measured readings always win over guide figures. [`CALIBRATION.md`](CALIBRATION.md) lists every prediction and its error.
+
+**Current fit:** 18 of 19 measured readings are exact, including 39 after the Chaos Crystal, 133 for the varnished Lorant Silver spear and 160 for the Ishe Platinum 2H Sword. The 58 after the Glow Crystal comes out as 61. The older guide varnish figures (Dragon Scales 711, Altena 414) do not fit the same model as the remaster readings, and the report shows by how much.
+
+```bash
+npm run test:unit
+```
+
+```bash
+npm run calibrate
+```
+
+The unit tests replay every measured reading. A reading the fit gets exactly must stay exact, and any change to the simulator that moves a prediction fails the build. After adding a new reading to `data/calibration.json`, run `npm run calibrate` and commit the updated `data/temper-model.json` and `CALIBRATION.md`.
+
 ## Data
 
 The page (`index.html`) is the source of truth. `tools/extract.mjs` pulls its quest, land and order tables into `data/`:

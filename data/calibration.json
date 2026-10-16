@@ -1,0 +1,52 @@
+{
+  "_about": "In-game readings the tempering simulator (js/temper.js) is checked against. kind 'measured' = read in the Android remaster (calibration log, Oct 2026); 'guide' = a figure printed in a fan guide. 'at' = the step after which the reading was taken (1-based; omitted = after the last step). A step is an item name, or {\"levels\": [...]} to set the eight essence levels directly when a guide gives levels but no item order.",
+  "readings": [
+    { "id": "lorant-spear-plain", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": [], "power": 28, "source": "calibration log: plain forge" },
+    { "id": "ishe-2h-plain", "kind": "measured", "material": "Ishe Platinum", "type": "2H Sword", "steps": [], "power": 50, "source": "CONTEXT §3" },
+    { "id": "vizel-2h-plain", "kind": "measured", "material": "Vizel Gold", "type": "2H Sword", "steps": [], "power": 43, "source": "CONTEXT §3" },
+    { "id": "lorimar-spear-plain", "kind": "measured", "material": "Lorimar Iron", "type": "Spear", "steps": [], "power": 50, "source": "CONTEXT §3" },
+    { "id": "lorant-gloves-db", "kind": "measured", "material": "Lorant Silver", "type": "Gloves", "steps": ["Dragon's Breath"], "power": 25, "source": "CONTEXT §4 (Chain Drill piece)" },
+
+    { "id": "piece1-db", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath"], "power": 31, "source": "calibration log 2026-10-13, piece 1" },
+    { "id": "piece1-cf", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Clear Feather"], "power": 30, "source": "calibration log, piece 1" },
+    { "id": "piece1-be", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Clear Feather", "Blank Eye"], "power": 30, "source": "calibration log 21:38, piece 1" },
+    { "id": "piece1-rhino", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Clear Feather", "Blank Eye", "Rhinoloupe"], "power": 30, "source": "calibration log 21:38, piece 1" },
+    { "id": "piece1-basil", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Clear Feather", "Blank Eye", "Rhinoloupe", "Spade Basil"], "power": 30, "source": "calibration log 21:38, piece 1" },
+
+    { "id": "piece2-db", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath"], "power": 31, "source": "calibration log 21:46, piece 2" },
+    { "id": "piece2-be", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Blank Eye"], "power": 30, "source": "calibration log 21:46, piece 2" },
+    { "id": "piece2-db2", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Blank Eye", "Dragon's Breath"], "power": 31, "source": "calibration log 21:51, piece 2" },
+    { "id": "piece2-lilipod", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Blank Eye", "Dragon's Breath", "Lilipods"], "power": 28, "cards": ["Pixie"], "source": "calibration log 21:58, piece 2 (a Pixie card appeared)" },
+    { "id": "piece2-db3", "kind": "measured", "material": "Lorant Silver", "type": "Spear", "steps": ["Dragon's Breath", "Blank Eye", "Dragon's Breath", "Lilipods", "Dragon's Breath"], "power": 31, "source": "calibration log 22:04, piece 2" },
+
+    { "id": "piece3-chaos", "kind": "measured", "material": "Lorant Silver", "type": "Spear",
+      "steps": ["Sun Crystal", "Earth Stone", "Wind Stone", "Water Stone", "Chaos Crystal"], "power": 39, "source": "calibration log 2026-10-15 10:13, piece 3" },
+    { "id": "piece3-glow", "kind": "measured", "material": "Lorant Silver", "type": "Spear",
+      "steps": ["Sun Crystal", "Earth Stone", "Wind Stone", "Water Stone", "Chaos Crystal", "Fire Stone", "Sulpher", "Sun Crystal", "Sun Crystal", "Sulpher", "Glow Crystal"], "power": 58, "source": "calibration log 2026-10-15 10:18, piece 3" },
+    { "id": "piece1-full", "kind": "measured", "material": "Lorant Silver", "type": "Spear",
+      "steps": ["Sun Crystal", "Earth Stone", "Wind Stone", "Water Stone", "Chaos Crystal", "Fire Stone", "Sulpher", "Sun Crystal", "Sun Crystal", "Sulpher", "Glow Crystal", "Lilipods", "Bumpkin", "Bumpkin", "Bumpkin", "Bumpkin", "Fire Stone", "Sharp Claw"],
+      "power": 133, "cards": ["Clown", "Clown", "Clown"], "source": "calibration log 2026-10-15 10:02, piece 1 (earlier attribute items omitted: any later item wipes them)" },
+    { "id": "ishe-2h-recipe5", "kind": "measured", "material": "Ishe Platinum", "type": "2H Sword",
+      "steps": ["Sun Crystal", "Earth Stone", "Wind Stone", "Water Stone", "Chaos Crystal", "Fire Stone", "Sulpher", "Wisp Silver coin", "Sun Crystal", "Sulpher", "Glow Crystal", "Pine o'Clock", "Angel Feather", "Bumpkin", "Bumpkin", "Bumpkin", "Fire Stone", "Sharp Claw"],
+      "power": 160, "source": "calibration log 2026-10-15 16:42 (Recipe 5 list)" },
+
+    { "id": "lorimar-2h-recipe4", "kind": "guide", "material": "Lorimar Iron", "type": "2H Sword",
+      "steps": ["Sun Crystal", "Earth Stone", "Wind Stone", "Water Stone", "Chaos Crystal", "Fire Stone", "Sulpher", "Wisp Silver coin", "Sun Crystal", "Sulpher", "Glow Crystal", "Pine o'Clock", "Angel Feather", "Bumpkin", "Bumpkin", "Bumpkin", "Fire Stone", "Sharp Claw"],
+      "power": 179, "source": "Steam recipe collection: 2H Sword 56 → 179" },
+    { "id": "dragon-spear-plain", "kind": "guide", "material": "Dragon Scales", "type": "Spear", "steps": [], "power": 65, "source": "Steam recipe collection: Dragon Scales spear starts at 65" },
+    { "id": "dragon-spear-varnish", "kind": "guide", "material": "Dragon Scales", "type": "Spear",
+      "steps": [{ "levels": [8, 7, 8, 7, 8, 7, 7, 8] }, "Bumpkin", "Bumpkin", "Bumpkin", "Bumpkin", "Sharp Claw"],
+      "power": 711, "source": "Steam recipe collection: all eight essences raised (343), then 4 Bumpkin and a Sharp Claw give 711. The guide gives power by stage, not levels; 60 levels reproduce its 343." },
+    { "id": "altena-sword-levels", "kind": "guide", "material": "Altena Alloy", "type": "Sword",
+      "steps": [{ "levels": [7, 7, 9, 9, 10, 7, 10, 7] }], "power": 232, "source": "Steam beginner guide: Altena Alloy sword 50 → 232 at Wisp 7, Shade 7, Dryad 9, Aura 9, Salamander 10, Gnome 7, Jinn 10, Undine 7" },
+    { "id": "altena-sword-varnish", "kind": "guide", "material": "Altena Alloy", "type": "Sword",
+      "steps": [{ "levels": [7, 7, 9, 9, 10, 7, 10, 7] }, "Lilipods", "Lilipods", "Lilipods", "Bumpkin", "Bumpkin", "Bumpkin", "Sharp Claw"],
+      "power": 414, "source": "Steam beginner guide: rinse, 3 Clown cards (Bumpkin) and a Sharp Claw take it from 232 to 414" }
+  ],
+  "rules": [
+    { "id": "block-plus-9", "kind": "measured", "pieces": [133, 28], "strength": 9, "source": "calibration log: Chain Spear 133 + 28 = 161 shows +9" },
+    { "id": "four-bumpkins-three-clowns", "kind": "measured", "steps": ["Bumpkin", "Bumpkin", "Bumpkin", "Bumpkin"], "visibleClowns": 3, "source": "CONTEXT §3 card slots" },
+    { "id": "lilipod-three-bumpkins-two-clowns", "kind": "measured", "steps": ["Lilipods", "Bumpkin", "Bumpkin", "Bumpkin"], "visibleClowns": 2, "source": "CONTEXT §3 card slots" },
+    { "id": "stone-makes-no-card", "kind": "measured", "steps": ["Bumpkin", "Fire Stone"], "visibleClowns": 0, "hiddenCard": "Clown", "source": "CONTEXT §3: a stone makes no card and pushes nothing" }
+  ]
+}

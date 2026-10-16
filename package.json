@@ -5,9 +5,12 @@
   "description": "Mana Compass: Legend of Mana Remastered companion (PWA) and route solver",
   "scripts": {
     "build": "node tools/extract.mjs && node solver/solve.mjs && node tools/stamp-sw.mjs",
+    "calibrate": "node tools/calibrate.mjs",
     "icons": "node tools/make-icons.mjs",
     "serve": "node tools/serve.mjs",
-    "test": "playwright test"
+    "test": "node --test \"tests/unit/*.test.mjs\" && playwright test",
+    "test:unit": "node --test \"tests/unit/*.test.mjs\"",
+    "test:e2e": "playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.64.1"

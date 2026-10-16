@@ -6,13 +6,13 @@ on:
 
 jobs:
   data:
-    name: Data, route and service worker
+    name: Data, route, simulator and service worker
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - name: Data in sync with index.html
         run: |
           node tools/extract.mjs
@@ -23,6 +23,12 @@ jobs:
         run: node solver/solve.mjs
       - name: Service worker version matches the shell files
         run: node tools/stamp-sw.mjs --check
+      - name: Tempering simulator replays every measured reading
+        run: npm run test:unit
+      - name: Calibration is reproducible
+        run: |
+          node tools/calibrate.mjs > /dev/null
+          git diff --exit-code data/temper-model.json CALIBRATION.md
 
   smoke:
     name: Playwright smoke tests
@@ -31,7 +37,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npx playwright install --with-deps chromium

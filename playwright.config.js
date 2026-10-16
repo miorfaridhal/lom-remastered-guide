@@ -4,6 +4,7 @@ const port = 4173;
 
 export default defineConfig({
   testDir: "tests",
+  testMatch: "*.spec.js", // tests/unit/*.test.mjs run under node --test
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
