@@ -23,7 +23,12 @@ test("status cards count up when a tab opens and land on the real values", async
     const vals = [], el = document.querySelector("#s-q");
     location.hash = "pets";
     const t0 = performance.now();
-    (function tick() { vals.push(el.textContent); performance.now() - t0 < 1100 ? requestAnimationFrame(tick) : done(vals); })();
+    // Stop once it has restarted low and landed again, or after 5 s on a slow machine.
+    (function tick() {
+      vals.push(el.textContent);
+      const low = vals.some(v => parseInt(v) < 10), landed = el.textContent === "37/68";
+      (low && landed) || performance.now() - t0 > 5000 ? done(vals) : requestAnimationFrame(tick);
+    })();
   }));
   const nums = seen.map(v => +v.split("/")[0]);
   // The count restarts at 0 when the tab opens, then only rises until it lands on 37.
@@ -75,7 +80,8 @@ test("the Mana tree gives a tip, and Show me jumps to the quest", async ({ page 
   await expect(page.locator("#tip")).toBeHidden();
 });
 
-test("finishing the last quest of a phase celebrates", async ({ page }) => {
+test("finishing the last quest of a phase celebrates with a fanfare, and a tap closes it", async ({ page }) => {
+  await fakeAudio(page);
   await page.goto("./");
   // Phase 6 is 3/12 in the sample save: tick everything except one, then the last one.
   const phase = await page.evaluate(() => [...document.querySelectorAll("#qlist .grp")][5].getAttribute("data-ids").split(","));
@@ -83,9 +89,15 @@ test("finishing the last quest of a phase celebrates", async ({ page }) => {
   const tick = id => page.locator(`#qlist input[data-k="q:${id}"]`).evaluate(el => { el.checked = true; el.dispatchEvent(new Event("change", { bubbles: true })); });
   for (const id of open.slice(0, -1)) await tick(id);
   await expect(page.locator("#cele")).toBeHidden();
+  const before = await page.evaluate(() => window.__tones);
   await tick(open.at(-1));
   await expect(page.locator("#cele")).toBeVisible();
   await expect(page.locator("#cele-t")).toHaveText("Phase complete");
+  await expect(page.locator("#cele-k")).toHaveText("Hooray!");
+  await expect(page.locator("#cele-n")).toHaveText(/^Phase 6 of 12 · \d+\/68 events$/);
+  expect(await page.evaluate(() => window.__tones) - before).toBeGreaterThan(30); // trumpets, drum, sparkles, bells
+  await page.mouse.click(12, 200); // tap the dimmed backdrop, away from the card
+  await expect(page.locator("#cele")).toBeHidden();
 });
 
 test("finished groups wear a medal, untouched ones a dashed pill", async ({ page }) => {
@@ -139,4 +151,92 @@ test("ticking plays a small sound, and the speaker button mutes it for good", as
   await expect(page.locator("#snd use")).toHaveAttribute("href", "#i-mute");
   await page.locator("#snd").click();
   await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "true");
+});
+
+// Li'l Cactus: where he stands is the translate in his inline transform.
+const cactusAt = page => page.locator("#cactus").evaluate(el => { const m = /translate3d\(([-\d.]+)px,\s*([-\d.]+)px/.exec(el.style.transform); return { x: +m[1], y: +m[2] }; });
+
+test("Li’l Cactus chases the mouse", async ({ page, isMobile }) => {
+  test.skip(isMobile, "mouse only");
+  await page.goto("./");
+  await expect(page.locator("#cactus")).toBeVisible();
+  const start = await cactusAt(page);
+  await page.mouse.move(200, 300);
+  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 218, p.y - 314); }, { timeout: 10000 }).toBeLessThan(3);
+  expect((await cactusAt(page)).x).toBeLessThan(start.x);
+  await expect(page.locator("#cactus")).toHaveClass(/left/);
+});
+
+test("Li’l Cactus hops beside a tap on a phone", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "touch only");
+  await page.goto("./");
+  await page.touchscreen.tap(100, 400);
+  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 136, p.y - 330); }, { timeout: 10000 }).toBeLessThan(3);
+});
+
+test("tapping Li’l Cactus gives a tip, and his button hides him for good", async ({ page }) => {
+  await page.goto("./");
+  await page.locator("#cactus").click();
+  await expect(page.locator("#tip")).toBeVisible();
+  await expect(page.locator("#tip-t")).not.toHaveText("");
+
+  await page.locator("#cac-toggle").click();
+  await expect(page.locator("#cactus")).toBeHidden();
+  await expect(page.locator("#cac-toggle")).toHaveAttribute("aria-pressed", "false");
+  await page.reload();
+  await expect(page.locator("#cactus")).toBeHidden();
+  await page.locator("#cac-toggle").click();
+  await expect(page.locator("#cactus")).toBeVisible();
+});
+
+test("Li’l Cactus stays put under reduce motion", async ({ page, isMobile }) => {
+  test.skip(isMobile, "mouse only");
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("./");
+  const start = await cactusAt(page);
+  await page.mouse.move(200, 300);
+  await page.waitForTimeout(600);
+  expect(await cactusAt(page)).toEqual(start);
+});
+
+test("Li’l Cactus waits when the mouse reaches him, so he can be clicked", async ({ page, isMobile }) => {
+  test.skip(isMobile, "mouse only");
+  await page.goto("./");
+  await page.mouse.move(300, 300);
+  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 318, p.y - 314); }, { timeout: 10000 }).toBeLessThan(3);
+  await page.mouse.move(340, 340); // onto him
+  const here = await cactusAt(page);
+  await page.waitForTimeout(500);
+  expect(await cactusAt(page)).toEqual(here);
+});
+
+test("tapping anywhere in the page body shows the touch sparkle, not only in the banner", async ({ page }) => {
+  await page.goto("./");
+  const h = await page.locator(".hero").boundingBox();
+  // The effect only lasts half a second, so count what gets added rather than racing it.
+  await page.evaluate(() => {
+    window.__fx = { ring: 0, spark: 0 };
+    new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => {
+      if (n.classList?.contains("tapring")) window.__fx.ring++;
+      if (n.classList?.contains("fx")) window.__fx.spark++;
+    }))).observe(document.body, { childList: true });
+  });
+  await page.mouse.click(200, h.y + h.height + 300);
+  await expect.poll(() => page.evaluate(() => window.__fx)).toEqual({ ring: 1, spark: 5 });
+  await expect(page.locator(".tapring")).toHaveCount(0, { timeout: 3000 });
+});
+
+test("sideways menus show a more-this-way arrow and note until they are scrolled", async ({ page, isMobile }) => {
+  test.skip(!isMobile, "the Forge menu fits on a wide screen");
+  await page.goto("./#forge");
+  const wrap = page.locator(".sh", { has: page.locator("#fnav") });
+  await expect(wrap).toHaveClass(/\br\b/);
+  await expect(wrap.locator(".sh-r")).toBeVisible();
+  await expect(wrap.locator(".sh-note")).toBeVisible();
+  await expect(wrap.locator(".sh-l")).toBeHidden();
+  await page.waitForTimeout(2000); // let the one-time peek finish
+  await wrap.locator(".sh-r").click();
+  await expect.poll(() => page.locator("#fnav").evaluate(e => e.scrollLeft)).toBeGreaterThan(50);
+  await expect(wrap.locator(".sh-note")).toBeHidden();
+  await expect(wrap.locator(".sh-l")).toBeVisible();
 });
