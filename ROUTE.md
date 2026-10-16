@@ -15,62 +15,62 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 | 7 | [#56 The Mana Orchards](#7-56) | Home | Crafting | opens a facility |
 | 8 | [#57 The Monster Corral](#8-57) | Home | Crafting | opens a facility, same land |
 | 9 | [#36 Reach for the Stars](#9-36) | Duma Desert | School | opens 3 new events |
-| 10 | [#54 Instruments 101](#10-54) | Home | Crafting | opens a facility |
-| 11 | [#2 The Little Sorcerers](#11-2) | Home | Bud & Lisa | opens 1 new event, same land |
-| 12 | [#9 The Murmuring Forest](#12-9) | Jungle | Faerie | opens 1 new event |
-| 13 | [#7 Two Torches](#13-7) | Gato Grottoes | Faerie | opens 1 new event, same arc |
-| 14 | [#45 Niccolo's Business Unusual: Part 2](#14-45) | Gato Grottoes | Niccolo | opens 1 new event, same land |
-| 15 | [#19 The Infernal Doll](#15-19) | Junkyard | Misc | opens 3 new events |
-| 16 | [#18 Daddy's Broom](#16-18) | Home | Bud & Lisa | protects 3 missable rules |
-| 17 | [#49 Li'l Cactus](#17-49) | Home | Bud & Lisa | protects 1 missable rule, same land |
-| 18 | [#10 The Gorgon Eye](#18-10) | Lake Kilma | Penguin | opens 1 new event |
-| 19 | [#30 The Spirits' Light](#19-30) | Lumina | Gilbert | protects 1 missable rule, opens 2 new events |
-| 20 | [#12 Teatime of Danger](#20-12) | Mindas Ruins | Misc | opens 2 new events |
-| 21 | [#14 Mine Your Own Business](#21-14) | Ulkan Mines | Misc | opens 2 new events, same arc |
-| 22 | [#41 The Fallen Emperor](#22-41) | Underworld | Dragon | opens 2 new events |
-| 23 | [#20 Diddle Had It!](#23-20) | Lumina | Diddle & Capella | protects 1 missable rule |
-| 24 | [#46 Niccolo's Business Unusual: Part 3](#24-46) | Lumina | Niccolo | opens 1 new event, same land |
-| 25 | [#47 Niccolo's Business Unusual: Part 4](#25-47) | Geo | Niccolo | opens 1 new event, same arc |
-| 26 | [#11 In Search of Faeries](#26-11) | Gato Grottoes | Faerie | opens 1 new event |
-| 27 | [#15 Pokiehl: Dream Teller](#27-15) | Ulkan Mines | Faerie | opens 1 new event, same arc |
-| 28 | [#61 Watts Drops the Hammer](#28-61) | Ulkan Mines | Misc | opens 1 new event, same land |
-| 29 | [#53 Path of the Blacksmith](#29-53) | Home | Crafting | opens a facility |
-| 30 | [#13 Star-Crossed Lovers](#30-13) | Gato Grottoes | Faerie | opens 1 new event |
-| 31 | [#17 Heaven's Gate](#31-17) | Gato Grottoes | Faerie | opens 1 new event, same land |
-| 32 | [#21 The Looking-Glass Tower](#32-21) | Tower of Leires | Jumi | opens 1 new event |
-| 33 | [#27 Summer Lovin'](#33-27) | Madora Beach | Penguin | opens 1 new event |
-| 34 | [#28 Drowned Dreams](#34-28) | Polpota Harbor | Jumi | opens 4 new events |
-| 35 | [#26 A Siren's Song](#35-26) | Lumina | Gilbert | opens 2 new events |
-| 36 | [#65 Gilbert: Love is Blind](#36-65) | Polpota Harbor | Gilbert | protects 1 missable rule, opens 1 new event, same arc |
-| 37 | [#58 Gilbert: School Amour](#37-58) | Geo | Gilbert | opens 2 new events, same arc |
-| 38 | [#31 The Lucky Clover](#38-31) | Domina | Jumi | opens 1 new event |
-| 39 | [#24 Cosmo](#39-24) | Home | Jumi | opens 1 new event, same arc |
-| 40 | [#22 The Two Pearls](#40-22) | Tower of Leires | Jumi | opens 1 new event, same arc |
-| 41 | [#32 Alexandrite](#41-32) | Domina | Jumi | opens 1 new event, same arc |
-| 42 | [#29 Fluorite](#42-29) | Geo | Jumi | opens 1 new event, same arc |
-| 43 | [#34 The Quiet Sea](#43-34) | SS Buccaneer | Penguin | opens 1 new event |
-| 44 | [#4 Where's Putty?](#44-4) | Ulkan Mines | Penguin | protects 1 missable rule, same arc |
-| 45 | [#38 The Guardian of Winds](#45-38) | Norn Peaks | Dragon | opens 1 new event |
-| 46 | [#60 Professor Bomb's Lab](#46-60) | Junkyard | Misc | opens 1 new event |
-| 47 | [#55 Golem Go Make 'em](#47-55) | Home | Crafting | opens a facility |
-| 48 | [#63 The Field Trip](#48-63) | Bone Fortress | School | opens 1 new event |
-| 49 | [#39 The Ghost of Nemesis](#49-39) | Bone Fortress | Dragon | opens 1 new event, same land |
-| 50 | [#64 Catchin' Lilipeas](#50-64) | White Forest | Misc | protects 1 missable rule, opens 1 new event |
-| 51 | [#16 Diddle Kidnapped!?](#51-16) | Domina | Diddle & Capella | protects 1 missable rule, opens 1 new event |
-| 52 | [#37 The Dragon Princess](#52-37) | White Forest | Dragon | opens 1 new event |
-| 53 | [#40 The Crimson Dragon](#53-40) | Underworld | Dragon | same arc |
-| 54 | [#25 Can't Look Back](#54-25) | Fieg Snowfields | School | next available |
-| 55 | [#35 The Treasure Map](#55-35) | SS Buccaneer | Penguin | opens 1 new event |
-| 56 | [#51 The Nordic Snowfield](#56-51) | SS Buccaneer | Penguin | same land |
-| 57 | [#52 Buried Treasure](#57-52) | SS Buccaneer | Penguin | same land |
-| 58 | [#33 The Teardrop Crystal](#58-33) | Geo | Jumi | next available |
-| 59 | [#48 Niccolo Calls It Quits?](#59-48) | Geo | Niccolo | same land |
-| 60 | [#59 Gilbert: Resume for Love](#60-59) | Geo | Gilbert | same land |
-| 61 | [#42 The Blessed Elixir](#61-42) | Gato Grottoes | Niccolo | next available |
-| 62 | [#43 Seeing Double](#62-43) | Domina | Misc | next available |
-| 63 | [#50 Rachel](#63-50) | Domina | Misc | same land |
-| 64 | [#67 Pee-Wee Birdie](#64-67) | Domina | Misc | same land |
-| 65 | [#66 The Wimpy Thugling](#65-66) | Duma Desert | Misc | same arc |
+| 10 | [#66 The Wimpy Thugling](#10-66) | Duma Desert | Misc | protects 1 missable rule, same land |
+| 11 | [#54 Instruments 101](#11-54) | Home | Crafting | opens a facility |
+| 12 | [#2 The Little Sorcerers](#12-2) | Home | Bud & Lisa | opens 1 new event, same land |
+| 13 | [#9 The Murmuring Forest](#13-9) | Jungle | Faerie | opens 1 new event |
+| 14 | [#7 Two Torches](#14-7) | Gato Grottoes | Faerie | opens 1 new event, same arc |
+| 15 | [#45 Niccolo's Business Unusual: Part 2](#15-45) | Gato Grottoes | Niccolo | opens 1 new event, same land |
+| 16 | [#19 The Infernal Doll](#16-19) | Junkyard | Misc | opens 3 new events |
+| 17 | [#18 Daddy's Broom](#17-18) | Home | Bud & Lisa | protects 3 missable rules |
+| 18 | [#49 Li'l Cactus](#18-49) | Home | Bud & Lisa | protects 1 missable rule, same land |
+| 19 | [#10 The Gorgon Eye](#19-10) | Lake Kilma | Penguin | opens 1 new event |
+| 20 | [#30 The Spirits' Light](#20-30) | Lumina | Gilbert | protects 1 missable rule, opens 2 new events |
+| 21 | [#12 Teatime of Danger](#21-12) | Mindas Ruins | Misc | opens 2 new events |
+| 22 | [#14 Mine Your Own Business](#22-14) | Ulkan Mines | Misc | opens 2 new events, same arc |
+| 23 | [#61 Watts Drops the Hammer](#23-61) | Ulkan Mines | Misc | opens 1 new event, same land |
+| 24 | [#53 Path of the Blacksmith](#24-53) | Home | Crafting | opens a facility |
+| 25 | [#11 In Search of Faeries](#25-11) | Gato Grottoes | Faerie | opens 1 new event |
+| 26 | [#15 Pokiehl: Dream Teller](#26-15) | Ulkan Mines | Faerie | opens 1 new event, same arc |
+| 27 | [#13 Star-Crossed Lovers](#27-13) | Gato Grottoes | Faerie | opens 1 new event, same arc |
+| 28 | [#17 Heaven's Gate](#28-17) | Gato Grottoes | Faerie | opens 1 new event, same land |
+| 29 | [#21 The Looking-Glass Tower](#29-21) | Tower of Leires | Jumi | opens 1 new event |
+| 30 | [#27 Summer Lovin'](#30-27) | Madora Beach | Penguin | opens 1 new event |
+| 31 | [#28 Drowned Dreams](#31-28) | Polpota Harbor | Jumi | opens 3 new events |
+| 32 | [#26 A Siren's Song](#32-26) | Lumina | Gilbert | opens 2 new events |
+| 33 | [#65 Gilbert: Love is Blind](#33-65) | Polpota Harbor | Gilbert | protects 1 missable rule, opens 1 new event, same arc |
+| 34 | [#58 Gilbert: School Amour](#34-58) | Geo | Gilbert | protects 1 missable rule, opens 3 new events, same arc |
+| 35 | [#31 The Lucky Clover](#35-31) | Domina | Jumi | opens 1 new event |
+| 36 | [#24 Cosmo](#36-24) | Home | Jumi | opens 1 new event, same arc |
+| 37 | [#22 The Two Pearls](#37-22) | Tower of Leires | Jumi | opens 1 new event, same arc |
+| 38 | [#32 Alexandrite](#38-32) | Domina | Jumi | opens 1 new event, same arc |
+| 39 | [#29 Fluorite](#39-29) | Geo | Jumi | opens 1 new event, same arc |
+| 40 | [#34 The Quiet Sea](#40-34) | SS Buccaneer | Penguin | opens 1 new event |
+| 41 | [#4 Where's Putty?](#41-4) | Ulkan Mines | Penguin | protects 2 missable rules, same arc |
+| 42 | [#41 The Fallen Emperor](#42-41) | Underworld | Dragon | opens 2 new events |
+| 43 | [#20 Diddle Had It!](#43-20) | Lumina | Diddle & Capella | protects 1 missable rule |
+| 44 | [#46 Niccolo's Business Unusual: Part 3](#44-46) | Lumina | Niccolo | opens 1 new event, same land |
+| 45 | [#47 Niccolo's Business Unusual: Part 4](#45-47) | Geo | Niccolo | opens 1 new event, same arc |
+| 46 | [#38 The Guardian of Winds](#46-38) | Norn Peaks | Dragon | opens 1 new event |
+| 47 | [#60 Professor Bomb's Lab](#47-60) | Junkyard | Misc | opens 1 new event |
+| 48 | [#55 Golem Go Make 'em](#48-55) | Home | Crafting | opens a facility |
+| 49 | [#63 The Field Trip](#49-63) | Bone Fortress | School | opens 1 new event |
+| 50 | [#39 The Ghost of Nemesis](#50-39) | Bone Fortress | Dragon | opens 1 new event, same land |
+| 51 | [#64 Catchin' Lilipeas](#51-64) | White Forest | Misc | protects 1 missable rule, opens 1 new event |
+| 52 | [#16 Diddle Kidnapped!?](#52-16) | Domina | Diddle & Capella | protects 1 missable rule, opens 1 new event |
+| 53 | [#37 The Dragon Princess](#53-37) | White Forest | Dragon | opens 1 new event |
+| 54 | [#40 The Crimson Dragon](#54-40) | Underworld | Dragon | same arc |
+| 55 | [#25 Can't Look Back](#55-25) | Fieg Snowfields | School | next available |
+| 56 | [#35 The Treasure Map](#56-35) | SS Buccaneer | Penguin | opens 1 new event |
+| 57 | [#51 The Nordic Snowfield](#57-51) | SS Buccaneer | Penguin | same land |
+| 58 | [#52 Buried Treasure](#58-52) | SS Buccaneer | Penguin | same land |
+| 59 | [#33 The Teardrop Crystal](#59-33) | Geo | Jumi | next available |
+| 60 | [#48 Niccolo Calls It Quits?](#60-48) | Geo | Niccolo | same land |
+| 61 | [#59 Gilbert: Resume for Love](#61-59) | Geo | Gilbert | same land |
+| 62 | [#42 The Blessed Elixir](#62-42) | Gato Grottoes | Niccolo | next available |
+| 63 | [#43 Seeing Double](#63-43) | Domina | Misc | next available |
+| 64 | [#50 Rachel](#64-50) | Domina | Misc | same land |
+| 65 | [#67 Pee-Wee Birdie](#65-67) | Domina | Misc | same land |
 | 66 | [#44 The Cage of Dreams](#66-44) | Home | Mana | next available |
 | 67 | [#62 The Seven Wisdoms](#67-62) | Home | Bud & Lisa | opens 1 new event, same land |
 | 68 | [#68 The Legend of Mana](#68-68) | Tree of Mana | Mana | next available |
@@ -241,8 +241,23 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Lower Left, Up, through the students, Left, Left
 5. Tell Kathinja you are ready and beat the two Axe Beaks.
 
-<a id="10-54"></a>
-## 10. #54 Instruments 101
+<a id="10-66"></a>
+## 10. #66 The Wimpy Thugling
+
+- **Land:** Duma Desert · **Arc:** Misc
+- **Starts:** Tikkle. Duma Desert: go Right
+- **Needs:** Reach for the Stars (#36); Duma Desert at Dryad level 3 (one source also wants The Blessed Elixir, #42, done)
+- **Gives:** None
+- **Ends:** Agree to help Tikkle, reach map area 23 and beat Kima
+- **Warning:** Remove pets, golems and NPCs from your party. Keep one Monster Corral slot free.
+
+1. Make sure you have no pet with you, 4 or fewer pets in your ranch and no NPCs in your party.
+2. Enter the Duma Desert, go Right and talk to Tikkle. Agree to help him.
+3. Work your way to area 23 on the map.
+4. Beat Kima.
+
+<a id="11-54"></a>
+## 11. #54 Instruments 101
 
 - **Land:** Home · **Arc:** Crafting
 - **Starts:** None (enter your workshop). Auto-starts when you enter the Workshops area to the left of Home
@@ -255,8 +270,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 2. Find the student who built your Instrument Workshop and follow the tutorial.
 3. Learn how to catch Spirits and get Coins to end the event.
 
-<a id="11-2"></a>
-## 11. #2 The Little Sorcerers
+<a id="12-2"></a>
+## 12. #2 The Little Sorcerers
 
 - **Land:** Home · **Arc:** Bud & Lisa
 - **Starts:** Pelican. Starts when you leave your house after your first event, then enter Domina
@@ -269,8 +284,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 3. Go to the upper left of the Outskirts. There is a pumpkin patch and two young sorcerers.
 4. Beat the two kids and dodge their magic. Afterwards tell Bud you want him to be your apprentice.
 
-<a id="12-9"></a>
-## 12. #9 The Murmuring Forest
+<a id="13-9"></a>
+## 13. #9 The Murmuring Forest
 
 - **Land:** Jungle · **Arc:** Faerie
 - **Starts:** Flowerling. Jungle: use the Psychic Service to warp to the Courtyard of Rain
@@ -284,8 +299,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 4. Go Down to the save room, then Lower Left. Watch Escad beat up the faeries, talk to him and keep going Left.
 5. Tell the Punkmaster you want to fight and beat him.
 
-<a id="13-7"></a>
-## 13. #7 Two Torches
+<a id="14-7"></a>
+## 14. #7 Two Torches
 
 - **Land:** Gato Grottoes · **Arc:** Faerie
 - **Starts:** Daena. Gato Grottoes: Temple of Healing, then the Dreamweaving Room at the far back
@@ -299,8 +314,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 4. Exit to the Gato Grottoes map and head for the Caves. Talk to Escad.
 5. Tell Daena to take you to the Sealed Room and beat Spriggan.
 
-<a id="14-45"></a>
-## 14. #45 Niccolo's Business Unusual: Part 2
+<a id="15-45"></a>
+## 15. #45 Niccolo's Business Unusual: Part 2
 
 - **Land:** Gato Grottoes · **Arc:** Niccolo
 - **Starts:** Niccolo. Gato Grottoes item shop: agree to help him
@@ -315,8 +330,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 3. Niccolo collects items here. Leave by the Right path.
 4. Return to the Waterfall area and stand on the log for 30 to 60 seconds. Then take the left path so a Faerie appears and talk to it.
 
-<a id="15-19"></a>
-## 15. #19 The Infernal Doll
+<a id="16-19"></a>
+## 16. #19 The Infernal Doll
 
 - **Land:** Junkyard · **Arc:** Misc
 - **Starts:** None (enter the Junkyard). Place the Broken Doll directly above the Ulkan Mines to create the Junkyard. The Jack-in-the-Box at the start gives you the route
@@ -333,8 +348,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 
 > This quest never needs Geo. You can keep the Tome of Magic unplaced. Placing it directly left of the Jungle creates Geo and its level 4 shop; read Forge, Items, first, because Geo's café can make Love is Blind (#65) vanish and your first visit starts Li'l Cactus (#49).
 
-<a id="16-18"></a>
-## 16. #18 Daddy's Broom
+<a id="17-18"></a>
+## 17. #18 Daddy's Broom
 
 - **Land:** Home · **Arc:** Bud & Lisa
 - **Starts:** Bud. Home: the cactus is missing from its pot. Talk to Lisa on the ground floor
@@ -349,8 +364,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Upper Right, Lower Right, Upper Right, Right, Upper Left, Right, Right
 4. Beat the Gremlin.
 
-<a id="17-49"></a>
-## 17. #49 Li'l Cactus
+<a id="18-49"></a>
+## 18. #49 Li'l Cactus
 
 - **Land:** Home · **Arc:** Bud & Lisa
 - **Starts:** Meimei. Home: come downstairs and find Bud on the floor (this always happens before Cosmo), then see the Domina fortune teller
@@ -370,8 +385,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 8. Enter Domina, go to the Outskirts of Domina and talk to the Pelican.
 9. Go home and take the Cactus out of the mailbox.
 
-<a id="18-10"></a>
-## 18. #10 The Gorgon Eye
+<a id="19-10"></a>
+## 19. #10 The Gorgon Eye
 
 - **Land:** Lake Kilma · **Arc:** Penguin
 - **Starts:** None (enter Lake Kilma). Place the Stone Eye directly above the Tower of Leires to create Lake Kilma. Talk to the penguins
@@ -385,8 +400,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Left, Left, Upper Right, Right, Lower Right, Right (to the save room), Upper Right, Right, Upper Right, Upper Left, Left, then jump off the cliff
 4. Beat the Gorgon's Eye.
 
-<a id="19-30"></a>
-## 19. #30 The Spirits' Light
+<a id="20-30"></a>
+## 20. #30 The Spirits' Light
 
 - **Land:** Lumina · **Arc:** Gilbert
 - **Starts:** Monique. Place the Firefly Lamp directly left of Mekiv Caverns to create Lumina. Monique's Lamp Shop is in the Shopping District (north, upper right)
@@ -404,8 +419,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 
 > Some guides call this event 'Faeries' Light'. The dudbear answers come from Legend of Mana Info.
 
-<a id="20-12"></a>
-## 20. #12 Teatime of Danger
+<a id="21-12"></a>
+## 21. #12 Teatime of Danger
 
 - **Land:** Mindas Ruins · **Arc:** Misc
 - **Starts:** None (enter Mindas Ruins). Place the Ancient Tablet directly right of Home to create the Mindas Ruins. Starts on entering; talk to Duelle (the onion)
@@ -420,10 +435,10 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 5. Talk to Teapo. Count Dovula comes down and the boss fight begins.
 6. After the fight you return to the entrance for a scene between Teapo and the onion.
 
-> The two walkthroughs I found give different move-by-move directions in these ruins (Legend of Mana Info says its instructions were recently overhauled), so go by what is on screen.
+> The two walkthroughs used here give different move-by-move directions in these ruins (Legend of Mana Info says its instructions were recently overhauled), so go by what is on screen.
 
-<a id="21-14"></a>
-## 21. #14 Mine Your Own Business
+<a id="22-14"></a>
+## 22. #14 Mine Your Own Business
 
 - **Land:** Ulkan Mines · **Arc:** Misc
 - **Starts:** Pokiehl. Place the Bottled Spirit directly right of the Mindas Ruins to create the Ulkan Mines. Watts' Workshop is the top room
@@ -438,8 +453,315 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Lower Left corner, Down the stairs, Upper Left three times, Upper Left, Up the stairs, then Down the path
 5. Talk to Watts three times. A monster attacks; beat it.
 
-<a id="22-41"></a>
-## 22. #41 The Fallen Emperor
+<a id="23-61"></a>
+## 23. #61 Watts Drops the Hammer
+
+- **Land:** Ulkan Mines · **Arc:** Misc
+- **Starts:** Watts. Ulkan Mines, his workshop: he talks about his lost hammer
+- **Needs:** Mine Your Own Business (#14)
+- **Gives:** None
+- **Ends:** Ride the Dudbear Express to Digger's Hideout, pick up the Hammer and return it to Watts
+- **Warning:** Cannot start while Pokiehl: Dream Teller (#15) is active.
+
+1. Enter the Ulkan Mines, go into Watts' Workshop and talk to him about his lost hammer.
+2. Return to the entrance of the Mines and talk to the pole to ride the Dudbear Express to Digger's Hideout.
+3. Pick up the Hammer lying on the ground and leave the room.
+4. Use the map to find your way back to Watts, and give him the hammer.
+
+<a id="24-53"></a>
+## 24. #53 Path of the Blacksmith
+
+- **Land:** Home · **Arc:** Crafting
+- **Starts:** None (enter your workshop). Auto-starts when you enter the Workshops area to the left of Home
+- **Needs:** Watts Drops the Hammer (#61)
+- **Gives:** None
+- **Ends:** Ask Watts every question in his new blacksmith room
+- **Warning:** Talk to Li'l Cactus right after.
+
+1. Go to the Workshops Area to the left of your Home.
+2. Find Watts, who is building a blacksmith room.
+3. Ask him every question to end the event.
+
+<a id="25-11"></a>
+## 25. #11 In Search of Faeries
+
+- **Land:** Gato Grottoes · **Arc:** Faerie
+- **Starts:** Matilda. Gato Grottoes Dreamweaving Room: agree to look for Daena
+- **Needs:** Two Torches (#7)
+- **Gives:** None
+- **Ends:** Follow Tote through Lake Kilma to Daena and beat the Boreal Hound
+- **Warning:** Agree to help Matilda. Refusing loses #11, #13, #15 and #17.
+
+1. Enter Gato Grottoes, go to the Dreamweaving Room and talk to Matilda. Agree to look for Daena.
+2. Enter Lake Kilma and go to area 16 to reach Tote.
+   - Path: Left, Left, Upper Right, Right, Lower Right, Right (to the save room), Upper Right, Right, Upper Right, Upper Left, Left
+3. Talk to Tote and follow him.
+   - Path: Lower Right, Lower Right (talk to Daena), Lower Left, Down, Left (Daena attacks Irwin), Lower Left, Left
+4. Beat the Boreal Hound.
+
+<a id="26-15"></a>
+## 26. #15 Pokiehl: Dream Teller
+
+- **Land:** Ulkan Mines · **Arc:** Faerie
+- **Starts:** Pokiehl. Ulkan Mines (Kid Escad appears)
+- **Needs:** In Search of Faeries (#11); Escad not in party
+- **Gives:** None
+- **Ends:** Choose Escad or Daena at the end of the dream. Choosing Daena makes Escad attack you
+- **Warning:** Fails if you leave the mines during the quest.
+
+1. Enter the Ulkan Mines.
+   - Path: Right, Lower Right
+2. Talk to Pokiehl and tell him you are in a hurry. He shows you a dream world.
+3. In the dream world.
+   - Path: Right, Lower Right, Right (to the stairs), keep going Right to another set of stairs and go down
+4. After the conversation you leave the dream world. Choose between Escad and Daena.
+
+> Do not leave the Mines during this event or it fails.
+
+<a id="27-13"></a>
+## 27. #13 Star-Crossed Lovers
+
+- **Land:** Gato Grottoes · **Arc:** Faerie
+- **Starts:** Matilda. Gato Grottoes Dreamweaving Room: a long scene takes everyone to the Mindas Ruins
+- **Needs:** Pokiehl: Dream Teller (#15) and Teatime of Danger (#12); Escad not in party
+- **Gives:** None
+- **Ends:** Pay Niccolo to take you to the Temple of Winds, climb the stairs, choose Escad or Daena and fight the one you did not choose
+
+1. Enter Gato Grottoes and go to the Dreamweaving Room. A long scene plays and everyone is taken to the Mindas Ruins.
+2. Cross the ruins.
+   - Path: Right, Right, Right, then Left (above ground)
+3. Go through the Gates and set both Flowerlings on the Right. Go Right and go through the Gates again.
+4. Pay Niccolo to take you to the Temple of Winds, then go up the stairs.
+5. At the top choose Escad or Daena. You then fight the one you did not choose.
+
+<a id="28-17"></a>
+## 28. #17 Heaven's Gate
+
+- **Land:** Gato Grottoes · **Arc:** Faerie
+- **Starts:** Matilda. Gato Grottoes Dreamweaving Room: the partner you sided with earlier must join you, then she gives you the Brooch of Love
+- **Needs:** Star-Crossed Lovers (#13). Do Daddy's Broom (#18) first
+- **Gives:** Brooch of Love
+- **Ends:** Place the Brooch of Love to create Lucemia, go to area 30 and beat Irwin
+- **Warning:** Ends the Faerie arc.
+
+1. Enter Gato Grottoes and go to the Dreamweaving Room. Whoever you sided with in earlier events must join your party; after the scene talk to them (Daena in the example).
+2. Talk to Matilda to get the Brooch of Love.
+3. Place the Brooch of Love directly right of the Jungle to create Lucemia, then enter.
+4. Go to area 30 on the Lucemia map and beat Irwin.
+
+<a id="29-21"></a>
+## 29. #21 The Looking-Glass Tower
+
+- **Land:** Tower of Leires · **Arc:** Jumi
+- **Starts:** Pearl. Place the Moon's Mirror directly above Gato Grottoes to create the Tower of Leires. She waits at the entrance
+- **Needs:** Do The Lost Princess (#5) first; Elazul not in party
+- **Gives:** Frozen Heart, Pirate's Hook
+- **Ends:** Take Pearl to the 11th floor and beat the Iron Centaur, then escort her down and beat the Jewel Beast on the bottom floor
+
+1. Place the Moon's Mirror directly above Gato Grottoes to create the Tower of Leires, then enter. Talk to Pearl in the first area and take her into the tower.
+2. Climb to the 11th floor. Two rooms with teleport crystals help.
+   - Path: Right, Left, Left (2nd floor), Right, Upstairs (3rd), Left, Upstairs (4th), Right, Upstairs (5th), Down, Left, Upstairs (6th), Left, Upstairs (7th), Right, Upstairs (8th), Lower Left, enter the large door, search the crystal and leave the room, Left, Upstairs, follow the hall to the Room of Fate, enter
+3. On the 11th floor beat the Iron Centaur.
+4. Escort Pearl out: fall off the railing on the 11th floor to land on the 5th floor, use the stairs down, and leave through the left or right side of the foyer near the top of the screen.
+5. On the bottom floor beat the Jewel Beast. It drops the Frozen Heart.
+
+<a id="30-27"></a>
+## 30. #27 Summer Lovin'
+
+- **Land:** Madora Beach · **Arc:** Penguin
+- **Starts:** None (enter Madora Beach). Place the Torch of Coral directly above Lake Kilma to create Madora Beach. Starts on entering
+- **Needs:** Madora Beach placed (Torch of Coral)
+- **Gives:** Rusted Anchor, Moon's Mirror
+- **Ends:** Step on every crab (20 or more), beat Fullmetal Haggar in the cave, then talk to the penguin (Valerie)
+- **Warning:** Talk to Valerie before leaving or you lose the rewards.
+
+1. Place the Torch of Coral directly above Lake Kilma to create Madora Beach, then enter.
+2. Watch the conversation, then step on every crab. You need at least 20 for Buried Treasure later.
+3. Go to Fullmetal Haggar.
+   - Path: Right, Right, Right (into the cave), Lower Right, Upper Right, Upper Right, Upper Left, Left (into the cave), Upper Left, Lower Right
+4. Beat him, then talk to the penguin (Valerie) before you leave.
+
+<a id="31-28"></a>
+## 31. #28 Drowned Dreams
+
+- **Land:** Polpota Harbor · **Arc:** Jumi
+- **Starts:** Hotel employee. Right side of the hotel reception
+- **Needs:** Polpota Harbor placed (Rusted Anchor). Do Flame of Hope (#23) first
+- **Gives:** Pirate's Hook, Bottled Spirit
+- **Ends:** Watch the scene with Thoma in the hotel room on the left
+
+1. Enter Polpota Harbor, go Left into the mall and talk to the Flowerling and the Mermaid.
+2. Go Left to the beach and talk to Thoma.
+3. Go to the town entrance, up to the hotel and talk to the manager. Agree to help.
+4. Go to the Lower Right stairway and talk to the Inspector. Follow the path to the restaurant and talk to the people there.
+5. Back on the beach talk to the Soldier.
+6. At the hotel entrance there is a Basket Fish. Talk to the Inspector and ask him every question until he walks away.
+7. Go to the restaurant to see Thoma, then back to the hotel entrance to see Thoma and Boyd speak.
+8. Go into the hotel, take the room on the left and talk to Thoma.
+
+<a id="32-26"></a>
+## 32. #26 A Siren's Song
+
+- **Land:** Lumina · **Arc:** Gilbert
+- **Starts:** Soldiers (Lumina tavern alley). Lumina: western tavern, then the alley
+- **Needs:** Drowned Dreams (#28), The Spirits' Light (#30), Summer Lovin' (#27)
+- **Gives:** None
+- **Ends:** Trick the mermaid at Madora Beach, run through the cage gate and beat Tropicallo
+
+1. In Lumina go to the tavern in the western section and enter the alley. Talk to the soldiers, then go to the Lamp Shop and talk to the soldier there.
+2. Go to Polpota Harbor. Take the path between the hotel and the restaurant and talk to Monique. Go to the beach and talk to the soldiers.
+3. Enter Madora Beach.
+   - Path: Left, Upper Left, Upper Left, Left, then talk to the Mermaid
+4. Walk to the right side of the screen and wait for the mermaid to turn into a bubble. The moment it starts to morph, run over to the cage and walk through the gate.
+5. Beat Tropicallo.
+
+<a id="33-65"></a>
+## 33. #65 Gilbert: Love is Blind
+
+- **Land:** Polpota Harbor · **Arc:** Gilbert
+- **Starts:** Elle. Madora Beach lighthouse: she joins you
+- **Needs:** A Siren's Song (#26)
+- **Gives:** None
+- **Ends:** Take Elle to Gilbert at the Polpota Harbor restaurant, then beat the Orc on the SS Buccaneer top deck
+- **Warning:** Lost if you enter Geo's café first, which triggers School Amour (#58).
+
+1. Enter Madora Beach, go to the lighthouse and have Elle join you.
+2. Enter Polpota Harbor and take her to the restaurant. Talk to Gilbert.
+3. Go back to the Madora Beach lighthouse and pick her up a second time. As you leave, Gilbert takes her.
+4. Enter the SS Buccaneer to see them on the top deck. Go to the Captain's Quarters and talk to the Captain.
+5. Go back to the top deck and beat the Orc.
+
+<a id="34-58"></a>
+## 34. #58 Gilbert: School Amour
+
+- **Land:** Geo · **Arc:** Gilbert
+- **Starts:** Gilbert. Geo: Fruit Parlor Cafe in the bar area on the left. Watch him talk with Miss Kathinja, then offer to help
+- **Needs:** The Spirits' Light (#30). Do Love is Blind (#65) first
+- **Gives:** None
+- **Ends:** Convince the students at the Cafe, Mall Avenue, Magic University, Library and bar, with the Item Shop student last
+
+1. Enter Geo and go to the bar area on the left of town (the Fruit Parlor Cafe). Watch Gilbert talk with Miss Kathinja, then talk to Gilbert and offer to help.
+2. Talk to the three kids in the cafe and tell them what they want to hear. Talk to them again; they should say they will return to school. If not, talk again and take the other choice.
+3. Go to Mall Avenue on the right side of Geo. Talk to the two kids, leave by the Upper Path and go to the Magic University. Talk to the two kids in the courtyard and the one in the entrance hall.
+4. Go to the Library and talk to the two kids there.
+5. Go back to the mall area and into the bar for two more kids.
+6. Go to the Item Shop (Instrument Shop) and talk to the kids there. One of them only returns to school after everyone else is convinced.
+7. The Palace of Arts has no students. When everyone has agreed, a final scene plays outside Geo's walls.
+
+> The guides do not agree on a total number of students, so work through each place listed instead of counting.
+
+<a id="35-31"></a>
+## 35. #31 The Lucky Clover
+
+- **Land:** Domina · **Arc:** Jumi
+- **Starts:** Elazul. Domina bar (one earlier source says the inn)
+- **Needs:** Flame of Hope (#23), Drowned Dreams (#28), Looking-Glass Tower (#21); also School Amour (#58) if #30 is done
+- **Gives:** Jade Egg, Frozen Heart
+- **Ends:** Find the three cores in Geo, then fight the Jewel Beast in the battle arena below Kristie's place
+
+1. In Domina go to the bar and talk to Elazul. Help him look for his friend. Leave and tell Pearl the bar is also dangerous; she goes to your Home.
+2. Enter Geo and go to the Academy of Magic to see Esmeralda. On a day that is not Gnome or Undine Day she is in the Academy; on Gnome or Undine Day she is in the Library. Change the day to find her in the classroom, change it again to see her in the Library, then offer to help her find the cores.
+3. Talk to Alex at the Jewelry Shop. Find three cores: (1) Mephianse's office in the Academy of Magic, on Dryad Day. (2) The basement of Kristie's place, the Diana statue. (3) Teapo at the Cafe: ask behind the counter about the core, exit to the city map and return, and Teapo hands it over.
+4. Go to the Jewelry Shop so Elazul joins you. Return to Kristie's place and talk to Diana, the statue in the basement. Head downstairs to the battle arena.
+5. Beat the Jewel Beast.
+
+<a id="36-24"></a>
+## 36. #24 Cosmo
+
+- **Land:** Home · **Arc:** Jumi
+- **Starts:** Elazul. Home: he is outside your front door. Tell him you have not seen Pearl and he joins you
+- **Needs:** Lucky Clover (#31). Clear Li'l Cactus (#49) first
+- **Gives:** None
+- **Ends:** Talk to the duck in Mekiv Caverns and beat the Jewel Beast at the boss area
+- **Warning:** Li'l Cactus (#49) is lost if you start this first.
+
+1. Leave your front door. Elazul is waiting. Tell him you have not seen Pearl and have him join you.
+2. Enter Mekiv Caverns and talk to the duck.
+3. Work through the caverns to the boss area (marked on the map) and beat the Jewel Beast.
+
+<a id="37-22"></a>
+## 37. #22 The Two Pearls
+
+- **Land:** Tower of Leires · **Arc:** Jumi
+- **Starts:** Elazul. Home: he is in your bed. Leave and return until he goes, then meet him at the Tower of Leires
+- **Needs:** Cosmo (#24)
+- **Gives:** None
+- **Ends:** Take Elazul to the Room of Fate on the 11th floor and fight Lady Blackpearl with him
+
+1. Talk to Elazul in your bed. Go downstairs, come back and talk to him again. Repeat until he leaves your home.
+2. Enter the Tower of Leires and offer to help Elazul.
+3. Climb to the 11th floor and the Room of Fate (same route as The Looking-Glass Tower).
+   - Path: Right, Left, Left (2nd floor), Right, Upstairs (3rd), Left, Upstairs (4th), Right, Upstairs (5th), Down, Left, Upstairs (6th), Left, Upstairs (7th), Right, Upstairs (8th), Lower Left, enter the large door, search the crystal and leave the room, Left, Upstairs, follow the hall to the Room of Fate, enter
+4. Agree to help Elazul and beat Lady Blackpearl.
+
+<a id="38-32"></a>
+## 38. #32 Alexandrite
+
+- **Land:** Domina · **Arc:** Jumi
+- **Starts:** Elazul. Domina bar: he asks you to take Pearl to Geo
+- **Needs:** The Two Pearls (#22)
+- **Gives:** None
+- **Ends:** Find Diana missing, go to the Underground Battle Arena and finish there
+
+1. In Domina go to the bar and talk to Elazul. Agree to take Pearl to Geo.
+2. Enter Geo, go to Kristie's place and talk to Diana. Tell Pearl everything is okay, then talk to Kristie.
+3. Collect 3 keys, in this order: Mephianse's office in the Academy of Magic, the City's gates, and the Instrument Shop.
+4. Return to Kristie's place. Diana is missing. Go to the Underground Battle Arena to find her.
+
+<a id="39-29"></a>
+## 39. #29 Fluorite
+
+- **Land:** Geo · **Arc:** Jumi
+- **Starts:** Florina. Geo Jewelry Shop: it takes you to Pandora's Box. Talk to Florina to enter the dream world
+- **Needs:** Alexandrite (#32) and Reach for the Stars (#36)
+- **Gives:** None
+- **Ends:** Cross the dream dungeon and beat the boss at the end
+
+1. Enter Geo and go to the Jewelry Shop. This takes you to Pandora's Box. Talk to Florina to enter another dream world.
+2. Pay Niccolo when you see him.
+3. Cross the dream.
+   - Path: Down, Left, Upper Right, Upper Right (Elazul and Pearl talk), talk to Elazul and go Upper Left, Left (Elazul and Pearl talk), Upper Left, Upper Left
+4. Beat the boss at the end.
+
+<a id="40-34"></a>
+## 40. #34 The Quiet Sea
+
+- **Land:** SS Buccaneer · **Arc:** Penguin
+- **Starts:** Ramtieger. Place the Pirate's Hook directly above Madora Beach to create the SS Buccaneer. Tell him 'South, East, East'
+- **Needs:** SS Buccaneer placed (Pirate's Hook)
+- **Gives:** Medallion, Frozen Heart
+- **Ends:** Get the bottle from the barrel below the Forecastle Deck, then beat Gova on the top deck
+
+1. Place the Pirate's Hook directly above Madora Beach to create the SS Buccaneer, then enter.
+2. Find Ramtieger.
+   - Path: Left, Down, then the second door from the end on the bottom wall
+3. Talk to Ramtieger and choose 'South, East, East'.
+4. Return to the top deck and talk to the Penguin. Leave and come straight back: he has a bottle and a ghost escapes. Talk to the Penguin again so he leaves.
+5. Go to the Captain's Quarters and talk to the Captain at the top of the screen.
+6. Go to the Forecastle Deck and take the stairs down. Enter the left door on the top wall, go downstairs and search the barrel.
+7. Tell the figure there is a pretty girl and keep talking until he gives you the bottle.
+8. Return to the top deck and beat Gova.
+
+<a id="41-4"></a>
+## 41. #4 Where's Putty?
+
+- **Land:** Ulkan Mines · **Arc:** Penguin
+- **Starts:** None (enter Ulkan Mines). Ulkan Mines: enter with a partner and ride the Dudbear Express to hear about Putty
+- **Needs:** Mine Your Own Business (#14) and The Quiet Sea (#34) started: #4 will not start until you start The Quiet Sea. SS Buccaneer and Polpota Harbor placed
+- **Gives:** None
+- **Ends:** Cross the SS Buccaneer to Polpota Harbor and watch the scene on the beach
+- **Warning:** Missed if you clear both Catchin' Lilipeas (#64) and Diddle Had It! (#20) first.
+
+1. Bring a partner into the Ulkan Mines and ride the Dudbear Express. You hear that Putty has disappeared.
+2. Leave the mines.
+   - Path: Down, Left, Upper Left, Up at the statue, Upper Right, Upper Right, Upper Left, Left
+3. Enter the SS Buccaneer.
+   - Path: Left, Down, Downstairs, Left Door, Downstairs, Left Door, Downstairs
+4. Search the moving barrel, then talk to the Captain so he lets you leave the ship.
+5. Enter Polpota Harbor and go to the beach to find Putty.
+
+<a id="42-41"></a>
+## 42. #41 The Fallen Emperor
 
 - **Land:** Underworld · **Arc:** Dragon
 - **Starts:** Larc. Enter the Underworld with no NPC in party
@@ -456,8 +778,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Lower Left, Lower Left, Right to the second doorway, Right, Right, first doorway
 6. Beat Hitodama.
 
-<a id="23-20"></a>
-## 23. #20 Diddle Had It!
+<a id="43-20"></a>
+## 43. #20 Diddle Had It!
 
 - **Land:** Lumina · **Arc:** Diddle & Capella
 - **Starts:** Diddle & Capella. Lumina tavern (western section)
@@ -474,8 +796,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 5. Beat Ape Mummy.
 6. Afterwards do not enter Domina. Go straight home.
 
-<a id="24-46"></a>
-## 24. #46 Niccolo's Business Unusual: Part 3
+<a id="44-46"></a>
+## 44. #46 Niccolo's Business Unusual: Part 3
 
 - **Land:** Lumina · **Arc:** Niccolo
 - **Starts:** Niccolo. Lumina Shopping District item shop: agree to go with him
@@ -497,8 +819,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 
 > Do not enter your house during this event or it fails. Sources differ on the start: two say the Shopping District item shop, StrategyWiki says Heartbreaker Jessica's Gem Shop via the dot on the right of the Lumina map. Legend of Mana Info says its own ruins directions need an overhaul, so go by the screens.
 
-<a id="25-47"></a>
-## 25. #47 Niccolo's Business Unusual: Part 4
+<a id="45-47"></a>
+## 45. #47 Niccolo's Business Unusual: Part 4
 
 - **Land:** Geo · **Arc:** Niccolo
 - **Starts:** Niccolo. Geo bar: have him join you
@@ -513,315 +835,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 4. Give him a Gator Skin. If you do not have one, talk to Miss Yuka at the Domina inn, then return to the workshop.
 5. Re-enter the workshop to end the event.
 
-<a id="26-11"></a>
-## 26. #11 In Search of Faeries
-
-- **Land:** Gato Grottoes · **Arc:** Faerie
-- **Starts:** Matilda. Gato Grottoes Dreamweaving Room: agree to look for Daena
-- **Needs:** Two Torches (#7)
-- **Gives:** None
-- **Ends:** Follow Tote through Lake Kilma to Daena and beat the Boreal Hound
-- **Warning:** Agree to help Matilda. Refusing loses #11, #13, #15 and #17.
-
-1. Enter Gato Grottoes, go to the Dreamweaving Room and talk to Matilda. Agree to look for Daena.
-2. Enter Lake Kilma and go to area 16 to reach Tote.
-   - Path: Left, Left, Upper Right, Right, Lower Right, Right (to the save room), Upper Right, Right, Upper Right, Upper Left, Left
-3. Talk to Tote and follow him.
-   - Path: Lower Right, Lower Right (talk to Daena), Lower Left, Down, Left (Daena attacks Irwin), Lower Left, Left
-4. Beat the Boreal Hound.
-
-<a id="27-15"></a>
-## 27. #15 Pokiehl: Dream Teller
-
-- **Land:** Ulkan Mines · **Arc:** Faerie
-- **Starts:** Pokiehl. Ulkan Mines (Kid Escad appears)
-- **Needs:** In Search of Faeries (#11); Escad not in party
-- **Gives:** None
-- **Ends:** Choose Escad or Daena at the end of the dream. Choosing Daena makes Escad attack you
-- **Warning:** Fails if you leave the mines during the quest.
-
-1. Enter the Ulkan Mines.
-   - Path: Right, Lower Right
-2. Talk to Pokiehl and tell him you are in a hurry. He shows you a dream world.
-3. In the dream world.
-   - Path: Right, Lower Right, Right (to the stairs), keep going Right to another set of stairs and go down
-4. After the conversation you leave the dream world. Choose between Escad and Daena.
-
-> Do not leave the Mines during this event or it fails.
-
-<a id="28-61"></a>
-## 28. #61 Watts Drops the Hammer
-
-- **Land:** Ulkan Mines · **Arc:** Misc
-- **Starts:** Watts. Ulkan Mines, his workshop: he talks about his lost hammer
-- **Needs:** Mine Your Own Business (#14)
-- **Gives:** None
-- **Ends:** Ride the Dudbear Express to Digger's Hideout, pick up the Hammer and return it to Watts
-- **Warning:** Cannot start while Pokiehl: Dream Teller (#15) is active.
-
-1. Enter the Ulkan Mines, go into Watts' Workshop and talk to him about his lost hammer.
-2. Return to the entrance of the Mines and talk to the pole to ride the Dudbear Express to Digger's Hideout.
-3. Pick up the Hammer lying on the ground and leave the room.
-4. Use the map to find your way back to Watts, and give him the hammer.
-
-<a id="29-53"></a>
-## 29. #53 Path of the Blacksmith
-
-- **Land:** Home · **Arc:** Crafting
-- **Starts:** None (enter your workshop). Auto-starts when you enter the Workshops area to the left of Home
-- **Needs:** Watts Drops the Hammer (#61)
-- **Gives:** None
-- **Ends:** Ask Watts every question in his new blacksmith room
-- **Warning:** Talk to Li'l Cactus right after.
-
-1. Go to the Workshops Area to the left of your Home.
-2. Find Watts, who is building a blacksmith room.
-3. Ask him every question to end the event.
-
-<a id="30-13"></a>
-## 30. #13 Star-Crossed Lovers
-
-- **Land:** Gato Grottoes · **Arc:** Faerie
-- **Starts:** Matilda. Gato Grottoes Dreamweaving Room: a long scene takes everyone to the Mindas Ruins
-- **Needs:** Pokiehl: Dream Teller (#15) and Teatime of Danger (#12); Escad not in party
-- **Gives:** None
-- **Ends:** Pay Niccolo to take you to the Temple of Winds, climb the stairs, choose Escad or Daena and fight the one you did not choose
-
-1. Enter Gato Grottoes and go to the Dreamweaving Room. A long scene plays and everyone is taken to the Mindas Ruins.
-2. Cross the ruins.
-   - Path: Right, Right, Right, then Left (above ground)
-3. Go through the Gates and set both Flowerlings on the Right. Go Right and go through the Gates again.
-4. Pay Niccolo to take you to the Temple of Winds, then go up the stairs.
-5. At the top choose Escad or Daena. You then fight the one you did not choose.
-
-<a id="31-17"></a>
-## 31. #17 Heaven's Gate
-
-- **Land:** Gato Grottoes · **Arc:** Faerie
-- **Starts:** Matilda. Gato Grottoes Dreamweaving Room: the partner you sided with earlier must join you, then she gives you the Brooch of Love
-- **Needs:** Star-Crossed Lovers (#13). Do Daddy's Broom (#18) first
-- **Gives:** Brooch of Love
-- **Ends:** Place the Brooch of Love to create Lucemia, go to area 30 and beat Irwin
-- **Warning:** Ends the Faerie arc.
-
-1. Enter Gato Grottoes and go to the Dreamweaving Room. Whoever you sided with in earlier events must join your party; after the scene talk to them (Daena in the example).
-2. Talk to Matilda to get the Brooch of Love.
-3. Place the Brooch of Love directly right of the Jungle to create Lucemia, then enter.
-4. Go to area 30 on the Lucemia map and beat Irwin.
-
-<a id="32-21"></a>
-## 32. #21 The Looking-Glass Tower
-
-- **Land:** Tower of Leires · **Arc:** Jumi
-- **Starts:** Pearl. Place the Moon's Mirror directly above Gato Grottoes to create the Tower of Leires. She waits at the entrance
-- **Needs:** Do The Lost Princess (#5) first; Elazul not in party
-- **Gives:** Frozen Heart, Pirate's Hook
-- **Ends:** Take Pearl to the 11th floor and beat the Iron Centaur, then escort her down and beat the Jewel Beast on the bottom floor
-
-1. Place the Moon's Mirror directly above Gato Grottoes to create the Tower of Leires, then enter. Talk to Pearl in the first area and take her into the tower.
-2. Climb to the 11th floor. Two rooms with teleport crystals help.
-   - Path: Right, Left, Left (2nd floor), Right, Upstairs (3rd), Left, Upstairs (4th), Right, Upstairs (5th), Down, Left, Upstairs (6th), Left, Upstairs (7th), Right, Upstairs (8th), Lower Left, enter the large door, search the crystal and leave the room, Left, Upstairs, follow the hall to the Room of Fate, enter
-3. On the 11th floor beat the Iron Centaur.
-4. Escort Pearl out: fall off the railing on the 11th floor to land on the 5th floor, use the stairs down, and leave through the left or right side of the foyer near the top of the screen.
-5. On the bottom floor beat the Jewel Beast. It drops the Frozen Heart.
-
-<a id="33-27"></a>
-## 33. #27 Summer Lovin'
-
-- **Land:** Madora Beach · **Arc:** Penguin
-- **Starts:** None (enter Madora Beach). Place the Torch of Coral directly above Lake Kilma to create Madora Beach. Starts on entering
-- **Needs:** Madora Beach placed (Torch of Coral)
-- **Gives:** Rusted Anchor, Moon's Mirror
-- **Ends:** Step on every crab (20 or more), beat Fullmetal Haggar in the cave, then talk to the penguin (Valerie)
-- **Warning:** Talk to Valerie before leaving or you lose the rewards.
-
-1. Place the Torch of Coral directly above Lake Kilma to create Madora Beach, then enter.
-2. Watch the conversation, then step on every crab. You need at least 20 for Buried Treasure later.
-3. Go to Fullmetal Haggar.
-   - Path: Right, Right, Right (into the cave), Lower Right, Upper Right, Upper Right, Upper Left, Left (into the cave), Upper Left, Lower Right
-4. Beat him, then talk to the penguin (Valerie) before you leave.
-
-<a id="34-28"></a>
-## 34. #28 Drowned Dreams
-
-- **Land:** Polpota Harbor · **Arc:** Jumi
-- **Starts:** Hotel employee. Right side of the hotel reception
-- **Needs:** Polpota Harbor placed (Rusted Anchor). Do Flame of Hope (#23) first
-- **Gives:** Pirate's Hook, Bottled Spirit
-- **Ends:** Watch the scene with Thoma in the hotel room on the left
-
-1. Enter Polpota Harbor, go Left into the mall and talk to the Flowerling and the Mermaid.
-2. Go Left to the beach and talk to Thoma.
-3. Go to the town entrance, up to the hotel and talk to the manager. Agree to help.
-4. Go to the Lower Right stairway and talk to the Inspector. Follow the path to the restaurant and talk to the people there.
-5. Back on the beach talk to the Soldier.
-6. At the hotel entrance there is a Basket Fish. Talk to the Inspector and ask him every question until he walks away.
-7. Go to the restaurant to see Thoma, then back to the hotel entrance to see Thoma and Boyd speak.
-8. Go into the hotel, take the room on the left and talk to Thoma.
-
-<a id="35-26"></a>
-## 35. #26 A Siren's Song
-
-- **Land:** Lumina · **Arc:** Gilbert
-- **Starts:** Soldiers (Lumina tavern alley). Lumina: western tavern, then the alley
-- **Needs:** Drowned Dreams (#28), The Spirits' Light (#30), Summer Lovin' (#27)
-- **Gives:** None
-- **Ends:** Trick the mermaid at Madora Beach, run through the cage gate and beat Tropicallo
-
-1. In Lumina go to the tavern in the western section and enter the alley. Talk to the soldiers, then go to the Lamp Shop and talk to the soldier there.
-2. Go to Polpota Harbor. Take the path between the hotel and the restaurant and talk to Monique. Go to the beach and talk to the soldiers.
-3. Enter Madora Beach.
-   - Path: Left, Upper Left, Upper Left, Left, then talk to the Mermaid
-4. Walk to the right side of the screen and wait for the mermaid to turn into a bubble. The moment it starts to morph, run over to the cage and walk through the gate.
-5. Beat Tropicallo.
-
-<a id="36-65"></a>
-## 36. #65 Gilbert: Love is Blind
-
-- **Land:** Polpota Harbor · **Arc:** Gilbert
-- **Starts:** Elle. Madora Beach lighthouse: she joins you
-- **Needs:** A Siren's Song (#26)
-- **Gives:** None
-- **Ends:** Take Elle to Gilbert at the Polpota Harbor restaurant, then beat the Orc on the SS Buccaneer top deck
-- **Warning:** Lost if you enter Geo's café first, which triggers School Amour (#58).
-
-1. Enter Madora Beach, go to the lighthouse and have Elle join you.
-2. Enter Polpota Harbor and take her to the restaurant. Talk to Gilbert.
-3. Go back to the Madora Beach lighthouse and pick her up a second time. As you leave, Gilbert takes her.
-4. Enter the SS Buccaneer to see them on the top deck. Go to the Captain's Quarters and talk to the Captain.
-5. Go back to the top deck and beat the Orc.
-
-<a id="37-58"></a>
-## 37. #58 Gilbert: School Amour
-
-- **Land:** Geo · **Arc:** Gilbert
-- **Starts:** Gilbert. Geo: Fruit Parlor Cafe in the bar area on the left. Watch him talk with Miss Kathinja, then offer to help
-- **Needs:** The Spirits' Light (#30). Do Love is Blind (#65) first
-- **Gives:** None
-- **Ends:** Convince the students at the Cafe, Mall Avenue, Magic University, Library and bar, with the Item Shop student last
-
-1. Enter Geo and go to the bar area on the left of town (the Fruit Parlor Cafe). Watch Gilbert talk with Miss Kathinja, then talk to Gilbert and offer to help.
-2. Talk to the three kids in the cafe and tell them what they want to hear. Talk to them again; they should say they will return to school. If not, talk again and take the other choice.
-3. Go to Mall Avenue on the right side of Geo. Talk to the two kids, leave by the Upper Path and go to the Magic University. Talk to the two kids in the courtyard and the one in the entrance hall.
-4. Go to the Library and talk to the two kids there.
-5. Go back to the mall area and into the bar for two more kids.
-6. Go to the Item Shop (Instrument Shop) and talk to the kids there. One of them only returns to school after everyone else is convinced.
-7. The Palace of Arts has no students. When everyone has agreed, a final scene plays outside Geo's walls.
-
-> The guides do not agree on a total number of students, so work through each place listed instead of counting.
-
-<a id="38-31"></a>
-## 38. #31 The Lucky Clover
-
-- **Land:** Domina · **Arc:** Jumi
-- **Starts:** Elazul. Domina bar (one earlier source says the inn)
-- **Needs:** Flame of Hope (#23), Drowned Dreams (#28), Looking-Glass Tower (#21); also School Amour (#58) if #30 is done
-- **Gives:** Jade Egg, Frozen Heart
-- **Ends:** Find the three cores in Geo, then fight the Jewel Beast in the battle arena below Kristie's place
-
-1. In Domina go to the bar and talk to Elazul. Help him look for his friend. Leave and tell Pearl the bar is also dangerous; she goes to your Home.
-2. Enter Geo and go to the Academy of Magic to see Esmeralda. On a day that is not Gnome or Undine Day she is in the Academy; on Gnome or Undine Day she is in the Library. Change the day to find her in the classroom, change it again to see her in the Library, then offer to help her find the cores.
-3. Talk to Alex at the Jewelry Shop. Find three cores: (1) Mephianse's office in the Academy of Magic, on Dryad Day. (2) The basement of Kristie's place, the Diana statue. (3) Teapo at the Cafe: ask behind the counter about the core, exit to the city map and return, and Teapo hands it over.
-4. Go to the Jewelry Shop so Elazul joins you. Return to Kristie's place and talk to Diana, the statue in the basement. Head downstairs to the battle arena.
-5. Beat the Jewel Beast.
-
-<a id="39-24"></a>
-## 39. #24 Cosmo
-
-- **Land:** Home · **Arc:** Jumi
-- **Starts:** Elazul. Home: he is outside your front door. Tell him you have not seen Pearl and he joins you
-- **Needs:** Lucky Clover (#31). Clear Li'l Cactus (#49) first
-- **Gives:** None
-- **Ends:** Talk to the duck in Mekiv Caverns and beat the Jewel Beast at the boss area
-- **Warning:** Li'l Cactus (#49) is lost if you start this first.
-
-1. Leave your front door. Elazul is waiting. Tell him you have not seen Pearl and have him join you.
-2. Enter Mekiv Caverns and talk to the duck.
-3. Work through the caverns to the boss area (marked on the map) and beat the Jewel Beast.
-
-<a id="40-22"></a>
-## 40. #22 The Two Pearls
-
-- **Land:** Tower of Leires · **Arc:** Jumi
-- **Starts:** Elazul. Home: he is in your bed. Leave and return until he goes, then meet him at the Tower of Leires
-- **Needs:** Cosmo (#24)
-- **Gives:** None
-- **Ends:** Take Elazul to the Room of Fate on the 11th floor and fight Lady Blackpearl with him
-
-1. Talk to Elazul in your bed. Go downstairs, come back and talk to him again. Repeat until he leaves your home.
-2. Enter the Tower of Leires and offer to help Elazul.
-3. Climb to the 11th floor and the Room of Fate (same route as The Looking-Glass Tower).
-   - Path: Right, Left, Left (2nd floor), Right, Upstairs (3rd), Left, Upstairs (4th), Right, Upstairs (5th), Down, Left, Upstairs (6th), Left, Upstairs (7th), Right, Upstairs (8th), Lower Left, enter the large door, search the crystal and leave the room, Left, Upstairs, follow the hall to the Room of Fate, enter
-4. Agree to help Elazul and beat Lady Blackpearl.
-
-<a id="41-32"></a>
-## 41. #32 Alexandrite
-
-- **Land:** Domina · **Arc:** Jumi
-- **Starts:** Elazul. Domina bar: he asks you to take Pearl to Geo
-- **Needs:** The Two Pearls (#22)
-- **Gives:** None
-- **Ends:** Find Diana missing, go to the Underground Battle Arena and finish there
-
-1. In Domina go to the bar and talk to Elazul. Agree to take Pearl to Geo.
-2. Enter Geo, go to Kristie's place and talk to Diana. Tell Pearl everything is okay, then talk to Kristie.
-3. Collect 3 keys, in this order: Mephianse's office in the Academy of Magic, the City's gates, and the Instrument Shop.
-4. Return to Kristie's place. Diana is missing. Go to the Underground Battle Arena to find her.
-
-<a id="42-29"></a>
-## 42. #29 Fluorite
-
-- **Land:** Geo · **Arc:** Jumi
-- **Starts:** Florina. Geo Jewelry Shop: it takes you to Pandora's Box. Talk to Florina to enter the dream world
-- **Needs:** Alexandrite (#32) and Reach for the Stars (#36)
-- **Gives:** None
-- **Ends:** Cross the dream dungeon and beat the boss at the end
-
-1. Enter Geo and go to the Jewelry Shop. This takes you to Pandora's Box. Talk to Florina to enter another dream world.
-2. Pay Niccolo when you see him.
-3. Cross the dream.
-   - Path: Down, Left, Upper Right, Upper Right (Elazul and Pearl talk), talk to Elazul and go Upper Left, Left (Elazul and Pearl talk), Upper Left, Upper Left
-4. Beat the boss at the end.
-
-<a id="43-34"></a>
-## 43. #34 The Quiet Sea
-
-- **Land:** SS Buccaneer · **Arc:** Penguin
-- **Starts:** Ramtieger. Place the Pirate's Hook directly above Madora Beach to create the SS Buccaneer. Tell him 'South, East, East'
-- **Needs:** SS Buccaneer placed (Pirate's Hook)
-- **Gives:** Medallion, Frozen Heart
-- **Ends:** Get the bottle from the barrel below the Forecastle Deck, then beat Gova on the top deck
-
-1. Place the Pirate's Hook directly above Madora Beach to create the SS Buccaneer, then enter.
-2. Find Ramtieger.
-   - Path: Left, Down, then the second door from the end on the bottom wall
-3. Talk to Ramtieger and choose 'South, East, East'.
-4. Return to the top deck and talk to the Penguin. Leave and come straight back: he has a bottle and a ghost escapes. Talk to the Penguin again so he leaves.
-5. Go to the Captain's Quarters and talk to the Captain at the top of the screen.
-6. Go to the Forecastle Deck and take the stairs down. Enter the left door on the top wall, go downstairs and search the barrel.
-7. Tell the figure there is a pretty girl and keep talking until he gives you the bottle.
-8. Return to the top deck and beat Gova.
-
-<a id="44-4"></a>
-## 44. #4 Where's Putty?
-
-- **Land:** Ulkan Mines · **Arc:** Penguin
-- **Starts:** None (enter Ulkan Mines). Ulkan Mines: enter with a partner and ride the Dudbear Express to hear about Putty
-- **Needs:** Mine Your Own Business (#14) and The Quiet Sea (#34) started: #4 will not start until you start The Quiet Sea. SS Buccaneer and Polpota Harbor placed
-- **Gives:** None
-- **Ends:** Cross the SS Buccaneer to Polpota Harbor and watch the scene on the beach
-- **Warning:** Missed if you clear both Catchin' Lilipeas (#64) and Diddle Had It! (#20) first.
-
-1. Bring a partner into the Ulkan Mines and ride the Dudbear Express. You hear that Putty has disappeared.
-2. Leave the mines.
-   - Path: Down, Left, Upper Left, Up at the statue, Upper Right, Upper Right, Upper Left, Left
-3. Enter the SS Buccaneer.
-   - Path: Left, Down, Downstairs, Left Door, Downstairs, Left Door, Downstairs
-4. Search the moving barrel, then talk to the Captain so he lets you leave the ship.
-5. Enter Polpota Harbor and go to the beach to find Putty.
-
-<a id="45-38"></a>
-## 45. #38 The Guardian of Winds
+<a id="46-38"></a>
+## 46. #38 The Guardian of Winds
 
 - **Land:** Norn Peaks · **Arc:** Dragon
 - **Starts:** Larc. Place the Skull Lantern directly left of the Underworld to create Norn Peaks. Arrive with him
@@ -841,8 +856,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Right, Upper Right, Left, Left
 7. Beat Akravator.
 
-<a id="46-60"></a>
-## 46. #60 Professor Bomb's Lab
+<a id="47-60"></a>
+## 47. #60 Professor Bomb's Lab
 
 - **Land:** Junkyard · **Arc:** Misc
 - **Starts:** Flowerling. Junkyard: talk to the man at the entrance and he warps you to the lab
@@ -856,8 +871,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 3. Enter Lake Kilma. The Golem is in the first area and exits through the Upper Left.
 4. Follow it, fight it and beat it.
 
-<a id="47-55"></a>
-## 47. #55 Golem Go Make 'em
+<a id="48-55"></a>
+## 48. #55 Golem Go Make 'em
 
 - **Land:** Home · **Arc:** Crafting
 - **Starts:** Professor Bomb. Workshops area left of Home: he explains the golem facility
@@ -873,8 +888,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 
 > You can retry wrong answers. These answers come from Legend of Mana Info, so check them against the questions you actually get.
 
-<a id="48-63"></a>
-## 48. #63 The Field Trip
+<a id="49-63"></a>
+## 49. #63 The Field Trip
 
 - **Land:** Bone Fortress · **Arc:** School
 - **Starts:** Student. Place the Dragon Bone directly left of Norn Peaks to create the Bone Fortress. Talk to the student in the middle of the first screen
@@ -891,8 +906,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 6. Silver Spotted Mushrooms: from the purple Flowerling near the middle right.
 7. Return to the first student to end the event.
 
-<a id="49-39"></a>
-## 49. #39 The Ghost of Nemesis
+<a id="50-39"></a>
+## 50. #39 The Ghost of Nemesis
 
 - **Land:** Bone Fortress · **Arc:** Dragon
 - **Starts:** Larc. Take him and a pet or golem into the Bone Fortress and enter the dragon skeleton
@@ -912,8 +927,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 7. Take the elevator to the 1st floor and search the lower-left stool. Use the elevator again to the 3rd floor and go Left to fight Deathbringer.
 8. Go Right and beat the 2 Jabaras.
 
-<a id="50-64"></a>
-## 50. #64 Catchin' Lilipeas
+<a id="51-64"></a>
+## 51. #64 Catchin' Lilipeas
 
 - **Land:** White Forest · **Arc:** Misc
 - **Starts:** Sotherbee. White Forest entrance
@@ -928,8 +943,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 3. Walk into town and talk to the Lilipeas until the Reverend translates, then talk to the elder on the left.
 4. Beat the Hegs Ant.
 
-<a id="51-16"></a>
-## 51. #16 Diddle Kidnapped!?
+<a id="52-16"></a>
+## 52. #16 Diddle Kidnapped!?
 
 - **Land:** Domina · **Arc:** Diddle & Capella
 - **Starts:** Diddle & Capella. Domina church: talk to Roger, then watch the scene in the park
@@ -944,8 +959,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Lower Left, Left, Upper Left, Left, Left
 4. Beat the Chimera Lord.
 
-<a id="52-37"></a>
-## 52. #37 The Dragon Princess
+<a id="53-37"></a>
+## 53. #37 The Dragon Princess
 
 - **Land:** White Forest · **Arc:** Dragon
 - **Starts:** Larc. Pick him up in the Underworld first, then take him into the White Forest
@@ -960,8 +975,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Lower Left, Lower Left, Down, Left, Left, Lower Left, Lower Right, Right
 5. Agree to take the test and fight Sierra.
 
-<a id="53-40"></a>
-## 53. #40 The Crimson Dragon
+<a id="54-40"></a>
+## 54. #40 The Crimson Dragon
 
 - **Land:** Underworld · **Arc:** Dragon
 - **Starts:** Sierra. Underworld: search the Stone and she asks for help
@@ -978,8 +993,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Up (bridge), Up, Up, Left, Upper Left, Up the first stairs, Up through the door, fall through the floor, far Lower Left, Down, Upper Right, kill the dragon, Lower Right, Upper Left, Up, far Lower Right, fall through the floor, kill the dragon, Right, Lower Right, Up the stairs, Lower Left, Down, Upper Left, Left, Down, Down, Blue Orb boss, Upper Right, Up, Up, Up through the door, Up
 5. Beat Drakonis.
 
-<a id="54-25"></a>
-## 54. #25 Can't Look Back
+<a id="55-25"></a>
+## 55. #25 Can't Look Back
 
 - **Land:** Fieg Snowfields · **Arc:** School
 - **Starts:** None (enter Fieg Snowfields). Place the Frozen Heart directly below the Bone Fortress to create Fieg Snowfields. Talk to Mephianse at the campfire
@@ -992,8 +1007,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 2. Head to area 13 on the map, listen to the conversation and talk to Mephianse at the campfire.
 3. Go on to area 18 and beat the boss.
 
-<a id="55-35"></a>
-## 55. #35 The Treasure Map
+<a id="56-35"></a>
+## 56. #35 The Treasure Map
 
 - **Land:** SS Buccaneer · **Arc:** Penguin
 - **Starts:** Ramtieger. SS Buccaneer: tell him 'North, North, East', then tell the Captain you will help
@@ -1008,8 +1023,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Upper Right, Right (Roger and his Dudbears), Upper Right, Right (the Dudbears destroy the map), catch the single Dudbear running around for piece 1, Upper Left, Left, Lower Right, Right (Dudbears with pieces 2 and 3), Upper Left, Left, Left, Left, Lower Right (three more Dudbears), Lower Right, Right, Right (the last two Dudbears)
 4. Catch all eight piece holders quickly. If Roger arrives you fail, and you also lose two other events.
 
-<a id="56-51"></a>
-## 56. #51 The Nordic Snowfield
+<a id="57-51"></a>
+## 57. #51 The Nordic Snowfield
 
 - **Land:** SS Buccaneer · **Arc:** Penguin
 - **Starts:** Ramtieger. SS Buccaneer: tell him 'South, South, West', then agree with the Captain
@@ -1028,8 +1043,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 
 > Only StrategyWiki names the correct faerie. The other guides say one of the three is right without saying which, and they spell some faerie names differently.
 
-<a id="57-52"></a>
-## 57. #52 Buried Treasure
+<a id="58-52"></a>
+## 58. #52 Buried Treasure
 
 - **Land:** SS Buccaneer · **Arc:** Penguin
 - **Starts:** Ramtieger. SS Buccaneer: tell him 'West, West, North' (after stomping 20 crabs on Madora Beach)
@@ -1047,8 +1062,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 7. Keep going Left to more Dudbears and give a Shell to the Upper Left exit.
 8. Leave to find the treasure, then offer the Dudbears a Halo Coin.
 
-<a id="58-33"></a>
-## 58. #33 The Teardrop Crystal
+<a id="59-33"></a>
+## 59. #33 The Teardrop Crystal
 
 - **Land:** Geo · **Arc:** Jumi
 - **Starts:** Inspector Boyd. Domina church: tell him 'No, that can't be'. He sends you to Geo
@@ -1067,8 +1082,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 8. Level 3: beat the Machine Golem for the Diamond in the room near the stairs. Search the gate to fight a Jewel Beast. Place four gems until you hear 4 tones and go on to the Room of Clarius.
 9. Beat Lord of Jewels 999 and Lord of Jewels 1000 and watch the scenes.
 
-<a id="59-48"></a>
-## 59. #48 Niccolo Calls It Quits?
+<a id="60-48"></a>
+## 60. #48 Niccolo Calls It Quits?
 
 - **Land:** Geo · **Arc:** Niccolo
 - **Starts:** Niccolo. Geo: Kristie's place, where he and Kristie talk
@@ -1084,8 +1099,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 6. Enter Gato Grottoes and go to the Bird's Nest again. Niccolo falls down.
 7. Enter Polpota Harbor and pick up Niccolo again. His journey ends.
 
-<a id="60-59"></a>
-## 60. #59 Gilbert: Resume for Love
+<a id="61-59"></a>
+## 61. #59 Gilbert: Resume for Love
 
 - **Land:** Geo · **Arc:** Gilbert
 - **Starts:** Gilbert (statue). Statue in the palace basement
@@ -1102,8 +1117,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 5. Enter Madora Beach, go to the Lighthouse and watch the scenes.
 6. Enter the Ulkan Mines, return to the statue and help her cast the spell by choosing the right lines.
 
-<a id="61-42"></a>
-## 61. #42 The Blessed Elixir
+<a id="62-42"></a>
+## 62. #42 The Blessed Elixir
 
 - **Land:** Gato Grottoes · **Arc:** Niccolo
 - **Starts:** Bartender (Geo). Geo bar first, then the nuns in the Gato Grottoes dungeons
@@ -1118,8 +1133,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 5. Enter Lumina and talk to the bartender in the western section.
 6. Enter the Duma Desert and work through the areas until you find the spring. Watch the barrel fill with water.
 
-<a id="62-43"></a>
-## 62. #43 Seeing Double
+<a id="63-43"></a>
+## 63. #43 Seeing Double
 
 - **Land:** Domina · **Arc:** Misc
 - **Starts:** None (shadow figure). Place the Sword of Mana directly above Domina to create the Tree of Mana (do not enter it). Then follow your shadow duplicate around Domina
@@ -1135,8 +1150,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 5. Leave the building and follow your duplicate to the Outskirts of Domina.
 6. The duplicate turns into Shadow Zero-One. Beat it.
 
-<a id="63-50"></a>
-## 63. #50 Rachel
+<a id="64-50"></a>
+## 64. #50 Rachel
 
 - **Land:** Domina · **Arc:** Misc
 - **Starts:** Mark & Jennifer. Domina: Mark's place (lower-left door in the town centre, top floor)
@@ -1152,8 +1167,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 
 > Mark or Jennifer run the item shop every other day, and you cannot have the needed talks while they are working, so leave and re-enter Domina until they are free.
 
-<a id="64-67"></a>
-## 64. #67 Pee-Wee Birdie
+<a id="65-67"></a>
+## 65. #67 Pee-Wee Birdie
 
 - **Land:** Domina · **Arc:** Misc
 - **Starts:** Yuka. Domina inn: she asks for your help; accept
@@ -1170,21 +1185,6 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 6. Talk to the Birdie to receive a Revive Ring. Do not talk to it too often: the guides say it breaks after 10 to 15 talks.
 
 > Item locations are from StrategyWiki; the item list matches Legend of Mana Info.
-
-<a id="65-66"></a>
-## 65. #66 The Wimpy Thugling
-
-- **Land:** Duma Desert · **Arc:** Misc
-- **Starts:** Tikkle. Duma Desert: go Right
-- **Needs:** Reach for the Stars (#36); Duma Desert at Dryad level 3 (one source also wants The Blessed Elixir, #42, done)
-- **Gives:** None
-- **Ends:** Agree to help Tikkle, reach map area 23 and beat Kima
-- **Warning:** Remove pets, golems and NPCs from your party. Keep one Monster Corral slot free.
-
-1. Make sure you have no pet with you, 4 or fewer pets in your ranch and no NPCs in your party.
-2. Enter the Duma Desert, go Right and talk to Tikkle. Agree to help him.
-3. Work your way to area 23 on the map.
-4. Beat Kima.
 
 <a id="66-44"></a>
 ## 66. #44 The Cage of Dreams

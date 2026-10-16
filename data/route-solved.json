@@ -82,431 +82,431 @@
   },
   {
     "step": 10,
+    "id": 66,
+    "name": "The Wimpy Thugling",
+    "land": "Duma Desert",
+    "arc": "Misc",
+    "why": "protects 1 missable rule, same land",
+    "choices": 10
+  },
+  {
+    "step": 11,
     "id": 54,
     "name": "Instruments 101",
     "land": "Home",
     "arc": "Crafting",
     "why": "opens a facility",
-    "choices": 10
+    "choices": 9
   },
   {
-    "step": 11,
+    "step": 12,
     "id": 2,
     "name": "The Little Sorcerers",
     "land": "Home",
     "arc": "Bud & Lisa",
     "why": "opens 1 new event, same land",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 12,
+    "step": 13,
     "id": 9,
     "name": "The Murmuring Forest",
     "land": "Jungle",
     "arc": "Faerie",
     "why": "opens 1 new event",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 13,
+    "step": 14,
     "id": 7,
     "name": "Two Torches",
     "land": "Gato Grottoes",
     "arc": "Faerie",
     "why": "opens 1 new event, same arc",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 14,
+    "step": 15,
     "id": 45,
     "name": "Niccolo's Business Unusual: Part 2",
     "land": "Gato Grottoes",
     "arc": "Niccolo",
     "why": "opens 1 new event, same land",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 15,
+    "step": 16,
     "id": 19,
     "name": "The Infernal Doll",
     "land": "Junkyard",
     "arc": "Misc",
     "why": "opens 3 new events",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 16,
+    "step": 17,
     "id": 18,
     "name": "Daddy's Broom",
     "land": "Home",
     "arc": "Bud & Lisa",
     "why": "protects 3 missable rules",
-    "choices": 11
+    "choices": 10
   },
   {
-    "step": 17,
+    "step": 18,
     "id": 49,
     "name": "Li'l Cactus",
     "land": "Home",
     "arc": "Bud & Lisa",
     "why": "protects 1 missable rule, same land",
-    "choices": 10
+    "choices": 9
   },
   {
-    "step": 18,
+    "step": 19,
     "id": 10,
     "name": "The Gorgon Eye",
     "land": "Lake Kilma",
     "arc": "Penguin",
     "why": "opens 1 new event",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 19,
+    "step": 20,
     "id": 30,
     "name": "The Spirits' Light",
     "land": "Lumina",
     "arc": "Gilbert",
     "why": "protects 1 missable rule, opens 2 new events",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 20,
+    "step": 21,
     "id": 12,
     "name": "Teatime of Danger",
     "land": "Mindas Ruins",
     "arc": "Misc",
     "why": "opens 2 new events",
-    "choices": 10
+    "choices": 9
   },
   {
-    "step": 21,
+    "step": 22,
     "id": 14,
     "name": "Mine Your Own Business",
     "land": "Ulkan Mines",
     "arc": "Misc",
     "why": "opens 2 new events, same arc",
-    "choices": 11
-  },
-  {
-    "step": 22,
-    "id": 41,
-    "name": "The Fallen Emperor",
-    "land": "Underworld",
-    "arc": "Dragon",
-    "why": "opens 2 new events",
-    "choices": 12
+    "choices": 10
   },
   {
     "step": 23,
-    "id": 20,
-    "name": "Diddle Had It!",
-    "land": "Lumina",
-    "arc": "Diddle & Capella",
-    "why": "protects 1 missable rule",
-    "choices": 13
-  },
-  {
-    "step": 24,
-    "id": 46,
-    "name": "Niccolo's Business Unusual: Part 3",
-    "land": "Lumina",
-    "arc": "Niccolo",
-    "why": "opens 1 new event, same land",
-    "choices": 12
-  },
-  {
-    "step": 25,
-    "id": 47,
-    "name": "Niccolo's Business Unusual: Part 4",
-    "land": "Geo",
-    "arc": "Niccolo",
-    "why": "opens 1 new event, same arc",
-    "choices": 12
-  },
-  {
-    "step": 26,
-    "id": 11,
-    "name": "In Search of Faeries",
-    "land": "Gato Grottoes",
-    "arc": "Faerie",
-    "why": "opens 1 new event",
-    "choices": 12
-  },
-  {
-    "step": 27,
-    "id": 15,
-    "name": "Pokiehl: Dream Teller",
-    "land": "Ulkan Mines",
-    "arc": "Faerie",
-    "why": "opens 1 new event, same arc",
-    "choices": 12
-  },
-  {
-    "step": 28,
     "id": 61,
     "name": "Watts Drops the Hammer",
     "land": "Ulkan Mines",
     "arc": "Misc",
     "why": "opens 1 new event, same land",
-    "choices": 12
+    "choices": 11
   },
   {
-    "step": 29,
+    "step": 24,
     "id": 53,
     "name": "Path of the Blacksmith",
     "land": "Home",
     "arc": "Crafting",
     "why": "opens a facility",
-    "choices": 12
+    "choices": 11
   },
   {
-    "step": 30,
+    "step": 25,
+    "id": 11,
+    "name": "In Search of Faeries",
+    "land": "Gato Grottoes",
+    "arc": "Faerie",
+    "why": "opens 1 new event",
+    "choices": 10
+  },
+  {
+    "step": 26,
+    "id": 15,
+    "name": "Pokiehl: Dream Teller",
+    "land": "Ulkan Mines",
+    "arc": "Faerie",
+    "why": "opens 1 new event, same arc",
+    "choices": 10
+  },
+  {
+    "step": 27,
     "id": 13,
     "name": "Star-Crossed Lovers",
     "land": "Gato Grottoes",
     "arc": "Faerie",
-    "why": "opens 1 new event",
-    "choices": 11
+    "why": "opens 1 new event, same arc",
+    "choices": 10
   },
   {
-    "step": 31,
+    "step": 28,
     "id": 17,
     "name": "Heaven's Gate",
     "land": "Gato Grottoes",
     "arc": "Faerie",
     "why": "opens 1 new event, same land",
-    "choices": 11
+    "choices": 10
   },
   {
-    "step": 32,
+    "step": 29,
     "id": 21,
     "name": "The Looking-Glass Tower",
     "land": "Tower of Leires",
     "arc": "Jumi",
     "why": "opens 1 new event",
-    "choices": 11
+    "choices": 10
   },
   {
-    "step": 33,
+    "step": 30,
     "id": 27,
     "name": "Summer Lovin'",
     "land": "Madora Beach",
     "arc": "Penguin",
     "why": "opens 1 new event",
-    "choices": 11
+    "choices": 10
   },
   {
-    "step": 34,
+    "step": 31,
     "id": 28,
     "name": "Drowned Dreams",
     "land": "Polpota Harbor",
     "arc": "Jumi",
-    "why": "opens 4 new events",
-    "choices": 11
+    "why": "opens 3 new events",
+    "choices": 10
   },
   {
-    "step": 35,
+    "step": 32,
     "id": 26,
     "name": "A Siren's Song",
     "land": "Lumina",
     "arc": "Gilbert",
     "why": "opens 2 new events",
-    "choices": 14
+    "choices": 12
   },
   {
-    "step": 36,
+    "step": 33,
     "id": 65,
     "name": "Gilbert: Love is Blind",
     "land": "Polpota Harbor",
     "arc": "Gilbert",
     "why": "protects 1 missable rule, opens 1 new event, same arc",
-    "choices": 15
+    "choices": 13
   },
   {
-    "step": 37,
+    "step": 34,
     "id": 58,
     "name": "Gilbert: School Amour",
     "land": "Geo",
     "arc": "Gilbert",
-    "why": "opens 2 new events, same arc",
-    "choices": 15
+    "why": "protects 1 missable rule, opens 3 new events, same arc",
+    "choices": 13
   },
   {
-    "step": 38,
+    "step": 35,
     "id": 31,
     "name": "The Lucky Clover",
     "land": "Domina",
     "arc": "Jumi",
     "why": "opens 1 new event",
-    "choices": 16
+    "choices": 15
   },
   {
-    "step": 39,
+    "step": 36,
     "id": 24,
     "name": "Cosmo",
     "land": "Home",
     "arc": "Jumi",
     "why": "opens 1 new event, same arc",
-    "choices": 16
+    "choices": 15
   },
   {
-    "step": 40,
+    "step": 37,
     "id": 22,
     "name": "The Two Pearls",
     "land": "Tower of Leires",
     "arc": "Jumi",
     "why": "opens 1 new event, same arc",
-    "choices": 16
+    "choices": 15
   },
   {
-    "step": 41,
+    "step": 38,
     "id": 32,
     "name": "Alexandrite",
     "land": "Domina",
     "arc": "Jumi",
     "why": "opens 1 new event, same arc",
-    "choices": 16
+    "choices": 15
   },
   {
-    "step": 42,
+    "step": 39,
     "id": 29,
     "name": "Fluorite",
     "land": "Geo",
     "arc": "Jumi",
     "why": "opens 1 new event, same arc",
-    "choices": 16
+    "choices": 15
   },
   {
-    "step": 43,
+    "step": 40,
     "id": 34,
     "name": "The Quiet Sea",
     "land": "SS Buccaneer",
     "arc": "Penguin",
     "why": "opens 1 new event",
-    "choices": 16
+    "choices": 15
   },
   {
-    "step": 44,
+    "step": 41,
     "id": 4,
     "name": "Where's Putty?",
     "land": "Ulkan Mines",
     "arc": "Penguin",
-    "why": "protects 1 missable rule, same arc",
-    "choices": 16
+    "why": "protects 2 missable rules, same arc",
+    "choices": 15
+  },
+  {
+    "step": 42,
+    "id": 41,
+    "name": "The Fallen Emperor",
+    "land": "Underworld",
+    "arc": "Dragon",
+    "why": "opens 2 new events",
+    "choices": 14
+  },
+  {
+    "step": 43,
+    "id": 20,
+    "name": "Diddle Had It!",
+    "land": "Lumina",
+    "arc": "Diddle & Capella",
+    "why": "protects 1 missable rule",
+    "choices": 15
+  },
+  {
+    "step": 44,
+    "id": 46,
+    "name": "Niccolo's Business Unusual: Part 3",
+    "land": "Lumina",
+    "arc": "Niccolo",
+    "why": "opens 1 new event, same land",
+    "choices": 14
   },
   {
     "step": 45,
+    "id": 47,
+    "name": "Niccolo's Business Unusual: Part 4",
+    "land": "Geo",
+    "arc": "Niccolo",
+    "why": "opens 1 new event, same arc",
+    "choices": 14
+  },
+  {
+    "step": 46,
     "id": 38,
     "name": "The Guardian of Winds",
     "land": "Norn Peaks",
     "arc": "Dragon",
     "why": "opens 1 new event",
-    "choices": 15
+    "choices": 14
   },
   {
-    "step": 46,
+    "step": 47,
     "id": 60,
     "name": "Professor Bomb's Lab",
     "land": "Junkyard",
     "arc": "Misc",
     "why": "opens 1 new event",
-    "choices": 15
+    "choices": 14
   },
   {
-    "step": 47,
+    "step": 48,
     "id": 55,
     "name": "Golem Go Make 'em",
     "land": "Home",
     "arc": "Crafting",
     "why": "opens a facility",
-    "choices": 15
+    "choices": 14
   },
   {
-    "step": 48,
+    "step": 49,
     "id": 63,
     "name": "The Field Trip",
     "land": "Bone Fortress",
     "arc": "School",
     "why": "opens 1 new event",
-    "choices": 14
+    "choices": 13
   },
   {
-    "step": 49,
+    "step": 50,
     "id": 39,
     "name": "The Ghost of Nemesis",
     "land": "Bone Fortress",
     "arc": "Dragon",
     "why": "opens 1 new event, same land",
-    "choices": 14
+    "choices": 13
   },
   {
-    "step": 50,
+    "step": 51,
     "id": 64,
     "name": "Catchin' Lilipeas",
     "land": "White Forest",
     "arc": "Misc",
     "why": "protects 1 missable rule, opens 1 new event",
-    "choices": 14
+    "choices": 13
   },
   {
-    "step": 51,
+    "step": 52,
     "id": 16,
     "name": "Diddle Kidnapped!?",
     "land": "Domina",
     "arc": "Diddle & Capella",
     "why": "protects 1 missable rule, opens 1 new event",
-    "choices": 14
+    "choices": 13
   },
   {
-    "step": 52,
+    "step": 53,
     "id": 37,
     "name": "The Dragon Princess",
     "land": "White Forest",
     "arc": "Dragon",
     "why": "opens 1 new event",
-    "choices": 14
+    "choices": 13
   },
   {
-    "step": 53,
+    "step": 54,
     "id": 40,
     "name": "The Crimson Dragon",
     "land": "Underworld",
     "arc": "Dragon",
     "why": "same arc",
-    "choices": 14
+    "choices": 13
   },
   {
-    "step": 54,
+    "step": 55,
     "id": 25,
     "name": "Can't Look Back",
     "land": "Fieg Snowfields",
     "arc": "School",
     "why": "next available",
-    "choices": 13
+    "choices": 12
   },
   {
-    "step": 55,
+    "step": 56,
     "id": 35,
     "name": "The Treasure Map",
     "land": "SS Buccaneer",
     "arc": "Penguin",
     "why": "opens 1 new event",
-    "choices": 12
-  },
-  {
-    "step": 56,
-    "id": 51,
-    "name": "The Nordic Snowfield",
-    "land": "SS Buccaneer",
-    "arc": "Penguin",
-    "why": "same land",
-    "choices": 12
+    "choices": 11
   },
   {
     "step": 57,
-    "id": 52,
-    "name": "Buried Treasure",
+    "id": 51,
+    "name": "The Nordic Snowfield",
     "land": "SS Buccaneer",
     "arc": "Penguin",
     "why": "same land",
@@ -514,62 +514,62 @@
   },
   {
     "step": 58,
+    "id": 52,
+    "name": "Buried Treasure",
+    "land": "SS Buccaneer",
+    "arc": "Penguin",
+    "why": "same land",
+    "choices": 10
+  },
+  {
+    "step": 59,
     "id": 33,
     "name": "The Teardrop Crystal",
     "land": "Geo",
     "arc": "Jumi",
     "why": "next available",
-    "choices": 10
+    "choices": 9
   },
   {
-    "step": 59,
+    "step": 60,
     "id": 48,
     "name": "Niccolo Calls It Quits?",
     "land": "Geo",
     "arc": "Niccolo",
     "why": "same land",
-    "choices": 9
+    "choices": 8
   },
   {
-    "step": 60,
+    "step": 61,
     "id": 59,
     "name": "Gilbert: Resume for Love",
     "land": "Geo",
     "arc": "Gilbert",
     "why": "same land",
-    "choices": 8
+    "choices": 7
   },
   {
-    "step": 61,
+    "step": 62,
     "id": 42,
     "name": "The Blessed Elixir",
     "land": "Gato Grottoes",
     "arc": "Niccolo",
     "why": "next available",
-    "choices": 7
+    "choices": 6
   },
   {
-    "step": 62,
+    "step": 63,
     "id": 43,
     "name": "Seeing Double",
     "land": "Domina",
     "arc": "Misc",
     "why": "next available",
-    "choices": 6
-  },
-  {
-    "step": 63,
-    "id": 50,
-    "name": "Rachel",
-    "land": "Domina",
-    "arc": "Misc",
-    "why": "same land",
     "choices": 5
   },
   {
     "step": 64,
-    "id": 67,
-    "name": "Pee-Wee Birdie",
+    "id": 50,
+    "name": "Rachel",
     "land": "Domina",
     "arc": "Misc",
     "why": "same land",
@@ -577,11 +577,11 @@
   },
   {
     "step": 65,
-    "id": 66,
-    "name": "The Wimpy Thugling",
-    "land": "Duma Desert",
+    "id": 67,
+    "name": "Pee-Wee Birdie",
+    "land": "Domina",
     "arc": "Misc",
-    "why": "same arc",
+    "why": "same land",
     "choices": 3
   },
   {
