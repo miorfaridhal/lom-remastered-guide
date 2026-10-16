@@ -275,7 +275,7 @@ table.t th{font:800 11px var(--sans);text-transform:uppercase;letter-spacing:.05
 .fac>header::after{content:"";position:absolute;right:8px;top:50%;width:8px;height:8px;margin-top:-6px;border:solid var(--muted);border-width:0 2px 2px 0;transform:rotate(45deg);transition:transform .25s}
 .fac.shut>header::after{transform:rotate(-45deg);margin-top:-4px}
 .fac.shut>header{margin-bottom:0}
-.fac.shut>.fbody{display:none}
+.fac.shut>:not(header){display:none}
 .fac>header:hover h3{text-decoration:underline;text-decoration-color:var(--trim);text-underline-offset:3px}
 #ftools{margin:0 0 10px}
 .stats{grid-template-columns:repeat(5,minmax(max-content,1fr))}
@@ -1283,9 +1283,15 @@ function updFinfo(){
   b.hidden=!inf.length;
   b.textContent=inf.some(function(f){return f.classList.contains("shut")})?"Expand info":"Collapse info";
 }
+/* Fold memory key for a card: its data-fk when fac() built it, otherwise its tab and title. */
+function facKey(f){
+  var fk=f.getAttribute("data-fk");if(fk)return "fac:"+fk;
+  var p=f.closest(".panel"),h=$("h3",f);
+  return "fac:"+(p?p.id:"")+":"+(h?h.textContent:"");
+}
 function toggleFac(h){
   var f=h.parentNode,shut=!f.classList.contains("shut");
-  setFac(f,shut);UI["fac:"+f.getAttribute("data-fk")]=shut?"c":"o";saveUI();updFinfo();
+  setFac(f,shut);UI[facKey(f)]=shut?"c":"o";saveUI();updFinfo();
 }
 function toggleRow(rh){
   var li=rh.closest(".row");if(!li||!(li.querySelector(".meta")||li.querySelector(".warn"))||li.closest("#plist"))return;
@@ -1298,12 +1304,21 @@ function decorate(){
     if(li.closest("#plist")||!(li.querySelector(".meta")||li.querySelector(".warn")))return;
     rh.setAttribute("role","button");rh.setAttribute("tabindex","0");rh.setAttribute("aria-expanded","false");
   });
+  /* Cards written straight into the page (Places facilities, Pets picks, Calculator...) get the
+     same fold behaviour as fac() cards: a button role and their remembered open or closed state. */
+  $$(".fac>header:not([data-dec])").forEach(function(h){
+    h.setAttribute("data-dec","1");
+    var f=h.parentNode;
+    if(!h.hasAttribute("role")){h.setAttribute("role","button");h.setAttribute("tabindex","0")}
+    if(!f.hasAttribute("data-fk")){var v=UI[facKey(f)];if(v==="c")f.classList.add("shut");else if(v==="o")f.classList.remove("shut")}
+    h.setAttribute("aria-expanded",String(!f.classList.contains("shut")));
+  });
 }
 document.addEventListener("click",function(e){
   var fh=e.target.closest(".fac>header");if(fh){toggleFac(fh);return}
   if(e.target.id==="finfo"){
     var sub=$("#f-"+forgeSub),inf=sub?$$(".fac.info",sub):[],shutAll=!inf.some(function(f){return f.classList.contains("shut")});
-    inf.forEach(function(f){setFac(f,shutAll);UI["fac:"+f.getAttribute("data-fk")]=shutAll?"c":"o"});
+    inf.forEach(function(f){setFac(f,shutAll);UI[facKey(f)]=shutAll?"c":"o"});
     saveUI();updFinfo();return;
   }
   var h=e.target.closest(".grp>header");if(h){toggleGrp(h);return}
@@ -2358,7 +2373,7 @@ function calc(){
   out+='<p style="margin:8px 0 0;font-size:.88rem;font-weight:600;color:var(--muted)">Tempering: this material has Elemental Growth '+m[4]+'. As a rough rule each essence level adds about base ÷ '+m[4]+' (an Altena Alloy sword went from 50 to 232 over 66 levels). Resistance by element, Wisp to Undine: '+m.res.join(" ")+'. Lower is easier to raise.</p></div>';
   rank.sort(function(x,y){return y[1]-x[1]});
   out+='<div class="fac"><header><h3>Best materials for this item</h3></header>'+olist(rank.slice(0,6).map(function(r){return '<b>'+esc(r[0])+'</b> '+esc(r[2])})) +'<p style="margin:8px 0 0;font-size:.82rem;color:var(--muted);font-weight:600">'+(iv.charAt(0)==="w"?'Shows base attack power.':'Shows Strike / Slash / Thrust / Magic; ranked by their total.')+' The material numbers come from a forum player’s tables and match four values in other guides; check yours in game.</p></div>';
-  $("#c-out").innerHTML=out;
+  $("#c-out").innerHTML=out;decorate();
 }
 function energy(){
   var r=+$("#e-res").value,wz=+$("#e-wiz").value,row=ENERGY[r][wz],tot=0;

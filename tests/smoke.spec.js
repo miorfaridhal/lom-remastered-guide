@@ -64,6 +64,55 @@ test("GoatCounter gets the page load and each tab, with no cookies", async ({ pa
   expect(await context.cookies()).toEqual([]);
 });
 
+test("every foldable card and group really hides its content when tapped", async ({ page }) => {
+  test.setTimeout(90000);
+  await seed(page);
+  await page.goto("./");
+  const tabs = ["quests", "places", "npcs", "hidden", "skills", "weapons", "plan", "money", "drops", "pets", "eggs", "about", "forge"];
+  const fsubs = ["start", "calc", "mats", "gear", "golem", "blocks", "ult", "items", "cards", "recipes"];
+  const broken = [];
+  let checked = 0;
+  // For each visible header: click it, then check that the content next to it changed visibility.
+  // One pass per tab inside the page keeps this fast.
+  async function sweep(where) {
+    const r = await page.evaluate(() => {
+      const shown = el => getComputedStyle(el).display !== "none";
+      const out = { checked: 0, broken: [] };
+      for (const h of document.querySelectorAll(".panel:not([hidden]) .grp>header, .panel:not([hidden]) .fac>header")) {
+        if (!h.offsetParent) continue;
+        const body = [...h.parentNode.children].find(c => c !== h);
+        if (!body) continue;
+        const before = shown(body);
+        h.click();
+        out.checked++;
+        if (shown(body) === before) out.broken.push(h.textContent.trim().slice(0, 40));
+      }
+      return out;
+    });
+    checked += r.checked;
+    broken.push(...r.broken.map(t => `${where}: "${t}"`));
+  }
+  for (const t of tabs) {
+    await page.evaluate(t => { location.hash = t; }, t);
+    if (t === "forge") {
+      for (const s of fsubs) { await page.locator(`#fnav button[data-fs="${s}"]`).click(); await sweep("forge/" + s); }
+    } else await sweep(t);
+  }
+  expect(checked).toBeGreaterThan(100);
+  expect(broken, "cards whose content did not hide or show").toEqual([]);
+});
+
+test("a folded facility card stays folded after a reload", async ({ page }) => {
+  await page.goto("./#places");
+  const card = page.locator('#fac .fac[data-fac="0"]');
+  await expect(card.locator("ol").first()).toBeVisible();
+  await card.locator("header").click();
+  await expect(card.locator("ol").first()).toBeHidden();
+  await page.reload();
+  await expect(page.locator('#fac .fac[data-fac="0"] ol').first()).toBeHidden();
+  await expect(page.locator('#fac .fac[data-fac="0"] > header')).toHaveAttribute("aria-expanded", "false");
+});
+
 test("saved progress renders the expected counts", async ({ page }) => {
   await seed(page);
   await page.goto("./");
