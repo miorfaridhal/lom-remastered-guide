@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Legend of Mana Tracker</title><meta name="description" content="Fan-made Legend of Mana Remastered completion tracker: all 68 quests in a prerequisite-safe play order, missable warnings, abilities, techniques, forge, farming and pets."><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Mana Compass</title><meta name="description" content="Mana Compass, a fan-made Legend of Mana Remastered companion: all 68 quests in a missable-safe play order, abilities, techniques, forging, farming and pets. Works offline."><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="theme-color" content="#25786F" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1D5F66" media="(prefers-color-scheme: dark)"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Mana Compass"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fondamento&family=IBM+Plex+Mono:wght@400;500&family=Nunito:wght@400;600;700;800&display=swap">
 <style>
@@ -416,6 +416,17 @@ table.t.mt tr.off td{font-style:italic}
 .amul{margin:0;padding-left:18px}
 .amul li{margin-bottom:5px}
 @media (max-width:420px){.amd{grid-template-columns:1fr;gap:0 10px}.amd dd{margin-bottom:6px}}
+
+/* backup panel and update toast */
+.backup{margin-top:30px;padding:12px 14px;background:var(--win);border:1px solid var(--frame);border-radius:8px}
+.backup h2{font-size:1.15rem;margin-bottom:4px}
+.backup p{margin:0 0 10px;color:var(--muted);font-weight:600;font-size:.9rem;max-width:68ch}
+.backup .tools{margin-bottom:4px}
+.backup .step{margin:0;min-height:1.2em}
+.toast{position:fixed;left:0;right:0;margin-inline:auto;width:max-content;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);white-space:nowrap;background:var(--head);color:var(--head-ink);border-radius:8px;padding:8px 8px 8px 14px;box-shadow:0 6px 18px var(--shadow);font-weight:800;animation:panelin .3s ease-out both}
+.toast .btn{background:var(--win);color:var(--ink);border-color:transparent}
+.toast .x{font:inherit;font-size:1.2rem;line-height:1;background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px}
+@media (max-width:760px){.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
@@ -483,7 +494,7 @@ table.t.mt tr.off td{font-style:italic}
       <g><circle class="fl" cx="140" cy="276" r="2.6"/><circle class="fl" cx="330" cy="283" r="2.2"/><circle class="fl" cx="520" cy="278" r="2.8"/><circle class="fl" cx="760" cy="276" r="2.4"/><circle class="fl" cx="1010" cy="284" r="2.6"/></g></g>
   </svg>
   <div class="hero-in">
-    <div class="logo"><span class="tile"><svg class="ic"><use href="#i-tree"/></svg></span><div><h1>Legend of Mana Tracker</h1><p class="tag">Quests, skills, crafting, farming and pets</p></div></div>
+    <div class="logo"><span class="tile"><svg class="ic"><use href="#i-tree"/></svg></span><div><h1>Mana Compass</h1><p class="tag">Legend of Mana Remastered companion: quests, skills, forging, farming and pets</p></div></div>
     <span class="save" id="save" aria-live="polite">Loading…</span>
   </div>
 </header>
@@ -641,6 +652,13 @@ table.t.mt tr.off td{font-style:italic}
     <div class="note"><b>Before you go.</b> You need the Monster Corral open (Places tab). Eggs sit in dead ends and old boss rooms, and the music changes when you enter one. Re-enter the screen to respawn it. The egg drawings are my own: colour and pattern show the family, not what the game shows. Area names and the pets seen at each spot come from fan guides; “could hatch” lists the whole family for that land.</div>
     <div class="tools"><button type="button" class="btn js-all" data-target="#egg-l">Expand all</button></div>
     <div id="egg-l"></div>
+  </section>
+
+  <section class="backup" id="backup" aria-labelledby="bk-h">
+    <h2 id="bk-h">Back up your progress</h2>
+    <p>Your ticks are saved only in this browser. Export them to a file to keep a copy or move them to another device, then import that file there. Importing replaces what this browser has.</p>
+    <div class="tools"><button type="button" class="btn" id="bk-exp">Export progress</button><button type="button" class="btn" id="bk-imp">Import progress</button><input type="file" id="bk-file" accept="application/json,.json" hidden></div>
+    <p class="step" id="bk-msg" aria-live="polite"></p>
   </section>
 
   <footer class="srcs">
@@ -869,7 +887,7 @@ var WT={
 };
 var WEAPONS=Object.keys(WT), STS=[];
 WEAPONS.forEach(function(w){WT[w].split(";").forEach(function(s){var p=s.split("|");STS.push({w:w,name:p[0],cost:+p[1],req:p[2].split(","),key:w+"|"+(p[3]||p[0]),was:p[3]||""})})});
-var STNOTE={"1H Sword|Cutting Pine":"One remaster list shows Back-Roll here, which looks like a copy of Blade Launcher. Two other lists give High-Jump, so this tracker uses High-Jump."};
+var STNOTE={"1H Sword|Cutting Pine":"One remaster list shows Back-Roll here, which looks like a copy of Blade Launcher. Two other lists give High-Jump, so Mana Compass uses High-Jump."};
 function techHow(st){
   var n=st.req.length,nm=st.req.map(function(x){return esc(lab(x))}),t;
   if(n===1)t="Win battles with "+esc(st.w)+" equipped and "+nm[0]+" in one of your two ability slots.";
@@ -2961,10 +2979,52 @@ function amInit(){
     if(t){var cl=t.querySelector(".fac.shut");if(cl)setFac(cl,false);t.scrollIntoView({behavior:calm?"auto":"smooth",block:"start"})}
   });
 }
+/* ---------- backup: export and import progress (same JSON shape as localStorage) ---------- */
+function bkMsg(t){$("#bk-msg").textContent=t}
+$("#bk-exp").addEventListener("click",function(){
+  var name="mana-compass-progress-"+new Date().toISOString().slice(0,10)+".json",
+    url=URL.createObjectURL(new Blob([JSON.stringify(ser(),null,2)],{type:"application/json"})),
+    a=document.createElement("a");
+  a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(function(){URL.revokeObjectURL(url)},1000);
+  bkMsg("Exported "+Object.keys(S.q).length+" finished quests to "+name+".");
+});
+$("#bk-imp").addEventListener("click",function(){$("#bk-file").click()});
+$("#bk-file").addEventListener("change",function(e){
+  var f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
+  f.text().then(function(t){
+    var d;try{d=JSON.parse(t)}catch(x){bkMsg("That file is not valid JSON, so nothing was imported.");return}
+    if(!d||d.v!==1||!Array.isArray(d.q)){bkMsg("That file is not a Mana Compass backup, so nothing was imported.");return}
+    if(hasProgress()&&!window.confirm("Replace the progress in this browser with the file ("+d.q.length+" finished quests)?"))return;
+    S=fromSer(d);saveLocal();location.reload();
+  });
+});
+
 /* ---------- boot ---------- */
 loadLocal();
 renderQuests();renderAbilities();renderWeaponBtns();renderTechs();renderPlaces();amInit();renderNpcs();renderHidden();renderForge();farmInit();showTab();sync();
 setSave("Saved on this device");
+})();
+</script>
+
+<div class="toast" id="upd" role="status" hidden><span>Update available</span><button type="button" class="btn" id="upd-go">Reload</button><button type="button" class="x" id="upd-x" aria-label="Dismiss">×</button></div>
+<script>
+/* Offline support: register the service worker and offer new versions with a toast. */
+(function(){
+  if(!("serviceWorker" in navigator)||!/^https?:$/.test(location.protocol))return;
+  var toast=document.getElementById("upd"),wanted=false,waiting=null;
+  function show(w){waiting=w;toast.hidden=false}
+  document.getElementById("upd-go").addEventListener("click",function(){wanted=true;if(waiting)waiting.postMessage("skip-waiting")});
+  document.getElementById("upd-x").addEventListener("click",function(){toast.hidden=true});
+  navigator.serviceWorker.addEventListener("controllerchange",function(){if(wanted){wanted=false;location.reload()}});
+  navigator.serviceWorker.register("sw.js").then(function(reg){
+    if(reg.waiting&&navigator.serviceWorker.controller)show(reg.waiting);
+    reg.addEventListener("updatefound",function(){
+      var w=reg.installing;if(!w)return;
+      w.addEventListener("statechange",function(){if(w.state==="installed"&&navigator.serviceWorker.controller)show(w)});
+    });
+    document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")reg.update().catch(function(){})});
+  }).catch(function(){});
 })();
 </script>
 

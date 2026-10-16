@@ -1,10 +1,14 @@
-# Legend of Mana Tracker
+# Mana Compass
 
-A fan-made completion tracker and route planner for **Legend of Mana Remastered**. It covers all 68 events in a prerequisite-safe play order, missable-quest warnings, abilities and weapon techniques, forging and tempering, farming, drops, pets and egg spots.
+<img src="icons/icon-192.png" alt="" width="96" align="right">
 
-**Live page:** https://miorfaridhal.github.io/lom-remastered-guide/
+A fan-made companion for **Legend of Mana Remastered**. It points you to the next step and the best gear. It covers all 68 events in a missable-safe play order, abilities and weapon techniques, forging and tempering, farming, drops, pets and egg spots.
 
-Ticks are saved in your own browser (localStorage). Nothing is sent anywhere.
+**Open it:** https://miorfaridhal.github.io/lom-remastered-guide/
+
+- **Install it.** On Android Chrome use *Add to Home screen* (or *Install app*); on iPhone Safari use *Share → Add to Home Screen*. It opens full screen like an app.
+- **Works offline.** After the first visit the whole app is cached, so it runs with no signal. When a new version is published, an *Update available* toast offers a one-tap reload.
+- **Your progress stays yours.** Ticks are saved in your browser (localStorage) and never sent anywhere. Use *Export progress* at the bottom of any tab to save a JSON file, and *Import progress* on another device to carry on there.
 
 ## What is in it
 
@@ -69,6 +73,39 @@ node tools/extract.mjs
 | `data/route-curated.json` | The hand-curated play order and its phases, as shown on the page |
 | `data/constraints.json` | Missable "before" rules and extra requirements, each with a reason |
 | `data/route-solved.json` | The solver's route with the reason for each step |
+
+## Development
+
+The site is static: `index.html`, `sw.js`, `manifest.webmanifest` and `icons/`, served from the `main` branch root by GitHub Pages. There is no build step for the page itself. Node 18 or later is needed for the tools and tests.
+
+```bash
+npm ci
+```
+
+```bash
+npx playwright install chromium
+```
+
+```bash
+npm run serve
+```
+
+```bash
+npm test
+```
+
+```bash
+npm run build
+```
+
+| Command | What it does |
+|---|---|
+| `npm run serve` | Serves the site at http://127.0.0.1:4173/lom-remastered-guide/, the same path as GitHub Pages. |
+| `npm test` | Playwright smoke tests on a 390 px phone and a desktop: no page errors, quest and land counts with a sample save (`tests/fixtures/progress.json`), Forge > Blocks shows the measured 133 spear, export and import, manifest and icons, offline after first load, and the update toast. |
+| `npm run build` | Re-extracts `data/`, re-runs the solver and stamps `sw.js` with a hash of the app shell. **Run it after any change to `index.html` or `icons/`**, or visitors keep the cached old version. CI fails if you forget. |
+| `npm run icons` | Re-renders the PNG icons from `icons/icon.svg` and `icons/icon-maskable.svg`. |
+
+Progress is stored under the localStorage keys `lom-tracker-v1` (ticks) and `lom-ui-v1` (folded cards). Keep those names so existing saves keep loading.
 
 ## Sources
 
