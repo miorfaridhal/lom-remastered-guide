@@ -1,4 +1,4 @@
-# Mana Compass
+# Mana Compass: Legend of Mana Remastered Companion
 
 <img src="icons/icon-192.png" alt="" width="96" align="right">
 

@@ -24,8 +24,8 @@ async function seed(page) {
 
 test("fresh visit renders every quest with nothing ticked", async ({ page }) => {
   await page.goto("./");
-  await expect(page).toHaveTitle("Mana Compass");
-  await expect(page.locator("h1")).toHaveText("Mana Compass");
+  await expect(page).toHaveTitle("Mana Compass: Legend of Mana Remastered Companion");
+  await expect(page.locator("h1")).toHaveText("Legend of Mana Remastered Mana Compass");
   await expect(page.locator("#s-q")).toHaveText("0/68");
   await expect(page.locator("#qlist li[data-q]")).toHaveCount(68);
   await expect(page.locator("#i-empty")).toBeAttached();
@@ -85,6 +85,7 @@ test("manifest and icons are installable", async ({ page, request }) => {
   expect(res.ok()).toBeTruthy();
   const m = await res.json();
   expect(m.short_name).toBe("Mana Compass");
+  expect(m.name).toContain("Legend of Mana");
   expect(m.display).toBe("standalone");
   const sizes = m.icons.map(i => i.sizes);
   expect(sizes).toEqual(expect.arrayContaining(["192x192", "512x512"]));
@@ -98,7 +99,7 @@ test("works offline after the first visit", async ({ page, context }) => {
   await context.setOffline(true);
   await page.reload();
   expect(await page.evaluate(() => !!navigator.serviceWorker.controller)).toBe(true);
-  await expect(page.locator("h1")).toHaveText("Mana Compass");
+  await expect(page.locator("h1")).toHaveText("Legend of Mana Remastered Mana Compass");
   await expect(page.locator("#qlist li[data-q]")).toHaveCount(68);
   await context.setOffline(false);
 });
@@ -116,5 +117,5 @@ test("a new deploy shows the update toast and reloads on request", async ({ page
 
   await Promise.all([page.waitForEvent("load"), page.locator("#upd-go").click()]);
   await expect(page.locator("#upd")).toBeHidden();
-  await expect(page.locator("h1")).toHaveText("Mana Compass");
+  await expect(page.locator("h1")).toHaveText("Legend of Mana Remastered Mana Compass");
 });
