@@ -3166,7 +3166,7 @@ function usageCard(db){
 /* Usage on the website: GoatCounter page and tab counts. No cookies, no personal data.
    Off until GC_CODE holds the site code from goatcounter.com (e.g. "manacompass"). */
 (function usage(){
-  var GC_CODE="";
+  var GC_CODE="manacompass";
   if(!GC_CODE||!/^https?:$/.test(location.protocol))return;
   var base=location.pathname.replace(/[^/]*$/,"");
   function tab(){return (location.hash||"").replace("#","")||"quests"}

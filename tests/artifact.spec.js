@@ -37,7 +37,13 @@ const writesTo = (page, path) => page.evaluate(p => window.__fake.writes.filter(
 
 test.beforeEach(async ({ page }, info) => {
   info.pageErrors = [];
+  info.gcRequests = [];
   page.on("pageerror", e => info.pageErrors.push(e.message));
+  page.on("request", r => { if (/goatcounter|gc\.zgo\.at/.test(r.url())) info.gcRequests.push(r.url()); });
+  await page.route(/goatcounter|gc\.zgo\.at/, r => r.abort());
+});
+test.afterEach(async ({}, info) => {
+  expect(info.gcRequests, "the artifact build never calls GoatCounter").toEqual([]);
 });
 test.afterEach(async ({}, info) => {
   expect(info.pageErrors, "uncaught page errors").toEqual([]);

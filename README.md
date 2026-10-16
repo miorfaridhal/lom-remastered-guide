@@ -106,7 +106,7 @@ node tools/extract.mjs
 ## Usage counts
 
 - **claude.ai artifact:** each signed-in viewer with Contributor access or above keeps one counter document, `visits/<anonymous id>`: number of visits, visits per day (last 120 days) and tabs opened. No names or emails. The artifact's database rules let each viewer write only their own counter and only the owner read them all; the owner sees the totals on the About tab.
-- **Website:** GitHub Pages has no visitor statistics, so the site can use [GoatCounter](https://www.goatcounter.com/) (no cookies, no personal data). It is off until `GC_CODE` in `index.html` is set to a GoatCounter site code. It then counts page loads, each tab as its own path, and opens of the installed app.
+- **Website:** GitHub Pages has no visitor statistics, so the site can use [GoatCounter](https://www.goatcounter.com/) (no cookies, no personal data). It is on, with site code `manacompass` (`GC_CODE` in `index.html`): it counts page loads, each tab as its own path, and opens of the installed app. Tests stand in for GoatCounter, so test runs never add visits to the dashboard.
 
 ## Development
 

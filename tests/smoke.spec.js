@@ -7,10 +7,14 @@ const fixturePath = fileURLToPath(new URL("./fixtures/progress.json", import.met
 const progress = JSON.parse(readFileSync(fixturePath, "utf8"));
 const KEY = "lom-tracker-v1";
 
-// Fail any test whose page throws.
+// Fail any test whose page throws. GoatCounter is replaced by a stand-in that records counts,
+// so test runs never reach the real dashboard.
+const GC_STUB = "window.goatcounter=Object.assign(window.goatcounter||{},{count:function(v){(window.__gc=window.__gc||[]).push(v)}});";
 test.beforeEach(async ({ page }, info) => {
   info.pageErrors = [];
   page.on("pageerror", e => info.pageErrors.push(e.message));
+  await page.route("https://gc.zgo.at/**", r => r.fulfill({ contentType: "text/javascript", body: GC_STUB }));
+  await page.route("https://*.goatcounter.com/**", r => r.abort());
 });
 test.afterEach(async ({}, info) => {
   expect(info.pageErrors, "uncaught page errors").toEqual([]);
@@ -32,8 +36,6 @@ test("fresh visit renders every quest with nothing ticked", async ({ page }) => 
 });
 
 test("sources live on one About page, other tabs only link to it", async ({ page }) => {
-  const tracked = [];
-  page.on("request", r => { if (/goatcounter|gc\.zgo\.at/.test(r.url())) tracked.push(r.url()); });
   await page.goto("./");
   await expect(page.locator("#p-quests")).toBeVisible();
   await expect(page.locator(".srclist")).toBeHidden();
@@ -42,8 +44,24 @@ test("sources live on one About page, other tabs only link to it", async ({ page
   await expect(page.locator("#p-about")).toBeVisible();
   expect(await page.locator(".srclist li").count()).toBeGreaterThan(20);
   await expect(page.locator("#priv-text")).toContainText("only in this browser");
+  await expect(page.locator("#priv-count")).toContainText("GoatCounter");
   await expect(page.locator("#usage")).toBeHidden();
-  expect(tracked, "no usage calls until a GoatCounter code is set").toEqual([]);
+});
+
+test("GoatCounter gets the page load and each tab, with no cookies", async ({ page, context }) => {
+  const loads = [];
+  page.on("request", r => { if (r.url().startsWith("https://gc.zgo.at/")) loads.push(r.url()); });
+  await page.goto("./");
+  await expect.poll(() => page.evaluate(() => (window.__gc || []).length)).toBe(1);
+  expect(loads).toEqual(["https://gc.zgo.at/count.v4.js"]);
+  expect(await page.locator('script[data-goatcounter]').getAttribute("data-goatcounter")).toBe("https://manacompass.goatcounter.com/count");
+
+  await page.evaluate(() => { location.hash = "forge"; });
+  await expect.poll(() => page.evaluate(() => (window.__gc || []).length)).toBe(2);
+  const counts = await page.evaluate(() => window.__gc);
+  expect(counts.map(c => c.path)).toEqual(["/lom-remastered-guide/quests", "/lom-remastered-guide/forge"]);
+  expect(counts.every(c => c.event === false)).toBe(true);
+  expect(await context.cookies()).toEqual([]);
 });
 
 test("saved progress renders the expected counts", async ({ page }) => {
