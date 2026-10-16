@@ -504,6 +504,13 @@ a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 .grp .cnt.won{animation:won .7s cubic-bezier(.3,1.6,.5,1)}
 @keyframes won{0%{transform:scale(.6) rotate(-8deg)}60%{transform:scale(1.2) rotate(4deg)}100%{transform:none}}
 
+/* sound toggle */
+.hero-tools{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex:none}
+.sndbtn{width:32px;height:32px;display:grid;place-items:center;border-radius:8px;border:1px solid var(--frame);background:var(--menuA);color:var(--ink);cursor:pointer;transition:scale .15s ease,background .2s}
+.sndbtn:hover{background:var(--donebg)}
+.sndbtn:active{scale:.92}
+.sndbtn[aria-pressed="false"]{color:var(--muted)}
+
 .foot{margin:24px 0 0;padding-top:10px;border-top:1px solid var(--frame);color:var(--muted);font-size:.84rem;font-weight:600}
 .toast{position:fixed;left:0;right:0;margin-inline:auto;width:max-content;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);white-space:nowrap;background:var(--head);color:var(--head-ink);border-radius:8px;padding:8px 8px 8px 14px;box-shadow:0 6px 18px var(--shadow);font-weight:800;animation:panelin .3s ease-out both}
 .toast .btn{background:var(--win);color:var(--ink);border-color:transparent}
@@ -554,6 +561,8 @@ a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l2 6 6 3-6 3-2 6-2-6-6-3 6-3z"/></symbol>
 <symbol id="i-cloud" viewBox="0 0 120 50"><path d="M18 46C6 46 2 32 14 28c-2-12 14-18 24-10C44 6 66 6 72 20c14-6 30 2 26 14 12 0 20 10 8 12z"/></symbol>
 <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.500"/><circle cx="12" cy="12" r="4.500"/></symbol>
+<symbol id="i-sound" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM16 9a4 4 0 0 1 0 6M18.500 6.500a8 8 0 0 1 0 11"/></symbol>
+<symbol id="i-mute" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM16 9l5 6M21 9l-5 6"/></symbol>
 <symbol id="i-paw" viewBox="0 0 24 24"><circle cx="6.500" cy="11" r="1.800"/><circle cx="10" cy="6.500" r="1.800"/><circle cx="15" cy="6.500" r="1.800"/><circle cx="18.500" cy="11" r="1.800"/><path d="M8 18c0-3.500 2.500-5.500 4-5.500s4 2 4 5.500c0 2-8 2-8 0z"/></symbol>
 </defs></svg>
 <header class="hero">
@@ -579,7 +588,7 @@ a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
   </svg>
   <div class="hero-in">
     <div class="logo"><span class="tile"><svg class="ic"><use href="#i-tree"/></svg></span><div><h1><span class="eyebrow">Legend of Mana Remastered</span> Mana Compass</h1><p class="tag">Companion for quests, skills, forging, farming and pets</p></div></div>
-    <span class="save" id="save" aria-live="polite">Loading…</span>
+    <div class="hero-tools"><span class="save" id="save" aria-live="polite">Loading…</span><button type="button" class="sndbtn" id="snd" aria-pressed="true" aria-label="Sound on" title="Sound on"><svg class="ic sm" aria-hidden="true"><use href="#i-sound"/></svg></button></div>
   </div>
   <button type="button" class="sr-tip" id="tipbtn">Shake the Mana tree for a tip</button>
   <div class="tip" id="tip" role="status" hidden><span class="tip-who">Li’l Cactus</span><span id="tip-t"></span><span class="tip-btns"><button type="button" class="btn" id="tip-go" hidden>Show me</button><button type="button" class="x" id="tip-x" aria-label="Close tip">×</button></span></div>
@@ -1200,7 +1209,10 @@ function cntBadge(el,n,tot,txt){
   el.innerHTML=(full?ic("medal",1):"")+esc(txt);
   el.setAttribute("aria-label",full?"Complete: "+txt:txt);
   var g=el.closest(".grp");if(g)g.classList.toggle("complete",full);
-  if(full&&!was&&cntBadge.ready&&!calm){el.classList.remove("won");void el.offsetWidth;el.classList.add("won")}
+  if(full&&!was&&cntBadge.ready){
+    if(!calm){el.classList.remove("won");void el.offsetWidth;el.classList.add("won")}
+    setTimeout(function(){if(Date.now()-SND.fan>500)sfx("medal")},0); // a phase fanfare already covers it
+  }
 }
 function setPill(el,cls,txt){if(!el)return;el.className="pill "+cls;el.textContent=txt}
 function sync(){
@@ -1287,6 +1299,7 @@ document.addEventListener("change",function(e){
   var g=k.charAt(0),key=k.slice(2);
   if(el.checked)S[g][key]=1;else delete S[g][key];
   if(el.checked)burst(el);
+  sfx(el.checked?"tick":"untick");
   sync();queueSave();
   if(el.checked&&g==="q")checkMilestone(+key);
 });
@@ -1320,6 +1333,7 @@ function showTab(){
   var ni=TABS.indexOf(h),pi=TABS.indexOf(showTab.prev);
   document.documentElement.setAttribute("data-dir",pi<0||ni===pi?"":(ni>pi?"next":"prev"));
   showTab.prev=h;
+  if(pi>=0&&ni!==pi)sfx("tab");
   countStats();
 }
 window.addEventListener("hashchange",function(){showTab();window.scrollTo(0,0)});
@@ -1363,7 +1377,7 @@ function unfoldFx(el){
 }
 function toggleGrp(h){
   var g=h.parentNode,shut=!g.classList.contains("shut");
-  setShut(g,shut);UI[grpKey(g)]=shut?"c":"o";saveUI();if(!shut)unfoldFx(g);
+  setShut(g,shut);UI[grpKey(g)]=shut?"c":"o";saveUI();if(!shut)unfoldFx(g);sfx(shut?"close":"open");
   var root=g.parentNode;if(root&&root.id)updAll(root);
 }
 function setFac(f,shut){f.classList.toggle("shut",shut);var h=f.firstElementChild;if(h)h.setAttribute("aria-expanded",String(!shut))}
@@ -1381,11 +1395,11 @@ function facKey(f){
 }
 function toggleFac(h){
   var f=h.parentNode,shut=!f.classList.contains("shut");
-  setFac(f,shut);UI[facKey(f)]=shut?"c":"o";saveUI();updFinfo();if(!shut)unfoldFx(f);
+  setFac(f,shut);UI[facKey(f)]=shut?"c":"o";saveUI();updFinfo();if(!shut)unfoldFx(f);sfx(shut?"close":"open");
 }
 function toggleRow(rh){
   var li=rh.closest(".row");if(!li||!(li.querySelector(".meta")||li.querySelector(".warn"))||li.closest("#plist"))return;
-  var o=li.classList.toggle("open");rh.setAttribute("aria-expanded",String(o));if(o)unfoldFx(li);
+  var o=li.classList.toggle("open");rh.setAttribute("aria-expanded",String(o));if(o)unfoldFx(li);sfx(o?"open":"close");
 }
 function decorate(){
   $$(".row .rh:not([data-dec])").forEach(function(rh){
@@ -1551,6 +1565,7 @@ var tipTimer=null;
 function shakeTree(x,y){
   var hero=$(".hero"),c=$("#scene .canopy"),b=$("#tip");
   if(c&&!calm){c.classList.remove("shake");void c.getBoundingClientRect();c.classList.add("shake")}
+  sfx("chime");
   if(x!=null){var r=hero.getBoundingClientRect();sparkle(x-r.left,y-r.top,14,hero)}
   var tip=tipNow();
   $("#tip-t").textContent=tip.t;
@@ -1568,11 +1583,53 @@ function shakeTree(x,y){
       return e.clientX>=r.left-10&&e.clientX<=r.right+10&&e.clientY>=r.top-10&&e.clientY<=r.bottom+10;
     });
     if(onTree)shakeTree(e.clientX,e.clientY);
-    else{var r=hero.getBoundingClientRect();sparkle(e.clientX-r.left,e.clientY-r.top,6,hero)}
+    else{var r=hero.getBoundingClientRect();sparkle(e.clientX-r.left,e.clientY-r.top,6,hero);sfx("pop")}
   });
   $("#tipbtn").addEventListener("click",function(){shakeTree()});
   $("#tip-x").addEventListener("click",function(){$("#tip").hidden=true});
   var c=$("#scene .canopy");if(c)c.addEventListener("animationend",function(e){if(e.animationName==="treeshake")c.classList.remove("shake")});
+})();
+
+/* ---------- sound: tiny tones made in the browser (no audio files), only after a tap ----------
+   Quiet by design. The speaker button in the header mutes it; the choice is remembered. */
+var SND={ctx:null,on:UI.sound!=="off",fan:0};
+function sndCtx(){
+  if(!SND.ctx){var A=window.AudioContext||window.webkitAudioContext;if(!A)return null;try{SND.ctx=new A()}catch(e){return null}}
+  if(SND.ctx.state==="suspended")SND.ctx.resume();
+  return SND.ctx;
+}
+function tone(c,freq,at,dur,type,vol,glide){
+  var o=c.createOscillator(),g=c.createGain();
+  o.type=type||"sine";o.frequency.setValueAtTime(freq,at);
+  if(glide)o.frequency.exponentialRampToValueAtTime(glide,at+dur);
+  g.gain.setValueAtTime(0.0001,at);g.gain.exponentialRampToValueAtTime(vol,at+0.012);g.gain.exponentialRampToValueAtTime(0.0001,at+dur);
+  o.connect(g);g.connect(c.destination);o.start(at);o.stop(at+dur+0.02);
+}
+function sfx(name){
+  if(!SND.on)return;
+  var c=sndCtx();if(!c)return;
+  var t=c.currentTime+0.005,seq=function(fs,step,dur,type,vol){fs.forEach(function(fq,i){tone(c,fq,t+i*step,dur,type,vol)})};
+  switch(name){
+    case "tick":tone(c,880,t,0.09,"sine",0.05,1320);tone(c,1320,t+0.05,0.09,"sine",0.03);break;
+    case "untick":tone(c,660,t,0.08,"sine",0.04,440);break;
+    case "open":tone(c,520,t,0.06,"triangle",0.03,700);break;
+    case "close":tone(c,600,t,0.06,"triangle",0.025,420);break;
+    case "tab":tone(c,740,t,0.045,"sine",0.025);break;
+    case "pop":tone(c,1200,t,0.07,"sine",0.03,900);break;
+    case "chime":seq([784,988,1175,1568],0.07,0.35,"sine",0.035);break;
+    case "medal":seq([988,1319,1760],0.06,0.25,"triangle",0.04);break;
+    case "fanfare":seq([523,659,784,1047,784,1047],0.09,0.3,"triangle",0.045);break;
+  }
+}
+function sndUI(){
+  var b=$("#snd");if(!b)return;
+  b.setAttribute("aria-pressed",String(SND.on));
+  b.setAttribute("aria-label",SND.on?"Sound on":"Sound off");b.title=SND.on?"Sound on":"Sound off";
+  b.innerHTML=ic(SND.on?"sound":"mute",1);
+}
+(function sndInit(){
+  sndUI();
+  $("#snd").addEventListener("click",function(){SND.on=!SND.on;UI.sound=SND.on?"on":"off";saveUI();sndUI();sfx("tick")});
 })();
 
 /* ---------- celebrations: a full phase of the play order, or all 68 events ---------- */
@@ -1582,6 +1639,7 @@ function celebrate(title,sub){
   $("#cele-t").textContent=title;$("#cele-s").textContent=sub||"";
   box.hidden=false;box.classList.remove("in");void box.offsetWidth;box.classList.add("in");
   clearTimeout(celeTimer);celeTimer=setTimeout(function(){box.hidden=true},4200);
+  SND.fan=Date.now();sfx("fanfare");
   if(calm)return;
   var cols=["var(--trim)","var(--accent)","var(--leaf2)","var(--glow)","var(--ready)"];
   for(var i=0;i<46;i++){

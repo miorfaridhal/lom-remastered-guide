@@ -101,3 +101,42 @@ test("finished groups wear a medal, untouched ones a dashed pill", async ({ page
   await expect(pills.nth(6)).toHaveClass(/none/);
   await expect(page.locator("#qlist .grp").nth(6)).not.toHaveClass(/complete/);
 });
+
+// A stand-in AudioContext that counts tones instead of playing them.
+async function fakeAudio(page) {
+  await page.addInitScript(() => {
+    window.__tones = 0;
+    const param = { setValueAtTime() {}, exponentialRampToValueAtTime() {} };
+    class FakeCtx {
+      constructor() { this.state = "running"; this.currentTime = 0; this.destination = {}; }
+      resume() {}
+      createOscillator() { window.__tones++; return { type: "", frequency: param, connect() {}, start() {}, stop() {} }; }
+      createGain() { return { gain: param, connect() {} }; }
+    }
+    window.AudioContext = FakeCtx;
+  });
+}
+
+test("ticking plays a small sound, and the speaker button mutes it for good", async ({ page }) => {
+  await fakeAudio(page);
+  await page.goto("./");
+  const tick = id => page.locator(`#qlist input[data-k="q:${id}"]`).evaluate(el => { el.checked = !el.checked; el.dispatchEvent(new Event("change", { bubbles: true })); });
+  const open = [...Array(68).keys()].map(i => String(i + 1)).find(id => !progress.q.includes(id));
+  const tones = () => page.evaluate(() => window.__tones);
+
+  await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "true");
+  await tick(open);
+  expect(await tones()).toBeGreaterThan(0);
+
+  await page.locator("#snd").click();
+  await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "false");
+  const before = await tones();
+  await tick(open);
+  expect(await tones()).toBe(before);
+
+  await page.reload();
+  await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "false");
+  await expect(page.locator("#snd use")).toHaveAttribute("href", "#i-mute");
+  await page.locator("#snd").click();
+  await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "true");
+});
