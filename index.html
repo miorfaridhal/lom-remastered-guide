@@ -424,6 +424,8 @@ table.t.mt tr.off td{font-style:italic}
 .backup p{margin:0 0 10px;color:var(--muted);font-weight:600;font-size:.9rem;max-width:68ch}
 .backup .tools{margin-bottom:4px}
 .backup .step{margin:0;min-height:1.2em}
+.bk-ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:4px 0 8px;padding:8px 10px;background:var(--goldbg);color:var(--ink);border-radius:6px;font-weight:700;font-size:.9rem}
+.bk-ask .bk-btns{display:flex;gap:8px}
 .toast{position:fixed;left:0;right:0;margin-inline:auto;width:max-content;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);white-space:nowrap;background:var(--head);color:var(--head-ink);border-radius:8px;padding:8px 8px 8px 14px;box-shadow:0 6px 18px var(--shadow);font-weight:800;animation:panelin .3s ease-out both}
 .toast .btn{background:var(--win);color:var(--ink);border-color:transparent}
 .toast .x{font:inherit;font-size:1.2rem;line-height:1;background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px}
@@ -657,8 +659,9 @@ table.t.mt tr.off td{font-style:italic}
 
   <section class="backup" id="backup" aria-labelledby="bk-h">
     <h2 id="bk-h">Back up your progress</h2>
-    <p>Your ticks are saved only in this browser. Export them to a file to keep a copy or move them to another device, then import that file there. Importing replaces what this browser has.</p>
+    <p id="bk-where">Your ticks are saved only in this browser. Export them to a file to keep a copy or move them to another device, then import that file there. Importing replaces what this browser has.</p>
     <div class="tools"><button type="button" class="btn" id="bk-exp">Export progress</button><button type="button" class="btn" id="bk-imp">Import progress</button><input type="file" id="bk-file" accept="application/json,.json" hidden></div>
+    <div class="bk-ask" id="bk-ask" hidden><span id="bk-ask-t"></span><span class="bk-btns"><button type="button" class="btn" id="bk-yes">Replace</button><button type="button" class="btn" id="bk-no">Cancel</button></span></div>
     <p class="step" id="bk-msg" aria-live="polite"></p>
   </section>
 
@@ -691,7 +694,7 @@ table.t.mt tr.off td{font-style:italic}
       <li>All icons on this page are simple original drawings, not artwork from the game.</li>
       <li>The play order is checked by a route solver: see <a href="https://github.com/miorfaridhal/lom-remastered-guide#route-solver" target="_blank" rel="noopener">the project on GitHub</a>.</li>
     </ul>
-    Fan-made and unofficial. Legend of Mana is a trademark of Square Enix; this site is not affiliated with or endorsed by Square Enix. Your ticks are saved only in this browser.<br>
+    Fan-made and unofficial. Legend of Mana is a trademark of Square Enix; this site is not affiliated with or endorsed by Square Enix.<br>
     Magic spells are not covered here. Ability and technique names follow the Android remaster, with the original name shown where it changed. Quest, land and item names come from guides that mix both versions, so a few may not match your game.
   </footer>
 </main>
@@ -2982,32 +2985,78 @@ function amInit(){
 }
 /* ---------- backup: export and import progress (same JSON shape as localStorage) ---------- */
 function bkMsg(t){$("#bk-msg").textContent=t}
+/* On claude.ai the page cannot start a download itself, so it asks the downloads capability,
+   which shows the viewer a save prompt. Anywhere else a plain download link does the job. */
+function bkSave(name,text){
+  var c=window.claude,ask=c&&c.use?c.use("downloads"):Promise.resolve(null);
+  return ask.then(function(dl){
+    if(dl)return dl.save({filename:name,data:text}).then(function(){return "saved"},function(e){return e&&e.code==="declined"?"declined":"failed"});
+    var url=URL.createObjectURL(new Blob([text],{type:"application/json"})),a=document.createElement("a");
+    a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url)},1000);
+    return "saved";
+  });
+}
 $("#bk-exp").addEventListener("click",function(){
-  var name="mana-compass-progress-"+new Date().toISOString().slice(0,10)+".json",
-    url=URL.createObjectURL(new Blob([JSON.stringify(ser(),null,2)],{type:"application/json"})),
-    a=document.createElement("a");
-  a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
-  setTimeout(function(){URL.revokeObjectURL(url)},1000);
-  bkMsg("Exported "+Object.keys(S.q).length+" finished quests to "+name+".");
+  var name="mana-compass-progress-"+new Date().toISOString().slice(0,10)+".json",n=Object.keys(S.q).length;
+  bkSave(name,JSON.stringify(ser(),null,2)).then(function(r){
+    bkMsg(r==="saved"?"Exported "+n+" finished quests to "+name+".":r==="declined"?"Export cancelled.":"This view cannot save files. Open the page in a browser and export from there.");
+  });
 });
+var bkPending=null;
+function bkApply(d){
+  S=fromSer(d);sync();queueSave();
+  bkMsg("Imported "+Object.keys(S.q).length+" finished quests.");
+}
 $("#bk-imp").addEventListener("click",function(){$("#bk-file").click()});
 $("#bk-file").addEventListener("change",function(e){
   var f=e.target.files&&e.target.files[0];e.target.value="";if(!f)return;
+  $("#bk-ask").hidden=true;bkPending=null;
   f.text().then(function(t){
     var d;try{d=JSON.parse(t)}catch(x){bkMsg("That file is not valid JSON, so nothing was imported.");return}
     if(!d||d.v!==1||!Array.isArray(d.q)){bkMsg("That file is not a Mana Compass backup, so nothing was imported.");return}
-    if(hasProgress()&&!window.confirm("Replace the progress in this browser with the file ("+d.q.length+" finished quests)?"))return;
-    S=fromSer(d);saveLocal();location.reload();
+    if(!hasProgress()){bkApply(d);return}
+    bkPending=d;bkMsg("");
+    $("#bk-ask-t").textContent="Replace your current progress ("+Object.keys(S.q).length+" finished quests) with this file ("+d.q.length+")?";
+    $("#bk-ask").hidden=false;
   });
 });
+$("#bk-yes").addEventListener("click",function(){var d=bkPending;bkPending=null;$("#bk-ask").hidden=true;if(d)bkApply(d)});
+$("#bk-no").addEventListener("click",function(){bkPending=null;$("#bk-ask").hidden=true;bkMsg("Import cancelled. Nothing changed.")});
 
 /* ---------- boot ---------- */
 loadLocal();
 renderQuests();renderAbilities();renderWeaponBtns();renderTechs();renderPlaces();amInit();renderNpcs();renderHidden();renderForge();farmInit();showTab();sync();
 setSave("Saved on this device");
+
+/* On claude.ai, progress also syncs to the viewer's account (db + user capabilities).
+   Elsewhere window.claude is absent and the page keeps using this browser's storage. */
+(function connect(){
+  var c=window.claude;if(!c||!c.use)return;
+  Promise.all([c.use("db"),c.use("user")]).then(function(r){
+    var db=r[0],user=r[1];
+    if(!db||!user)return null;
+    return user.id().then(function(id){
+      if(!id)return null;
+      dbDoc=db.doc("data/users/"+id+"/progress");
+      setSave("Syncing…");
+      $("#bk-where").textContent="Your ticks are saved to your Claude account. Export them to a file to keep a copy or to move them to the Mana Compass website, then import that file there. Importing replaces your current progress.";
+      dbDoc.onSnapshot(function(snap){
+        if(writing||dirty)return;
+        if(snap.exists){
+          S=fromSer(snap.data()||{});saveLocal();sync();setSave("Saved to your account");
+        } else {
+          if(firstSnap&&hasProgress())queueSave();else setSave("Saved to your account");
+        }
+        firstSnap=false;
+      },function(){dbDoc=null;setSave("Saved on this device")});
+    });
+  }).catch(function(){dbDoc=null;setSave("Saved on this device")});
+})();
 })();
 </script>
 
+<!-- site-only:start (offline support; tools/build-artifact.mjs drops this for the claude.ai artifact) -->
 <div class="toast" id="upd" role="status" hidden><span>Update available</span><button type="button" class="btn" id="upd-go">Reload</button><button type="button" class="x" id="upd-x" aria-label="Dismiss">×</button></div>
 <script>
 /* Offline support: register the service worker and offer new versions with a toast. */
@@ -3028,5 +3077,6 @@ setSave("Saved on this device");
   }).catch(function(){});
 })();
 </script>
+<!-- site-only:end -->
 
 </body></html>

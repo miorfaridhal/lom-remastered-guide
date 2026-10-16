@@ -71,6 +71,25 @@ test("import restores progress on a fresh browser", async ({ page }) => {
   expect(await page.evaluate(k => JSON.parse(localStorage.getItem(k)).q.length, KEY)).toBe(37);
 });
 
+test("import over existing progress asks first, in the page", async ({ page }) => {
+  await seed(page);
+  await page.goto("./");
+  const other = { ...progress, q: progress.q.slice(0, 5) };
+  const file = { name: "other.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify(other)) };
+
+  await page.locator("#bk-file").setInputFiles(file);
+  await expect(page.locator("#bk-ask")).toBeVisible();
+  await expect(page.locator("#bk-ask-t")).toContainText("37 finished quests");
+  await page.locator("#bk-no").click();
+  await expect(page.locator("#bk-ask")).toBeHidden();
+  await expect(page.locator("#s-q")).toHaveText("37/68");
+
+  await page.locator("#bk-file").setInputFiles(file);
+  await page.locator("#bk-yes").click();
+  await expect(page.locator("#s-q")).toHaveText("5/68");
+  await expect(page.locator("#bk-msg")).toContainText("Imported 5 finished quests");
+});
+
 test("import rejects a file that is not a backup", async ({ page }) => {
   await page.goto("./");
   await page.locator("#bk-file").setInputFiles({ name: "x.json", mimeType: "application/json", buffer: Buffer.from('{"hello":1}') });
