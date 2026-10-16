@@ -439,6 +439,71 @@ table.t.mt tr.off td{font-style:italic}
 .usage-stats div{background:var(--bg);border-radius:6px;padding:8px 10px}
 .usage-stats b{display:block;font:500 1.2rem var(--mono);font-variant-numeric:tabular-nums}
 .usage-stats span{font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+/* ---------- motion and play ----------
+   Everything is fully visible at rest: scroll effects only run where the browser supports
+   scroll-driven animations, and all of it switches off under prefers-reduced-motion. */
+a.st{color:inherit;text-decoration:none;display:block;transition:background .2s}
+a.st:hover{background:var(--donebg)}
+a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.st.bump b{animation:bump .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes bump{0%{transform:scale(1)}40%{transform:scale(1.25);color:var(--accent)}100%{transform:scale(1)}}
+.st b{transform-origin:left center}
+.scroll-line{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;height:3px;z-index:30;pointer-events:none;background:linear-gradient(90deg,var(--trim),var(--accent));transform-origin:0 50%;transform:scaleX(0)}
+@supports (animation-timeline: view()){
+  .scroll-line{animation:growx linear both;animation-timeline:scroll(root)}
+  .grp,.fac,.card,.aboutc,.backup,.amgo{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 65%}
+  @media (min-width:761px){.menu{animation:menushade linear both;animation-timeline:scroll(root);animation-range:0 140px}}
+}
+@keyframes growx{to{transform:scaleX(1)}}
+@keyframes rise{from{opacity:.3;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes menushade{to{box-shadow:0 6px 18px var(--shadow)}}
+@keyframes unfold{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.grp.opening>.list,.fac.opening>:not(header),.row.opening .meta,.row.opening .warn,.row.opening .route{animation:unfold .3s cubic-bezier(.2,.8,.2,1)}
+.grp>header,.fac>header,.rh,.btn,.seg button,.wpn button,.subnav a,.amc,.amgo,a.st{transition:scale .15s ease,background .2s,color .2s}
+.grp>header:active,.fac>header:active,.btn:active,.seg button:active,.wpn button:active,.subnav a:active,.amc:active,.amgo:active,a.st:active{scale:.97}
+.rh:active{scale:.99}
+@media (hover:hover){
+  .card,.aboutc,.amgo{transition:translate .2s ease,box-shadow .2s ease}
+  .card:hover,.aboutc:hover,.amgo:hover{translate:0 -3px;box-shadow:0 8px 18px var(--shadow)}
+}
+:root[data-dir="next"] .panel:not([hidden]){animation-name:panelnext}
+:root[data-dir="prev"] .panel:not([hidden]){animation-name:panelprev}
+@keyframes panelnext{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@keyframes panelprev{from{opacity:0;transform:translateX(-28px)}to{opacity:1;transform:none}}
+.row.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%,30%{background:var(--goldbg)}100%{background:transparent}}
+.hero{cursor:pointer}
+.canopy.shake{animation:treeshake .8s ease-in-out}
+@keyframes treeshake{0%,100%{transform:rotate(0)}15%{transform:rotate(-4deg)}35%{transform:rotate(3.5deg)}55%{transform:rotate(-2.5deg)}75%{transform:rotate(1.5deg)}}
+.sr-tip{position:absolute;left:14px;bottom:8px;z-index:3;font:inherit;font-weight:800;font-size:.8rem;padding:6px 10px;border-radius:6px;border:1px solid var(--frame);background:var(--win);color:var(--ink);clip-path:inset(50%);width:1px;height:1px;overflow:hidden;white-space:nowrap}
+.sr-tip:focus-visible{clip-path:none;width:auto;height:auto;overflow:visible}
+.tip{position:fixed;top:calc(env(safe-area-inset-top,0px) + 12px);left:16px;right:16px;margin-inline:auto;max-width:560px;z-index:65;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:10px 10px 10px 14px;background:var(--win);color:var(--ink);border:1px solid var(--frame);border-left:4px solid var(--accent);border-radius:10px;box-shadow:0 10px 26px var(--shadow);font-size:.9rem;font-weight:700;cursor:default}
+.tip.in{animation:tipin .35s cubic-bezier(.2,1.3,.4,1)}
+@keyframes tipin{from{opacity:0;transform:translateY(-14px) scale(.96)}to{opacity:1;transform:none}}
+.tip-who{flex:0 0 100%;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+#tip-t{flex:1 1 220px;min-width:0}
+.tip-btns{display:flex;align-items:center;gap:4px;margin-left:auto}
+.tip .x{font:inherit;font-size:1.2rem;line-height:1;background:none;border:0;color:var(--muted);cursor:pointer;padding:4px 8px}
+.cele{position:fixed;top:28%;left:16px;right:16px;margin-inline:auto;max-width:420px;z-index:66;pointer-events:none;display:grid;gap:4px;text-align:center;padding:18px 20px;background:var(--head);color:var(--head-ink);border-radius:14px;box-shadow:0 16px 40px var(--shadow)}
+.cele.in{animation:celein .5s cubic-bezier(.2,1.4,.4,1)}
+@keyframes celein{from{opacity:0;transform:scale(.8) translateY(20px)}to{opacity:1;transform:none}}
+#cele-t{font:400 1.45rem var(--display)}
+#cele-s{font-size:.88rem;font-weight:700;opacity:.92}
+.petal{position:fixed;top:-14px;width:9px;height:13px;z-index:64;pointer-events:none;background:var(--c);border-radius:60% 0 60% 0;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),105vh) rotate(var(--rot));opacity:.2}}
+.hero .spk{z-index:3}
+/* wide headers crop the top of the scene, so the tree is drawn smaller from its base there */
+@media (min-width:761px){.treeg{transform:scale(.55);transform-origin:925px 300px}}
+
+/* achievement pills on group counters */
+.grp .cnt{display:inline-flex;align-items:center;gap:4px;white-space:nowrap}
+.grp .cnt .ic{width:14px;height:14px;stroke-width:2.2}
+.grp .cnt.full{background:var(--trim);color:#2A1D00;font-weight:600;box-shadow:0 0 0 1px rgba(255,255,255,.35)}
+.grp .cnt.none{background:transparent;border:1px dashed currentColor;opacity:.7;padding:0 6px}
+.grp.complete>header{box-shadow:inset 4px 0 0 var(--trim)}
+.grp .cnt.won{animation:won .7s cubic-bezier(.3,1.6,.5,1)}
+@keyframes won{0%{transform:scale(.6) rotate(-8deg)}60%{transform:scale(1.2) rotate(4deg)}100%{transform:none}}
+
 .foot{margin:24px 0 0;padding-top:10px;border-top:1px solid var(--frame);color:var(--muted);font-size:.84rem;font-weight:600}
 .toast{position:fixed;left:0;right:0;margin-inline:auto;width:max-content;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);white-space:nowrap;background:var(--head);color:var(--head-ink);border-radius:8px;padding:8px 8px 8px 14px;box-shadow:0 6px 18px var(--shadow);font-weight:800;animation:panelin .3s ease-out both}
 .toast .btn{background:var(--win);color:var(--ink);border-color:transparent}
@@ -498,12 +563,14 @@ table.t.mt tr.off td{font-style:italic}
     <defs><radialGradient id="glowg" cx="50%" cy="50%" r="50%"><stop offset="0" style="stop-color:var(--glow);stop-opacity:.85"/><stop offset="1" style="stop-color:var(--glow);stop-opacity:0"/></radialGradient></defs>
     <g class="par" data-p="0.12"><path class="hill far" d="M0 215 C150 165 280 195 420 185 C560 175 640 135 780 165 C920 195 1040 155 1200 185 V300 H0z"/></g>
     <g class="par" data-p="0.2">
+      <g class="treeg">
       <circle class="halo" cx="925" cy="105" r="135" fill="url(#glowg)"/>
       <path class="trunk" d="M912 300 C918 255 910 215 902 180 L934 180 C928 215 940 255 950 300z"/>
       <g class="canopy">
         <circle class="leaf-a" cx="895" cy="125" r="50"/><circle class="leaf-a" cx="958" cy="120" r="46"/><circle class="leaf-b" cx="925" cy="88" r="46"/>
         <circle class="leaf-a" cx="868" cy="158" r="32"/><circle class="leaf-b" cx="985" cy="156" r="32"/><circle class="leaf-b" cx="922" cy="146" r="40"/>
         <circle class="fl" cx="900" cy="100" r="2.6"/><circle class="fl" cx="945" cy="82" r="2.2"/><circle class="fl" cx="965" cy="130" r="2.8"/><circle class="fl" cx="880" cy="140" r="2.2"/><circle class="fl" cx="925" cy="120" r="3"/><circle class="fl" cx="990" cy="160" r="2.2"/>
+      </g>
       </g>
     </g>
     <g class="par" data-p="0.3"><path class="hill mid" d="M0 250 C200 210 360 255 560 235 C760 215 900 255 1200 225 V300 H0z"/></g>
@@ -514,14 +581,18 @@ table.t.mt tr.off td{font-style:italic}
     <div class="logo"><span class="tile"><svg class="ic"><use href="#i-tree"/></svg></span><div><h1><span class="eyebrow">Legend of Mana Remastered</span> Mana Compass</h1><p class="tag">Companion for quests, skills, forging, farming and pets</p></div></div>
     <span class="save" id="save" aria-live="polite">Loading…</span>
   </div>
+  <button type="button" class="sr-tip" id="tipbtn">Shake the Mana tree for a tip</button>
+  <div class="tip" id="tip" role="status" hidden><span class="tip-who">Li’l Cactus</span><span id="tip-t"></span><span class="tip-btns"><button type="button" class="btn" id="tip-go" hidden>Show me</button><button type="button" class="x" id="tip-x" aria-label="Close tip">×</button></span></div>
 </header>
-<div class="stats">
-  <div class="st"><b id="s-q">0/68</b><span>Quests</span><div class="bar"><i id="b-q"></i></div></div>
-  <div class="st"><b id="s-a">0/26</b><span>Abilities</span><div class="bar"><i id="b-a"></i></div></div>
-  <div class="st"><b id="s-t">0</b><span>Techniques</span><div class="bar"><i id="b-t"></i></div></div>
-  <div class="st"><b id="s-p">0/26</b><span>Lands</span><div class="bar"><i id="b-p"></i></div></div>
-  <div class="st"><b id="s-e">0/64</b><span>Pets</span><div class="bar"><i id="b-e"></i></div></div>
-</div>
+<div class="scroll-line" aria-hidden="true"></div>
+<div class="cele" id="cele" role="status" hidden><b id="cele-t"></b><span id="cele-s"></span></div>
+<nav class="stats" aria-label="Progress">
+  <a class="st" href="#quests"><b id="s-q">0/68</b><span>Quests</span><div class="bar"><i id="b-q"></i></div></a>
+  <a class="st" href="#skills"><b id="s-a">0/26</b><span>Abilities</span><div class="bar"><i id="b-a"></i></div></a>
+  <a class="st" href="#weapons"><b id="s-t">0</b><span>Techniques</span><div class="bar"><i id="b-t"></i></div></a>
+  <a class="st" href="#places"><b id="s-p">0/26</b><span>Lands</span><div class="bar"><i id="b-p"></i></div></a>
+  <a class="st" href="#pets"><b id="s-e">0/64</b><span>Pets</span><div class="bar"><i id="b-e"></i></div></a>
+</nav>
 <nav class="menu" id="tabs" aria-label="Sections"></nav>
 
 <main class="wrap">
@@ -1121,6 +1192,16 @@ function renderHidden(){
 }
 
 /* ---------- SYNC: reflect state in the DOM without rebuilding ---------- */
+/* Group counters: a gold medal pill when everything is done, a faint dashed one before anything is. */
+function cntBadge(el,n,tot,txt){
+  if(!el)return;
+  var full=tot>0&&n===tot,none=n===0,was=el.classList.contains("full");
+  el.classList.toggle("full",full);el.classList.toggle("none",none&&!full);
+  el.innerHTML=(full?ic("medal",1):"")+esc(txt);
+  el.setAttribute("aria-label",full?"Complete: "+txt:txt);
+  var g=el.closest(".grp");if(g)g.classList.toggle("complete",full);
+  if(full&&!was&&cntBadge.ready&&!calm){el.classList.remove("won");void el.offsetWidth;el.classList.add("won")}
+}
 function setPill(el,cls,txt){if(!el)return;el.className="pill "+cls;el.textContent=txt}
 function sync(){
   farmRefresh();
@@ -1140,12 +1221,12 @@ function sync(){
   });
   $$("#qlist .grp").forEach(function(g){
     var ids=g.getAttribute("data-ids").split(",").map(Number),n=ids.filter(qDone).length;
-    $("[data-cnt]",g).textContent=n+"/"+ids.length+" done";
+    cntBadge($("[data-cnt]",g),n,ids.length,n+"/"+ids.length+" done");
     g.classList.toggle("alldone",n===ids.length);
   });
   $$("#nlist .grp, #hlist .grp, #f-start .grp, #f-recipes-l .grp").forEach(function(g){
     var rs=$$(".row",g),n=rs.filter(function(r){var i=$("input[data-k]",r);return i&&i.checked}).length,c=$("[data-cnt]",g);
-    if(c)c.textContent=n+"/"+rs.length+" done";
+    if(c)cntBadge(c,n,rs.length,n+"/"+rs.length+" done");
   });
   decorate();
   // abilities
@@ -1193,10 +1274,7 @@ function sync(){
   $$("[data-pl]").forEach(function(li){li.classList.toggle("done",!!S.p[li.getAttribute("data-pl")])});
   // header totals
   var nq=Object.keys(S.q).length,na=AB.filter(function(a){return S.a[a[0]]}).length,nt=STS.filter(function(s){return S.t[s.key]}).length,np=LANDS.filter(function(l){return S.p[l[0]]}).length;
-  $("#s-q").textContent=nq+"/"+Q.length;$("#b-q").style.width=(100*nq/Q.length)+"%";
-  $("#s-a").textContent=na+"/"+AB.length;$("#b-a").style.width=(100*na/AB.length)+"%";
-  $("#s-t").textContent=nt+"/"+STS.length;$("#b-t").style.width=(100*nt/STS.length)+"%";
-  $("#s-p").textContent=np+"/"+LANDS.length;$("#b-p").style.width=(100*np/LANDS.length)+"%";
+  setStat("q",nq,Q.length);setStat("a",na,AB.length);setStat("t",nt,STS.length);setStat("p",np,LANDS.length);
   eggCounts();
   $$("li[data-o]").forEach(function(li){li.classList.toggle("own",!!S.o[li.getAttribute("data-o")])});
   $$("li[data-e]").forEach(function(li){li.classList.toggle("own",!!S.e[li.getAttribute("data-e")])});
@@ -1210,6 +1288,7 @@ document.addEventListener("change",function(e){
   if(el.checked)S[g][key]=1;else delete S[g][key];
   if(el.checked)burst(el);
   sync();queueSave();
+  if(el.checked&&g==="q")checkMilestone(+key);
 });
 $("#v-art").addEventListener("click",function(){view="art";$("#v-art").setAttribute("aria-pressed","true");$("#v-seq").setAttribute("aria-pressed","false");renderQuests()});
 $("#v-seq").addEventListener("click",function(){view="seq";$("#v-seq").setAttribute("aria-pressed","true");$("#v-art").setAttribute("aria-pressed","false");renderQuests()});
@@ -1237,6 +1316,11 @@ function showTab(){
   $("#tabs").innerHTML=GROUPS.map(function(x){return '<a href="#'+(lastIn[x[0]]||x[3][0][0])+'" aria-current="'+(x===g)+'">'+ic(x[2],1)+x[1]+'</a>'}).join("");
   var sn=$("#subnav");sn.innerHTML=g[3].length>1?g[3].map(function(p){return '<a href="#'+p[0]+'" aria-current="'+(p[0]===h)+'">'+p[1]+'</a>'}).join(""):"";
   sn.hidden=g[3].length<2;
+  /* slide the new tab in from the side it sits on, and count the status cards up again */
+  var ni=TABS.indexOf(h),pi=TABS.indexOf(showTab.prev);
+  document.documentElement.setAttribute("data-dir",pi<0||ni===pi?"":(ni>pi?"next":"prev"));
+  showTab.prev=h;
+  countStats();
 }
 window.addEventListener("hashchange",function(){showTab();window.scrollTo(0,0)});
 
@@ -1271,9 +1355,15 @@ function updAll(root){
   var anyOpen=$$(".grp",root).some(function(g){return !g.classList.contains("shut")});
   btn.textContent=anyOpen?"Collapse all":"Expand all";
 }
+/* a short slide-in when a person opens something (not when lists re-render) */
+function unfoldFx(el){
+  if(typeof calm!=="undefined"&&calm)return;
+  el.classList.remove("opening");void el.offsetWidth;el.classList.add("opening");
+  setTimeout(function(){el.classList.remove("opening")},400);
+}
 function toggleGrp(h){
   var g=h.parentNode,shut=!g.classList.contains("shut");
-  setShut(g,shut);UI[grpKey(g)]=shut?"c":"o";saveUI();
+  setShut(g,shut);UI[grpKey(g)]=shut?"c":"o";saveUI();if(!shut)unfoldFx(g);
   var root=g.parentNode;if(root&&root.id)updAll(root);
 }
 function setFac(f,shut){f.classList.toggle("shut",shut);var h=f.firstElementChild;if(h)h.setAttribute("aria-expanded",String(!shut))}
@@ -1291,11 +1381,11 @@ function facKey(f){
 }
 function toggleFac(h){
   var f=h.parentNode,shut=!f.classList.contains("shut");
-  setFac(f,shut);UI[facKey(f)]=shut?"c":"o";saveUI();updFinfo();
+  setFac(f,shut);UI[facKey(f)]=shut?"c":"o";saveUI();updFinfo();if(!shut)unfoldFx(f);
 }
 function toggleRow(rh){
   var li=rh.closest(".row");if(!li||!(li.querySelector(".meta")||li.querySelector(".warn"))||li.closest("#plist"))return;
-  var o=li.classList.toggle("open");rh.setAttribute("aria-expanded",String(o));
+  var o=li.classList.toggle("open");rh.setAttribute("aria-expanded",String(o));if(o)unfoldFx(li);
 }
 function decorate(){
   $$(".row .rh:not([data-dec])").forEach(function(rh){
@@ -1326,7 +1416,7 @@ document.addEventListener("click",function(e){
   var all=e.target.closest(".js-all");
   if(all){
     var root=$(all.getAttribute("data-target")),shut=all.textContent==="Collapse all";
-    $$(".grp",root).forEach(function(g){setShut(g,shut);UI[grpKey(g)]=shut?"c":"o"});
+    $(".grp",root).forEach(function(g){var was=g.classList.contains("shut");setShut(g,shut);UI[grpKey(g)]=shut?"c":"o";if(was&&!shut)unfoldFx(g)});
     saveUI();updAll(root);
   }
 });
@@ -1373,16 +1463,152 @@ function burst(el){
   }
   box.innerHTML=h;
 })();
+/* Header scene: hills drift with scroll and lean toward the pointer or finger. */
 (function parallax(){
   if(calm)return;
-  var gs=[].slice.call(document.querySelectorAll("#scene .par")),ticking=false;
+  var gs=[].slice.call(document.querySelectorAll("#scene .par")),hero=document.querySelector(".hero"),ticking=false,px=0,py=0;
   function go(){
     var y=Math.min(window.scrollY,500);
-    gs.forEach(function(g){g.style.transform="translateY("+(y*parseFloat(g.getAttribute("data-p"))*.35).toFixed(1)+"px)"});
+    gs.forEach(function(g){var d=parseFloat(g.getAttribute("data-p"));g.style.transform="translate("+(px*d*60).toFixed(1)+"px,"+(y*d*.35+py*d*20).toFixed(1)+"px)"});
     ticking=false;
   }
-  window.addEventListener("scroll",function(){if(!ticking){ticking=true;requestAnimationFrame(go)}},{passive:true});
+  function req(){if(!ticking){ticking=true;requestAnimationFrame(go)}}
+  window.addEventListener("scroll",req,{passive:true});
+  hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();px=(e.clientX-r.left)/r.width-.5;py=(e.clientY-r.top)/r.height-.5;req()});
+  hero.addEventListener("pointerleave",function(){px=0;py=0;req()});
 })();
+
+/* ---------- status cards: values come from sync(); they count up from zero whenever a tab opens ---------- */
+var STATV={},statRun=0;
+function statText(v,n){return n+"/"+v.t}
+function setStat(k,n,tot){
+  var old=STATV[k];STATV[k]={n:n,t:tot};
+  if(statRun)return; // a count-up is running and will end on the newest values
+  $("#s-"+k).textContent=statText(STATV[k],n);$("#b-"+k).style.width=(tot?100*n/tot:0)+"%";
+  if(old&&n>old.n&&!calm){var el=$("#s-"+k).parentNode;el.classList.remove("bump");void el.offsetWidth;el.classList.add("bump")}
+}
+function countStats(){
+  if(calm)return;
+  var keys=Object.keys(STATV),t0=null,run=++statRun;
+  keys.forEach(function(k){$("#b-"+k).style.transition="none"});
+  function frame(ts){
+    if(run!==statRun)return;
+    if(t0===null)t0=ts;
+    var p=Math.min(1,(ts-t0)/750),e=1-Math.pow(1-p,3);
+    keys.forEach(function(k){
+      var v=STATV[k],n=Math.round(v.n*e);
+      $("#s-"+k).textContent=statText(v,n);$("#b-"+k).style.width=(v.t?100*v.n*e/v.t:0)+"%";
+    });
+    if(p<1)requestAnimationFrame(frame);
+    else{statRun=0;keys.forEach(function(k){$("#b-"+k).style.transition="";setStat(k,STATV[k].n,STATV[k].t)})}
+  }
+  requestAnimationFrame(frame);
+}
+
+/* ---------- the Mana tree: tap it for sparkles and a tip from Li'l Cactus ---------- */
+var TIPS=[
+ "Talk to Li'l Cactus after every event, then save. Some diary entries cannot be redone later.",
+ "Bumpkin × 4 shows three Clown cards. The newest card waits in the hidden slot.",
+ "An attribute item like Dragon's Breath only counts while it is the last item added.",
+ "Golem block strength is (piece 1 + piece 2) ÷ 17. A 133 spear plus a plain 28 spear gives +9.",
+ "Cross lands on the world map to pass days faster for eggs and the Orchard.",
+ "Keep the Tome of Magic unplaced until Love is Blind (#65) is done: Geo's café can lose it.",
+ "Pets level by picking up Exp crystals. The Forbidden Ring shares them with the whole party.",
+ "Where you place an artifact sets the mana of the land and its neighbours. See Places for a full map."
+];
+function nextQuest(){
+  for(var i=0;i<ORDER.length;i++){var q=QB[ORDER[i]];if(!qDone(q.id)&&reqState(q.req,q.mode).ok)return q}
+  return null;
+}
+function tipNow(){
+  var q=nextQuest(),r=Math.random();
+  if(q&&r<.45)return {t:"Next up: #"+q.id+" "+q.name+", in "+q.land+".",go:q.id};
+  var w=Q.filter(function(x){return x[9]&&!qDone(x[0])});
+  if(w.length&&r<.75){var x=w[Math.floor(Math.random()*w.length)];return {t:"Watch out on #"+x[0]+" "+x[1]+": "+x[9],go:x[0]}}
+  return {t:TIPS[Math.floor(Math.random()*TIPS.length)]};
+}
+function showQuest(id){
+  location.hash="quests";
+  setTimeout(function(){
+    var li=$('#qlist li[data-q="'+id+'"]');if(!li)return;
+    var g=li.closest(".grp");if(g&&g.classList.contains("shut"))setShut(g,false);
+    li.classList.add("open");li.scrollIntoView({behavior:calm?"auto":"smooth",block:"center"});
+    li.classList.remove("flash");void li.offsetWidth;li.classList.add("flash");
+  },60);
+}
+function sparkle(x,y,n,host){
+  if(calm)return;
+  host=host||document.body;
+  for(var i=0;i<n;i++){
+    var s=document.createElement("i"),a=Math.random()*Math.PI*2,d=20+Math.random()*50;
+    s.className="spk";s.style.left=x+"px";s.style.top=y+"px";
+    s.style.setProperty("--dx",Math.cos(a)*d+"px");s.style.setProperty("--dy",(Math.sin(a)*d+30)+"px");
+    host.appendChild(s);
+    setTimeout(function(nd){return function(){nd.remove()}}(s),800);
+  }
+}
+var tipTimer=null;
+function shakeTree(x,y){
+  var hero=$(".hero"),c=$("#scene .canopy"),b=$("#tip");
+  if(c&&!calm){c.classList.remove("shake");void c.getBoundingClientRect();c.classList.add("shake")}
+  if(x!=null){var r=hero.getBoundingClientRect();sparkle(x-r.left,y-r.top,14,hero)}
+  var tip=tipNow();
+  $("#tip-t").textContent=tip.t;
+  var go=$("#tip-go");go.hidden=!tip.go;go.onclick=function(){b.hidden=true;showQuest(tip.go)};
+  b.hidden=false;b.classList.remove("in");void b.offsetWidth;b.classList.add("in");
+  clearTimeout(tipTimer);tipTimer=setTimeout(function(){b.hidden=true},9000);
+}
+(function treeInit(){
+  var hero=$(".hero");
+  hero.addEventListener("click",function(e){
+    if(e.target.closest(".logo,.save,#tip,button,a"))return;
+    /* the tree's whole box counts, so a tap near the leaves or on the visible part works on any screen */
+    var onTree=["#scene .canopy","#scene .trunk"].some(function(sel){
+      var el=$(sel);if(!el)return false;var r=el.getBoundingClientRect();
+      return e.clientX>=r.left-10&&e.clientX<=r.right+10&&e.clientY>=r.top-10&&e.clientY<=r.bottom+10;
+    });
+    if(onTree)shakeTree(e.clientX,e.clientY);
+    else{var r=hero.getBoundingClientRect();sparkle(e.clientX-r.left,e.clientY-r.top,6,hero)}
+  });
+  $("#tipbtn").addEventListener("click",function(){shakeTree()});
+  $("#tip-x").addEventListener("click",function(){$("#tip").hidden=true});
+  var c=$("#scene .canopy");if(c)c.addEventListener("animationend",function(e){if(e.animationName==="treeshake")c.classList.remove("shake")});
+})();
+
+/* ---------- celebrations: a full phase of the play order, or all 68 events ---------- */
+var celeTimer=null;
+function celebrate(title,sub){
+  var box=$("#cele");
+  $("#cele-t").textContent=title;$("#cele-s").textContent=sub||"";
+  box.hidden=false;box.classList.remove("in");void box.offsetWidth;box.classList.add("in");
+  clearTimeout(celeTimer);celeTimer=setTimeout(function(){box.hidden=true},4200);
+  if(calm)return;
+  var cols=["var(--trim)","var(--accent)","var(--leaf2)","var(--glow)","var(--ready)"];
+  for(var i=0;i<46;i++){
+    var p=document.createElement("i");
+    p.className="petal";
+    p.style.left=(Math.random()*100)+"vw";
+    p.style.setProperty("--c",cols[i%cols.length]);
+    p.style.setProperty("--dx",(Math.random()*120-60)+"px");
+    p.style.setProperty("--rot",(Math.random()*720-360)+"deg");
+    p.style.animationDuration=(1.6+Math.random()*1.4)+"s";
+    p.style.animationDelay=(Math.random()*.4)+"s";
+    document.body.appendChild(p);
+    setTimeout(function(nd){return function(){nd.remove()}}(p),3400);
+  }
+}
+function checkMilestone(id){
+  var n=Object.keys(S.q).length;
+  if(n===Q.length){celebrate("All 68 events done!","Climb the Tree of Mana when you are ready.");return}
+  var step=SEQ[id];
+  for(var i=0;i<PHASES.length;i++){
+    var from=PHASES[i][0],to=PHASES[i+1]?PHASES[i+1][0]-1:ORDER.length;
+    if(step>=from&&step<=to){
+      if(ORDER.slice(from-1,to).every(qDone))celebrate("Phase complete",PHASES[i][1].replace(/^\d+\.\s*/,""));
+      return;
+    }
+  }
+}
 
 /* ---------- FORGE DATA ---------- */
 var R8="8 8 8 8 8 8 8 8", WR="7 8 6 9 10 7 7 7", AR="7 8 10 7 7 8 9 8";
@@ -2880,9 +3106,9 @@ function renderEggs(){
   $("#egg-l").innerHTML=h;foldInit($("#egg-l"),"allShut");
 }
 function eggCounts(){
-  $$("#egg-l .grp").forEach(function(g){var rs=$$(".row",g),n=rs.filter(function(r){var i=$("input[data-k]",r);return i&&i.checked}).length,c=$("[data-ecnt]",g),nm=g.getAttribute("data-egrp");if(c)c.textContent=n+"/"+rs.length+" caught · "+STG[stageOfLand(nm)].toLowerCase()});
+  $$("#egg-l .grp").forEach(function(g){var rs=$$(".row",g),n=rs.filter(function(r){var i=$("input[data-k]",r);return i&&i.checked}).length,c=$("[data-ecnt]",g),nm=g.getAttribute("data-egrp");if(c)cntBadge(c,n,rs.length,n+"/"+rs.length+" caught · "+STG[stageOfLand(nm)].toLowerCase())});
   var own=MONS.filter(function(m){return m.pet&&S.o[m.n]}).length,tot=MONS.filter(function(m){return m.pet}).length;
-  $("#s-e").textContent=own+"/"+tot;$("#b-e").style.width=(100*own/tot)+"%";
+  setStat("e",own,tot);
   var po=$("#pet-own");if(po)po.textContent=own+" of "+tot+" owned";
 }
 
@@ -3074,6 +3300,7 @@ $("#bk-no").addEventListener("click",function(){bkPending=null;$("#bk-ask").hidd
 loadLocal();
 renderQuests();renderAbilities();renderWeaponBtns();renderTechs();renderPlaces();amInit();renderNpcs();renderHidden();renderForge();farmInit();showTab();sync();
 setSave("Saved on this device");
+cntBadge.ready=true;
 
 /* ---------- usage on claude.ai ----------
    Each signed-in viewer keeps one counter document, visits/<their id>: number of visits,
