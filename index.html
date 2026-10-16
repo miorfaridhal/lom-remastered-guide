@@ -426,6 +426,20 @@ table.t.mt tr.off td{font-style:italic}
 .backup .step{margin:0;min-height:1.2em}
 .bk-ask{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:4px 0 8px;padding:8px 10px;background:var(--goldbg);color:var(--ink);border-radius:6px;font-weight:700;font-size:.9rem}
 .bk-ask .bk-btns{display:flex;gap:8px}
+
+/* about page: credits, privacy, owner-only usage, sources */
+.about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px;margin-bottom:6px}
+.aboutc{min-width:0;padding:12px 14px;background:var(--win);border:1px solid var(--frame);border-radius:8px}
+.aboutc h3{font-size:1.05rem;margin-bottom:6px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px}
+.aboutc p{margin:0 0 8px;font-size:.9rem;font-weight:600;color:var(--muted);max-width:68ch}
+.aboutc p:last-child{margin-bottom:0}
+.srch{font-size:1.05rem;margin:18px 0 6px}
+.srclist{margin:0;padding-left:18px;color:var(--muted);font-size:.86rem;font-weight:600;display:grid;gap:4px;max-width:90ch}
+.usage-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;margin:0 0 10px}
+.usage-stats div{background:var(--bg);border-radius:6px;padding:8px 10px}
+.usage-stats b{display:block;font:500 1.2rem var(--mono);font-variant-numeric:tabular-nums}
+.usage-stats span{font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.foot{margin:24px 0 0;padding-top:10px;border-top:1px solid var(--frame);color:var(--muted);font-size:.84rem;font-weight:600}
 .toast{position:fixed;left:0;right:0;margin-inline:auto;width:max-content;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;display:flex;align-items:center;gap:10px;max-width:calc(100vw - 32px);white-space:nowrap;background:var(--head);color:var(--head-ink);border-radius:8px;padding:8px 8px 8px 14px;box-shadow:0 6px 18px var(--shadow);font-weight:800;animation:panelin .3s ease-out both}
 .toast .btn{background:var(--win);color:var(--ink);border-color:transparent}
 .toast .x{font:inherit;font-size:1.2rem;line-height:1;background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px}
@@ -657,17 +671,27 @@ table.t.mt tr.off td{font-style:italic}
     <div id="egg-l"></div>
   </section>
 
-  <section class="backup" id="backup" aria-labelledby="bk-h">
-    <h2 id="bk-h">Back up your progress</h2>
-    <p id="bk-where">Your ticks are saved only in this browser. Export them to a file to keep a copy or move them to another device, then import that file there. Importing replaces what this browser has.</p>
-    <div class="tools"><button type="button" class="btn" id="bk-exp">Export progress</button><button type="button" class="btn" id="bk-imp">Import progress</button><input type="file" id="bk-file" accept="application/json,.json" hidden></div>
-    <div class="bk-ask" id="bk-ask" hidden><span id="bk-ask-t"></span><span class="bk-btns"><button type="button" class="btn" id="bk-yes">Replace</button><button type="button" class="btn" id="bk-no">Cancel</button></span></div>
-    <p class="step" id="bk-msg" aria-live="polite"></p>
-  </section>
-
-  <footer class="srcs">
-    <b>Sources</b>
-    <ul>
+  <section class="panel" id="p-about" hidden>
+    <h2>About Mana Compass</h2>
+    <div class="about-grid">
+      <div class="aboutc">
+        <h3>What this is</h3>
+        <p>A fan-made companion for Legend of Mana Remastered: all 68 events in a missable-safe play order, skills, forging, farming and pets. Legend of Mana is a trademark of Square Enix. This guide is unofficial and not affiliated with or endorsed by Square Enix.</p>
+        <p>Magic spells are not covered. Ability and technique names follow the Android remaster, with the original name shown where it changed. Quest, land and item names come from guides that mix both versions, so a few may not match your game.</p>
+        <p>The play order is checked by a route solver, and forging numbers by a tempering simulator calibrated on in-game readings. Both are on <a href="https://github.com/miorfaridhal/lom-remastered-guide" target="_blank" rel="noopener">the project on GitHub</a>. All icons are simple original drawings, not artwork from the game.</p>
+      </div>
+      <div class="aboutc">
+        <h3>Privacy and usage counts</h3>
+        <p id="priv-text">Your ticks are saved only in this browser and never sent anywhere unless you export them.</p>
+        <p id="priv-count" hidden></p>
+      </div>
+      <div class="aboutc" id="usage" hidden>
+        <h3>Usage <span class="pill">only you see this</span></h3>
+        <div id="usage-body"><p class="step">Loading…</p></div>
+      </div>
+    </div>
+    <h3 class="srch">Sources</h3>
+    <ul class="srclist">
       <li><a href="https://gamepretty.com/legend-of-mana-event-guide-prerequisites-fail-states/" target="_blank" rel="noopener">GamePretty event guide</a>: prerequisites, missables, rewards, starting NPCs</li>
       <li><a href="https://legendofmana.info/walkthrough/maps/" target="_blank" rel="noopener">Legend of Mana Info maps and artifacts</a>: placement order</li>
       <li><a href="https://gamefaqs.gamespot.com/pc/313543-legend-of-mana-remastered/faqs/77187" target="_blank" rel="noopener">GameFAQs Legend of Mana Remastered Artifact Placement Guide</a>: the next-game map (grid, order, shop levels, Home and Orchard mana)</li>
@@ -691,12 +715,18 @@ table.t.mt tr.off td{font-style:italic}
       <li><a href="https://gamefaqs.gamespot.com/boards/256525-legend-of-mana/58679394" target="_blank" rel="noopener">GameFAQs quick Lucre thread</a>, <a href="https://gamefaqs.gamespot.com/boards/256525-legend-of-mana/61476426" target="_blank" rel="noopener">best way to make money</a> and <a href="https://gamefaqs.gamespot.com/ps/256525-legend-of-mana/answers/316023-what-is-the-best-strategy-for-earning-money" target="_blank" rel="noopener">earning money Q&amp;A</a>: Wind Cap, dragon eggs, Wings of Darkness, Polter Box room</li>
       <li><a href="https://gamefaqs.gamespot.com/ps/256525-legend-of-mana/faqs/10806" target="_blank" rel="noopener">GameFAQs Tempering FAQ</a>: what sets a sale price, card Lucre values</li>
       <li><a href="https://gamefaqs.gamespot.com/ps4/256525-legend-of-mana-remastered/answers/620887-how-to-get-spirit-coins-without-playing-an-instrument" target="_blank" rel="noopener">GameFAQs spirit coins answer</a> and <a href="https://gamefaqs.gamespot.com/boards/256525-legend-of-mana/80073444" target="_blank" rel="noopener">catching spirits thread</a>: coin hunting</li>
-      <li>All icons on this page are simple original drawings, not artwork from the game.</li>
-      <li>The play order is checked by a route solver: see <a href="https://github.com/miorfaridhal/lom-remastered-guide#route-solver" target="_blank" rel="noopener">the project on GitHub</a>.</li>
     </ul>
-    Fan-made and unofficial. Legend of Mana is a trademark of Square Enix; this site is not affiliated with or endorsed by Square Enix.<br>
-    Magic spells are not covered here. Ability and technique names follow the Android remaster, with the original name shown where it changed. Quest, land and item names come from guides that mix both versions, so a few may not match your game.
-  </footer>
+  </section>
+
+  <section class="backup" id="backup" aria-labelledby="bk-h">
+    <h2 id="bk-h">Back up your progress</h2>
+    <p id="bk-where">Your ticks are saved only in this browser. Export them to a file to keep a copy or move them to another device, then import that file there. Importing replaces what this browser has.</p>
+    <div class="tools"><button type="button" class="btn" id="bk-exp">Export progress</button><button type="button" class="btn" id="bk-imp">Import progress</button><input type="file" id="bk-file" accept="application/json,.json" hidden></div>
+    <div class="bk-ask" id="bk-ask" hidden><span id="bk-ask-t"></span><span class="bk-btns"><button type="button" class="btn" id="bk-yes">Replace</button><button type="button" class="btn" id="bk-no">Cancel</button></span></div>
+    <p class="step" id="bk-msg" aria-live="polite"></p>
+  </section>
+
+  <p class="foot">Fan-made and unofficial. <a href="#about">Sources, credits and privacy</a></p>
 </main>
 
 <script>
@@ -1194,7 +1224,8 @@ var GROUPS=[
  ["skills","Skills","bolt",[["skills","Abilities"],["weapons","Techniques"]]],
  ["forge","Forge","hammer",[["forge","Forge"]]],
  ["farm","Farm","coin",[["plan","Plan"],["money","Money"],["drops","Drops"]]],
- ["pets","Pets","paw",[["pets","Ranking"],["eggs","Egg spots"]]]
+ ["pets","Pets","paw",[["pets","Ranking"],["eggs","Egg spots"]]],
+ ["about","About","book",[["about","About"]]]
 ];
 var TABS=[];GROUPS.forEach(function(g){g[3].forEach(function(p){TABS.push(p[0])})});
 var lastIn={};
@@ -3029,6 +3060,57 @@ loadLocal();
 renderQuests();renderAbilities();renderWeaponBtns();renderTechs();renderPlaces();amInit();renderNpcs();renderHidden();renderForge();farmInit();showTab();sync();
 setSave("Saved on this device");
 
+/* ---------- usage on claude.ai ----------
+   Each signed-in viewer keeps one counter document, visits/<their id>: number of visits,
+   visits per day (last 120 days) and tab opens. No names or emails. The artifact's db rules
+   let each viewer write only their own document and only the owner read the collection. */
+var visitDoc=null,visitData=null,visitTimer=null,visitBusy=false;
+function curTab(){var h=(location.hash||"").replace("#","");return TABS.indexOf(h)<0?"quests":h}
+function dayKey(d){return d.toISOString().slice(0,10)}
+function visitSave(){
+  if(!visitDoc||!visitData)return;
+  if(visitBusy){clearTimeout(visitTimer);visitTimer=setTimeout(visitSave,1500);return}
+  visitBusy=true;
+  var days=visitData.days,keys=Object.keys(days).sort();
+  while(keys.length>120)delete days[keys.shift()];
+  visitDoc.set(JSON.parse(JSON.stringify(visitData))).catch(function(){}).then(function(){visitBusy=false});
+}
+function visitTab(t){
+  if(!visitData)return;
+  visitData.tabs[t]=(visitData.tabs[t]||0)+1;
+  clearTimeout(visitTimer);visitTimer=setTimeout(visitSave,4000);
+}
+function startVisits(db,id){
+  try{visitDoc=db.doc("visits/"+id)}catch(e){return Promise.resolve()}
+  return visitDoc.get().then(function(snap){
+    var d=snap.exists?JSON.parse(JSON.stringify(snap.data()||{})):{},now=new Date(),t=dayKey(now),tab=curTab();
+    d.first=d.first||now.toISOString();d.last=now.toISOString();
+    d.visits=(d.visits||0)+1;d.days=d.days||{};d.days[t]=(d.days[t]||0)+1;
+    d.tabs=d.tabs||{};d.tabs[tab]=(d.tabs[tab]||0)+1;
+    visitData=d;visitSave();
+    window.addEventListener("hashchange",function(){visitTab(curTab())});
+  }).catch(function(){visitDoc=null});
+}
+function usageCard(db){
+  var box=$("#usage-body");
+  db.collection("visits").get().then(function(qs){
+    var docs=qs.docs.filter(function(d){return d.exists}).map(function(d){return d.data()||{}}),now=Date.now();
+    var within=function(d,days){return d.last&&now-Date.parse(d.last)<=days*864e5};
+    var last14=[];for(var i=13;i>=0;i--)last14.push(dayKey(new Date(now-i*864e5)));
+    var perDay=last14.map(function(k){var v=0,u=0;docs.forEach(function(d){var n=(d.days||{})[k]||0;v+=n;if(n)u++});return [k,v,u]});
+    var tabs={};docs.forEach(function(d){Object.keys(d.tabs||{}).forEach(function(t){tabs[t]=(tabs[t]||0)+d.tabs[t]})});
+    var tabRows=Object.keys(tabs).sort(function(a,b){return tabs[b]-tabs[a]});
+    var stat=function(n,l){return '<div><b>'+n+'</b><span>'+l+'</span></div>'};
+    box.innerHTML='<div class="usage-stats">'+
+      stat(docs.length,"people")+stat(docs.reduce(function(a,d){return a+(d.visits||0)},0),"visits")+
+      stat(docs.filter(function(d){return within(d,7)}).length,"active 7 days")+stat(docs.filter(function(d){return within(d,30)}).length,"active 30 days")+'</div>'+
+      '<div class="tw"><table class="t"><thead><tr><th>Day</th><th>Visits</th><th>People</th></tr></thead><tbody>'+
+      perDay.slice().reverse().map(function(r){return '<tr><td>'+r[0]+'</td><td>'+r[1]+'</td><td>'+r[2]+'</td></tr>'}).join("")+'</tbody></table></div>'+
+      (tabRows.length?'<p style="margin-top:8px"><b>Tabs opened:</b> '+tabRows.map(function(t){return esc(t)+' '+tabs[t]}).join(" · ")+'</p>':'')+
+      '<p>Counts signed-in viewers with Contributor access or above, on claude.ai only. View-only viewers and the website are not counted here.</p>';
+  }).catch(function(){box.innerHTML='<p>Usage could not be loaded. Reopen the page to try again.</p>'});
+}
+
 /* On claude.ai, progress also syncs to the viewer's account (db + user capabilities).
    Elsewhere window.claude is absent and the page keeps using this browser's storage. */
 (function connect(){
@@ -3041,6 +3123,10 @@ setSave("Saved on this device");
       dbDoc=db.doc("data/users/"+id+"/progress");
       setSave("Syncing…");
       $("#bk-where").textContent="Your ticks are saved to your Claude account. Export them to a file to keep a copy or to move them to the Mana Compass website, then import that file there. Importing replaces your current progress.";
+      $("#priv-text").textContent="On claude.ai your ticks are saved to your Claude account, in a part of the page’s data only you can read.";
+      var pc=$("#priv-count");pc.hidden=false;
+      pc.textContent="Each signed-in visit is counted under an anonymous id: how many visits, on which days and which tabs were opened. Names and emails are not stored, and only the owner of this page sees the totals.";
+      startVisits(db,id).then(function(){return user.isOwner()}).then(function(own){if(own){$("#usage").hidden=false;usageCard(db)}});
       dbDoc.onSnapshot(function(snap){
         if(writing||dirty)return;
         if(snap.exists){
@@ -3075,6 +3161,29 @@ setSave("Saved on this device");
     });
     document.addEventListener("visibilitychange",function(){if(document.visibilityState==="visible")reg.update().catch(function(){})});
   }).catch(function(){});
+})();
+
+/* Usage on the website: GoatCounter page and tab counts. No cookies, no personal data.
+   Off until GC_CODE holds the site code from goatcounter.com (e.g. "manacompass"). */
+(function usage(){
+  var GC_CODE="";
+  if(!GC_CODE||!/^https?:$/.test(location.protocol))return;
+  var base=location.pathname.replace(/[^/]*$/,"");
+  function tab(){return (location.hash||"").replace("#","")||"quests"}
+  function count(){try{window.goatcounter.count({path:base+tab(),title:"Mana Compass: "+tab(),event:false})}catch(e){}}
+  window.goatcounter={no_onload:true};
+  var s=document.createElement("script");
+  s.async=true;s.src="https://gc.zgo.at/count.v4.js";s.setAttribute("data-goatcounter","https://"+GC_CODE+".goatcounter.com/count");
+  s.onload=function(){
+    count();
+    window.addEventListener("hashchange",count);
+    if(window.matchMedia&&window.matchMedia("(display-mode: standalone)").matches)
+      try{window.goatcounter.count({path:"installed-app-open",title:"Opened as installed app",event:true})}catch(e){}
+  };
+  document.head.appendChild(s);
+  var pc=document.getElementById("priv-count");
+  pc.hidden=false;
+  pc.textContent="This website counts page and tab views with GoatCounter so the author can see how much the guide is used. It sets no cookies and stores no personal data.";
 })();
 </script>
 <!-- site-only:end -->

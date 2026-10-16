@@ -31,6 +31,21 @@ test("fresh visit renders every quest with nothing ticked", async ({ page }) => 
   await expect(page.locator("#i-empty")).toBeAttached();
 });
 
+test("sources live on one About page, other tabs only link to it", async ({ page }) => {
+  const tracked = [];
+  page.on("request", r => { if (/goatcounter|gc\.zgo\.at/.test(r.url())) tracked.push(r.url()); });
+  await page.goto("./");
+  await expect(page.locator("#p-quests")).toBeVisible();
+  await expect(page.locator(".srclist")).toBeHidden();
+  await expect(page.locator(".foot a")).toHaveText("Sources, credits and privacy");
+  await page.locator(".foot a").click();
+  await expect(page.locator("#p-about")).toBeVisible();
+  expect(await page.locator(".srclist li").count()).toBeGreaterThan(20);
+  await expect(page.locator("#priv-text")).toContainText("only in this browser");
+  await expect(page.locator("#usage")).toBeHidden();
+  expect(tracked, "no usage calls until a GoatCounter code is set").toEqual([]);
+});
+
 test("saved progress renders the expected counts", async ({ page }) => {
   await seed(page);
   await page.goto("./");

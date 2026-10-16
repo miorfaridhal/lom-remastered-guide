@@ -103,6 +103,11 @@ node tools/extract.mjs
 | `data/constraints.json` | Missable "before" rules and extra requirements, each with a reason |
 | `data/route-solved.json` | The solver's route with the reason for each step |
 
+## Usage counts
+
+- **claude.ai artifact:** each signed-in viewer with Contributor access or above keeps one counter document, `visits/<anonymous id>`: number of visits, visits per day (last 120 days) and tabs opened. No names or emails. The artifact's database rules let each viewer write only their own counter and only the owner read them all; the owner sees the totals on the About tab.
+- **Website:** GitHub Pages has no visitor statistics, so the site can use [GoatCounter](https://www.goatcounter.com/) (no cookies, no personal data). It is off until `GC_CODE` in `index.html` is set to a GoatCounter site code. It then counts page loads, each tab as its own path, and opens of the installed app.
+
 ## Development
 
 The site is static: `index.html`, `sw.js`, `manifest.webmanifest` and `icons/`, served from the `main` branch root by GitHub Pages. There is no build step for the page itself. Node 18 or later is needed for the tools and tests.
