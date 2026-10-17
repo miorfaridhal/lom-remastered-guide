@@ -1902,9 +1902,27 @@ function cacStep(now){
   CAC.el.classList.add("walk");
   CAC.raf=requestAnimationFrame(cacStep);
 }
+/* Places he must not stand on, so he never hides the way around: tab bars, sub-menus, the status
+   cards, tool rows (search, filters), sideways menus, the header buttons and the Mana tree. */
+var CAC_KEEPOFF=".menu,.subnav,.stats,.tools,.seg,.wpn,.sh-btn,.hero-tools,#tip,.toast,details.about>summary,#scene .treeg";
+function cacAvoid(){
+  var W=56,H=68,pad=6,b=cacBounds(),vh=window.innerHeight;
+  var zs=$$(CAC_KEEPOFF).map(function(el){return el.getBoundingClientRect()}).filter(function(r){return r.width&&r.height&&r.bottom>0&&r.top<vh});
+  var hitAt=function(y){var h=null;zs.forEach(function(r){if(!h&&CAC.tx<r.right+pad&&CAC.tx+W>r.left-pad&&y<r.bottom+pad&&y+H>r.top-pad)h=r});return h};
+  var first=hitAt(CAC.ty);if(!first)return;
+  // Find the first clear spot below and above, hopping over stacked rows, and take the nearer one
+  // that is still on screen. If neither fits he stays where he was heading.
+  var best=null;
+  [true,false].forEach(function(down){
+    var y=CAC.ty,h=first;
+    for(var k=0;k<12&&h;k++){y=down?h.bottom+pad:h.top-pad-H;h=hitAt(y)}
+    if(!h&&y>=b.minY&&y<=b.maxY&&(best===null||Math.abs(y-CAC.ty)<Math.abs(best-CAC.ty)))best=y;
+  });
+  if(best!==null)CAC.ty=best;
+}
 function cacGo(x,y){
   if(!CAC.on||calm)return;
-  CAC.tx=x;CAC.ty=y;cacClamp();
+  CAC.tx=x;CAC.ty=y;cacClamp();cacAvoid();
   if(!CAC.raf)CAC.raf=requestAnimationFrame(cacStep);
 }
 function cacMood(cls,ms){
@@ -1931,6 +1949,13 @@ function cacShow(){
   window.addEventListener("resize",function(){cacClamp();CAC.x=CAC.tx;CAC.y=CAC.ty;cacPlace()});
   // he dozes off when nothing happens for a while, and wakes on any touch, mouse, key or scroll
   ["pointerdown","pointermove","keydown","scroll"].forEach(function(ev){window.addEventListener(ev,cacWake,{passive:true})});
+  // menus move under him when the page scrolls or a tab opens, so step aside after things settle
+  var settle=0;
+  function recheck(){clearTimeout(settle);settle=setTimeout(function(){if(CAC.raf)recheck();else cacGo(CAC.x,CAC.y)},160)}
+  window.addEventListener("scroll",recheck,{passive:true});window.addEventListener("hashchange",recheck);
+  document.addEventListener("pointerup",recheck,{passive:true}); // a tap that opens a tab or a fold reshapes the page
+  if(window.ResizeObserver)new ResizeObserver(recheck).observe(document.body); // late fonts, folds and new rows shift the menus too
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(recheck);
   cacWake();
   CAC.el.addEventListener("click",function(e){
     e.stopPropagation();

@@ -59,6 +59,7 @@ test("tapping a status card opens its tab", async ({ page }) => {
 });
 
 test("the Mana tree gives a tip, and Show me jumps to the quest", async ({ page }) => {
+  test.setTimeout(60000); // heavy animation; slow when several browsers run at once
   await page.goto("./");
   await expect(page.locator("#tip")).toBeHidden();
   // Click the middle of the tree canopy wherever the scene places it.
@@ -81,6 +82,7 @@ test("the Mana tree gives a tip, and Show me jumps to the quest", async ({ page 
 });
 
 test("finishing the last quest of a phase celebrates with a fanfare, and a tap closes it", async ({ page }) => {
+  test.setTimeout(60000); // heavy animation; slow when several browsers run at once
   await fakeAudio(page);
   await page.goto("./");
   // Phase 6 is 3/12 in the sample save: tick everything except one, then the last one.
@@ -161,8 +163,8 @@ test("Li’l Cactus chases the mouse", async ({ page, isMobile }) => {
   await page.goto("./");
   await expect(page.locator("#cactus")).toBeVisible();
   const start = await cactusAt(page);
-  await page.mouse.move(200, 300);
-  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 218, p.y - 314); }, { timeout: 10000 }).toBeLessThan(3);
+  await page.mouse.move(200, 500); // over the quest list, clear of menus
+  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 218, p.y - 514); }, { timeout: 10000 }).toBeLessThan(3);
   expect((await cactusAt(page)).x).toBeLessThan(start.x);
   await expect(page.locator("#cactus")).toHaveClass(/left/);
 });
@@ -170,8 +172,39 @@ test("Li’l Cactus chases the mouse", async ({ page, isMobile }) => {
 test("Li’l Cactus hops beside a tap on a phone", async ({ page, isMobile }) => {
   test.skip(!isMobile, "touch only");
   await page.goto("./");
-  await page.touchscreen.tap(100, 400);
-  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 136, p.y - 330); }, { timeout: 10000 }).toBeLessThan(3);
+  await page.touchscreen.tap(100, 640); // on the quest list
+  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 136, p.y - 570); }, { timeout: 10000 }).toBeLessThan(3);
+});
+
+// Which menus and tool rows his box covers right now (should always be none).
+const cactusCovers = page => page.evaluate(() => {
+  const m = /translate3d\(([-\d.]+)px,\s*([-\d.]+)px/.exec(document.querySelector("#cactus").style.transform);
+  const x = +m[1], y = +m[2];
+  return [...document.querySelectorAll(".menu,.subnav,.stats,.tools,.seg,.wpn,.sh-btn,details.about>summary")].filter(el => {
+    const r = el.getBoundingClientRect();
+    return r.width && r.height && x < r.right && x + 56 > r.left && y < r.bottom && y + 68 > r.top;
+  }).map(el => el.className);
+});
+
+test("Li’l Cactus keeps off tab bars, menus and tool rows", async ({ page, isMobile }) => {
+  test.setTimeout(90000);
+  await page.goto("./");
+  const place = async (x, y) => {
+    if (isMobile) await page.touchscreen.tap(x, y); else await page.mouse.move(x, y);
+    // a tap can open a tab or scroll the page; he steps aside once things settle
+    await expect.poll(async () => (await cactusCovers(page)).length === 0 && !(await page.locator("#cactus").evaluate(el => el.classList.contains("walk"))),
+      { message: "covered at " + x + "," + y, timeout: 20000 }).toBe(true);
+    await page.waitForTimeout(400);
+    expect(await cactusCovers(page), "still clear at " + x + "," + y).toEqual([]);
+  };
+  for (const sel of [".panel:not([hidden]) .tools", ".subnav", ".stats"]) { // the stats last: tapping one opens its tab
+    const r = await page.locator(sel + " >> visible=true").first().boundingBox();
+    await place(r.x + r.width / 2, r.y + r.height / 2);
+  }
+  // on a sub-tab too: open Forge, aim at its sideways menu
+  await page.evaluate(() => { location.hash = "forge"; });
+  const f = await page.locator("#fnav").boundingBox();
+  await place(f.x + 40, f.y + f.height / 2);
 });
 
 test("tapping Li’l Cactus gives a tip, and his button hides him for good", async ({ page }) => {
@@ -202,9 +235,9 @@ test("Li’l Cactus stays put under reduce motion", async ({ page, isMobile }) =
 test("Li’l Cactus waits when the mouse reaches him, so he can be clicked", async ({ page, isMobile }) => {
   test.skip(isMobile, "mouse only");
   await page.goto("./");
-  await page.mouse.move(300, 300);
-  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 318, p.y - 314); }, { timeout: 10000 }).toBeLessThan(3);
-  await page.mouse.move(340, 340); // onto him
+  await page.mouse.move(300, 500);
+  await expect.poll(async () => { const p = await cactusAt(page); return Math.hypot(p.x - 318, p.y - 514); }, { timeout: 10000 }).toBeLessThan(3);
+  await page.mouse.move(340, 540); // onto him
   const here = await cactusAt(page);
   await page.waitForTimeout(500);
   expect(await cactusAt(page)).toEqual(here);
