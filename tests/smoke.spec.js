@@ -28,7 +28,7 @@ async function seed(page) {
 
 test("fresh visit renders every quest with nothing ticked", async ({ page }) => {
   await page.goto("./");
-  await expect(page).toHaveTitle("Mana Compass: Legend of Mana Remastered Companion");
+  await expect(page).toHaveTitle("Legend of Mana Remastered Walkthrough and Quest Guide | Mana Compass");
   await expect(page.locator("h1")).toHaveText("Legend of Mana Remastered Mana Compass");
   await expect(page.locator("#s-q")).toHaveText("0/68");
   await expect(page.locator("#qlist li[data-q]")).toHaveCount(68);
@@ -179,6 +179,18 @@ test("import rejects a file that is not a backup", async ({ page }) => {
   await expect(page.locator("#s-q")).toHaveText("0/68");
 });
 
+test("search engines get a description, canonical address, structured data and a sitemap", async ({ page, request }) => {
+  await page.goto("./");
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute("content", /walkthrough and quest guide/);
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", "https://miorfaridhal.github.io/lom-remastered-guide/");
+  const ld = JSON.parse(await page.locator('script[type="application/ld+json"]').textContent());
+  expect(ld["@graph"].map(n => n["@type"])).toEqual(["WebSite", "WebApplication"]);
+  expect(ld["@graph"][1].about.name).toBe("Legend of Mana Remastered");
+  const map = await request.get("sitemap.xml");
+  expect(map.ok()).toBeTruthy();
+  expect(await map.text()).toContain("<loc>https://miorfaridhal.github.io/lom-remastered-guide/</loc>");
+});
+
 test("manifest and icons are installable", async ({ page, request }) => {
   await page.goto("./");
   const href = await page.locator('link[rel="manifest"]').getAttribute("href");
@@ -188,6 +200,9 @@ test("manifest and icons are installable", async ({ page, request }) => {
   expect(m.short_name).toBe("Mana Compass");
   expect(m.name).toContain("Legend of Mana");
   expect(m.display).toBe("standalone");
+  // Android paints its bottom system bar (and the splash screen) in background_color, and the manifest
+  // allows one colour only, so it is the header teal, which suits both the light and dark skins.
+  expect(m.background_color).toBe("#1D5F66");
   const sizes = m.icons.map(i => i.sizes);
   expect(sizes).toEqual(expect.arrayContaining(["192x192", "512x512"]));
   expect(m.icons.some(i => i.purpose === "maskable")).toBeTruthy();

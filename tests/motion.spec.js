@@ -251,8 +251,14 @@ test("Li’l Cactus naps after a quiet spell, wakes on the next touch, and smile
   await expect(cac).toHaveClass(/sleep/);
   await page.mouse.move(400, 300);
   await expect(cac).not.toHaveClass(/sleep/);
+  // The moods last under two seconds, so record them as they are added rather than racing them.
+  await cac.evaluate(el => {
+    window.__moods = [];
+    new MutationObserver(() => window.__moods.push(...el.classList)).observe(el, { attributes: true, attributeFilter: ["class"] });
+  });
   await cac.click();
-  await expect(cac).toHaveClass(/say/);
-  await expect(cac.locator(".cac-happy")).toBeVisible();
   await expect(page.locator("#tip")).toBeVisible();
+  const moods = await page.evaluate(() => window.__moods);
+  expect(moods).toContain("say");
+  expect(moods).toContain("wave"); // wave shows the happy face
 });
