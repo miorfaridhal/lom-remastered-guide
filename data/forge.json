@@ -38,7 +38,7 @@
       ]
     },
     {
-      "name": "Forsena Iron",
+      "name": "Valsena Iron",
       "class": "Metal",
       "weapon": [
         15,
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "name": "Lorant Silver",
+      "name": "Laurent Silver",
       "class": "Metal",
       "weapon": [
         25,
@@ -146,7 +146,7 @@
       ]
     },
     {
-      "name": "Orihalcon",
+      "name": "Orichalcum",
       "class": "Metal",
       "weapon": [
         28,
@@ -173,7 +173,7 @@
       ]
     },
     {
-      "name": "Vizel Gold",
+      "name": "Beiser Gold",
       "class": "Metal",
       "weapon": [
         35,
@@ -605,7 +605,7 @@
       ]
     },
     {
-      "name": "Gaeus's Tears",
+      "name": "Gaia's Tears",
       "class": "Stone",
       "weapon": [
         48,
@@ -1388,7 +1388,7 @@
       ]
     },
     {
-      "name": "Shell",
+      "name": "Seashell",
       "class": "Other",
       "weapon": [
         20,
@@ -2192,7 +2192,7 @@
       "effect": ""
     },
     {
-      "name": "Loquat-Shoes",
+      "name": "Loquat-Shoe",
       "group": "Fruit and vegetables",
       "energy": 16,
       "taint": "None",
@@ -2241,7 +2241,7 @@
       "effect": "Weapons: Force -25%, Tech +25%"
     },
     {
-      "name": "Applesocks",
+      "name": "Applesock",
       "group": "Fruit and vegetables",
       "energy": 64,
       "taint": "None",
@@ -2364,7 +2364,7 @@
       "group": "Fruit and vegetables",
       "energy": 8,
       "taint": "None",
-      "effect": "Each one makes a neutral Enticed Nymph card, used to rinse old cards out. On a Lorant Silver spear with no essence, a measured test made a Pixie card instead"
+      "effect": "Each one makes a neutral Enticed Nymph card, used to rinse old cards out. On a Laurent Silver spear with no essence, a measured test made a Pixie card instead"
     },
     {
       "name": "Rocket Papaya",

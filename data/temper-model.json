@@ -29,7 +29,7 @@
     {
       "id": "lorant-spear-plain",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 28,
       "predicted": 28,
@@ -53,7 +53,7 @@
     {
       "id": "vizel-2h-plain",
       "kind": "measured",
-      "material": "Vizel Gold",
+      "material": "Beiser Gold",
       "type": "2H Sword",
       "actual": 43,
       "predicted": 43,
@@ -77,7 +77,7 @@
     {
       "id": "lorant-gloves-db",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Gloves",
       "actual": 25,
       "predicted": 25,
@@ -89,7 +89,7 @@
     {
       "id": "piece1-db",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 31,
       "predicted": 31,
@@ -101,7 +101,7 @@
     {
       "id": "piece1-cf",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 30,
       "predicted": 30,
@@ -113,7 +113,7 @@
     {
       "id": "piece1-be",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 30,
       "predicted": 30,
@@ -125,7 +125,7 @@
     {
       "id": "piece1-rhino",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 30,
       "predicted": 30,
@@ -137,7 +137,7 @@
     {
       "id": "piece1-basil",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 30,
       "predicted": 30,
@@ -149,7 +149,7 @@
     {
       "id": "piece2-db",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 31,
       "predicted": 31,
@@ -161,7 +161,7 @@
     {
       "id": "piece2-be",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 30,
       "predicted": 30,
@@ -173,7 +173,7 @@
     {
       "id": "piece2-db2",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 31,
       "predicted": 31,
@@ -185,7 +185,7 @@
     {
       "id": "piece2-lilipod",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 28,
       "predicted": 28,
@@ -197,7 +197,7 @@
     {
       "id": "piece2-db3",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 31,
       "predicted": 31,
@@ -209,7 +209,7 @@
     {
       "id": "piece3-chaos",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 39,
       "predicted": 39,
@@ -221,7 +221,7 @@
     {
       "id": "piece3-glow",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 58,
       "predicted": 61,
@@ -233,7 +233,7 @@
     {
       "id": "piece1-full",
       "kind": "measured",
-      "material": "Lorant Silver",
+      "material": "Laurent Silver",
       "type": "Spear",
       "actual": 133,
       "predicted": 133,

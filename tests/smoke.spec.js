@@ -243,13 +243,26 @@ test("Forge > Ultimate shows the max-power weapon recipe, and its pickers redo t
   const root = page.locator("#f-ult-l");
   await expect(root).toContainText("Ultimate weapon: pick weapon and material");
   await expect(root).toContainText("Ultimate weapon: max-power recipe");
-  await expect(root).toContainText("2H Sword in Vizel Gold");
-  await expect(root).toContainText("Measured on Lorant Silver Spear: 28, 39, 58, 133.");
+  await expect(root).toContainText("2H Sword in Beiser Gold");
+  await expect(root).toContainText("Measured on Laurent Silver Spear: 28, 39, 58, 133.");
   await page.locator("#uw-type").selectOption("Spear");
-  await expect(root).toContainText("Spear in Vizel Gold");
-  await page.locator("#uw-mat").selectOption("Lorant Silver");
-  await expect(root).toContainText("Spear in Lorant Silver: plain 28, est. about 133 after the full list."); // the measured spear itself
+  await expect(root).toContainText("Spear in Beiser Gold");
+  await page.locator("#uw-mat").selectOption("Laurent Silver");
+  await expect(root).toContainText("Spear in Laurent Silver: plain 28, est. about 133 after the full list."); // the measured spear itself
   await page.reload();
   await page.locator('#fnav button[data-fs="ult"]').click();
   await expect(page.locator("#uw-type")).toHaveValue("Spear");
+});
+
+test("materials use the Remastered names, and an old PS1 name still finds them", async ({ page }) => {
+  await page.goto("./#forge");
+  await page.locator('#fnav button[data-fs="mats"]').click();
+  await page.locator("#msearch").fill("Vizel Gold");
+  const shown = page.locator("#f-mats .row:not([hidden])");
+  await expect(shown.first()).toContainText("Beiser Gold");
+  expect(await shown.count()).toBeGreaterThan(0);
+  await page.locator("#msearch").fill("Lorant");
+  await expect(shown.first()).toContainText("Laurent Silver");
+  await page.evaluate(() => { location.hash = "about"; });
+  await expect(page.locator("#names-note")).toContainText("Beiser Gold (was Vizel Gold)");
 });

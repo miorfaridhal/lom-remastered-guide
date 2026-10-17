@@ -75,7 +75,7 @@ Each part of the model has a confidence level:
 
 How essence turns into power is not published, so [`tools/calibrate.mjs`](tools/calibrate.mjs) fits it. It tries over 200,000 combinations of the model's open choices against [`data/calibration.json`](data/calibration.json): 19 readings measured in the Android remaster and 5 figures from fan guides. Measured readings always win over guide figures. [`CALIBRATION.md`](CALIBRATION.md) lists every prediction and its error.
 
-**Current fit:** 18 of 19 measured readings are exact, including 39 after the Chaos Crystal, 133 for the varnished Lorant Silver spear and 160 for the Ishe Platinum 2H Sword. The 58 after the Glow Crystal comes out as 61. The older guide varnish figures (Dragon Scales 711, Altena 414) do not fit the same model as the remaster readings, and the report shows by how much.
+**Current fit:** 18 of 19 measured readings are exact, including 39 after the Chaos Crystal, 133 for the varnished Laurent Silver spear and 160 for the Ishe Platinum 2H Sword. The 58 after the Glow Crystal comes out as 61. The older guide varnish figures (Dragon Scales 711, Altena 414) do not fit the same model as the remaster readings, and the report shows by how much.
 
 ```bash
 npm run test:unit

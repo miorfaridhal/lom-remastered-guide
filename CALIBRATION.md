@@ -26,24 +26,24 @@ The simulator (`js/temper.js`) was fitted to 24 readings: 19 measured in the And
 
 | Reading | Kind | Item | Actual | Predicted | Error | Essence levels |
 |---|---|---|---:|---:|---:|---:|
-| lorant-spear-plain | measured | Lorant Silver Spear | 28 | 28 | 0 | 0 |
+| lorant-spear-plain | measured | Laurent Silver Spear | 28 | 28 | 0 | 0 |
 | ishe-2h-plain | measured | Ishe Platinum 2H Sword | 50 | 50 | 0 | 0 |
-| vizel-2h-plain | measured | Vizel Gold 2H Sword | 43 | 43 | 0 | 0 |
+| vizel-2h-plain | measured | Beiser Gold 2H Sword | 43 | 43 | 0 | 0 |
 | lorimar-spear-plain | measured | Lorimar Iron Spear | 50 | 50 | 0 | 0 |
-| lorant-gloves-db | measured | Lorant Silver Gloves | 25 | 25 | 0 | 0 |
-| piece1-db | measured | Lorant Silver Spear | 31 | 31 | 0 | 0 |
-| piece1-cf | measured | Lorant Silver Spear | 30 | 30 | 0 | 0 |
-| piece1-be | measured | Lorant Silver Spear | 30 | 30 | 0 | 0 |
-| piece1-rhino | measured | Lorant Silver Spear | 30 | 30 | 0 | 0 |
-| piece1-basil | measured | Lorant Silver Spear | 30 | 30 | 0 | 0 |
-| piece2-db | measured | Lorant Silver Spear | 31 | 31 | 0 | 0 |
-| piece2-be | measured | Lorant Silver Spear | 30 | 30 | 0 | 0 |
-| piece2-db2 | measured | Lorant Silver Spear | 31 | 31 | 0 | 0 |
-| piece2-lilipod | measured | Lorant Silver Spear | 28 | 28 | 0 | 0 |
-| piece2-db3 | measured | Lorant Silver Spear | 31 | 31 | 0 | 0 |
-| piece3-chaos | measured | Lorant Silver Spear | 39 | 39 | 0 | 5 |
-| piece3-glow | measured | Lorant Silver Spear | 58 | 61 | +3 | 15 |
-| piece1-full | measured | Lorant Silver Spear | 133 | 133 | 0 | 18 (varnished) |
+| lorant-gloves-db | measured | Laurent Silver Gloves | 25 | 25 | 0 | 0 |
+| piece1-db | measured | Laurent Silver Spear | 31 | 31 | 0 | 0 |
+| piece1-cf | measured | Laurent Silver Spear | 30 | 30 | 0 | 0 |
+| piece1-be | measured | Laurent Silver Spear | 30 | 30 | 0 | 0 |
+| piece1-rhino | measured | Laurent Silver Spear | 30 | 30 | 0 | 0 |
+| piece1-basil | measured | Laurent Silver Spear | 30 | 30 | 0 | 0 |
+| piece2-db | measured | Laurent Silver Spear | 31 | 31 | 0 | 0 |
+| piece2-be | measured | Laurent Silver Spear | 30 | 30 | 0 | 0 |
+| piece2-db2 | measured | Laurent Silver Spear | 31 | 31 | 0 | 0 |
+| piece2-lilipod | measured | Laurent Silver Spear | 28 | 28 | 0 | 0 |
+| piece2-db3 | measured | Laurent Silver Spear | 31 | 31 | 0 | 0 |
+| piece3-chaos | measured | Laurent Silver Spear | 39 | 39 | 0 | 5 |
+| piece3-glow | measured | Laurent Silver Spear | 58 | 61 | +3 | 15 |
+| piece1-full | measured | Laurent Silver Spear | 133 | 133 | 0 | 18 (varnished) |
 | ishe-2h-recipe5 | measured | Ishe Platinum 2H Sword | 160 | 160 | 0 | 19 (varnished) |
 | lorimar-2h-recipe4 | guide | Lorimar Iron 2H Sword | 179 | 180 | +1 | 19 (varnished) |
 | dragon-spear-plain | guide | Dragon Scales Spear | 65 | 65 | 0 | 0 |

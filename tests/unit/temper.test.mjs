@@ -59,7 +59,7 @@ test("the 133 spear ends with three Clown cards in view and varnished", () => {
 
 for (const rule of cal.rules.filter(r => r.steps)) {
   test(`card slots: ${rule.id}`, () => {
-    const t = sim({ material: "Lorant Silver", type: "Spear", steps: rule.steps });
+    const t = sim({ material: "Laurent Silver", type: "Spear", steps: rule.steps });
     const s = t[t.length - 1];
     assert.equal(s.visible.filter(c => c === "Clown").length, rule.visibleClowns);
     if (rule.hiddenCard) assert.equal(s.hidden, rule.hiddenCard);
@@ -74,7 +74,7 @@ test("golem block strength: 133 + 28 = 161 shows +9", () => {
 });
 
 test("attribute items count only while they are the last item", () => {
-  const run = steps => { const t = sim({ material: "Lorant Silver", type: "Spear", steps }); return t[t.length - 1].power; };
+  const run = steps => { const t = sim({ material: "Laurent Silver", type: "Spear", steps }); return t[t.length - 1].power; };
   assert.equal(run(["Dragon's Breath"]), 31);
   assert.equal(run(["Dragon's Breath", "Dragon's Breath"]), 31, "stacking does nothing");
   assert.equal(run(["Dragon's Breath", "Fire Stone"]), run(["Fire Stone"]), "a stone wipes the attribute change");
