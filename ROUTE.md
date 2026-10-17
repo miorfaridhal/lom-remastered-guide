@@ -1058,8 +1058,8 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 3. At Madora Beach talk to the Captain and get 15 Halo Coins.
 4. Go Right. Talk to the central Dudbear, third from the top, and give it a coin.
 5. Keep going Right until you enter the cave. Talk to a Dudbear to get 3 Li'l Bottles and give one to the Dudbear at the Lower Right exit.
-6. Keep going Right to more Dudbears. The centre Dudbear trades Pucashells for 2 Li'l Bottles. Give one Shell to the Dudbear guarding the Upper Left exit.
-7. Keep going Left to more Dudbears and give a Shell to the Upper Left exit.
+6. Keep going Right to more Dudbears. The centre Dudbear trades Pucashells for 2 Li'l Bottles. Give one Seashell to the Dudbear guarding the Upper Left exit.
+7. Keep going Left to more Dudbears and give a Seashell to the Upper Left exit.
 8. Leave to find the treasure, then offer the Dudbears a Halo Coin.
 
 <a id="59-33"></a>
