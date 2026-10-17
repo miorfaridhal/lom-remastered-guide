@@ -240,3 +240,19 @@ test("sideways menus show a more-this-way arrow and note until they are scrolled
   await expect(wrap.locator(".sh-note")).toBeHidden();
   await expect(wrap.locator(".sh-l")).toBeVisible();
 });
+
+test("Li’l Cactus naps after a quiet spell, wakes on the next touch, and smiles with a tip", async ({ page, isMobile }) => {
+  test.skip(isMobile, "mouse only");
+  await page.clock.install();
+  await page.goto("./");
+  const cac = page.locator("#cactus");
+  await expect(cac).not.toHaveClass(/sleep/);
+  await page.clock.fastForward(31000);
+  await expect(cac).toHaveClass(/sleep/);
+  await page.mouse.move(400, 300);
+  await expect(cac).not.toHaveClass(/sleep/);
+  await cac.click();
+  await expect(cac).toHaveClass(/say/);
+  await expect(cac.locator(".cac-happy")).toBeVisible();
+  await expect(page.locator("#tip")).toBeVisible();
+});

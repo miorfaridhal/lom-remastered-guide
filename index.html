@@ -559,32 +559,55 @@ a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 @keyframes won{0%{transform:scale(.6) rotate(-8deg)}60%{transform:scale(1.2) rotate(4deg)}100%{transform:none}}
 
 /* Li’l Cactus: one illustrated look, outlined so it reads on light and dark pages */
-:root{--cac-body:#6DBE7B;--cac-line:#2E7D4F;--cac-pot:#D98B5A;--cac-rim:#B96B3D;--cac-face:#22304A;--cac-blush:#F29B9B;--cac-flower:#F7A8C8;--cac-flower-c:#FFE38A}
-.cactus{position:fixed;left:0;top:0;z-index:62;width:52px;height:64px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;will-change:transform}
+:root{--cac-line:#2E6E47;--cac-face:#22304A;--cac-blush:#F49AA8;--cac-flower:#F59AB5;--cac-flower-c:#FFDD7A;--cac-pot-line:#8E4A26;--cac-cream:#FFF4D6}
+.cactus{position:fixed;left:0;top:0;z-index:62;width:56px;height:68px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent;will-change:transform}
 .cactus[hidden]{display:none!important}
 .cactus:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:12px}
-.cac-sprite{position:absolute;inset:0;width:100%;height:100%;overflow:visible;animation:cacbob 2.6s ease-in-out infinite;transform-origin:50% 100%}
+.cac-sprite{position:absolute;inset:0;width:100%;height:100%;overflow:visible;animation:cacsway 3.4s ease-in-out infinite;transform-origin:50% 96%}
 .cactus.left .cac-sprite{scale:-1 1}
 .cac-shadow{position:absolute;left:12px;right:12px;bottom:-3px;height:6px;border-radius:50%;background:var(--shadow);filter:blur(1px)}
-.cac-trunk,.cac-arm{fill:var(--cac-body);stroke:var(--cac-line);stroke-width:1.6}
-.cac-arm{stroke-linecap:round;stroke-linejoin:round;transform-box:fill-box}
-.cac-arm-l{transform-origin:100% 80%}.cac-arm-r{transform-origin:0% 80%}
-.cac-spine{stroke:var(--cac-line);stroke-width:1.2;stroke-linecap:round}
-.cac-pot{fill:var(--cac-pot)}.cac-rim{fill:var(--cac-rim)}
-.cac-flower circle{fill:var(--cac-flower)}.cac-flower .cac-flower-c{fill:var(--cac-flower-c)}
+.cac-trunk,.cac-arm{fill:url(#cacg-body);stroke:var(--cac-line);stroke-width:1.6;stroke-linejoin:round}
+.cac-arm{stroke-linecap:round;transform-box:fill-box}
+.cac-arm-l{transform-origin:100% 100%}.cac-arm-r{transform-origin:0% 100%}
+.cac-rib{fill:none;stroke:#2F7A4C;stroke-width:1.1;stroke-linecap:round;opacity:.28}
+.cac-shine{fill:#fff;opacity:.38}
+.cac-tuft{stroke:var(--cac-cream);stroke-width:1.1;stroke-linecap:round}
+.cac-flower ellipse{fill:var(--cac-flower);stroke:#D9668A;stroke-width:.6}.cac-flower .cac-flower-c{fill:var(--cac-flower-c)}
+.cac-leaf{fill:#8FD07E;stroke:var(--cac-line);stroke-width:.8}
 .cac-flower{transform-box:fill-box;transform-origin:50% 100%}
-.cac-eye{fill:var(--cac-face);transform-box:fill-box;transform-origin:center;animation:cacblink 4.2s infinite}
-.cac-blush{fill:var(--cac-blush);opacity:.75}
-.cac-mouth{fill:none;stroke:var(--cac-face);stroke-width:1.2;stroke-linecap:round}
+.cac-eye ellipse{fill:var(--cac-face)}.cac-glint{fill:#fff}
+.cac-eye{transform-box:fill-box;transform-origin:center;animation:cacblink 4.2s infinite}
+.cac-blush{fill:var(--cac-blush);opacity:.7}
+.cac-mouth,.cac-line{fill:none;stroke:var(--cac-face);stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.cac-open{fill:#7A2E3A}.cac-dot{fill:var(--cac-face)}
+.cac-pot{fill:url(#cacg-pot);stroke:var(--cac-pot-line);stroke-width:1.1;stroke-linejoin:round}
+.cac-rim{fill:#CF7D48;stroke:var(--cac-pot-line);stroke-width:1.1}
+.cac-rim-hi{stroke:#F2B98A;stroke-width:1.1;stroke-linecap:round}
+.cac-stripe{fill:none;stroke:var(--cac-cream);stroke-width:1.2;stroke-linecap:round;opacity:.85}
+/* moods: happy squint (ticks, taps), sleepy after a quiet spell, "!" when he has a tip */
+.cac-happy,.cac-sleepy{display:none}
+.cactus.wave .cac-eyes,.cactus.happy .cac-eyes,.cactus.sleep .cac-eyes{display:none}
+.cactus.wave .cac-happy,.cactus.happy .cac-happy{display:inline}
+.cactus.sleep:not(.wave):not(.happy) .cac-sleepy{display:inline}
+.cactus.sleep .cac-sprite{animation:cacbreathe 3.8s ease-in-out infinite}
+.cac-say,.cac-z{position:absolute;pointer-events:none;opacity:0}
+.cac-say{top:-16px;right:-10px;width:22px;height:22px;display:grid;place-items:center;border-radius:50%;background:var(--win);border:2px solid var(--accent);color:var(--accent);font:900 .85rem/1 var(--sans);box-shadow:0 3px 8px var(--shadow)}
+.cactus.say .cac-say{animation:cacsay 1.8s ease both}
+.cac-z{top:-6px;right:-2px;font:800 .8rem var(--sans);color:var(--muted)}
+.cactus.sleep .cac-z{animation:cacz 2.4s ease-in-out infinite}
+@keyframes cacsway{0%,100%{transform:rotate(-2.5deg)}50%{transform:rotate(2.5deg) translateY(-2px)}}
+@keyframes cacbreathe{0%,100%{transform:scale(1,1)}50%{transform:scale(1.03,.97)}}
+@keyframes cacsay{0%{opacity:0;transform:scale(0)}15%{opacity:1;transform:scale(1.2)}25%,80%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(.6) translateY(-6px)}}
+@keyframes cacz{0%{opacity:0;transform:translate(0,4px) scale(.7)}40%{opacity:1}100%{opacity:0;transform:translate(6px,-14px) scale(1.15)}}
+@media (prefers-reduced-motion:reduce){.cac-sprite,.cac-eye,.cactus.sleep .cac-sprite,.cactus.sleep .cac-z{animation:none}.cactus.say .cac-say,.cactus.sleep .cac-z{animation:none;opacity:1}}
 @media (hover:hover){.cactus:hover .cac-arm-r{animation:cacwave .32s ease-in-out 2 alternate}}
 .cactus.walk .cac-sprite{animation:cacwaddle .32s ease-in-out infinite alternate}
 .cactus.hop .cac-sprite{animation:cachop .6s cubic-bezier(.3,1.6,.5,1)}
 .cactus.wave .cac-arm-r{animation:cacwave .32s ease-in-out 4 alternate}
 .cactus.wave .cac-flower{animation:cacflower .6s ease-in-out 2}
-@keyframes cacbob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 @keyframes cacwaddle{from{transform:rotate(-7deg) translateY(-2px)}to{transform:rotate(7deg)}}
 @keyframes cachop{0%{transform:translateY(0) scale(1,1)}25%{transform:translateY(0) scale(1.1,.85)}55%{transform:translateY(-18px) scale(.95,1.08)}100%{transform:translateY(0) scale(1)}}
-@keyframes cacwave{from{transform:rotate(0)}to{transform:rotate(-38deg)}}
+@keyframes cacwave{from{transform:rotate(0)}to{transform:rotate(-40deg)}}
 @keyframes cacflower{50%{transform:rotate(14deg)}}
 @keyframes cacblink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
 .hero-btns{display:flex;gap:6px}
@@ -682,17 +705,36 @@ a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
 <div class="scroll-line" aria-hidden="true"></div>
 <button type="button" class="cactus" id="cactus" aria-label="Li’l Cactus: tap for a tip">
   <span class="cac-shadow" aria-hidden="true"></span>
-  <svg class="cac-sprite" viewBox="0 0 48 60" aria-hidden="true">
+  <span class="cac-say" aria-hidden="true">!</span>
+  <span class="cac-z" aria-hidden="true">z</span>
+  <svg class="cac-sprite" viewBox="0 0 56 66" aria-hidden="true">
+    <defs>
+      <radialGradient id="cacg-body" cx="36%" cy="30%" r="75%"><stop offset="0" stop-color="#A9E09A"/><stop offset=".55" stop-color="#66B874"/><stop offset="1" stop-color="#3F8E5C"/></radialGradient>
+      <linearGradient id="cacg-pot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#EBA673"/><stop offset=".6" stop-color="#D4824E"/><stop offset="1" stop-color="#B8663A"/></linearGradient>
+    </defs>
     <g class="cac-body">
-      <path class="cac-arm cac-arm-l" d="M13 30c-5 0-7-3-7-7 0-2 2-3 3-1 1 2 1 4 4 4"/>
-      <path class="cac-arm cac-arm-r" d="M35 26c5 0 7-3 7-7 0-2-2-3-3-1-1 2-1 4-4 4"/>
-      <rect class="cac-trunk" x="13" y="10" width="22" height="34" rx="11"/>
-      <path class="cac-spine" d="M18 20v2M30 18v2M24 14v2M19 34v2M29 33v2"/>
-      <g class="cac-flower"><circle cx="24" cy="9" r="3.2"/><circle cx="20.500" cy="7.500" r="2.4"/><circle cx="27.500" cy="7.500" r="2.4"/><circle cx="24" cy="9" r="1.4" class="cac-flower-c"/></g>
-      <g class="cac-face"><ellipse class="cac-eye" cx="20" cy="26" rx="1.7" ry="2.2"/><ellipse class="cac-eye" cx="28" cy="26" rx="1.7" ry="2.2"/>
-        <circle class="cac-blush" cx="17" cy="30" r="2"/><circle class="cac-blush" cx="31" cy="30" r="2"/><path class="cac-mouth" d="M22 30q2 2 4 0"/></g>
+      <path class="cac-arm cac-arm-l" d="M11.500 35c-4.600 1-7.800-1.700-7.800-5.800 0-2.500 1.700-3.700 3.100-2.900 1.100.6 1.100 2.100 1.700 3.500.6 1.300 1.800 1.600 3.200 1.400"/>
+      <path class="cac-arm cac-arm-r" d="M44.500 29c4.600 1 7.800-1.700 7.800-5.800 0-2.500-1.700-3.700-3.100-2.900-1.100.6-1.100 2.100-1.700 3.500-.6 1.300-1.800 1.600-3.200 1.400"/>
+      <path class="cac-trunk" d="M28 12C38.600 11.800 45.600 19 45.800 29.500L46 39C46 44.500 42.400 48.200 37 48.200H19.200C13.600 48.200 10 44.400 10.100 38.800L10.300 29.200C10.600 18.800 17.600 12.200 28 12Z"/>
+      <path class="cac-rib" d="M20.500 15.500C16.800 22.500 16.200 36 17.800 47.500M35.600 15.400C39.400 22.600 39.900 36 38.300 47.500M28 12.300V47.800"/>
+      <ellipse class="cac-shine" cx="19.500" cy="22" rx="3.600" ry="6.400" transform="rotate(-18 19.500 22)"/>
+      <path class="cac-tuft" d="M21 16.800v2.400M19.800 18h2.400M35 16.800v2.400M33.800 18h2.400M14.200 24v2.400M13 25.200h2.400M41.800 24v2.400M40.600 25.200h2.400M14 40v2.400M12.800 41.200h2.400M42 40v2.400M40.800 41.200h2.400"/>
+      <g class="cac-flower">
+        <path class="cac-leaf" d="M28.400 12.200c1.700-3.100 4.900-3.900 6.700-2.900-1.400 2.700-4 3.600-6.700 2.900z"/>
+        <g transform="translate(27.600 8.600)"><ellipse cy="-3" rx="2.300" ry="3.100"/><ellipse cy="-3" rx="2.300" ry="3.100" transform="rotate(72)"/><ellipse cy="-3" rx="2.300" ry="3.100" transform="rotate(144)"/><ellipse cy="-3" rx="2.300" ry="3.100" transform="rotate(216)"/><ellipse cy="-3" rx="2.300" ry="3.100" transform="rotate(288)"/><circle class="cac-flower-c" r="1.700"/></g>
+      </g>
+      <g class="cac-face">
+        <g class="cac-eyes"><g class="cac-eye"><ellipse cx="22" cy="29.200" rx="2.300" ry="3"/><circle class="cac-glint" cx="22.800" cy="28" r=".85"/></g><g class="cac-eye"><ellipse cx="34" cy="29.200" rx="2.300" ry="3"/><circle class="cac-glint" cx="34.800" cy="28" r=".85"/></g>
+          <path class="cac-mouth" d="M26 33.600q1 1.400 2 0q1 1.400 2 0"/></g>
+        <g class="cac-happy"><path class="cac-line" d="M19.700 30q2.300-3 4.600 0M31.700 30q2.300-3 4.600 0"/><path class="cac-open" d="M25.400 33.200h5.200q-.5 3.200-2.600 3.200t-2.600-3.200z"/></g>
+        <g class="cac-sleepy"><path class="cac-line" d="M19.800 29.800q2.200 1.400 4.400 0M31.800 29.800q2.200 1.400 4.400 0"/><circle class="cac-dot" cx="28" cy="34.200" r=".9"/></g>
+        <ellipse class="cac-blush" cx="17.400" cy="33.800" rx="2.600" ry="1.600"/><ellipse class="cac-blush" cx="38.600" cy="33.800" rx="2.600" ry="1.600"/>
+      </g>
     </g>
-    <path class="cac-pot" d="M10 44h28l-3 14H13z"/><rect class="cac-rim" x="8" y="42" width="32" height="5" rx="2"/>
+    <path class="cac-pot" d="M10.600 50.500h34.800L42.600 64.200H13.400z"/>
+    <path class="cac-stripe" d="M12.300 57q2.600-2 5.200 0t5.200 0 5.200 0 5.200 0 5.200 0 5.200 0"/>
+    <rect class="cac-rim" x="8" y="46.600" width="40" height="5.400" rx="2.200"/>
+    <path class="cac-rim-hi" d="M10.200 47.800h35.600"/>
   </svg>
 </button>
 <div class="cele" id="cele" role="status" hidden>
@@ -875,7 +917,7 @@ a.st:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
     <div class="about-grid">
       <div class="aboutc">
         <h3>What this is</h3>
-        <p>A fan-made companion for Legend of Mana Remastered: all 68 events in a missable-safe play order, skills, forging, farming and pets. Legend of Mana is a trademark of Square Enix. This guide is unofficial and not affiliated with or endorsed by Square Enix.</p>
+        <p>A fan-made companion for Legend of Mana Remastered: all 68 events in a missable-safe play order, skills, forging, farming and pets. Legend of Mana is a trademark of Square Enix. This guide is unofficial and not affiliated with or endorsed by Square Enix. The Li’l Cactus companion on these pages is an original drawing made for this guide, inspired by the game; it is not game artwork.</p>
         <p>Magic spells are not covered. Ability and technique names follow the Android remaster, with the original name shown where it changed. Quest, land and item names come from guides that mix both versions, so a few may not match your game.</p>
         <p>The play order is checked by a route solver, and forging numbers by a tempering simulator calibrated on in-game readings. Both are on <a href="https://github.com/miorfaridhal/lom-remastered-guide" target="_blank" rel="noopener">the project on GitHub</a>. All icons are simple original drawings, not artwork from the game.</p>
       </div>
@@ -1419,7 +1461,7 @@ document.addEventListener("change",function(e){
   if(el.checked)S[g][key]=1;else delete S[g][key];
   if(el.checked)burst(el);
   sfx(el.checked?"tick":"untick");
-  if(el.checked)cacMood("hop",600);
+  if(el.checked){cacMood("hop",600);cacMood("happy",900)}
   sync();queueSave();
   if(el.checked&&g==="q")checkMilestone(+key);
 });
@@ -1838,10 +1880,15 @@ function sndUI(){
 })();
 
 /* ---------- Li’l Cactus: a small companion that chases the mouse and every tap, and gives tips ---------- */
-var CAC={el:null,x:0,y:0,tx:0,ty:0,raf:0,t:0,on:UI.cactus!=="off",face:1};
+var CAC={el:null,x:0,y:0,tx:0,ty:0,raf:0,t:0,on:UI.cactus!=="off",face:1,nap:0};
+function cacWake(){
+  if(!CAC.el)return;
+  CAC.el.classList.remove("sleep");clearTimeout(CAC.nap);
+  CAC.nap=setTimeout(function(){if(CAC.on)CAC.el.classList.add("sleep")},30000);
+}
 function cacBounds(){
   var w=window.innerWidth,h=window.innerHeight,nav=w<=760?84:16;
-  return {minX:8,maxX:w-60,minY:8,maxY:h-nav-64};
+  return {minX:8,maxX:w-64,minY:8,maxY:h-nav-70};
 }
 function cacClamp(){var b=cacBounds();CAC.tx=Math.max(b.minX,Math.min(b.maxX,CAC.tx));CAC.ty=Math.max(b.minY,Math.min(b.maxY,CAC.ty))}
 function cacPlace(){CAC.el.style.transform="translate3d("+CAC.x.toFixed(1)+"px,"+CAC.y.toFixed(1)+"px,0)";CAC.el.classList.toggle("left",CAC.face<0)}
@@ -1882,9 +1929,12 @@ function cacShow(){
     cacGo(e.clientX+(right?36:-96),e.clientY-70);
   },{passive:true});
   window.addEventListener("resize",function(){cacClamp();CAC.x=CAC.tx;CAC.y=CAC.ty;cacPlace()});
+  // he dozes off when nothing happens for a while, and wakes on any touch, mouse, key or scroll
+  ["pointerdown","pointermove","keydown","scroll"].forEach(function(ev){window.addEventListener(ev,cacWake,{passive:true})});
+  cacWake();
   CAC.el.addEventListener("click",function(e){
     e.stopPropagation();
-    cacMood("wave",1300);sfx("chime");showTip();
+    cacWake();cacMood("wave",1300);cacMood("say",1800);sfx("chime");showTip();
   });
   $("#cac-toggle").addEventListener("click",function(){
     CAC.on=!CAC.on;UI.cactus=CAC.on?"on":"off";saveUI();cacShow();sfx(CAC.on?"pop":"close");
