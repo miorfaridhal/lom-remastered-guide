@@ -2673,9 +2673,9 @@ function isheBlock(r5,r4){
     }).join(""),
     p4=rcProg(r4),
     sum=fac("Ishe Platinum 2H Sword",
-      '<p class="why" style="margin-top:0">Ishe Platinum is a metal with weapon values 40 40 40 40. A player reports getting one in Reach for the Stars (#36), and Geo’s shop sells it for 3,000. Resistance is the energy a level costs, so lower is easier. The eight numbers run Wisp, Shade, Dryad, Aura, Salamander, Gnome, Jinn, Undine.</p>'+
+      '<p class="why" style="margin-top:0">Ishe Platinum is a metal with weapon values 40 40 40 40. A player reports getting one in Reach for the Stars (#36). One player’s Android Geo shop did not sell it; it had Vizel Gold instead (price not checked). Resistance is the energy a level costs, so lower is easier. The eight numbers run Wisp, Shade, Dryad, Aura, Salamander, Gnome, Jinn, Undine.</p>'+
       '<ul class="kit">'+rows+'</ul>'+
-      '<p class="why"><b>Measured: an Ishe Platinum 2H Sword made with this list read 160</b> (one player, Android). Vizel Gold (35) starts lower than Ishe Platinum (40), so it is not an upgrade for this sword.</p>'+
+      '<p class="why"><b>Measured: an Ishe Platinum 2H Sword made with this list read 160</b> (one player, Android). Vizel Gold (35) starts lower than Ishe Platinum (40), but this list spends steps on plunge cards. For raw power use the Ultimate tab’s max-power recipe instead: Vizel Gold 2H Sword about 204 (est.).</p>'+
       '<p class="why"><b>How the estimates are made.</b> Rough, not measured: the guide’s 56 to 179 (about 3.2 times, on Lorimar Iron) is scaled by each sword’s starting power. Ishe Platinum’s resistances are no higher than Lorimar Iron’s in any element, so each level in the list should cost the same or less than in the guide’s own example.</p>'+
       '<p class="why"><b>Recipe 4 or Recipe 5.</b> Both use the same list and give the same plunge attacks, and the items are spent either way. The Ishe Platinum sword starts higher, so it ends stronger. Recipe 4 progress: '+p4.d+' of '+p4.n+' steps.</p>'+
       '<p class="why"><b>The coin.</b> Step 9 needs a Wisp Silver coin from the spirit quest. Reach for the Stars (#36): '+(S.q[36]?uo("done"):un("not ticked"))+'. Instruments 101 (#54): '+(S.q[54]?uo("done"):un("not done"))+'. #54 starts when you enter the Workshops area left of Home once #36 is done. Steps 1 to 8 can go ahead before you have the coin.</p>');
@@ -2839,7 +2839,7 @@ function ultWeaponCard(){
   return fac("Ultimate weapon: status effects",
     '<p class="why" style="margin-top:0"><b>Can tempering add a status effect to a weapon?</b> No source found says so. Two guides (Seikens and Wiki of Mana) list weapon effects as attribute percentages (Slash, Heavy, Force, Tech) and plunge attacks, three slots per weapon, where a new plunge attack replaces the one in its slot. Neither lists a tempering item that adds a status to a weapon.</p>'+
     '<p class="why"><b>The closest thing is a plunge attack.</b> One site says some plunge attacks do extra damage through special effects, such as setting enemies on fire or poison, but it names none. For a Spear the known plunge attacks are Trident (Ocean God card) and Gungnir (Ruler of the Sky card). No source says either inflicts a status. Fire-named ones are Flame Tongue (a Sword, God of Destruction card) and Magma Hammer (a Hammer, Volcano card); neither is confirmed either.</p>'+
-    '<p class="why"><b>So the ultimate weapon here is the max-stats one.</b> That is Golem recipe 1 on the Golem tab: a Spear aimed at the 200 attack cap. Plunge items are left out because it is unknown whether a golem uses them.</p>'+
+    '<p class="why"><b>So the ultimate weapon here is the max-power one.</b> See the max-power recipe card on this tab: pick the weapon and the material, and it gives the steps and the expected power at each checkpoint. Plunge attacks take card slots away from the varnish, so they are left out.</p>'+
     '<p class="why"><b>Measured on a Lorant Silver block spear (Blocks tab, piece 1).</b> The full list took a Lorant Silver Spear from 28 to 133, about × 4.75 (39 after the Chaos Crystal, 58 after the Glow Crystal on piece 3). Estimates for later metals with the same list: Granz Steel 22 → about 105, Forsena Iron 16 → about 78 (same resistance, good guess); Ishe Platinum 45 → about 214, Lorimar Iron 50 → about 238 (different resistance, rough). Armor: Dragon Scales or better with Needles, see the Golem tab.</p>');
 }
 /* ---------- FORGE: Forbidden ring, stat upgrade ---------- */
@@ -2872,11 +2872,56 @@ function ringCard(){
     '<li><div class="kh"><strong>Stat bonuses</strong>'+pl("Small")+'</div><div>Measured: about +1 per stat per card, not the top of each card’s range. Whether a bonus stays once its card is pushed out is unknown. Since each card is worth about +1, the Ear of Wheat step is the one that matters.</div></li>'+
     '</ul>');
 }
+/* ---------- FORGE: ultimate weapon, max power, any material ----------
+   The block spear list, measured on a Lorant Silver Spear: plain 28, 39 after the Chaos Crystal,
+   58 after the Glow Crystal, 133 final (about x4.75). Estimates scale the plain power. */
+var UWM=[28,39,58,133];
+function uwPick(){
+  var t=UI.uwType&&blkWeap(UI.uwType)?UI.uwType:"2H Sword",m=UI.uwMat&&MATN[UI.uwMat]?UI.uwMat:"Vizel Gold";
+  return {t:t,m:m};
+}
+function uwConf(m){
+  var r=MATN[m],same=r.res.every(function(x){return x===9});
+  if(r[1]==="Wood")return ["unreliable","Wood carries a permanent Dryad taint, so cards and levels differ from the measured metal."];
+  if(r[1]==="Aerolite")return ["unreliable","Aerolites lose a Salamander level on every tempering."];
+  if(same)return ["good","Same element resistance (9) as the measured Lorant Silver."];
+  if(Math.max.apply(null,r.res)<=9)return ["rough, likely higher","Lower resistance than Lorant Silver in some elements, so levels cost less."];
+  return ["rough, likely lower","Higher resistance than Lorant Silver in some elements, so levels cost more."];
+}
+function buildUW(){
+  var p=uwPick(),w=blkWeap(p.t),M=MATN[p.m],base=blkPow(w.v,M),fin=blkBest(w.v,M),last=fin.n||"Dragon's Breath",
+    est=function(i){return Math.round(base*UWM[i]/UWM[0])};
+  return expandRcp([{id:"uwp",title:"Ultimate weapon: max-power recipe",
+    intro:p.t+" in "+p.m+": plain "+base+", est. about "+est(3)+" after the full list.",
+    steps:[{h:p.t+" in "+p.m,item:p.m,why:"Forge a Weapon, pick "+p.t+", then "+p.m+". Plain power "+base+"."},
+     {h:"Sun Crystal",item:"Sun Crystal"},{h:"Earth Stone",item:"Earth Stone"},{h:"Wind Stone",item:"Wind Stone"},{h:"Water Stone",item:"Water Stone"},
+     {h:"Chaos Crystal",item:"Chaos Crystal",why:"Checkpoint 1: expect about "+est(1)+"."},
+     {h:"Fire Stone",item:"Fire Stone"},{h:"Sulpher",item:"Sulpher"},{h:"Sun Crystal",item:"Sun Crystal",q:2},{h:"Sulpher",item:"Sulpher"},
+     {h:"Glow Crystal",item:"Glow Crystal",why:"Checkpoint 2: expect about "+est(2)+"."},
+     {h:"Bumpkin",item:"Bumpkin",q:4,why:"The 4th moves the 3rd Clown card into view."},
+     {h:"Check: 3 Clown cards shown",why:"All three shown cards must be Clown. If not, stop and re-check before the next step."},
+     {h:"Fire Stone",item:"Fire Stone"},
+     {h:last+" (last)",item:last,why:"Best last item for a "+p.t+(fin.txt?" ("+fin.txt+")":"")+". Final: expect about "+est(3)+". Do not temper again."}],
+    result:"Est. about "+est(3)+" ("+uwConf(p.m)[0]+"). Measured on Lorant Silver Spear: 28, 39, 58, 133."}]);
+}
+function uwCard(rs){
+  var p=uwPick(),c=uwConf(p.m),w=blkWeap(p.t);
+  var tOpt=WEAP.map(function(x){return '<option'+(x[0]===p.t?' selected':'')+'>'+esc(x[0])+'</option>'}).join("");
+  var mats=MATS.filter(function(m){return m[1]!=="Gem"}).map(function(m){return {m:m,pw:blkPow(w.v,m)}}).sort(function(a,b){return b.pw-a.pw});
+  var mOpt=mats.map(function(x){var n=x.m[0],ok=blkMatAvail(n);return '<option value="'+esc(n)+'"'+(n===p.m?' selected':'')+'>'+esc(n)+' · plain '+x.pw+' · est. '+Math.round(x.pw*UWM[3]/UWM[0])+(ok?' · can get':'')+'</option>'}).join("");
+  var top=mats.slice(0,6).map(function(x){var n=x.m[0];return '<tr><td>'+esc(n)+'</td><td>'+x.pw+'</td><td>'+Math.round(x.pw*UWM[3]/UWM[0])+'</td><td>'+esc(uwConf(n)[0])+'</td><td>'+(blkMatAvail(n)?uo("yes"):un("not yet"))+'</td></tr>'}).join("");
+  return fac("Ultimate weapon: pick weapon and material",
+    '<div class="tools" style="margin-bottom:6px"><select id="uw-type" aria-label="Weapon type">'+tOpt+'</select><select id="uw-mat" aria-label="Material">'+mOpt+'</select></div>'+
+    '<p class="why" style="margin-top:0"><b>Estimate quality:</b> '+esc(c[0])+'. '+esc(c[1])+' Every number is plain power × 4.75, scaled from the measured Lorant Silver Spear.</p>'+
+    '<div class="tw"><table class="t"><thead><tr><th>Best for '+esc(p.t)+'</th><th>Plain</th><th>Est.</th><th>Quality</th><th>Can get now</th></tr></thead><tbody>'+top+'</tbody></table></div>'+
+    '<p class="why">Cost of the list: about 13,000 Lucre plus the material, and 4 Bumpkins. Send the two checkpoint readings and the final power to calibrate other metals.</p>');
+}
 function renderUlt(){
   var root=$("#f-ult-l");if(!root)return;
   var rs=buildUlt(),rem=remaining(rs);
   var rr=buildRing();
-  root.innerHTML=gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+ultStatusCard()+rs.map(recipeCard).join("")+ringCard()+rr.map(recipeCard).join("")+ultWeaponCard();
+  var uw=buildUW();
+  root.innerHTML=uwCard(uw)+gatherCard(uw,remaining(uw),"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+ultStatusCard()+rs.map(recipeCard).join("")+ringCard()+rr.map(recipeCard).join("")+ultWeaponCard();
 }
 /* ---------- FORGE: logic blocks, best score and a score-only recipe ---------- */
 var BNEED=153;
@@ -3036,6 +3081,7 @@ document.addEventListener("click",function(e){
 document.addEventListener("change",function(e){
   var id=e.target.id;
   if(id==="c-item"||id==="c-mat")calc();else if(id==="e-res"||id==="e-wiz")energy();
+  else if(id==="uw-type"||id==="uw-mat"){if(id==="uw-type")UI.uwType=e.target.value;else UI.uwMat=e.target.value;saveUI();renderUlt();decorate()}
 });
 document.addEventListener("input",function(e){
   var id=e.target.id;
@@ -3138,14 +3184,14 @@ var EAREA={"Bone Fortress|Undead":"Throne of Corpses","Domina|Beast":"West end",
 var DEMI={"Chobin Hood":["Jungle","Dryad level 3","Chitto"],"Goblin":["Lumina","Shade and Dryad level 3","Guri"],"Mad Mallard":["Lake Kilma","Wisp level 3","Capt. Dayang"],"Narcissos":["Junkyard","Gnome level 3","Fernando"],"Sahagin":["Duma Desert","Dryad level 3","Tikkle"],"Succubus":["Fieg Snowfields","Shade level 3","Elysia"],"Tomato Man":["Norn Peaks","Salamander level 3","Mambo"]};
 /* Shops: land, shop level, stock types, material prices.
    Polpota Harbor: the guide also lists Wendel Silver 1800 and Vizel Gold 2400, but one player's remastered shop stopped at Lorant Silver (same as Ulkan Mines), so they are left out. Ebony Wood, Judd Hemp, Aroma Oil and Holy Water are level 3 stock not seen in that shop, so they are marked unconfirmed. */
-var UNCHECKED={"Polpota Harbor":{"Ebony Wood":1,"Judd Hemp":1,"Aroma Oil":1,"Holy Water":1}};
+var UNCHECKED={"Polpota Harbor":{"Ebony Wood":1,"Judd Hemp":1,"Aroma Oil":1,"Holy Water":1},"Geo":{"Vizel Gold":1}};
 var SHOPS=[
  ["Domina",1,"weapons, armor, instruments, materials","Menos Bronze 300;Forsena Iron 600;Oak Wood 300;Holly Wood 720;Marble 600;Topple Cotton 60;Fire Stone 250;Earth Stone 250;Wind Stone 250;Water Stone 250"],
  ["Gato Grottoes",0,"weapons, materials",""],
  ["Lumina",2,"weapons, armor, instruments, materials, jewels","Granz Steel 1200;Lorant Silver 1500;Baobab Wood 1320;Obsidian 1320;Sultan's Silk 180;Mercury 300;Sulfur 300"],
  ["Ulkan Mines",0,"weapons, armor",""],
  ["Polpota Harbor",3,"weapons, armor, instruments, materials","Ebony Wood 1800;Judd Hemp 300;Aroma Oil 250;Holy Water 250"],
- ["Geo",4,"weapons, armor, instruments, materials, jewels","Ishe Platinum 3000;Lorimar Iron 3600;Maple Wood 2400;Pedan Stone 2700;Altena Felt 600;Aroma Oil 250;Holy Water 250"],
+ ["Geo",4,"weapons, armor, instruments, materials, jewels","Vizel Gold 2400;Lorimar Iron 3600;Maple Wood 2400;Pedan Stone 2700;Altena Felt 600;Aroma Oil 250;Holy Water 250"],
  ["Bone Fortress",0,"seeds and produce",""],
  ["Bejeweled City",0,"jewels",""]
 ];

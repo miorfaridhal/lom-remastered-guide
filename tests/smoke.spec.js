@@ -235,3 +235,21 @@ test("a new deploy shows the update toast and reloads on request", async ({ page
   await expect(page.locator("#upd")).toBeHidden();
   await expect(page.locator("h1")).toHaveText("Legend of Mana Remastered Mana Compass");
 });
+
+test("Forge > Ultimate shows the max-power weapon recipe, and its pickers redo the estimate", async ({ page }) => {
+  await seed(page);
+  await page.goto("./#forge");
+  await page.locator('#fnav button[data-fs="ult"]').click();
+  const root = page.locator("#f-ult-l");
+  await expect(root).toContainText("Ultimate weapon: pick weapon and material");
+  await expect(root).toContainText("Ultimate weapon: max-power recipe");
+  await expect(root).toContainText("2H Sword in Vizel Gold");
+  await expect(root).toContainText("Measured on Lorant Silver Spear: 28, 39, 58, 133.");
+  await page.locator("#uw-type").selectOption("Spear");
+  await expect(root).toContainText("Spear in Vizel Gold");
+  await page.locator("#uw-mat").selectOption("Lorant Silver");
+  await expect(root).toContainText("Spear in Lorant Silver: plain 28, est. about 133 after the full list."); // the measured spear itself
+  await page.reload();
+  await page.locator('#fnav button[data-fs="ult"]').click();
+  await expect(page.locator("#uw-type")).toHaveValue("Spear");
+});
