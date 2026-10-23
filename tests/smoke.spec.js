@@ -242,7 +242,10 @@ test("Forge > Ultimate shows the max-power weapon recipe, and picking a card or 
   await page.goto("./#forge");
   await page.locator('#fnav button[data-fs="ult"]').click();
   const root = page.locator("#f-ult-l");
-  await expect(root).toContainText("Best gear: pick a weapon or armor");
+  await expect(root.locator(".ug-title")).toHaveText("Best gear: 2H Sword");
+  await expect(page.locator("#finfo")).toBeHidden(); // no Expand info on Ultimate
+  // gear first, then the Immunities group, then the Forbidden ring group
+  expect(await root.locator("h3.ug-title, h3.ug-sec").allTextContents()).toEqual(["Best gear: 2H Sword", "Immunities", "Forbidden ring"]);
   await expect(root).toContainText("Ultimate weapon: max-power recipe");
   await expect(page.locator('[data-uw="2H Sword"]')).toHaveAttribute("aria-pressed", "true");
   await page.locator('[data-uw="Spear"]').click();
@@ -287,6 +290,7 @@ test("Best gear: a swipeable card per weapon and per armor piece drives the reci
   await expect(hammer).toContainText("Lorimar Iron");
   await hammer.click();
   await expect(hammer).toHaveAttribute("aria-pressed", "true");
+  await expect(root.locator(".ug-title")).toHaveText("Best gear: Hammer");
   await expect(root).toContainText("8 72 64 16");
   await expect(root).toContainText("Hammer in Lorimar Iron: plain 56");
   await expect(root).toContainText("Giant's Horn (last)");

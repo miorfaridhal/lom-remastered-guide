@@ -212,7 +212,11 @@ input[type=checkbox].pop{animation:pop .45s ease-out}
 .fac li.done i{color:var(--accent)}
 .fac .alt{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--muted);margin:10px 0 0}
 .tw{overflow-x:auto}
+.ug-top{margin:2px 0 10px}
 .ug-k{width:max-content;margin-bottom:10px}
+.ug-sel{display:grid;gap:4px;background:var(--win);border:1px solid var(--frame);border-radius:12px;padding:12px 14px;margin:0 0 12px;box-shadow:0 2px 8px var(--shadow)}
+.ug-title{margin:0;font:400 1.3rem/1.2 var(--display);color:var(--ink)}
+.ug-sec{margin:26px 0 10px;padding-top:14px;border-top:1px solid var(--line);font:400 1.35rem/1.2 var(--display);color:var(--ink)}
 .ug-row{gap:8px;padding:2px 2px 6px}
 .wpn button.ug-c{display:grid;gap:2px;min-width:118px;padding:9px 12px;text-align:left;white-space:nowrap;border-radius:10px;font-weight:600;color:var(--muted)}
 .wpn button.ug-c b{font-size:.95rem;color:var(--ink)}
@@ -1559,7 +1563,7 @@ function setFac(f,shut){f.classList.toggle("shut",shut);var h=f.firstElementChil
 function updFinfo(){
   var b=$("#finfo");if(!b)return;
   var sub=$("#f-"+forgeSub),inf=sub?$$(".fac.info",sub):[];
-  b.hidden=!inf.length;
+  b.hidden=!inf.length||forgeSub==="ult"; // Ultimate is laid out in its own groups
   b.textContent=inf.some(function(f){return f.classList.contains("shut")})?"Expand info":"Collapse info";
 }
 /* Fold memory key for a card: its data-fk when fac() built it, otherwise its tab and title. */
@@ -2986,7 +2990,7 @@ function ugCard(){
     }).join("");
     var w=blkWeap(wp.t),fin=blkBest(w.v,MATN[wp.m]),r=uwRank(wp.t);
     var mOpt=r.map(function(x){return '<option value="'+esc(x.n)+'"'+(x.n===wp.m?' selected':'')+'>'+esc(x.n)+' · plain '+x.pw+' · est. '+uwEst(x.pw)+(x.av?' · can get':'')+'</option>'}).join("");
-    detail='<div class="ug-d"><div class="ug-h"><b>'+esc(wp.t)+'</b> <span class="uw-n">Slash, Heavy, Force, Tech: '+esc(w[1])+'</span></div>'+
+    detail='<div class="ug-d"><div class="ug-h"><span class="uw-n">Slash, Heavy, Force, Tech: '+esc(w[1])+'</span></div>'+
       '<label class="ug-l">Material <select id="uw-mat" aria-label="Material">'+mOpt+'</select></label>'+
       '<p class="why" style="margin:6px 0 0"><b>Last item:</b> '+(fin.n?esc(fin.n)+' ('+esc(fin.txt)+')':'Dragon’s Breath (no attribute item you can get yet beats plain)')+'. <b>Estimate:</b> '+esc(uwConf(wp.m)[0])+'. '+esc(uwConf(wp.m)[1])+'</p>'+
       uwMatTable(r.slice(0,5).map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.pw+'</td><td>'+uwEst(x.pw)+'</td><td>'+(x.av?uo("yes"):un("not yet"))+'</td></tr>'}).join(""),["Best for "+esc(wp.t),"Plain","Est.","Can get now"])+
@@ -2998,22 +3002,24 @@ function ugCard(){
     }).join("");
     var a=uaArm(ap.t),b=uaBest(ap.t,ap.m),ra=uaRank(ap.t);
     var aOpt=ra.map(function(x){return '<option value="'+esc(x.n)+'"'+(x.n===ap.m?' selected':'')+'>'+esc(x.n)+' · def '+x.sum+(x.av?' · can get':'')+'</option>'}).join("");
-    detail='<div class="ug-d"><div class="ug-h"><b>'+esc(ap.t)+'</b> <span class="uw-n">'+esc(a[1])+' · Strike, Slash, Thrust, Magic: '+esc(a[2])+'</span></div>'+
+    detail='<div class="ug-d"><div class="ug-h"><span class="uw-n">'+esc(a[1])+' · Strike, Slash, Thrust, Magic: '+esc(a[2])+'</span></div>'+
       '<label class="ug-l">Material <select id="ua-mat" aria-label="Armor material">'+aOpt+'</select></label>'+
       '<p class="why" style="margin:6px 0 0"><b>Last item:</b> '+(b.n?esc(b.n)+' ('+esc(b.txt)+')':'none you can get yet raises its defense')+'.</p>'+
       uwMatTable(ra.slice(0,5).map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.d.join(" ")+'</td><td>'+x.sum+'</td><td>'+(x.av?uo("yes"):un("not yet"))+'</td></tr>'}).join(""),["Best for "+esc(ap.t),"Strike Slash Thrust Magic","Total","Can get now"])+
       '<p class="why">Defense comes from the guide’s armor values for each material; armor tempering is not measured yet.</p></div>';
   }
-  return fac("Best gear: pick a weapon or armor",
-    '<div class="seg ug-k" role="group" aria-label="Weapons or armor"><button type="button" data-ugk="w" aria-pressed="'+(k==="w")+'">Weapons</button><button type="button" data-ugk="a" aria-pressed="'+(k==="a")+'">Armor</button></div>'+
-    '<div class="wpn ug-row" id="ug-row" role="group" aria-label="'+(k==="w"?"Weapon types":"Armor types")+'">'+cards+'</div>'+detail);
+  return '<div class="ug-top"><div class="seg ug-k" role="group" aria-label="Weapons or armor"><button type="button" data-ugk="w" aria-pressed="'+(k==="w")+'">Weapons</button><button type="button" data-ugk="a" aria-pressed="'+(k==="a")+'">Armor</button></div>'+
+    '<div class="wpn ug-row" id="ug-row" role="group" aria-label="'+(k==="w"?"Weapon types":"Armor types")+'">'+cards+'</div></div>'+
+    '<section class="ug-sel" aria-live="polite"><h3 class="ug-title">Best gear: '+esc(k==="w"?wp.t:ap.t)+'</h3>'+detail+'</section>';
 }
 function renderUlt(){
   var root=$("#f-ult-l");if(!root)return;
   var rs=buildUlt(),rem=remaining(rs);
   var rr=buildRing();
   var arm=UI.ugKind==="a",uw=arm?buildUA():buildUW();
-  root.innerHTML=ugCard()+gatherCard(uw,remaining(uw),arm?"Ultimate armor: still to gather":"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+ultStatusCard()+rs.map(recipeCard).join("")+ringCard()+rr.map(recipeCard).join("")+ultWeaponCard();
+  root.innerHTML=ugCard()+gatherCard(uw,remaining(uw),arm?"Ultimate armor: still to gather":"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+(arm?"":ultWeaponCard())+
+    '<h3 class="ug-sec">Immunities</h3>'+ultStatusCard()+gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+rs.map(recipeCard).join("")+
+    '<h3 class="ug-sec">Forbidden ring</h3>'+ringCard()+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+rr.map(recipeCard).join("");
 }
 /* ---------- FORGE: logic blocks, best score and a score-only recipe ---------- */
 var BNEED=153;
