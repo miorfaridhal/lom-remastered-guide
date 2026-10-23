@@ -212,16 +212,18 @@ input[type=checkbox].pop{animation:pop .45s ease-out}
 .fac li.done i{color:var(--accent)}
 .fac .alt{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--muted);margin:10px 0 0}
 .tw{overflow-x:auto}
-#uw-best td{vertical-align:top}#uw-best .uw-n{font:500 .8rem var(--mono);color:var(--muted)}#uw-best tr.uw-cur td{background:var(--goldbg)}
-/* phones: one small card per weapon instead of a squeezed table */
-@media (max-width:760px){
-  #uw-best{min-width:0;width:100%}#uw-best thead{display:none}
-  #uw-best tr{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;padding:10px 4px;border-bottom:1px solid var(--line)}
-  #uw-best tr.uw-cur{background:var(--goldbg);border-radius:10px}#uw-best tr.uw-cur td{background:none}
-  #uw-best td{display:block;padding:0;border:0;text-align:left}
-  #uw-best td[data-l]::before{content:attr(data-l);display:block;font-size:.68rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-  #uw-best td.uw-go{align-self:center;justify-self:end}
-}
+.ug-k{width:max-content;margin-bottom:10px}
+.ug-row{gap:8px;padding:2px 2px 6px}
+.wpn button.ug-c{display:grid;gap:2px;min-width:118px;padding:9px 12px;text-align:left;white-space:nowrap;border-radius:10px;font-weight:600;color:var(--muted)}
+.wpn button.ug-c b{font-size:.95rem;color:var(--ink)}
+.ug-c .ug-p{font:500 .78rem var(--mono)}
+.wpn button.ug-c[aria-pressed="true"],.wpn button.ug-c[aria-pressed="true"] b{color:var(--head-ink)}
+.ug-d{display:grid;gap:4px}
+.ug-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:1.05rem}
+.ug-l{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-weight:700;font-size:.88rem}
+.ug-l select{min-width:0;max-width:100%}
+.uw-n{font:500 .8rem var(--mono);color:var(--muted)}
+
 /* sideways scrollers (sub-menus, weapon picks, wide tables) show where more is hiding:
    the edge fades, a round arrow button scrolls on, and a one-time peek plus a small note on first sight */
 .sh{position:relative}
@@ -2888,7 +2890,7 @@ function ringCard(){
    58 after the Glow Crystal, 133 final (about x4.75). Estimates scale the plain power. */
 var UWM=[28,39,58,133];
 function uwPick(){
-  var t=UI.uwType&&blkWeap(UI.uwType)?UI.uwType:"2H Sword",m=UI.uwMat&&MATN[UI.uwMat]?UI.uwMat:"Beiser Gold";
+  var t=UI.uwType&&blkWeap(UI.uwType)?UI.uwType:"2H Sword",m=UI.uwMat&&MATN[UI.uwMat]?UI.uwMat:uwBestMat(t);
   return {t:t,m:m};
 }
 function uwConf(m){
@@ -2915,49 +2917,103 @@ function buildUW(){
      {h:last+" (last)",item:last,why:"Best last item for a "+p.t+(fin.txt?" ("+fin.txt+")":"")+". Final: expect about "+est(3)+". Do not temper again."}],
     result:"Est. about "+est(3)+" ("+uwConf(p.m)[0]+"). Measured on Laurent Silver Spear: 28, 39, 58, 133."}]);
 }
-function uwCard(rs){
-  var p=uwPick(),c=uwConf(p.m),w=blkWeap(p.t);
-  var tOpt=WEAP.map(function(x){return '<option'+(x[0]===p.t?' selected':'')+'>'+esc(x[0])+'</option>'}).join("");
-  var mats=MATS.filter(function(m){return m[1]!=="Gem"}).map(function(m){return {m:m,pw:blkPow(w.v,m)}}).sort(function(a,b){return b.pw-a.pw});
-  var mOpt=mats.map(function(x){var n=x.m[0],ok=blkMatAvail(n);return '<option value="'+esc(n)+'"'+(n===p.m?' selected':'')+'>'+esc(n)+' · plain '+x.pw+' · est. '+Math.round(x.pw*UWM[3]/UWM[0])+(ok?' · can get':'')+'</option>'}).join("");
-  var top=mats.slice(0,6).map(function(x){var n=x.m[0];return '<tr><td>'+esc(n)+'</td><td>'+x.pw+'</td><td>'+Math.round(x.pw*UWM[3]/UWM[0])+'</td><td>'+esc(uwConf(n)[0])+'</td><td>'+(blkMatAvail(n)?uo("yes"):un("not yet"))+'</td></tr>'}).join("");
-  return fac("Ultimate weapon: pick weapon and material",
-    '<div class="tools" style="margin-bottom:6px"><select id="uw-type" aria-label="Weapon type">'+tOpt+'</select><select id="uw-mat" aria-label="Material">'+mOpt+'</select></div>'+
-    '<p class="why" style="margin-top:0"><b>Estimate quality:</b> '+esc(c[0])+'. '+esc(c[1])+' Every number is plain power × 4.75, scaled from the measured Laurent Silver Spear.</p>'+
-    '<div class="tw"><table class="t"><thead><tr><th>Best for '+esc(p.t)+'</th><th>Plain</th><th>Est.</th><th>Quality</th><th>Can get now</th></tr></thead><tbody>'+top+'</tbody></table></div>'+
-    '<p class="why">Cost of the list: about 13,000 Lucre plus the material, and 4 Bumpkins. Send the two checkpoint readings and the final power to calibrate other metals.</p>');
+function uwMatTable(rows,cols){
+  return '<div class="tw"><table class="t ug-mats"><thead><tr>'+cols.map(function(c){return '<th>'+c+'</th>'}).join("")+'</tr></thead><tbody>'+rows+'</tbody></table></div>';
 }
 /* Each weapon type weighs Slash, Heavy, Force and Tech differently (a Hammer is 8 72 64 16, a Spear
-   52 20 24 48), so each has its own best material and its own best last item. The tempering list in
-   between is the same for all of them. */
+   52 20 24 48), and each armor piece weighs Strike, Slash, Thrust and Magic, so every type has its own
+   best material and its own best last item. For weapons the tempering list in between is the same. */
 function uwRank(t){
   var w=blkWeap(t);
   return MATS.filter(function(m){return m[1]!=="Gem"}).map(function(m){return {n:m[0],pw:blkPow(w.v,m),av:blkMatAvail(m[0])}})
     .sort(function(a,b){return b.pw-a.pw});
 }
 function uwBestMat(t){var r=uwRank(t),now=r.filter(function(x){return x.av})[0];return (now||r[0]).n}
-function uwBestCard(){
-  var p=uwPick();
-  var rows=WEAP.map(function(w){
-    var r=uwRank(w[0]),top=r[0],now=r.filter(function(x){return x.av})[0],fin=blkBest(w.v,MATN[(now||top).n]); // the last item that suits the material you would use
-    var est=function(x){return Math.round(x.pw*UWM[3]/UWM[0])};
-    return '<tr'+(w[0]===p.t?' class="uw-cur"':'')+'><td><b>'+esc(w[0])+'</b><br><span class="uw-n">'+esc(w[1])+'</span></td>'+
-      '<td data-l="Best material">'+esc(top.n)+'<br><span class="uw-n">'+top.pw+' → about '+est(top)+'</span></td>'+
-      '<td data-l="You can get now">'+(now?(now.n===top.n?uo("same"):esc(now.n)+'<br><span class="uw-n">'+now.pw+' → about '+est(now)+'</span>'):un("none yet"))+'</td>'+
-      '<td data-l="Last item">'+(fin.n?esc(fin.n)+'<br><span style="font-size:.78rem">'+esc(fin.txt)+'</span>':'Dragon’s Breath<br><span style="font-size:.78rem">no attribute item you can get yet beats plain</span>')+'</td>'+
-      '<td class="uw-go"><button type="button" class="btn" data-uw="'+esc(w[0])+'">Use</button></td></tr>';
-  }).join("");
-  return fac("Best build for every weapon",
-    '<p class="why" style="margin-top:0">The weights under each name are Slash, Heavy, Force and Tech. A Hammer leans on Heavy and Force, so it wants a material strong in those and a last item that raises them; a Spear wants Slash and Tech. The tempering list in between is the same for every weapon. Tap Use to load that weapon into the recipe below.</p>'+
-    '<div class="tw"><table class="t" id="uw-best"><thead><tr><th>Weapon</th><th>Best material (plain → est.)</th><th>Best you can get now</th><th>Best last item (for that material)</th><th></th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-    '<p class="why">Estimates scale the plain power by the measured Laurent Silver Spear (28 → 133). Only the Spear is measured; other weapons are estimates until someone sends readings.</p>');
+function uwEst(pw){return Math.round(pw*UWM[3]/UWM[0])}
+/* armor: defense in Strike, Slash, Thrust and Magic is floor(piece weight x material armor value / 64) */
+var ANM=["Strike","Slash","Thrust","Magic"];
+function uaArm(t){return ARM.filter(function(a){return a[0]===t})[0]}
+function uaRank(t){
+  var a=uaArm(t);
+  return MATS.filter(function(m){return m[1]!=="Gem"}).map(function(m){var d=aDef(a,m);return {n:m[0],d:d,sum:d.reduce(function(x,y){return x+y},0),av:blkMatAvail(m[0])}})
+    .sort(function(x,y){return y.sum-x.sum});
+}
+function uaBestMat(t){var r=uaRank(t),now=r.filter(function(x){return x.av})[0];return (now||r[0]).n}
+function uaPick(){
+  var t=UI.uaType&&uaArm(UI.uaType)?UI.uaType:"Armor",m=UI.uaMat&&MATN[UI.uaMat]?UI.uaMat:uaBestMat(t);
+  return {t:t,m:m};
+}
+/* armor attribute items you can get: "Armor: Strike, Slash, Thrust -25%, Magic +25%" (a percent covers the names before it) */
+function uaEff(){
+  var out=[];
+  ITEMS.forEach(function(c){c[1].forEach(function(it){
+    var m=/Armor: ([^.]*)/.exec(it[3]||"");
+    if(!m||it[2]!=="None"||!blkAvailItem(it[0]))return;
+    var mul=[1,1,1,1],ok=false,wait=[];
+    m[1].split(",").forEach(function(q){
+      var nm=/(Strike|Slash|Thrust|Magic)/.exec(q),pc=/([+-])(\d+)%/.exec(q);
+      if(nm)wait.push(ANM.indexOf(nm[1]));
+      if(pc){wait.forEach(function(i){mul[i]=1+(pc[1]==="-"?-1:1)*(+pc[2])/100;ok=true});wait=[]}
+    });
+    if(ok)out.push({n:it[0],mul:mul,txt:m[1].trim()});
+  })});
+  return out;
+}
+function uaBest(t,mn){
+  var a=uaArm(t),M=MATN[mn],base=aDef(a,M),sum=function(d){return d.reduce(function(x,y){return x+y},0)};
+  var best=null,bd=base;
+  uaEff().forEach(function(x){
+    var d=a.v.map(function(v,i){return Math.floor(v*x.mul[i]*M.a[i]/64)});
+    if(sum(d)>sum(bd)){bd=d;best=x}
+  });
+  return {n:best?best.n:"",txt:best?best.txt:"",d:bd,sum:sum(bd),base:base};
+}
+function buildUA(){
+  var p=uaPick(),b=uaBest(p.t,p.m);
+  var steps=[{h:p.t+" in "+p.m,item:p.m,why:"Forge Armor, pick "+p.t+", then "+p.m+". Defense (Strike / Slash / Thrust / Magic): "+b.base.join(" / ")+"."}];
+  if(b.n)steps.push({h:b.n+" (last)",item:b.n,why:"Last item ("+b.txt+"). Defense becomes "+b.d.join(" / ")+". Only the last item counts, so add it after any other tempering, and do not temper again."});
+  return expandRcp([{id:"uap",title:"Ultimate armor: max-defense build",
+    intro:p.t+" in "+p.m+": defense "+b.d.join(" / ")+" (total "+b.sum+").",
+    steps:steps,
+    result:"Defense "+b.d.join(" / ")+", from the guide's armor values; not measured in game. For immunities, use the Ultimate Hauberk recipe below."}]);
+}
+function ugCard(){
+  var k=UI.ugKind==="a"?"a":"w",wp=uwPick(),ap=uaPick(),cards,detail;
+  if(k==="w"){
+    cards=WEAP.map(function(w){
+      var on=w[0]===wp.t,mn=on?wp.m:uwBestMat(w[0]),pw=blkPow(w.v,MATN[mn]);
+      return '<button type="button" class="ug-c" data-uw="'+esc(w[0])+'" aria-pressed="'+on+'"><b>'+esc(w[0])+'</b><span>'+esc(mn)+'</span><span class="ug-p">'+pw+' → ~'+uwEst(pw)+'</span></button>';
+    }).join("");
+    var w=blkWeap(wp.t),fin=blkBest(w.v,MATN[wp.m]),r=uwRank(wp.t);
+    var mOpt=r.map(function(x){return '<option value="'+esc(x.n)+'"'+(x.n===wp.m?' selected':'')+'>'+esc(x.n)+' · plain '+x.pw+' · est. '+uwEst(x.pw)+(x.av?' · can get':'')+'</option>'}).join("");
+    detail='<div class="ug-d"><div class="ug-h"><b>'+esc(wp.t)+'</b> <span class="uw-n">Slash, Heavy, Force, Tech: '+esc(w[1])+'</span></div>'+
+      '<label class="ug-l">Material <select id="uw-mat" aria-label="Material">'+mOpt+'</select></label>'+
+      '<p class="why" style="margin:6px 0 0"><b>Last item:</b> '+(fin.n?esc(fin.n)+' ('+esc(fin.txt)+')':'Dragon’s Breath (no attribute item you can get yet beats plain)')+'. <b>Estimate:</b> '+esc(uwConf(wp.m)[0])+'. '+esc(uwConf(wp.m)[1])+'</p>'+
+      uwMatTable(r.slice(0,5).map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.pw+'</td><td>'+uwEst(x.pw)+'</td><td>'+(x.av?uo("yes"):un("not yet"))+'</td></tr>'}).join(""),["Best for "+esc(wp.t),"Plain","Est.","Can get now"])+
+      '<p class="why">Estimates scale the plain power by the measured Laurent Silver Spear (28 → 133); only the Spear is measured. The list costs about 13,000 Lucre plus the material, and 4 Bumpkins.</p></div>';
+  }else{
+    cards=ARM.map(function(a){
+      var on=a[0]===ap.t,mn=on?ap.m:uaBestMat(a[0]),b=uaBest(a[0],mn);
+      return '<button type="button" class="ug-c" data-ua="'+esc(a[0])+'" aria-pressed="'+on+'"><b>'+esc(a[0])+'</b><span>'+esc(mn)+'</span><span class="ug-p">def '+b.base.reduce(function(x,y){return x+y},0)+' → '+b.sum+'</span></button>';
+    }).join("");
+    var a=uaArm(ap.t),b=uaBest(ap.t,ap.m),ra=uaRank(ap.t);
+    var aOpt=ra.map(function(x){return '<option value="'+esc(x.n)+'"'+(x.n===ap.m?' selected':'')+'>'+esc(x.n)+' · def '+x.sum+(x.av?' · can get':'')+'</option>'}).join("");
+    detail='<div class="ug-d"><div class="ug-h"><b>'+esc(ap.t)+'</b> <span class="uw-n">'+esc(a[1])+' · Strike, Slash, Thrust, Magic: '+esc(a[2])+'</span></div>'+
+      '<label class="ug-l">Material <select id="ua-mat" aria-label="Armor material">'+aOpt+'</select></label>'+
+      '<p class="why" style="margin:6px 0 0"><b>Last item:</b> '+(b.n?esc(b.n)+' ('+esc(b.txt)+')':'none you can get yet raises its defense')+'.</p>'+
+      uwMatTable(ra.slice(0,5).map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.d.join(" ")+'</td><td>'+x.sum+'</td><td>'+(x.av?uo("yes"):un("not yet"))+'</td></tr>'}).join(""),["Best for "+esc(ap.t),"Strike Slash Thrust Magic","Total","Can get now"])+
+      '<p class="why">Defense comes from the guide’s armor values for each material; armor tempering is not measured yet.</p></div>';
+  }
+  return fac("Best gear: pick a weapon or armor",
+    '<div class="seg ug-k" role="group" aria-label="Weapons or armor"><button type="button" data-ugk="w" aria-pressed="'+(k==="w")+'">Weapons</button><button type="button" data-ugk="a" aria-pressed="'+(k==="a")+'">Armor</button></div>'+
+    '<div class="wpn ug-row" id="ug-row" role="group" aria-label="'+(k==="w"?"Weapon types":"Armor types")+'">'+cards+'</div>'+detail);
 }
 function renderUlt(){
   var root=$("#f-ult-l");if(!root)return;
   var rs=buildUlt(),rem=remaining(rs);
   var rr=buildRing();
-  var uw=buildUW();
-  root.innerHTML=uwCard(uw)+uwBestCard()+gatherCard(uw,remaining(uw),"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+ultStatusCard()+rs.map(recipeCard).join("")+ringCard()+rr.map(recipeCard).join("")+ultWeaponCard();
+  var arm=UI.ugKind==="a",uw=arm?buildUA():buildUW();
+  root.innerHTML=ugCard()+gatherCard(uw,remaining(uw),arm?"Ultimate armor: still to gather":"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+ultStatusCard()+rs.map(recipeCard).join("")+ringCard()+rr.map(recipeCard).join("")+ultWeaponCard();
 }
 /* ---------- FORGE: logic blocks, best score and a score-only recipe ---------- */
 var BNEED=153;
@@ -3115,16 +3171,24 @@ function filt(root,inp){
   root.classList.toggle("searching",!!t);
 }
 document.addEventListener("click",function(e){
-  var u=e.target.closest("[data-uw]");
-  if(u){var t=u.getAttribute("data-uw");UI.uwType=t;UI.uwMat=uwBestMat(t);saveUI();renderUlt();decorate();sfx("pop");
-    var c=$("#uw-type");if(c)c.scrollIntoView({behavior:calm?"auto":"smooth",block:"center"});return}
+  var u=e.target.closest("[data-uw],[data-ua],[data-ugk]");
+  if(u){
+    var row=$("#ug-row"),keep=row?row.scrollLeft:0,kind=u.getAttribute("data-ugk");
+    if(kind)UI.ugKind=kind;
+    else if(u.hasAttribute("data-uw")){var t=u.getAttribute("data-uw");if(UI.uwType!==t){UI.uwType=t;UI.uwMat=uwBestMat(t)}}
+    else{var ta=u.getAttribute("data-ua");if(UI.uaType!==ta){UI.uaType=ta;UI.uaMat=uaBestMat(ta)}}
+    saveUI();renderUlt();decorate();sfx("pop");
+    // keep the row where it was, then bring the picked card to the middle
+    var nr=$("#ug-row"),sel=nr&&nr.querySelector('[aria-pressed="true"]');
+    if(nr){nr.scrollLeft=kind?0:keep;if(sel)nr.scrollTo({left:sel.offsetLeft-nr.offsetLeft-(nr.clientWidth-sel.offsetWidth)/2,behavior:calm?"auto":"smooth"})}
+    return}
   var b=e.target.closest("#fnav button");if(!b)return;
   forgeSub=b.getAttribute("data-fs");showForge();
 });
 document.addEventListener("change",function(e){
   var id=e.target.id;
   if(id==="c-item"||id==="c-mat")calc();else if(id==="e-res"||id==="e-wiz")energy();
-  else if(id==="uw-type"||id==="uw-mat"){if(id==="uw-type"){UI.uwType=e.target.value;UI.uwMat=uwBestMat(e.target.value)}else UI.uwMat=e.target.value;saveUI();renderUlt();decorate()}
+  else if(id==="uw-mat"||id==="ua-mat"){if(id==="uw-mat")UI.uwMat=e.target.value;else UI.uaMat=e.target.value;saveUI();renderUlt();decorate()}
 });
 document.addEventListener("input",function(e){
   var id=e.target.id;

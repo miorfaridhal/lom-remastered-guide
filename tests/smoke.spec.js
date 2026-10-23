@@ -236,22 +236,22 @@ test("a new deploy shows the update toast and reloads on request", async ({ page
   await expect(page.locator("h1")).toHaveText("Legend of Mana Remastered Mana Compass");
 });
 
-test("Forge > Ultimate shows the max-power weapon recipe, and its pickers redo the estimate", async ({ page }) => {
+test("Forge > Ultimate shows the max-power weapon recipe, and picking a card or material redoes it", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" }); // no peeking or smooth scrolling under the clicks; this checks the numbers
   await seed(page);
   await page.goto("./#forge");
   await page.locator('#fnav button[data-fs="ult"]').click();
   const root = page.locator("#f-ult-l");
-  await expect(root).toContainText("Ultimate weapon: pick weapon and material");
+  await expect(root).toContainText("Best gear: pick a weapon or armor");
   await expect(root).toContainText("Ultimate weapon: max-power recipe");
-  await expect(root).toContainText("2H Sword in Beiser Gold");
-  await expect(root).toContainText("Measured on Laurent Silver Spear: 28, 39, 58, 133.");
-  await page.locator("#uw-type").selectOption("Spear");
+  await expect(page.locator('[data-uw="2H Sword"]')).toHaveAttribute("aria-pressed", "true");
+  await page.locator('[data-uw="Spear"]').click();
   await expect(root).toContainText("Spear in Lorimar Iron"); // a new weapon picks its best material you can get
   await page.locator("#uw-mat").selectOption("Laurent Silver");
   await expect(root).toContainText("Spear in Laurent Silver: plain 28, est. about 133 after the full list."); // the measured spear itself
   await page.reload();
   await page.locator('#fnav button[data-fs="ult"]').click();
-  await expect(page.locator("#uw-type")).toHaveValue("Spear");
+  await expect(page.locator('[data-uw="Spear"]')).toHaveAttribute("aria-pressed", "true");
 });
 
 test("materials use the Remastered names, and an old PS1 name still finds them", async ({ page }) => {
@@ -276,18 +276,25 @@ test("quest #42 gives the route to the hidden Duma Desert oasis", async ({ page 
   await expect(row).toContainText("hidden behind the rocks in the top-left corner");
 });
 
-test("Forge > Ultimate lists the best build for every weapon, and Use loads the Hammer", async ({ page }) => {
+test("Best gear: a swipeable card per weapon and per armor piece drives the recipe", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" }); // no peeking or smooth scrolling under the clicks; this checks the numbers
   await seed(page);
   await page.goto("./#forge");
   await page.locator('#fnav button[data-fs="ult"]').click();
-  const best = page.locator("#uw-best");
-  await expect(best.locator("tbody tr")).toHaveCount(11);
-  const hammer = best.locator("tr", { has: page.locator('[data-uw="Hammer"]') });
-  await expect(hammer).toContainText("8 72 64 16");
+  const root = page.locator("#f-ult-l");
+  await expect(page.locator("#ug-row [data-uw]")).toHaveCount(11);
+  const hammer = page.locator('[data-uw="Hammer"]');
   await expect(hammer).toContainText("Lorimar Iron");
-  await expect(hammer).toContainText("Giant's Horn");
-  await hammer.locator("[data-uw]").click();
-  await expect(page.locator("#uw-type")).toHaveValue("Hammer");
-  await expect(page.locator("#f-ult-l")).toContainText("Hammer in Lorimar Iron: plain 56");
-  await expect(page.locator("#f-ult-l")).toContainText("Giant's Horn (last)");
+  await hammer.click();
+  await expect(hammer).toHaveAttribute("aria-pressed", "true");
+  await expect(root).toContainText("8 72 64 16");
+  await expect(root).toContainText("Hammer in Lorimar Iron: plain 56");
+  await expect(root).toContainText("Giant's Horn (last)");
+  await page.locator('[data-ugk="a"]').click();
+  await expect(page.locator("#ug-row [data-ua]")).toHaveCount(12);
+  await page.locator('[data-ua="Hauberk"]').click();
+  await expect(root).toContainText("Ultimate armor: max-defense build");
+  await expect(root).toContainText("Hauberk in Lorimar Iron");
+  await expect(root).toContainText("Little Eye (last)");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
