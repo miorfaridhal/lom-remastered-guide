@@ -246,7 +246,7 @@ test("Forge > Ultimate shows the max-power weapon recipe, and its pickers redo t
   await expect(root).toContainText("2H Sword in Beiser Gold");
   await expect(root).toContainText("Measured on Laurent Silver Spear: 28, 39, 58, 133.");
   await page.locator("#uw-type").selectOption("Spear");
-  await expect(root).toContainText("Spear in Beiser Gold");
+  await expect(root).toContainText("Spear in Lorimar Iron"); // a new weapon picks its best material you can get
   await page.locator("#uw-mat").selectOption("Laurent Silver");
   await expect(root).toContainText("Spear in Laurent Silver: plain 28, est. about 133 after the full list."); // the measured spear itself
   await page.reload();
@@ -274,4 +274,20 @@ test("quest #42 gives the route to the hidden Duma Desert oasis", async ({ page 
   await row.locator(".rh").click();
   await expect(row).toContainText("sand waterfall");
   await expect(row).toContainText("hidden behind the rocks in the top-left corner");
+});
+
+test("Forge > Ultimate lists the best build for every weapon, and Use loads the Hammer", async ({ page }) => {
+  await seed(page);
+  await page.goto("./#forge");
+  await page.locator('#fnav button[data-fs="ult"]').click();
+  const best = page.locator("#uw-best");
+  await expect(best.locator("tbody tr")).toHaveCount(11);
+  const hammer = best.locator("tr", { has: page.locator('[data-uw="Hammer"]') });
+  await expect(hammer).toContainText("8 72 64 16");
+  await expect(hammer).toContainText("Lorimar Iron");
+  await expect(hammer).toContainText("Giant's Horn");
+  await hammer.locator("[data-uw]").click();
+  await expect(page.locator("#uw-type")).toHaveValue("Hammer");
+  await expect(page.locator("#f-ult-l")).toContainText("Hammer in Lorimar Iron: plain 56");
+  await expect(page.locator("#f-ult-l")).toContainText("Giant's Horn (last)");
 });
