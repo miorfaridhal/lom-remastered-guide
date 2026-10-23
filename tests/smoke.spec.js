@@ -266,3 +266,12 @@ test("materials use the Remastered names, and an old PS1 name still finds them",
   await page.evaluate(() => { location.hash = "about"; });
   await expect(page.locator("#names-note")).toContainText("Beiser Gold (was Vizel Gold)");
 });
+
+test("quest #42 gives the route to the hidden Duma Desert oasis", async ({ page }) => {
+  await page.goto("./");
+  await page.locator("#qsearch").fill("Blessed Elixir");
+  const row = page.locator('#qlist li[data-q="42"]');
+  await row.locator(".rh").click();
+  await expect(row).toContainText("sand waterfall");
+  await expect(row).toContainText("hidden behind the rocks in the top-left corner");
+});

@@ -1491,10 +1491,22 @@
         "step": "Enter Geo and talk to the bartender again."
       },
       {
-        "step": "Enter Lumina and talk to the bartender in the western section."
+        "step": "Enter Lumina and talk to the bartender in the western section. Listen to his story and say yes when he asks; you leave with the barrel."
       },
       {
-        "step": "Enter the Duma Desert and work through the areas until you find the spring. Watch the barrel fill with water."
+        "step": "Duma Desert: from the entrance, follow the only path down to the screen with three exits."
+      },
+      {
+        "step": "Take the bottom exit to a long screen that scrolls sideways. Go all the way right and leave by the exit furthest right, next to the sand waterfall."
+      },
+      {
+        "step": "Go up past the sand waterfall. The next screen has two Demon Face enemies and a bird skeleton."
+      },
+      {
+        "step": "This screen has two exits on its left side. The lower one is easy to see. The upper one is hidden behind the rocks in the top-left corner: walk up along the left edge into the rocks to find it."
+      },
+      {
+        "step": "The hidden path leads to the oasis spring. Step up to the water and watch the barrel fill. The game takes you back to the nuns and the quest ends."
       }
     ],
     "routeNote": ""

@@ -1130,8 +1130,12 @@ All 68 events in an order that respects every prerequisite, every land unlock an
 2. Enter Gato Grottoes and go to the Dungeons in the western section. Enter the first door on the Left and keep going until you find a room with barrels and nuns.
 3. Talk to the nuns to trigger the event and leave the room. Beat Niccolo.
 4. Enter Geo and talk to the bartender again.
-5. Enter Lumina and talk to the bartender in the western section.
-6. Enter the Duma Desert and work through the areas until you find the spring. Watch the barrel fill with water.
+5. Enter Lumina and talk to the bartender in the western section. Listen to his story and say yes when he asks; you leave with the barrel.
+6. Duma Desert: from the entrance, follow the only path down to the screen with three exits.
+7. Take the bottom exit to a long screen that scrolls sideways. Go all the way right and leave by the exit furthest right, next to the sand waterfall.
+8. Go up past the sand waterfall. The next screen has two Demon Face enemies and a bird skeleton.
+9. This screen has two exits on its left side. The lower one is easy to see. The upper one is hidden behind the rocks in the top-left corner: walk up along the left edge into the rocks to find it.
+10. The hidden path leads to the oasis spring. Step up to the water and watch the barrel fill. The game takes you back to the nuns and the quest ends.
 
 <a id="63-43"></a>
 ## 63. #43 Seeing Double
