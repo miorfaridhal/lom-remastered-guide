@@ -84,7 +84,47 @@ b,strong{font-weight:800}
 .menu a{display:flex;align-items:center;gap:7px;color:var(--muted);text-decoration:none;font-weight:800;padding:11px 16px;border-bottom:3px solid transparent;margin-bottom:-1px;transition:color .2s,border-color .2s,background .2s}
 .menu a:hover{color:var(--ink);background:var(--donebg)}
 .menu a[aria-current="true"]{color:var(--accent);border-bottom-color:var(--accent)}
-.menu a[aria-current="true"] .ic{animation:lift .5s ease-out}
+/* animated icons ---------------------------------------------------------------
+   Strokes draw in (pathLength 1, so a dash of 1 is the whole shape), then the icon plays its own
+   motion: tools swing, the bolt flashes, paws hop, coins spin, books open, pins drop, eyes blink. */
+#fnav button.play .ic>*,.menu a[aria-current="true"] .ic>*,.subnav a[aria-current="true"] .ic>*,.panel:not([hidden]) .hico .ic>*,.st.play .ic>*{stroke-dasharray:1;animation:icdraw .7s cubic-bezier(.5,0,.2,1) both}
+.ic>:nth-child(2){animation-delay:.08s}.ic>:nth-child(3){animation-delay:.16s}.ic>:nth-child(4){animation-delay:.24s}.ic>:nth-child(5){animation-delay:.32s}.ic>:nth-child(n+6){animation-delay:.4s}
+@keyframes icdraw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.ic{transform-origin:50% 60%}
+#fnav button.play .ic,.menu a[aria-current="true"] .ic,.subnav a[aria-current="true"] .ic,.panel:not([hidden]) .hico .ic,.st.play .ic{animation:ic-pop .6s .3s cubic-bezier(.3,1.6,.5,1) both}
+.menu a[aria-current="true"] .ic:is([data-i=hammer],[data-i=sword],[data-i=axe],[data-i=knife],[data-i=spear],[data-i=staff],[data-i=flail]),.subnav a[aria-current="true"] .ic:is([data-i=sword]),.panel:not([hidden]) .hico .ic:is([data-i=hammer],[data-i=sword]),.st.play .ic[data-i=sword]{animation:ic-swing .8s .35s ease-out both;transform-origin:25% 85%}
+.menu a[aria-current="true"] .ic:is([data-i=bolt],[data-i=spark],[data-i=flame]),.panel:not([hidden]) .hico .ic[data-i=bolt],.subnav a[aria-current="true"] .ic[data-i=bolt],.st.play .ic[data-i=bolt]{animation:ic-zap .7s .35s ease-out both}
+.menu a[aria-current="true"] .ic:is([data-i=paw],[data-i=egg],[data-i=person],[data-i=cactus]),.subnav a[aria-current="true"] .ic:is([data-i=paw],[data-i=egg],[data-i=person]),.panel:not([hidden]) .hico .ic:is([data-i=paw],[data-i=egg],[data-i=person]),.st.play .ic[data-i=paw]{animation:ic-hop .8s .35s cubic-bezier(.3,1.5,.5,1) both}
+.menu a[aria-current="true"] .ic:is([data-i=coin],[data-i=gem],[data-i=medal]),.subnav a[aria-current="true"] .ic:is([data-i=coin],[data-i=gem]),.panel:not([hidden]) .hico .ic:is([data-i=coin],[data-i=gem]){animation:ic-spin .9s .35s ease-in-out both}
+.menu a[aria-current="true"] .ic:is([data-i=book],[data-i=tablet],[data-i=check]),.subnav a[aria-current="true"] .ic:is([data-i=tablet],[data-i=book]),.panel:not([hidden]) .hico .ic:is([data-i=book],[data-i=tablet]),.st.play .ic[data-i=tablet]{animation:ic-open .7s .3s cubic-bezier(.3,1.4,.5,1) both}
+.subnav a[aria-current="true"] .ic:is([data-i=pin],[data-i=seed]),.panel:not([hidden]) .hico .ic:is([data-i=pin],[data-i=seed]),.st.play .ic[data-i=pin]{animation:ic-drop .8s .3s cubic-bezier(.3,1.5,.5,1) both}
+.subnav a[aria-current="true"] .ic[data-i=eye],.panel:not([hidden]) .hico .ic[data-i=eye]{animation:ic-blink .9s .5s ease both}
+@keyframes ic-pop{0%{transform:scale(.6)}60%{transform:scale(1.15)}100%{transform:none}}
+@keyframes ic-swing{0%{transform:rotate(0)}30%{transform:rotate(-30deg)}62%{transform:rotate(14deg)}82%{transform:rotate(-5deg)}100%{transform:none}}
+@keyframes ic-zap{0%,100%{transform:none;filter:none}20%{transform:scale(1.3) rotate(-8deg);filter:drop-shadow(0 0 6px currentColor)}40%{opacity:.4}55%{opacity:1;transform:scale(1.1)}75%{opacity:.6}}
+@keyframes ic-hop{0%,100%{transform:none}30%{transform:translateY(-6px) scale(1.05,.95)}55%{transform:translateY(0) scale(1.1,.9)}75%{transform:translateY(-2px)}}
+@keyframes ic-spin{from{transform:perspective(60px) rotateY(0)}to{transform:perspective(60px) rotateY(360deg)}}
+@keyframes ic-open{0%{transform:scaleX(.2)}70%{transform:scaleX(1.12)}100%{transform:none}}
+@keyframes ic-drop{0%{transform:translateY(-9px);opacity:0}55%{transform:translateY(1px);opacity:1}75%{transform:translateY(-2px)}100%{transform:none}}
+@keyframes ic-blink{0%,100%{transform:none}40%{transform:scaleY(.1)}60%{transform:none}}
+/* a light replay on hover with a mouse */
+@media (hover:hover){
+  .menu a:hover .ic,.subnav a:hover .ic,a.st:hover .ic{animation:ic-pop .5s cubic-bezier(.3,1.6,.5,1)}
+  .menu a:hover .ic:is([data-i=hammer],[data-i=sword]),.subnav a:hover .ic[data-i=sword],a.st:hover .ic[data-i=sword]{animation:ic-swing .7s ease-out;transform-origin:25% 85%}
+  .menu a:hover .ic[data-i=paw],.subnav a:hover .ic:is([data-i=paw],[data-i=egg]),a.st:hover .ic[data-i=paw]{animation:ic-hop .7s cubic-bezier(.3,1.5,.5,1)}
+  .menu a:hover .ic[data-i=coin],.subnav a:hover .ic:is([data-i=coin],[data-i=gem]){animation:ic-spin .8s ease-in-out}
+}
+/* section badge, sub-tab and status-card icons */
+.panel>h2.hh{display:flex;align-items:center;gap:12px}
+.hico{display:grid;place-items:center;flex:none;width:46px;height:46px;border-radius:14px;background:var(--head);color:var(--head-ink);box-shadow:0 4px 12px var(--shadow),inset 0 1px 0 rgba(255,255,255,.25)}
+.hico .ic{width:26px;height:26px;stroke-width:1.9}
+.subnav a{display:inline-flex;align-items:center;gap:6px}
+.subnav a .ic{width:17px;height:17px}
+#fnav button{display:inline-flex;align-items:center;gap:6px}
+#fnav button .ic{width:16px;height:16px}
+.st span .ic{width:12px;height:12px;margin:-2px 4px 0 0;vertical-align:middle;color:var(--accent);stroke-width:2.2}
+@media (max-width:420px){.st span .ic{display:none}.hico{width:40px;height:40px;border-radius:12px}.hico .ic{width:23px;height:23px}}
+@media (prefers-reduced-motion:reduce){.ic,.ic>*{animation:none!important}}
 @keyframes lift{0%{transform:translateY(4px)}60%{transform:translateY(-3px)}100%{transform:none}}
 .menu a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,[role=button]:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
 
@@ -1102,7 +1142,24 @@ var LANDS=[
 ];
 var ICON={"Mailbox":"mailbox","Colorblocks":"blocks","Wheel":"wheel","Flame":"flame","Ancient Tablet":"tablet","Bottled Spirit":"bottle","Broken Doll":"doll","Jade Egg":"egg","Moon's Mirror":"mirror","Stone Eye":"eye","Firefly Lamp":"lamp","Medallion":"medal","Sand Rose":"rose","Trembling Spoon":"spoon","Skull Lantern":"lantern","Dragon Bone":"bone","Frozen Heart":"heart","Brooch of Love":"brooch","Sword of Mana":"tree","Rusted Anchor":"anchor","Golden Seed":"seed","Torch of Coral":"coral","Tome of Magic":"book","Green Cane":"cane","Pirate's Hook":"hook","Jumi's Staff":"gem"};
 var WI={"Knife":"knife","1H Sword":"sword","2H Sword":"sword","1H Axe":"axe","2H Axe":"axe","Hammer":"hammer","Spear":"spear","Staff":"staff","Glove":"glove","Flail":"flail","Bow":"bow"};
-function ic(n,sm){return '<svg class="ic'+(sm?' sm':'')+'" aria-hidden="true"><use href="#i-'+n+'"/></svg>'}
+/* Icons are copied inline from the sprite (not <use>), so each stroke can draw itself in.
+   pathLength="1" makes every shape's length 1, so one dash rule fits all of them. */
+var SYM=null;
+function symInit(){
+  SYM={};
+  $$("symbol[id^='i-']").forEach(function(sy){
+    SYM[sy.id.slice(2)]={v:sy.getAttribute("viewBox")||"0 0 24 24",h:sy.innerHTML.replace(/<(path|circle|rect|ellipse|line|polyline|polygon)\b/g,'<$1 pathLength="1"')};
+  });
+}
+function ic(n,sm){
+  if(!SYM)symInit();
+  var y=SYM[n]||{v:"0 0 24 24",h:""};
+  return '<svg class="ic'+(sm?' sm':'')+'" data-i="'+n+'" viewBox="'+y.v+'" aria-hidden="true">'+y.h+'</svg>';
+}
+/* one icon per tab: the sub-tabs, section badges and status cards use these */
+var TICON={quests:"tablet",places:"pin",npcs:"person",hidden:"eye",skills:"bolt",weapons:"sword",forge:"hammer",plan:"seed",money:"coin",drops:"gem",pets:"paw",eggs:"egg",about:"book"};
+/* replay an icon's animation (remove the class, force a reflow, add it back) */
+function icPlay(el){if(!el||calm)return;el.classList.remove("play");void el.getBoundingClientRect();el.classList.add("play")}
 function tile(n){return '<span class="tile sm">'+ic(n,1)+'</span>'}
 var LAND_Q={}; Q.forEach(function(r){(LAND_Q[r[2]]=LAND_Q[r[2]]||[]).push(r[0])});
 
@@ -1501,12 +1558,21 @@ var GROUPS=[
 var TABS=[];GROUPS.forEach(function(g){g[3].forEach(function(p){TABS.push(p[0])})});
 var lastIn={};
 function groupOf(t){return GROUPS.filter(function(g){return g[3].some(function(p){return p[0]===t})})[0]}
+(function iconInit(){
+  $$(".panel>h2").forEach(function(h){
+    var t=h.parentNode.id.slice(2);
+    h.classList.add("hh");
+    h.insertAdjacentHTML("afterbegin",'<span class="hico">'+ic(TICON[t]||"spark")+'</span>');
+  });
+  var STI={q:"tablet",a:"bolt",t:"sword",p:"pin",e:"paw"};
+  Object.keys(STI).forEach(function(k){var b=$("#s-"+k);if(b&&b.nextElementSibling)b.nextElementSibling.insertAdjacentHTML("afterbegin",ic(STI[k],1))});
+})();
 function showTab(){
   var h=(location.hash||"").replace("#","");if(TABS.indexOf(h)<0)h="quests";
   var g=groupOf(h);lastIn[g[0]]=h;
   TABS.forEach(function(t){$("#p-"+t).hidden=(t!==h)});
   $("#tabs").innerHTML=GROUPS.map(function(x){return '<a href="#'+(lastIn[x[0]]||x[3][0][0])+'" aria-current="'+(x===g)+'">'+ic(x[2],1)+x[1]+'</a>'}).join("");
-  var sn=$("#subnav");sn.innerHTML=g[3].length>1?g[3].map(function(p){return '<a href="#'+p[0]+'" aria-current="'+(p[0]===h)+'">'+p[1]+'</a>'}).join(""):"";
+  var sn=$("#subnav");sn.innerHTML=g[3].length>1?g[3].map(function(p){return '<a href="#'+p[0]+'" aria-current="'+(p[0]===h)+'">'+ic(TICON[p[0]]||"spark",1)+p[1]+'</a>'}).join(""):"";
   sn.hidden=g[3].length<2;
   /* slide the new tab in from the side it sits on, and count the status cards up again */
   var ni=TABS.indexOf(h),pi=TABS.indexOf(showTab.prev);
@@ -1723,6 +1789,7 @@ function setStat(k,n,tot){
   if(old&&n>old.n&&!calm){var el=$("#s-"+k).parentNode;el.classList.remove("bump");void el.offsetWidth;el.classList.add("bump")}
 }
 function countStats(){
+  $$(".stats .st").forEach(icPlay);
   if(calm)return;
   var keys=Object.keys(STATV),t0=null,run=++statRun;
   keys.forEach(function(k){$("#b-"+k).style.transition="none"});
@@ -2262,7 +2329,7 @@ var RECIPES=[
 ];
 
 /* ---------- RENDER: forge ---------- */
-var FSUBS=[["start","Start"],["calc","Calculator"],["mats","Materials"],["gear","Gear"],["golem","Golem"],["blocks","Blocks"],["ult","Ultimate"],["items","Items"],["cards","Cards"],["recipes","Recipes"]];
+var FSUBS=[["start","Start","flame"],["calc","Calculator","wheel"],["mats","Materials","gem"],["gear","Gear","brooch"],["golem","Golem","doll"],["blocks","Blocks","blocks"],["ult","Ultimate","spark"],["items","Items","bottle"],["cards","Cards","tablet"],["recipes","Recipes","book"]];
 var forgeSub="start";
 function nrow(title,pills,meta,text){
   return '<li class="row nc" data-text="'+esc((text||title).toLowerCase())+'"><div><div class="rh"><strong>'+esc(title)+'</strong>'+(pills||"")+'</div>'+(meta?'<div class="meta">'+meta+'</div>':'')+'</div></li>';
@@ -2284,7 +2351,7 @@ function qline(id){
   return '<li class="row" data-q="'+id+'"><label class="chk"><input type="checkbox" data-k="q:'+id+'" aria-label="Finished: '+esc(q.name)+'"></label><div><div class="rh"><span class="num">#'+id+'</span><strong>'+esc(q.name)+'</strong><span class="pill" data-st></span><span class="step">'+esc(q.land)+'</span></div><div data-wait style="display:none"></div></div></li>';
 }
 function renderForge(){
-  $("#fnav").innerHTML=FSUBS.map(function(s){return '<button type="button" data-fs="'+s[0]+'" aria-pressed="'+(s[0]===forgeSub)+'">'+s[1]+'</button>'}).join("");
+  $("#fnav").innerHTML=FSUBS.map(function(s){return '<button type="button" data-fs="'+s[0]+'" aria-pressed="'+(s[0]===forgeSub)+'">'+ic(s[2],1)+s[1]+'</button>'}).join("");
   /* start */
   $("#f-start").innerHTML=
     '<section class="grp"><header><h3>Open the forge</h3><span class="sub">Quests that unlock Watts’ smithy in your workshops, in order.</span><span class="cnt" data-cnt></span></header><ul class="list">'+[14,61,53].map(qline).join("")+'</ul></section>'+
@@ -3139,7 +3206,7 @@ document.addEventListener("click",function(e){
 });
 function showForge(){
   FSUBS.forEach(function(s){var el=$("#f-"+s[0]);if(el)el.hidden=(s[0]!==forgeSub)});
-  $$("#fnav button").forEach(function(b){b.setAttribute("aria-pressed",b.getAttribute("data-fs")===forgeSub)});
+  $$("#fnav button").forEach(function(b){var on=b.getAttribute("data-fs")===forgeSub;if(on&&b.getAttribute("aria-pressed")!=="true")icPlay(b);b.setAttribute("aria-pressed",on)});
   updFinfo();
 }
 function calc(){

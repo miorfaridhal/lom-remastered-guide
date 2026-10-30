@@ -107,7 +107,7 @@ test("finished groups wear a medal, untouched ones a dashed pill", async ({ page
   const pills = page.locator("#qlist .grp [data-cnt]");
   await expect(pills.nth(0)).toHaveText("7/7 done");
   await expect(pills.nth(0)).toHaveClass(/full/);
-  await expect(pills.nth(0).locator("svg use")).toHaveAttribute("href", "#i-medal");
+  await expect(pills.nth(0).locator("svg.ic")).toHaveAttribute("data-i", "medal");
   await expect(page.locator("#qlist .grp").nth(0)).toHaveClass(/complete/);
   await expect(pills.nth(5)).toHaveText("3/12 done");
   await expect(pills.nth(5)).not.toHaveClass(/full|none/);
@@ -150,7 +150,7 @@ test("ticking plays a small sound, and the speaker button mutes it for good", as
 
   await page.reload();
   await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "false");
-  await expect(page.locator("#snd use")).toHaveAttribute("href", "#i-mute");
+  await expect(page.locator("#snd svg.ic")).toHaveAttribute("data-i", "mute");
   await page.locator("#snd").click();
   await expect(page.locator("#snd")).toHaveAttribute("aria-pressed", "true");
 });
@@ -294,4 +294,24 @@ test("Li’l Cactus naps after a quiet spell, wakes on the next touch, and smile
   const moods = await page.evaluate(() => window.__moods);
   expect(moods).toContain("say");
   expect(moods).toContain("wave"); // wave shows the happy face
+});
+
+test("icons are drawn inline and animate on the tab bar, sub-tabs, section badge and Forge menu", async ({ page }) => {
+  await page.goto("./#skills");
+  const cur = page.locator('#tabs a[aria-current="true"] svg.ic');
+  await expect(cur).toHaveAttribute("data-i", "bolt");
+  expect(await cur.locator("[pathLength]").count()).toBeGreaterThan(0);
+  expect(await cur.evaluate(el => getComputedStyle(el).animationName)).toMatch(/ic-/);
+  await expect(page.locator('#subnav a[aria-current="true"] svg.ic')).toHaveAttribute("data-i", "bolt");
+  await expect(page.locator("#p-skills .hico svg.ic")).toHaveAttribute("data-i", "bolt");
+  await page.evaluate(() => { location.hash = "forge"; });
+  await page.locator('#fnav button[data-fs="ult"]').click();
+  await expect(page.locator('#fnav button[data-fs="ult"]')).toHaveClass(/play/);
+  await expect(page.locator('#fnav button[data-fs="ult"] svg.ic')).toHaveAttribute("data-i", "spark");
+});
+
+test("icons stay still under reduce motion", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("./#skills");
+  expect(await page.locator('#tabs a[aria-current="true"] svg.ic').evaluate(el => getComputedStyle(el).animationName)).toBe("none");
 });
