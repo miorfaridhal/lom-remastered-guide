@@ -261,6 +261,12 @@ input[type=checkbox].pop{animation:pop .45s ease-out}
 .wpn button.ug-c{display:grid;gap:2px;min-width:118px;padding:9px 12px;text-align:left;white-space:nowrap;border-radius:10px;font-weight:600;color:var(--muted)}
 .wpn button.ug-c b{font-size:.95rem;color:var(--ink)}
 .ug-c .ug-p{font:500 .78rem var(--mono)}
+.wpn button.ug-setc{border-color:var(--trim);box-shadow:inset 0 0 0 1px var(--trim)}
+.ug-set3 .btn{margin-top:6px}
+.ug-set3 .kh{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px}
+.ug-set3 .pill{white-space:normal;line-height:1.5}
+.ug-set3 li>div{min-width:0;overflow-wrap:anywhere}
+.wpn button.ug-c{flex:none}
 .wpn button.ug-c[aria-pressed="true"],.wpn button.ug-c[aria-pressed="true"] b{color:var(--head-ink)}
 .ug-d{display:grid;gap:4px}
 .ug-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:1.05rem}
@@ -3011,7 +3017,9 @@ function uaRank(t){
 }
 function uaBestMat(t){var r=uaRank(t),now=r.filter(function(x){return x.av})[0];return (now||r[0]).n}
 function uaPick(){
-  var t=UI.uaType&&uaArm(UI.uaType)?UI.uaType:"Armor",m=UI.uaMat&&MATN[UI.uaMat]?UI.uaMat:uaBestMat(t);
+  var t=UI.uaType==="set"||!UI.uaType?"set":(uaArm(UI.uaType)?UI.uaType:"set");
+  if(t==="set")return {t:t,m:""};
+  var m=UI.uaMat&&MATN[UI.uaMat]?UI.uaMat:uaBestMat(t);
   return {t:t,m:m};
 }
 /* armor attribute items you can get: "Armor: Strike, Slash, Thrust -25%, Magic +25%" (a percent covers the names before it) */
@@ -3048,6 +3056,19 @@ function buildUA(){
     steps:steps,
     result:"Defense "+b.d.join(" / ")+", from the guide's armor values; not measured in game. For immunities, use the Ultimate Hauberk recipe below."}]);
 }
+/* The full set: the Recipe 3 pendant holds five immunities, the Hauberk the three a pendant cannot
+   (Freeze is listed for a Hauberk only), and the Forbidden ring keeps EXP sharing and adds stats. */
+function setDetail(){
+  var hm=uaBestMat("Hauberk"),hb=armD("Hauberk",hm),ht=bedK(hb,3),am=uaBestMat("Armor"),at=bedK(armD("Armor",am),3);
+  var pp=rcProg(buildRcp()[2]),pd=MATN["Lapis Lazuli"]?dtxt(armD("Pendant","Lapis Lazuli")):"";
+  var li=function(name,imm,body){return '<li><div class="kh"><strong>'+name+'</strong>'+pl(imm)+'</div><div>'+body+'</div></li>'};
+  return '<div class="ug-d"><p class="why" style="margin:0">Wear these three together: between them they hold all eight immunities, and the Hauberk carries the defense.</p>'+
+    '<ul class="kit ug-set3">'+
+    li("Hauberk","Freeze · Petrification · Flameburst","Best material you can get: "+esc(hm)+", defense "+dtxt(hb)+" (Strike/Slash/Thrust/Magic), about "+dtxt(ht)+" after three Bed of Thorn cards. An Armor in "+esc(am)+" would reach about "+dtxt(at)+", but Freeze is listed for a Hauberk only. Recipe below.")+
+    li("Pendant","Poison · Confusion · Darkness · Paralysis · Sleep","Recipe 3, the Lapis Lazuli pendant on the Gear tab"+(pd?" (defense "+pd+")":"")+": "+(pp.next?pp.d+" of "+pp.n+" steps done.":"finished.")+' <button type="button" class="btn" data-goto-r3>Open Recipe 3</button>')+
+    li("Ring","EXP for the party · stats","The Forbidden ring (reward of #3): it shares EXP with the whole party. The recipe below adds stat bonuses and Flameburst as a spare, and keeps the EXP sharing.")+
+    '</ul></div>';
+}
 function ugCard(){
   var k=UI.ugKind==="a"?"a":"w",wp=uwPick(),ap=uaPick(),cards,detail;
   if(k==="w"){
@@ -3063,10 +3084,11 @@ function ugCard(){
       uwMatTable(r.slice(0,5).map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.pw+'</td><td>'+uwEst(x.pw)+'</td><td>'+(x.av?uo("yes"):un("not yet"))+'</td></tr>'}).join(""),["Best for "+esc(wp.t),"Plain","Est.","Can get now"])+
       '<p class="why">Estimates scale the plain power by the measured Laurent Silver Spear (28 → 133); only the Spear is measured. The list costs about 13,000 Lucre plus the material, and 4 Bumpkins.</p></div>';
   }else{
-    cards=ARM.map(function(a){
+    cards='<button type="button" class="ug-c ug-setc" data-ua="set" aria-pressed="'+(ap.t==="set")+'"><b>Full set</b><span>Hauberk + Pendant + Ring</span><span class="ug-p">all 8 immunities</span></button>'+ARM.map(function(a){
       var on=a[0]===ap.t,mn=on?ap.m:uaBestMat(a[0]),b=uaBest(a[0],mn);
       return '<button type="button" class="ug-c" data-ua="'+esc(a[0])+'" aria-pressed="'+on+'"><b>'+esc(a[0])+'</b><span>'+esc(mn)+'</span><span class="ug-p">def '+b.base.reduce(function(x,y){return x+y},0)+' → '+b.sum+'</span></button>';
     }).join("");
+    if(ap.t==="set")detail=setDetail();else{
     var a=uaArm(ap.t),b=uaBest(ap.t,ap.m),ra=uaRank(ap.t);
     var aOpt=ra.map(function(x){return '<option value="'+esc(x.n)+'"'+(x.n===ap.m?' selected':'')+'>'+esc(x.n)+' · def '+x.sum+(x.av?' · can get':'')+'</option>'}).join("");
     detail='<div class="ug-d"><div class="ug-h"><span class="uw-n">'+esc(a[1])+' · Strike, Slash, Thrust, Magic: '+esc(a[2])+'</span></div>'+
@@ -3074,19 +3096,25 @@ function ugCard(){
       '<p class="why" style="margin:6px 0 0"><b>Last item:</b> '+(b.n?esc(b.n)+' ('+esc(b.txt)+')':'none you can get yet raises its defense')+'.</p>'+
       uwMatTable(ra.slice(0,5).map(function(x){return '<tr><td>'+esc(x.n)+'</td><td>'+x.d.join(" ")+'</td><td>'+x.sum+'</td><td>'+(x.av?uo("yes"):un("not yet"))+'</td></tr>'}).join(""),["Best for "+esc(ap.t),"Strike Slash Thrust Magic","Total","Can get now"])+
       '<p class="why">Defense comes from the guide’s armor values for each material; armor tempering is not measured yet.</p></div>';
+    }
   }
   return '<div class="ug-top"><div class="seg ug-k" role="group" aria-label="Weapons or armor"><button type="button" data-ugk="w" aria-pressed="'+(k==="w")+'">Weapons</button><button type="button" data-ugk="a" aria-pressed="'+(k==="a")+'">Armor</button></div>'+
     '<div class="wpn ug-row" id="ug-row" role="group" aria-label="'+(k==="w"?"Weapon types":"Armor types")+'">'+cards+'</div></div>'+
-    '<section class="ug-sel" aria-live="polite"><h3 class="ug-title">Best gear: '+esc(k==="w"?wp.t:ap.t)+'</h3>'+detail+'</section>';
+    '<section class="ug-sel" aria-live="polite"><h3 class="ug-title">Best gear: '+esc(k==="w"?wp.t:(ap.t==="set"?"Full set":ap.t))+'</h3>'+detail+'</section>';
 }
 function renderUlt(){
   var root=$("#f-ult-l");if(!root)return;
   var rs=buildUlt(),rem=remaining(rs);
   var rr=buildRing();
-  var arm=UI.ugKind==="a",uw=arm?buildUA():buildUW();
-  root.innerHTML=ugCard()+gatherCard(uw,remaining(uw),arm?"Ultimate armor: still to gather":"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+(arm?"":ultWeaponCard())+
-    '<h3 class="ug-sec">Immunities</h3>'+ultStatusCard()+gatherCard(rs,rem,"Ultimate Hauberk: still to gather")+rs.map(recipeCard).join("")+
-    '<h3 class="ug-sec">Forbidden ring</h3>'+ringCard()+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+rr.map(recipeCard).join("");
+  var arm=UI.ugKind==="a";
+  if(arm&&uaPick().t==="set"){
+    root.innerHTML=ugCard()+ultStatusCard()+
+      gatherCard(rs,rem,"Hauberk: still to gather")+rs.map(recipeCard).join("")+
+      ringCard()+gatherCard(rr,remaining(rr),"Forbidden ring: still to gather","The optional steps are listed as optional. A tick on the Items tab means you hold at least one; the number is how many the open steps still need.")+rr.map(recipeCard).join("");
+    return;
+  }
+  var uw=arm?buildUA():buildUW();
+  root.innerHTML=ugCard()+gatherCard(uw,remaining(uw),arm?"Ultimate armor: still to gather":"Ultimate weapon: still to gather")+uw.map(recipeCard).join("")+(arm?"":ultWeaponCard());
 }
 /* ---------- FORGE: logic blocks, best score and a score-only recipe ---------- */
 var BNEED=153;
@@ -3244,12 +3272,18 @@ function filt(root,inp){
   root.classList.toggle("searching",!!t);
 }
 document.addEventListener("click",function(e){
+  if(e.target.closest("[data-goto-r3]")){
+    forgeSub="gear";showForge();
+    var r3=$('#f-gear [data-fk="Recipe 3: Lapis Lazuli pendant"]');
+    if(r3){setFac(r3,false);UI[facKey(r3)]="o";saveUI();r3.scrollIntoView({behavior:calm?"auto":"smooth",block:"start"})}
+    return;
+  }
   var u=e.target.closest("[data-uw],[data-ua],[data-ugk]");
   if(u){
     var row=$("#ug-row"),keep=row?row.scrollLeft:0,kind=u.getAttribute("data-ugk");
     if(kind)UI.ugKind=kind;
     else if(u.hasAttribute("data-uw")){var t=u.getAttribute("data-uw");if(UI.uwType!==t){UI.uwType=t;UI.uwMat=uwBestMat(t)}}
-    else{var ta=u.getAttribute("data-ua");if(UI.uaType!==ta){UI.uaType=ta;UI.uaMat=uaBestMat(ta)}}
+    else{var ta=u.getAttribute("data-ua");if(UI.uaType!==ta){UI.uaType=ta;UI.uaMat=ta==="set"?"":uaBestMat(ta)}}
     saveUI();renderUlt();decorate();sfx("pop");
     // keep the row where it was, then bring the picked card to the middle
     var nr=$("#ug-row"),sel=nr&&nr.querySelector('[aria-pressed="true"]');

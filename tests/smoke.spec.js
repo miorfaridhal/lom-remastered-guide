@@ -244,8 +244,7 @@ test("Forge > Ultimate shows the max-power weapon recipe, and picking a card or 
   const root = page.locator("#f-ult-l");
   await expect(root.locator(".ug-title")).toHaveText("Best gear: 2H Sword");
   await expect(page.locator("#finfo")).toBeHidden(); // no Expand info on Ultimate
-  // gear first, then the Immunities group, then the Forbidden ring group
-  expect(await root.locator("h3.ug-title, h3.ug-sec").allTextContents()).toEqual(["Best gear: 2H Sword", "Immunities", "Forbidden ring"]);
+  await expect(root).not.toContainText("Forbidden ring: stat upgrade"); // the ring and Hauberk live in Armor > Full set
   await expect(root).toContainText("Ultimate weapon: max-power recipe");
   await expect(page.locator('[data-uw="2H Sword"]')).toHaveAttribute("aria-pressed", "true");
   await page.locator('[data-uw="Spear"]').click();
@@ -295,7 +294,7 @@ test("Best gear: a swipeable card per weapon and per armor piece drives the reci
   await expect(root).toContainText("Hammer in Lorimar Iron: plain 56");
   await expect(root).toContainText("Giant's Horn (last)");
   await page.locator('[data-ugk="a"]').click();
-  await expect(page.locator("#ug-row [data-ua]")).toHaveCount(12);
+  await expect(page.locator("#ug-row [data-ua]")).toHaveCount(13); // Full set + 12 pieces
   await page.locator('[data-ua="Hauberk"]').click();
   await expect(root).toContainText("Ultimate armor: max-defense build");
   await expect(root).toContainText("Hauberk in Lorimar Iron");
@@ -309,4 +308,22 @@ test("Google Search Console can verify the site, by meta tag and by file", async
   const f = await request.get("google6283d33a5b5334b6.html");
   expect(f.ok()).toBeTruthy();
   expect(await f.text()).toContain("google-site-verification: google6283d33a5b5334b6.html");
+});
+
+test("Armor > Full set: Hauberk, pendant and ring hold all eight immunities, with their recipes", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await seed(page);
+  await page.goto("./#forge");
+  await page.locator('#fnav button[data-fs="ult"]').click();
+  await page.locator('[data-ugk="a"]').click();
+  const root = page.locator("#f-ult-l");
+  await expect(page.locator('[data-ua="set"]')).toHaveAttribute("aria-pressed", "true"); // the set is the default armor pick
+  await expect(root.locator(".ug-title")).toHaveText("Best gear: Full set");
+  for (const imm of ["Freeze", "Petrification", "Flameburst", "Poison", "Confusion", "Darkness", "Paralysis", "Sleep"]) await expect(root.locator(".ug-set3")).toContainText(imm);
+  await expect(root).toContainText("Ultimate recipe: Hauberk with Freeze, Petrification and Flameburst");
+  await expect(root).toContainText("Forbidden ring: stat upgrade");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.locator("[data-goto-r3]").click();
+  await expect(page.locator('#fnav button[data-fs="gear"]')).toHaveAttribute("aria-pressed", "true");
+  await expect(page.locator('#f-gear [data-fk="Recipe 3: Lapis Lazuli pendant"]')).not.toHaveClass(/shut/);
 });
