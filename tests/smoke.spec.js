@@ -302,3 +302,11 @@ test("Best gear: a swipeable card per weapon and per armor piece drives the reci
   await expect(root).toContainText("Little Eye (last)");
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });
+
+test("Google Search Console can verify the site, by meta tag and by file", async ({ page, request }) => {
+  await page.goto("./");
+  await expect(page.locator('meta[name="google-site-verification"]')).toHaveAttribute("content", "KdxtvKWbiLH6ssoH1hiFvCTb9uDmm35D9AA20pXLMvk");
+  const f = await request.get("google6283d33a5b5334b6.html");
+  expect(f.ok()).toBeTruthy();
+  expect(await f.text()).toContain("google-site-verification: google6283d33a5b5334b6.html");
+});

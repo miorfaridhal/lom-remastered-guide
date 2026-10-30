@@ -2,7 +2,7 @@
 // App shell is cache-first from a versioned cache. VERSION is rewritten by `npm run build`
 // (tools/stamp-sw.mjs) from a hash of the shell files, so any change to them ships a new
 // worker; the page then shows an "Update available" toast and reloads when the user agrees.
-const VERSION = "7a9e5fb6e1f6";
+const VERSION = "660fc4058080";
 const SHELL = [
   "./",
   "index.html",
