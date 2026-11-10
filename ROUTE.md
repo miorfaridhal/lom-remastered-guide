@@ -1115,7 +1115,9 @@ All 68 events in an order that respects every prerequisite, every land unlock an
    - Path: Left, Down, Left, Up, Up at the save statue, Up, Up, search the statue
 4. Enter Lumina and go to Monique's Lamp Shop. Talk to her.
 5. Enter Madora Beach, go to the Lighthouse and watch the scenes.
-6. Enter the Ulkan Mines, return to the statue and help her cast the spell by choosing the right lines.
+6. Enter the Ulkan Mines and return to the statue (same way as step 3). Monique cannot remember the spell, so you pick each line for her. There are three prompts; choose these, in this order:
+   - Path: Pick: 1. Heavens bless the earth with life-giving showers of rain.
+7. Save before the statue: a wrong line fails the quest for good (one guide says picking only the bottom option each time fails it). With all three right, Gilbert is freed and the quest ends.
 
 <a id="62-42"></a>
 ## 62. #42 The Blessed Elixir

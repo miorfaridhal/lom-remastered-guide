@@ -270,6 +270,7 @@ test("materials use the Remastered names, and an old PS1 name still finds them",
 });
 
 test("quest #42 gives the route to the hidden Duma Desert oasis", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("lom-ui-v1", JSON.stringify({ cactus: "off" }))); // keep Li’l Cactus from standing on the row we tap
   await page.goto("./");
   await page.locator("#qsearch").fill("Blessed Elixir");
   const row = page.locator('#qlist li[data-q="42"]');
@@ -326,4 +327,18 @@ test("Armor > Full set: Hauberk, pendant and ring hold all eight immunities, wit
   await page.locator("[data-goto-r3]").click();
   await expect(page.locator('#fnav button[data-fs="gear"]')).toHaveAttribute("aria-pressed", "true");
   await expect(page.locator('#f-gear [data-fk="Recipe 3: Lapis Lazuli pendant"]')).not.toHaveClass(/shut/);
+});
+
+test("quest #59 lists the three spell lines to pick at the statue, in order", async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem("lom-ui-v1", JSON.stringify({ cactus: "off" }))); // keep Li’l Cactus from standing on the row we tap
+  await page.goto("./");
+  await page.locator("#qsearch").fill("Resume for Love");
+  const row = page.locator('#qlist li[data-q="59"]');
+  await row.locator(".rh").click();
+  await expect(row.locator(".pth.pick")).toHaveText([
+    "1. Heavens bless the earth with life-giving showers of rain.",
+    "2. The ancient memories of Mother Earth fill our souls with bliss.",
+    "3. Know the truth that is the ultimate tower of energy for all.",
+  ]);
+  await expect(row).toContainText("Save before the statue");
 });
